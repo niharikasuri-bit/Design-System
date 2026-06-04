@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alert Card - DIGIT Design System. A visual communication element for errors, warnings, success and informative updates." />
+  <title>Alert Card · Atoms · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+        theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = { section:'components', page:'atoms', title:'Alert Card', breadcrumb:['Components','Atoms','Alert Card'] };
+    
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- ══ LAYOUT ════════════════════════════════════════════════════ -->
+<div class="flex min-h-screen">
+
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0 h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl">
+      <div id="breadcrumb-mount"></div>
+
+      <!-- ══ HEADER ═══════════════════════════════════════════════ -->
+      <div class="mb-12">
+
+
+        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] dark:text-[#C7D2FE] tracking-[-0.022em] leading-[1.18] mb-4">Alert Card</h1>
+
+        <p class="text-[16px] text-[#6B7280] dark:text-gray-400 leading-relaxed max-w-[720px] mb-8">
+          The Alert Card component is a visual communication element used to inform users about critical
+          messages like errors, warnings, success confirmations, or informative updates. It ensures users
+          are guided with appropriate visual cues and messaging hierarchy at every touchpoint of their
+          interaction.
+        </p>
+
+        <!-- Preview placeholder -->
+        <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-[14px] overflow-hidden mb-10">
+          <img src="../../assets/previews/Alert Card.png" alt="Alert Card component overview — informational, warning, and error alert states" class="w-full block" loading="lazy"/>
+        </div>
+
+        <!-- Action tiles Tailwind utilities matching accordion.html exactly -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+          <!-- Figma -->
+          <a href="https://www.figma.com/design/G4UcvjXgxhpe58W9MiAnmn/DIGIT-Design-System?node-id=75718-23269&amp;t=MqAspIMheD9xTUtC-0"
+             target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col items-center text-center
+               bg-white dark:bg-[#111827]
+               border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)]
+               rounded-[14px] px-5 py-5 relative overflow-hidden
+               shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)]
+               hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)]
+               hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]"
+                 style="background:linear-gradient(90deg,#f24e1e,#ff7262)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1"
+                 style="background:rgba(242,78,30,.08)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="26" height="26" aria-label="Figma" role="img">
+                <path d="M25 150c13.807 0 25-11.193 25-25v-25H25C11.193 100 0 111.193 0 125S11.193 150 25 150z" fill="#0ACF83"/>
+                <path d="M0 75C0 61.193 11.193 50 25 50H50v50H25C11.193 100 0 88.807 0 75z" fill="#A259FF"/>
+                <path d="M0 25C0 11.193 11.193 0 25 0H50v50H25C11.193 50 0 38.807 0 25z" fill="#F24E1E"/>
+                <path d="M50 0h25C88.807 0 100 11.193 100 25S88.807 50 75 50H50V0z" fill="#FF7262"/>
+                <path d="M100 75c0 13.807-11.193 25-25 25S50 88.807 50 75s11.193-25 25-25 25 11.193 25 25z" fill="#1ABCFE"/>
+              </svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7]
+              group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">
+              Component Design
+            </span>
+          </a>
+
+          <!-- Flutter -->
+          <button onclick="openModal('flutter')"
+            class="group flex flex-col items-center text-center
+              bg-white dark:bg-[#111827]
+              border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)]
+              rounded-[14px] px-5 py-5 relative overflow-hidden
+              shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)]
+              hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)]
+              hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]"
+                 style="background:linear-gradient(90deg,#54C5F8,#01579B)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1"
+                 style="background:rgba(84,197,248,.1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="26" height="26" aria-label="Flutter" role="img">
+                <path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z" fill="#54C5F8"/>
+                <path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z" fill="#54C5F8"/>
+                <path d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z" fill="#29B6F6"/>
+                <path d="M115.7 128L81.6 93.9l-20 19.9L76.3 128z" fill="#01579B"/>
+              </svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7]
+              group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">
+              Component Flutter
+            </span>
+          </button>
+
+          <!-- React -->
+          <button onclick="openModal('react')"
+            class="group flex flex-col items-center text-center
+              bg-white dark:bg-[#111827]
+              border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)]
+              rounded-[14px] px-5 py-5 relative overflow-hidden
+              shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)]
+              hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)]
+              hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]"
+                 style="background:linear-gradient(90deg,#61DAFB,#087EA4)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1"
+                 style="background:rgba(97,218,251,.1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.232 23 20.463" width="28" height="28" aria-label="React" role="img">
+                <circle cx="0" cy="0" r="2.05" fill="#61DAFB"/>
+                <g stroke="#61DAFB" stroke-width="1" fill="none">
+                  <ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                </g>
+              </svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7]
+              group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">
+              Component React
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
+      <div class="bg-[#F4F5F7] dark:bg-[#1F2937] rounded-[14px] p-6 mb-24">
+        <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-4">On this page</h3>
+        <ul class="flex flex-col gap-y-3">
+          <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"       class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"        class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
+          <li><a href="#usage-guide"      class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"        class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist" class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        </ul>
+      </div>
+
+      <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
+      <section id="anatomy" class="mb-24 scroll-mt-24">
+
+        <h2 class="section-title">Anatomy</h2>
+        <div class="section-divider"></div>
+        <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F2sHmbdJYqZmjhuqECPot%252Fimage.png%3Falt%3Dmedia%26token%3Db77d7c28-7926-4c67-a2ff-63e3429af6b6&width=768&dpr=3&quality=100&sign=63584067&sv=2"
+             alt="Alert Card anatomy diagram" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/>
+      </section>
+
+      <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
+      <!-- Section 1: TEXT LEFT · IMAGE RIGHT (md:flex-row, txt first) -->
+      <section id="variants" class="mb-24 scroll-mt-24">
+
+        <h2 class="section-title">Variants</h2>
+        <div class="section-divider"></div>
+
+        <!-- Info -->
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Info</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Used to convey general information or tips that help users proceed smoothly, and uses a neutral blue tone to maintain a calm and non-intrusive presence.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FX0WRTxiMHZBUWAR47lbV%252Fimage.png%3Falt%3Dmedia%26token%3D5aae8574-ccc4-430b-bf4e-5acbd520a02c&width=768&dpr=3&quality=100&sign=b961b493&sv=2" alt="Info variant" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Error</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Indicates a problem or a failure in the process and is highlighted with red accents to draw immediate attention.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FdpEsY6SOArC8HC1ZxFVK%252Fimage.png%3Falt%3Dmedia%26token%3Df719d249-7603-4b3a-8297-c7f7fe2c6a0f&width=768&dpr=3&quality=100&sign=d530712b&sv=2" alt="Error variant" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Success</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Represents successful outcomes or completion of user actions, and green colour signifies affirmation and closure.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F9cX7DCoNJpVHyAyT46ov%252Fimage.png%3Falt%3Dmedia%26token%3D1bb942ef-9aaf-4562-a37b-0d3fd9bcc8f4&width=768&dpr=3&quality=100&sign=fdab339e&sv=2" alt="Success variant" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div class="mb-0">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Warning</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Alerts users about potential issues or required attention, and the orange tone ensures visibility without creating an alarm.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fq5dD5TqeJU48XrU1SPjV%252Fimage.png%3Falt%3Dmedia%26token%3Da1072129-e8d8-4ee1-bafd-6a9884149c09&width=768&dpr=3&quality=100&sign=883bed06&sv=2" alt="Warning variant" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
+      <!-- Section 2: IMAGE LEFT · TEXT RIGHT (md:flex-row-reverse, txt first) -->
+      <section id="properties" class="mb-24 scroll-mt-24">
+
+        <h2 class="section-title">Properties</h2>
+        <div class="section-divider"></div>
+
+        <!-- Action Button -->
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Action Button</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Optional call-to-action placed within the alert for quick resolution or follow-up and it is also styled consistently with the alert type.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FLaUhL2f7KEzZOtKikU57%252Fimage.png%3Falt%3Dmedia%26token%3D97810e33-f9be-4994-a004-cdfd33b1ba98&width=768&dpr=3&quality=100&sign=68c499f0&sv=2" alt="Action Button property" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+
+        <!-- Widget Alignment -->
+        <div class="mb-0">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Widget Alignment</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Elements like text, icon, buttons, and additional content are aligned using layout grids or auto-layout features as it ensures a structured, clean appearance across device sizes and screen states.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FnyDDcH59MXXpTWn5tFxs%252Fimage.png%3Falt%3Dmedia%26token%3D51d07be9-3073-444b-882d-2c0f14253749&width=768&dpr=3&quality=100&sign=e4e0de1&sv=2" alt="Widget Alignment property" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+          </div>
+        </div>
+
+        <!-- Property Configuration Table -->
+        <div class="mt-12">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <h3 class="text-xl font-bold text-[#111827] dark:text-white" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
+          </div>
+          <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+
+          <div class="mt-8">
+            <div class="prop-toggle">
+              <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
+              <button class="tab-trigger" onclick="switchTab(this,'t-flutter')">Flutter</button>
+            </div>
+
+            <div id="t-react" class="tab-panel active">
+              <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-xl overflow-hidden">
+                <table class="prop-table w-full" style="min-width:560px">
+                  <thead><tr>
+                    <th scope="col" style="width:220px">Property</th>
+                    <th scope="col" style="width:160px">Type</th>
+                    <th scope="col">Default</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">label</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">text</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">text</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">text</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">variant</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">style</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">textStyle</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">number</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">additionalElements</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">inline</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">className</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">headerWrapperClassName</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">yes/no</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">headerClassName</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">number</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">no</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Flutter property table -->
+            <div id="t-flutter" class="tab-panel">
+              <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-xl overflow-hidden">
+                <table class="prop-table w-full" style="min-width:560px">
+                  <thead><tr>
+                    <th scope="col" style="width:220px">Property</th>
+                    <th scope="col" style="width:160px">Type</th>
+                    <th scope="col">Default</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">title</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">String</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">required</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">description</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">String</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">required</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">type</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">Alert Card type</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">info</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">additionalWidget</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">List&lt;Widget&gt;</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">inline</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">false</td></tr>
+                    <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><code class="prop-code">infoCardThemeData</code></td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">DigitInfoCardThemeData</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">-</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ BEHAVIORS ════════════════════════════════════════════ -->
+        <section id="behaviors" class="mb-24 scroll-mt-24">
+          <h2 class="section-title">Behaviors</h2>
+          <div class="section-divider"></div>
+          <div class="mb-0">
+            <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+              <div class="txt-col w-full md:w-[60%]">
+                <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Flexible Layout</h3>
+                <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Designed to adapt within cards, modals, or full-width views, and it is also responsive to container size and works well in both desktop and mobile interfaces.</p>
+              </div>
+              <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FygXqregdpqNDrnFpxAiP%252Fimage.png%3Falt%3Dmedia%26token%3D0bf7957c-8954-48de-9408-8a4bf98b8350&width=768&dpr=3&quality=100&sign=197a7808&sv=2" alt="Flexible Layout behavior" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
+        <section id="usage-guide" class="mb-24 scroll-mt-24">
+          <h2 class="section-title">Usage guide</h2>
+          <div class="section-divider"></div>
+          <div class="mb-12">
+            <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+              <div class="txt-col w-full md:w-[60%]">
+                <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Use Alert Cards to provide clear feedback</h3>
+                <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Use alert cards to provide clear and concise feedback about important system statuses, warnings, or errors. Ensure the message is direct and informative so users can take appropriate action quickly.</p>
+              </div>
+              <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FD7Ev0KihOY3tqSRI6QI8%252Fimage.png%3Falt%3Dmedia%26token%3D20a69cbe-394d-4791-8394-494b15c7570e&width=768&dpr=3&quality=100&sign=c9f61b10&sv=2" alt="Usage Do" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+            </div>
+          </div>
+          <div class="mb-0">
+            <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+              <div class="txt-col w-full md:w-[60%]">
+                <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Avoid using alert cards for non-critical information or minor updates.</h3>
+                <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Overusing them for trivial messages can cause users to ignore them, reducing their effectiveness in important situations.</p>
+              </div>
+              <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fz3QG0ARudToDQr422YnJ%252Fimage.png%3Falt%3Dmedia%26token%3Da28c445b-9abf-4333-a0af-1a4e3fe4926d&width=768&dpr=3&quality=100&sign=fff7b4b9&sv=2" alt="Usage Don't" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy"/></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
+        <section id="changelog" class="mb-24 scroll-mt-24">
+          <h2 class="section-title">Change log</h2>
+          <div class="section-divider"></div>
+          <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-xl overflow-hidden">
+            <table class="prop-table w-full" style="min-width:560px">
+              <thead><tr><th scope="col" style="width:140px">Date</th><th scope="col" style="width:100px">Version</th><th scope="col">Notes</th></tr></thead>
+              <tbody>
+                <tr class="data-row"><td class="text-[#6B7280] dark:text-gray-400 text-[15px] whitespace-nowrap align-top px-4 py-3">Dec 15, 2024</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] whitespace-nowrap align-top px-4 py-3">v-0.0.2</td><td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3"><ul class="list-disc pl-4 space-y-1"><li>This component is added to the website.</li><li>This component is now individually versioned.</li></ul></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
+        <section id="design-checklist" class="mb-16 scroll-mt-24">
+          <h2 class="section-title">Design Checklist</h2>
+          <div class="section-divider"></div>
+          <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
+        </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ══ FLUTTER MODAL ══════════════════════════════════════════════ -->
+<div id="modal-flutter" class="fixed inset-0 z-[200] hidden" onclick="closeMOnBg(event,'flutter')">
+  <div class="absolute inset-0 bg-black/45 backdrop-blur-[4px]"></div>
+  <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white dark:bg-[#111827] border-l border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
+    <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] dark:bg-[#1F2937] border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shrink-0">
+      <div>
+        <div class="text-[15px] font-bold text-[#111827] dark:text-white">Alert Card</div>
+        <div class="text-[11.5px] text-[#6B7280] dark:text-gray-500 mt-0.5">Component Flutter | Dart</div>
+      </div>
+      <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.1)] bg-white dark:bg-[#374151] flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6">
+      <p class="text-[14px] text-[#6B7280] dark:text-gray-400 leading-relaxed mb-5">Use the <code style="background:#F4F5F7;border:1px solid #E5E7EB;border-radius:4px;padding:2px 6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#0E165D">AlertCard</code> widget in your Flutter UI.</p>
+      <div class="relative bg-[#111827] rounded-xl overflow-hidden">
+        <button class="copy-btn" onclick="copyCode(this,'flutter-code-pre')" aria-label="Copy Flutter code">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:12px;height:12px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+          <span class="copy-label">Copy code</span>
+        </button>
+        <div class="p-5 overflow-x-auto">
+          <pre id="flutter-code-pre" class="font-mono text-[12.5px] leading-relaxed text-[#E5E7EB] whitespace-pre">AlertCard(
+  title: 'Information',
+  description: 'This is an informational card',
+  type: InfoType.info,
+)</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REACT MODAL ════════════════════════════════════════════════ -->
+<div id="modal-react" class="fixed inset-0 z-[200] hidden" onclick="closeMOnBg(event,'react')">
+  <div class="absolute inset-0 bg-black/45 backdrop-blur-[4px]"></div>
+  <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white dark:bg-[#111827] border-l border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
+    <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] dark:bg-[#1F2937] border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shrink-0">
+      <div>
+        <div class="text-[15px] font-bold text-[#111827] dark:text-white">Alert Card</div>
+        <div class="text-[11.5px] text-[#6B7280] dark:text-gray-500 mt-0.5">Component React | JSX</div>
+      </div>
+      <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.1)] bg-white dark:bg-[#374151] flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6">
+      <p class="text-[14px] text-[#6B7280] dark:text-gray-400 leading-relaxed mb-5">Use the <code style="background:#F4F5F7;border:1px solid #E5E7EB;border-radius:4px;padding:2px 6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#0E165D">&lt;AlertCard&gt;</code> component in your React application.</p>
+      <div class="relative bg-[#111827] rounded-xl overflow-hidden">
+        <button class="copy-btn" onclick="copyCode(this,'react-code-pre')" aria-label="Copy React code">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:12px;height:12px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+          <span class="copy-label">Copy code</span>
+        </button>
+        <div class="p-5 overflow-x-auto">
+          <pre id="react-code-pre" class="font-mono text-[12.5px] leading-relaxed text-[#E5E7EB] whitespace-pre">&lt;AlertCard
+  additionalElements={[
+    &lt;p key="1"&gt;Additional Element 1&lt;/p&gt;,
+    &lt;img key="2" alt="Additional Element 2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="3" alt="Additional Element 3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="4" alt="Additional Element 4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="5" alt="Additional Element 5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="6" alt="Additional Element 6" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="7" alt="Additional Element 7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIGMLufj86aep95KwMzr3U0QShg7oxdAG8gBPJ9ALIFQ&amp;s"/&gt;,
+    &lt;img key="8" alt="Additional Element 8" src="https://digit.org/wp-content/uploads/2023/06/Digit-Logo-1.png"/&gt;,
+    &lt;TextArea populators={{resizeSmart: true}} type="textarea"/&gt;,
+    &lt;InfoButton label="Button" size="large"/&gt;
+  ]}
+  label="Info"
+  text="Application process will take a minute to complete. It might cost around Rs.500/- to Rs.1000/- to clean your septic tank and you can expect theservice to get completed in 24 hrs from the time of payment."
+  variant="default"
+/&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/search.js"></script>
+<script src="../../assets/js/mobile-nav.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+<script>
+  // ── Checklist (same pass/fail as accordion source) ────────────
+  var checklistItems = [
+    { title:"All interactive states",               checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Accessible use of color",              checked:true,  req:"Color is not used as the only visual means of conveying information (WCAG 2.1 1.4.1)." },
+    { title:"Accessible contrast for text",         checked:true,  req:"Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3)." },
+    { title:"Accessible contrast for UI components",checked:true,  req:"Visual information required to identify components and states has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11)." },
+    { title:"Keyboard interactions",               checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Screen reader accessible",            checked:true,  req:"All content, including headings, labels, and descriptions, is meaningful, concise, contextual and accessible by screen readers." },
+    { title:"Responsive for all breakpoints",      checked:true,  req:"Responsiveness for 3 breakpoints - Mobile, Tablet and Desktop." },
+    { title:"Usage guidelines",                    checked:true,  req:"Includes a list of dos and don'ts that highlight best practices and common mistakes." },
+    { title:"Content guidelines",                  checked:false, req:"Content standards and usage guidelines for writing and formatting in-product content for the component." },
+    { title:"Defined variants and properties",     checked:true,  req:"Includes relevant variants and properties (style, size, orientation, optional iconography, decorative elements, selection states, error states, etc.)." },
+    { title:"Defined behaviors",                   checked:true,  req:"Guidelines for keyboard navigation and focus, layout management (including wrapping, truncation, and overflow), animations, and user interactions." },
+    { title:"Design Kit",                          checked:true,  req:"Access to the design file for the component in Figma with multiple options, states, color themes, and platform scales." },
+  ];
+
+  function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  // ── Render checklist with pass/N/A icons ────────────────────
+  (function () {
+    var tbody = document.getElementById('checklist-body');
+    if (!tbody) return;
+        var PASS_ICON = '<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#15803D;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5l2.5 2.5 5.5-5.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    var NA_ICON  = '<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#E5E7EB;border:1.5px solid #D1D5DB;flex-shrink:0"><svg width="10" height="2" viewBox="0 0 10 2" fill="none"><line x1="1" y1="1" x2="9" y2="1" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/></svg></span>';
+    var html = '';
+    checklistItems.forEach(function (item) {
+      html += '<div style="padding:12px 0 4px;">'
+        + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
+        + (item.checked ? PASS_ICON : NA_ICON)
+        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '</div>'
+        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '</div>';
+    });
+    tbody.innerHTML = html;
+  }());
+
+  function smoothScroll(e,id){ e.preventDefault(); document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
+
+  function switchTab(btn, panelId) {
+    btn.closest('.prop-toggle').querySelectorAll('.tab-trigger').forEach(function(t){ t.classList.remove('active'); });
+    var container = btn.closest('.mt-8');
+    if (container) container.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    var panel = document.getElementById(panelId);
+    if (panel) panel.classList.add('active');
+  }
+
+  function openModal(w){ var o=document.getElementById('modal-'+w),d=document.getElementById('drawer-'+w); if(!o||!d)return; o.classList.remove('hidden'); document.body.style.overflow='hidden'; requestAnimationFrame(function(){ d.classList.remove('translate-x-full'); }); }
+  function closeM(w){ var o=document.getElementById('modal-'+w),d=document.getElementById('drawer-'+w); if(!o||!d)return; d.classList.add('translate-x-full'); setTimeout(function(){ o.classList.add('hidden'); document.body.style.overflow=''; },260); }
+  function closeMOnBg(e,w){ if(e.target===e.currentTarget||e.target.classList.contains('absolute')) closeM(w); }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeM('flutter'); closeM('react'); } });
+
+  function copyCode(btn,preId){
+    var pre=document.getElementById(preId); if(!pre) return;
+    var text=pre.textContent||pre.innerText;
+    var label=btn.querySelector('.copy-label');
+    navigator.clipboard.writeText(text).then(function(){ btn.classList.add('copied'); if(label) label.textContent='Copied!'; setTimeout(function(){ btn.classList.remove('copied'); if(label) label.textContent='Copy code'; },2000); }).catch(function(){ btn.classList.add('copied'); if(label) label.textContent='Copied!'; setTimeout(function(){ btn.classList.remove('copied'); if(label) label.textContent='Copy code'; },2000); });
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('m-btn'),cls=document.getElementById('m-close'),ov=document.getElementById('m-overlay'),dr=document.getElementById('m-drawer');
+    if(!dr) return;
+    function openM(){ dr.classList.remove('-translate-x-full'); ov.classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    function closeM2(){ dr.classList.add('-translate-x-full'); ov.classList.add('hidden'); document.body.style.overflow=''; }
+    if(btn) btn.addEventListener('click',openM);
+    if(cls) cls.addEventListener('click',closeM2);
+    if(ov)  ov.addEventListener('click',closeM2);
+  });
+</script>
+
+</body>
+</html>
+

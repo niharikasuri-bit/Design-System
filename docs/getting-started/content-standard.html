@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGIT Content Standard localisation guidelines and UX copy standards for consistent digital experiences." />
+  <title>Content Standard · Getting Started · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+
+    /* Convention badge */
+    .badge-title  { background:#edf0ff; color:#0E165D; }
+    .badge-sentence { background:#e8f8f0; color:#15803D; }
+
+    /* Do / Don't table */
+    .do-dont { width:100%; border-collapse:collapse; }
+    .do-dont th { padding:10px 14px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+    .do-dont td { padding:10px 14px; font-size:14px; vertical-align:top; border-top:1px solid #f0f0f0; }
+    .do-dont .col-do   th { background:#e8f8f0; color:#15803D; border-radius:8px 0 0 0; }
+    .do-dont .col-dont th { background:#fff5f4; color:#B91900; border-radius:0 8px 0 0; }
+    .do-dont .col-do   td { color:#111827; }
+    .do-dont .col-dont td { color:#6B7280; }
+
+    /* Objective card (like design-approach) */
+    .obj-card {
+      background: #F4F5F7; border-radius: 12px; padding: 14px;
+      display: flex; gap: 20px; align-items: flex-start;
+      border: 1px solid transparent; transition: border-color .15s;
+    }
+    .obj-card:hover { border-color: #E5E7EB; }
+    .obj-icon {
+      background: #fff; padding: 12px; border-radius: 8px;
+      color: #0E165D; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Principle card (like design-approach) */
+    .cs-prin-card {
+      background: #fff; border-radius: 12px; padding: 24px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+      transition: box-shadow .15s;
+    }
+    .cs-prin-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+    .cs-prin-icon { color: #0E165D; margin-bottom: 14px; }
+
+    /* Tone cards */
+    .tone-card {
+      border-radius: 12px; padding: 20px;
+      border: 1px solid #E5E7EB; background: #fff;
+      transition: box-shadow .15s;
+    }
+    .tone-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+
+    /* Pre-ship checklist */
+    .chk-item { display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:1px solid #f0f0f0; }
+    .chk-item:last-child { border-bottom:none; }
+    .chk-box {
+      width:18px; height:18px; border-radius:4px; border:2px solid #0E165D;
+      background:#0E165D; flex-shrink:0; margin-top:2px;
+      display:flex; align-items:center; justify-content:center;
+      pointer-events:none;
+    }
+
+    /* Principle card */
+    .prin-chip { display:flex; align-items:flex-start; gap:10px; padding:14px 16px;
+      border:1px solid #E5E7EB; border-radius:10px; background:#fff; }
+    .prin-dot { width:8px; height:8px; border-radius:50%; background:#0E165D;
+      flex-shrink:0; margin-top:6px; }
+
+    /* Inline code / example */
+    .eg { background:#F4F5F7; border:1px solid #e0e0e0; border-radius:6px;
+      padding:2px 8px; font-size:13px; color:#0E165D; font-family:inherit; }
+
+    /* Check icon (Design Checkpoints style) */
+    .check-icon {
+      margin-top: 3px;
+      width: 22px; height: 22px;
+      background: #0E165D; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Section anchor offset */
+    .scroll-mt { scroll-margin-top: 32px; }
+
+    /* ── Spacing fixes: match component-docs reference ───────────────────────
+       Hero section contains the OTP card as its last child; its bottom margin
+       IS the OTP→first-section gap. Raise to 96px (same as component pages). */
+    .page-content > section:first-child { margin-bottom: 6rem !important; }
+    /* Active/Passive Voice h3 had mb-2 (8px) — too tight before its table. */
+    #ux-copy h3[class~="mb-2"] { margin-bottom: 1.25rem !important; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'getting-started',
+      page:    'content-standard',
+      title:   'Content Standard',
+      breadcrumb: ['Getting Started', 'Content Standard'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────── -->
+      <section class="mb-12">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-4 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">
+          DIGIT Content Standard
+        </h1>
+        <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-6">
+          Words are part of the design. These standards ensure every label, heading, error, and CTA across DIGIT products reads as if one person wrote it clearly, consistently, and for the user.
+        </p>
+
+        <!-- On this page -->
+        <div class="bg-[#F4F5F7] rounded-xl p-6">
+          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <ul class="space-y-2">
+            <li><a href="#localisation"       class="text-[#0E165D] hover:underline font-medium">Localisation Guidelines</a></li>
+            <li><a href="#ux-copy"            class="text-[#0E165D] hover:underline font-medium">UX Copy Guidelines</a></li>
+            <li><a href="#pre-ship-checklist" class="text-[#0E165D] hover:underline font-medium">Pre-ship Checklist</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════
+           SECTION 1 LOCALISATION GUIDELINES
+      ══════════════════════════════════════════════════════════════ -->
+      <section id="localisation" class="mb-20 scroll-mt">
+
+        <div class="flex items-center gap-4 mb-2">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Localisation Guidelines</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl">
+          This guide outlines the conventions for localizing text within DIGIT to English, ensuring consistency and clarity across all products and interfaces.
+        </p>
+
+        <!-- Casing heading -->
+        <h3 class="text-[18px] font-bold text-[#111827] mb-6">Casing</h3>
+
+        <div class="flex flex-col gap-4">
+
+          <!-- Button Text -->
+          <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <h4 class="font-bold text-[#111827] text-[15px]">Button Text &amp; CTAs</h4>
+              <span class="badge-title text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Title Case</span>
+            </div>
+            <p class="text-[#6B7280] text-[14px] leading-relaxed mb-3">
+              Capitalize the first letter of every word, except articles and conjunctions.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="eg">"Submit Feedback"</span>
+              <span class="eg">"Create Account"</span>
+              <span class="eg">"Learn More"</span>
+            </div>
+          </div>
+
+          <!-- Body Text -->
+          <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <h4 class="font-bold text-[#111827] text-[15px]">Body Text</h4>
+              <span class="badge-sentence text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Sentence Case</span>
+            </div>
+            <p class="text-[#6B7280] text-[14px] leading-relaxed mb-3">
+              Capitalize only the first letter. Applies to help text, descriptions, error messages, validations, and links. Proper nouns are exceptions.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="eg">"Please enter a valid email address"</span>
+              <span class="eg">"Contact support for assistance"</span>
+            </div>
+          </div>
+
+          <!-- Headings -->
+          <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <h4 class="font-bold text-[#111827] text-[15px]">Headings, Sub-headings &amp; Captions</h4>
+              <span class="badge-sentence text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Sentence Case</span>
+            </div>
+            <p class="text-[#6B7280] text-[14px] leading-relaxed mb-4">
+              Default to Sentence case. Exceptions allowed when capitalizing words for emphasis.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-[#F4F5F7] rounded-lg p-3">
+                <p class="text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-1">Default</p>
+                <p class="text-[14px] text-[#111827] font-medium">"Latest updates"</p>
+              </div>
+              <div class="bg-[#F4F5F7] rounded-lg p-3">
+                <p class="text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-1">With emphasis</p>
+                <p class="text-[14px] text-[#111827] font-medium">"Discover the New Features"</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Additional Considerations -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-5">Additional Considerations</h3>
+        <div class="flex flex-col gap-4">
+          <div class="obj-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" class="shrink-0 mt-0.5">
+              <circle cx="12" cy="12" r="10" fill="#0E165D"/>
+              <path d="M8 12h8" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div>
+              <h3 class="text-[16px] font-bold text-[#111827] mb-1">Consistency</h3>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Maintain uniform text formatting throughout the interface to enhance user understanding and reduce cognitive load.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" class="shrink-0 mt-0.5">
+              <circle cx="12" cy="12" r="10" fill="#0E165D"/>
+              <path d="M8 12h8" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div>
+              <h3 class="text-[16px] font-bold text-[#111827] mb-1">Clarity</h3>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Ensure localized text is clear, concise, and easy to understand for the target audience, regardless of language or context.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" class="shrink-0 mt-0.5">
+              <circle cx="12" cy="12" r="10" fill="#0E165D"/>
+              <path d="M8 12h8" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div>
+              <h3 class="text-[16px] font-bold text-[#111827] mb-1">Testing</h3>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Thoroughly test all localized text to verify accuracy and appropriateness within the context of the interface before shipping.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════
+           SECTION 2 UX COPY GUIDELINES
+      ══════════════════════════════════════════════════════════════ -->
+      <section id="ux-copy" class="mb-20 scroll-mt">
+
+        <div class="flex items-center gap-4 mb-2">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">UX Copy Guidelines</h2>
+          <div class="section-rule"></div>
+        </div>
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl">
+          Standards for voice, structure, and word choice across every product. Use alongside the Localisation Guide, which governs casing.
+        </p>
+
+        <!-- Core Principles -->
+        <h3 class="text-[18px] font-bold text-[#111827] mb-6">Core Principles</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Clear over clever</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Plain words beat polished ones. Write to be understood, not to impress.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Short over long</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Cut every word that doesn't earn its place.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Active over passive</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Say who does what. Active voice is shorter and clearer.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Consistent over creative</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Use the same word for the same thing, everywhere.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">User-first</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Speak to the user, not about the system. Every word should serve them.</p>
+          </div>
+
+        </div>
+
+        <!-- Voice and Tone -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Voice and Tone</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+
+          <!-- Voice -->
+          <div class="tone-card">
+            <div class="w-10 h-10 rounded-xl bg-[#edf0ff] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <p class="text-[11px] font-bold text-[#0E165D] uppercase tracking-wider mb-2">Voice stays the same</p>
+            <p class="text-[14px] font-bold text-[#111827] mb-1">Direct, helpful, respectful</p>
+            <p class="text-[13px] text-[#6B7280] leading-relaxed">We do not lecture, joke, or apologise unless something has gone wrong.</p>
+          </div>
+
+          <!-- Confirmation -->
+          <div class="tone-card" style="border-color:#d1f5e0">
+            <div class="w-10 h-10 rounded-xl bg-[#e8f8f0] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <p class="text-[11px] font-bold text-[#15803D] uppercase tracking-wider mb-2">Confirmation</p>
+            <p class="text-[14px] font-bold text-[#111827] mb-1">Warm</p>
+            <p class="text-[13px] text-[#6B7280] leading-relaxed">Confirm what happened in one clear line. Skip the exclamation mark.</p>
+          </div>
+
+          <!-- Error -->
+          <div class="tone-card" style="border-color:#fde8c8">
+            <div class="w-10 h-10 rounded-xl bg-[#fff9f0] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#EA8D00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <p class="text-[11px] font-bold text-[#EA8D00] uppercase tracking-wider mb-2">Error</p>
+            <p class="text-[14px] font-bold text-[#111827] mb-1">Calm and specific</p>
+            <p class="text-[13px] text-[#6B7280] leading-relaxed">Say what went wrong and what to do next. Never blame the user.</p>
+          </div>
+
+          <!-- Destructive -->
+          <div class="tone-card" style="border-color:#fad0cc">
+            <div class="w-10 h-10 rounded-xl bg-[#fff5f4] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B91900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            </div>
+            <p class="text-[11px] font-bold text-[#B91900] uppercase tracking-wider mb-2">Destructive action</p>
+            <p class="text-[14px] font-bold text-[#111827] mb-1">Firm</p>
+            <p class="text-[13px] text-[#6B7280] leading-relaxed">Be clear about consequences. Don't soften language that needs to be direct.</p>
+          </div>
+
+        </div>
+
+        <!-- Active and Passive Voice -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-2">Active and Passive Voice</h3>
+        <p class="text-[#6B7280] text-[14px] leading-relaxed mb-5">
+          Use active voice by default. If the user is acting, write actively. If the system did something and blame would be unhelpful, passive is fine.
+        </p>
+        <div class="rounded-xl overflow-hidden border border-[#E5E7EB] mb-12">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider">Context</th>
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider">Voice</th>
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-[#f0f0f0]">
+                <td class="py-3 px-4 text-[14px] text-[#6B7280]">Default for all UI copy</td>
+                <td class="py-3 px-4"><span class="badge-sentence text-[11px] font-bold px-2 py-0.5 rounded-full">Active</span></td>
+                <td class="py-3 px-4 text-[14px] text-[#111827]">"Save your changes" <span class="text-[#6B7280]">not "Changes should be saved."</span></td>
+              </tr>
+              <tr class="border-b border-[#f0f0f0]">
+                <td class="py-3 px-4 text-[14px] text-[#6B7280]">System actions the user didn't trigger</td>
+                <td class="py-3 px-4"><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#F4F5F7] text-[#6B7280] border border-[#E5E7EB]">Passive OK</span></td>
+                <td class="py-3 px-4 text-[14px] text-[#111827]">"Your account was created on 12 May."</td>
+              </tr>
+              <tr class="border-b border-[#f0f0f0]">
+                <td class="py-3 px-4 text-[14px] text-[#6B7280]">Errors caused by the system</td>
+                <td class="py-3 px-4"><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#F4F5F7] text-[#6B7280] border border-[#E5E7EB]">Passive OK</span></td>
+                <td class="py-3 px-4 text-[14px] text-[#111827]">"The file could not be uploaded."</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 text-[14px] text-[#6B7280]">Errors the user can fix</td>
+                <td class="py-3 px-4"><span class="badge-sentence text-[11px] font-bold px-2 py-0.5 rounded-full">Active</span></td>
+                <td class="py-3 px-4 text-[14px] text-[#111827]">"Enter a valid email address."</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Element Guidelines -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Element Guidelines</h3>
+
+        <div class="flex flex-col gap-8 mb-12">
+
+          <!-- Headings -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Headings</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• Tell the user what the screen or section is about. Skip filler like "Welcome to".</li>
+              <li>• Keep under 6 words where possible. Sentence case. No full stops.</li>
+              <li>• Front-load the keyword the most important word comes first.</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" class="col-do" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" class="col-dont" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Payment methods</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Manage your payment methods here</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Account settings</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Welcome to the account settings page</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Pending approvals</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Approvals that are currently pending</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Descriptions -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Descriptions &amp; Supporting Text</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• One sentence is usually enough. Two is the ceiling.</li>
+              <li>• Explain what the section does. Do not repeat the heading. End with a full stop.</li>
+              <li>• Avoid "please" unless asking for something inconvenient.</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Add the cards you use to pay for orders.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Here you can add the cards that you would like to use for paying for your orders.</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Choose how you want to receive updates.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Please kindly select your preferred notification preferences from the options below.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Labels -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Labels</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• Use a noun or short noun phrase never a sentence.</li>
+              <li>• Sentence case. No colon, no full stop.</li>
+              <li>• Match the data, not the field type. "Email address" beats "Enter your email."</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Email address</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Please enter your email:</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Phone number</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Mobile no.*</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Date of birth</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">DOB</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Calls to Action (CTAs)</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• Start with a verb. Title Case. No full stop. Keep to 1–3 words.</li>
+              <li>• Be specific "Save Draft" beats "Submit". "Delete Account" beats "OK".</li>
+              <li>• Pair opposites: primary moves forward, secondary cancels or goes back.</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Create Account</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Submit</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Delete Property</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Yes</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Save Draft &nbsp;/&nbsp; Discard</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">OK &nbsp;/&nbsp; Cancel</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Add Payment Method</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Click Here</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Error Messages -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Error Messages</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• Say what went wrong and what to do next.</li>
+              <li>• Do not blame the user. Avoid the word "invalid" where possible.</li>
+              <li>• Be specific about the field or action.</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Enter a valid email address.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Invalid input.</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Password must be at least 8 characters.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Wrong password format.</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">We couldn't save your changes. Try again.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Error occurred.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Empty States -->
+          <div>
+            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Empty States &amp; Confirmations</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+              <li>• Empty state: tell the user what will appear there, and how to add the first item.</li>
+              <li>• Confirmation: one line, what happened. No exclamation mark.</li>
+            </ul>
+            <div class="rounded-xl overflow-hidden border border-[#E5E7EB]">
+              <table class="do-dont w-full">
+                <thead><tr>
+                  <th scope="col" style="background:#e8f8f0;color:#15803D;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✓ Do</th>
+                  <th scope="col" style="background:#fff5f4;color:#B91900;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;width:50%">✕ Don't</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">No properties yet. Add one to get started.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Nothing to show here!</td></tr>
+                  <tr><td class="py-2.5 px-4 text-[14px] text-[#111827] border-t border-[#f0f0f0]">Application submitted.</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280] border-t border-[#f0f0f0]">Success! Your application has been submitted successfully!</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Word Choice -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-5">Word Choice</h3>
+        <p class="text-[14px] text-[#6B7280] mb-4">Pick one term per concept and use it everywhere. Never switch between "property", "asset", "unit", and "listing" for the same thing.</p>
+        <div class="rounded-xl overflow-hidden border border-[#E5E7EB] mb-12">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider w-1/3">Use</th>
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider w-1/3">Not</th>
+                <th scope="col" class="py-3 px-4 text-[12px] font-bold text-[#111827] uppercase tracking-wider">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Use</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Utilise / Utilize</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Shorter, same meaning.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Help</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Assist</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Plainer.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Need to</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Required to</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Conversational.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">About</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Regarding</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Plain English.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Now</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">At this point in time</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Cut padding.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Can't / We'll</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Cannot / We will</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Contractions feel human. Use them.</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Sign in</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Login / Log-in</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">"Sign in" (verb), "sign-in" (adjective).</td></tr>
+              <tr class="border-t border-[#f0f0f0]"><td class="py-2.5 px-4 text-[14px] font-medium text-[#111827]">Delete</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Remove / Discard</td><td class="py-2.5 px-4 text-[14px] text-[#6B7280]">Pick one term and stay with it.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Numbers, Dates, Punctuation -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Numbers, Dates &amp; Punctuation</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Numbers</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Always use numerals in UI "3 items", not "three items".</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Dates</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">12 May 2026 (long) or 12/05/2026 (short). Pick one format per surface.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Time</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">24-hour for government / back-office; 12-hour with am/pm for citizens.</p>
+          </div>
+
+          <div class="cs-prin-card">
+            <div class="cs-prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            </div>
+            <h3 class="text-[15px] font-bold text-[#111827] mb-2">Punctuation</h3>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed">Oxford comma in lists of 3+. No exclamation marks. No emojis in core UI.</p>
+          </div>
+
+        </div>
+
+        <!-- Accessibility -->
+        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Accessibility &amp; Inclusion</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+
+          <!-- Do's -->
+          <div class="rounded-xl overflow-hidden border border-[#d1f5e0] bg-white">
+            <div class="bg-[#e8f8f0] px-5 py-3 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-[12px] font-bold text-[#15803D] uppercase tracking-wider">Do</span>
+            </div>
+            <div class="bg-white p-5 flex flex-col gap-4">
+              <div class="flex gap-3 items-start">
+                <span class="w-5 h-5 rounded-full bg-white border border-[#d1f5e0] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="text-[14px] text-[#111827] leading-relaxed">Use meaningful link text <span class="eg">View invoice</span> so screen reader users understand where each link goes without surrounding context.</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <span class="w-5 h-5 rounded-full bg-white border border-[#d1f5e0] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="text-[14px] text-[#111827] leading-relaxed">Use gender-neutral language "they" works for everyone and removes assumptions about the reader.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Don'ts -->
+          <div class="rounded-xl overflow-hidden border border-[#fad0cc]">
+            <div class="bg-[#fff5f4] px-5 py-3 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B91900" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span class="text-[12px] font-bold text-[#B91900] uppercase tracking-wider">Don't</span>
+            </div>
+            <div class="bg-white p-5 flex flex-col gap-4">
+              <div class="flex gap-3 items-start">
+                <span class="w-5 h-5 rounded-full bg-[#fff5f4] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B91900" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                <p class="text-[14px] text-[#6B7280] leading-relaxed">Rely on directional cues alone "the button below" breaks on reflowed mobile layouts. Name the button instead.</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <span class="w-5 h-5 rounded-full bg-[#fff5f4] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B91900" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                <p class="text-[14px] text-[#6B7280] leading-relaxed">Use idioms, sports metaphors, or humour they often fail to translate across languages and cultures.</p>
+              </div>
+              <div class="flex gap-3 items-start">
+                <span class="w-5 h-5 rounded-full bg-[#fff5f4] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B91900" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </span>
+                <p class="text-[14px] text-[#6B7280] leading-relaxed">Rely on colour alone in copy. If you say "the red items", also name them for users who cannot perceive colour.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Pre-ship Checklist -->
+      <section id="pre-ship-checklist" class="mb-20 scroll-mt">
+
+        <div class="flex items-center gap-4 mb-2">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Pre-ship Checklist</h2>
+          <div class="section-rule"></div>
+        </div>
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-8 max-w-3xl">Before any screen ships, the copy should pass each of these.</p>
+
+        <ul class="space-y-3">
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Heading under 6 words</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Description is one or two sentences</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Does not repeat the heading. Ends with a full stop.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Labels are nouns, sentence case</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Consistent with labels used elsewhere for the same data across the product.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">CTAs start with a verb, Title Case</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Voice is active</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Unless the system, not the user, did the action then passive is acceptable.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">No "please", exclamation marks, or "click here"</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Also avoid "invalid" describe what went wrong instead.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Same term for the same concept</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[16px] mb-1">Error messages tell the user what to do next</h4>
+              <p class="text-[#6B7280] text-[14px] leading-relaxed">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
+            </div>
+          </li>
+
+        </ul>
+
+      </section><!-- /pre-ship-checklist -->
+
+    </div><!-- /max-w-4xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

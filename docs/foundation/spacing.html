@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spacing consistent spacing system for the DIGIT Design System." />
+  <title>Spacing · Foundation · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+
+    /* image placeholder */
+    .img-placeholder {
+      width: 100%;
+      max-height: 240px;
+      aspect-ratio: 4/3;
+      background: #F4F5F7;
+      border: 1px solid #E5E7EB;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Spacing fixes ────────────────────────────────────────────────────────
+       Hero section's mb is the OTP→first-section gap. Raise to 96px. */
+    .page-content > section:first-child { margin-bottom: 6rem !important; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'foundation',
+      page:    'spacing',
+      title:   'Spacing',
+      breadcrumb: ['Foundation', 'Spacing'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────── -->
+      <section class="mb-16">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-6 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">Spacing</h1>
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-[1.72] mb-12">
+          DIGIT Spacer defines a consistent spacing system for the application, providing a set of predefined spacing values that can be applied across different UI elements. This ensures uniformity in layout design and alignment.
+        </p>
+
+        <!-- On this page -->
+        <div class="bg-[#F4F5F7] rounded-xl p-6">
+          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <ul class="space-y-2">
+            <li><a href="#spacing-system"    class="text-[#0E165D] hover:underline font-medium">Spacing System</a></li>
+            <li><a href="#usage-guidelines"  class="text-[#0E165D] hover:underline font-medium">Usage Guidelines</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── Spacing System ────────────────────────────────────────── -->
+      <section id="spacing-system" class="mb-16 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Spacing System</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-10">
+          DIGIT Spacers provides 12 spacing levels, each corresponding to a predefined pixel value.
+        </p>
+
+        <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white">
+          <table class="w-full text-left border-collapse" style="min-width:560px">
+            <thead>
+              <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/3">Spacer Name</th>
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/3">Value</th>
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/3">Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer1</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">4px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:4px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer2</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">8px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:8px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer3</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">12px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:12px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer4</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">16px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:16px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer5</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">20px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:20px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer6</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">24px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:24px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer7</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">28px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:28px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer8</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">32px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:32px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer9</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">36px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:36px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer10</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">40px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:40px"></div></td>
+              </tr>
+
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer11</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">44px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:44px"></div></td>
+              </tr>
+
+              <tr class="hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">spacer12</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">48px</td>
+                <td class="py-4 px-6"><div class="h-4 rounded-sm bg-[#0E165D] opacity-50" style="width:48px"></div></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Usage Guidelines ──────────────────────────────────────── -->
+      <section id="usage-guidelines" class="mb-20 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Usage Guidelines</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="flex flex-col gap-12">
+
+          <!-- 1a: Consistent Scaling -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Consistent Scaling</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use predefined spacers instead of arbitrary values to maintain uniformity.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FMtXXkfi991xQeYqdRdcB%252FConsistent%2520Scalings1.png%3Falt%3Dmedia%26token%3D58b0497d-0d88-4385-8b76-66dc3d2499d6&width=300&dpr=3&quality=100&sign=a11cd7ab&sv=2" alt="Consistent Scaling example 1" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <!-- 2: Spacing Hierarchy -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Spacing Hierarchy</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Apply smaller spacers for minor separations (e.g., spacer1 to spacer3) and larger spacers for major divisions.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FPu7relExOaG2gEDPjODM%252FConsistent%2520Scaling2.png%3Falt%3Dmedia%26token%3D09fb236c-1c78-4f01-ab0c-2d99d4d73a25&width=300&dpr=3&quality=100&sign=7d4eae16&sv=2" alt="Spacing Hierarchy" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <!-- 3: Avoid Overuse -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Avoid Overuse</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Excessive spacing can lead to inefficient use of screen space, reducing visual coherence.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FioxtHpCeyU1AOv8Vg6ef%252FAvoid%2520Overuses3.png%3Falt%3Dmedia%26token%3Dc026ef08-ef3a-4170-9b51-cb25c90cedd9&width=300&dpr=3&quality=100&sign=c3e3bb03&sv=2" alt="Avoid Overuse" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /max-w-5xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

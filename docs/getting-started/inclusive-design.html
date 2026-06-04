@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inclusive Design creating digital products accessible to everyone, regardless of ability or circumstance." />
+  <title>Inclusive Design · Getting Started · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+
+    /* check icon */
+    .check-icon {
+      margin-top: 4px;
+      width: 22px;
+      height: 22px;
+      background: #0E165D;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* practice placeholder */
+    .practice-placeholder {
+      background: #F4F5F7;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .practice-placeholder svg { color: #a0aab0; }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+
+    /* ── Spacing fixes ────────────────────────────────────────────────────────
+       On this page, the OTP card is a standalone div (sibling of sections),
+       so its own mb controls the OTP→first-section gap. Raise to 96px. */
+    .page-content > div.rounded-xl { margin-bottom: 6rem !important; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'getting-started',
+      page:    'inclusive-design',
+      title:   'Inclusive Design',
+      breadcrumb: ['Getting Started', 'Inclusive Design'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────── -->
+      <section class="mb-12">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-6 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">
+          Inclusive Design
+        </h1>
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-[1.72]">
+          Accessibility is a core principle of the DIGIT Design System. We follow WCAG 2.1 AA guidelines to ensure that every interface we build is perceivable, operable, understandable, and robust, serving all users regardless of ability, device, or context.
+        </p>
+      </section>
+
+      <!-- ── On this page ──────────────────────────────────────────── -->
+      <div class="bg-[#F4F5F7] rounded-xl p-6 mb-12">
+        <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#principles"  class="text-[#0E165D] hover:underline font-medium">Design Principles (What we follow?)</a></li>
+          <li><a href="#checkpoints" class="text-[#0E165D] hover:underline font-medium">Design Checkpoints (What we verify?)</a></li>
+          <li><a href="#in-practice" class="text-[#0E165D] hover:underline font-medium">Inclusive Design in Practice (How it is applied?)</a></li>
+        </ul>
+      </div>
+
+      <!-- ── Section 1: Design Principles ─────────────────────────── -->
+      <section id="principles" class="mb-20 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Design Principles (What we follow?)</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <!-- Illustration -->
+        <div class="mb-8 rounded-xl border border-[#E5E7EB] bg-[#F4F5F7] p-5 flex items-center justify-center w-full">
+          <img
+            src="https://www.image2url.com/r2/default/images/1778612008536-14b52bd9-0779-4b52-b630-c801c0d015ce.png"
+            alt="Inclusive design illustration"
+            class="h-auto object-contain max-h-56"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <!-- fallback -->
+          <div style="display:none" class="w-full aspect-[16/7] items-center justify-center rounded-lg bg-[#edf0f5]">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#a0aab0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          </div>
+        </div>
+
+        <p class="text-[#6B7280] text-[17px] leading-relaxed">
+          Inclusive design at DIGIT is a foundational principle that shapes how we build digital public infrastructure. It ensures that our systems are usable by everyone, regardless of ability, context, or environment. Designers, engineers, and product teams collaborate to expand perspectives, actively include diverse user needs, and create experiences that are simple, intuitive, and accessible. Inclusion is not treated as a feature but as a core quality of the system.
+        </p>
+
+        <a href="../../docs/getting-started/design-approach.html"
+           class="inline-flex items-center gap-2 mt-6 text-[#0E165D] hover:text-[#0E165D] font-medium text-[17px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
+          Explore Design approach
+          <!-- ArrowRight -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </section>
+
+      <!-- ── Section 2: Design Checkpoints ─────────────────────────── -->
+      <section id="checkpoints" class="mb-20 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Design Checkpoints (What we verify?)</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <!-- 1 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">All interactive states implemented</h4>
+              <p class="text-[#6B7280] leading-relaxed">Ensure all components include complete interaction coverage such as hover, focus, active, disabled, and keyboard focus states to support consistent user behavior across all input methods.</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Responsive design across Mobile, Tablet, Desktop</h4>
+              <p class="text-[#6B7280] leading-relaxed">Design layouts must adapt seamlessly across all breakpoints, ensuring content remains usable, readable, and visually balanced on mobile, tablet, and desktop screens.</p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Accessible color usage (no color-only meaning)</h4>
+              <p class="text-[#6B7280] leading-relaxed">Do not rely on color alone to communicate information. Always reinforce meaning using labels, icons, structure, or supporting text to ensure accessibility.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Minimum contrast compliance</h4>
+              <p class="text-[#6B7280] leading-relaxed">Maintain WCAG-compliant contrast ratios of at least 4.5:1 for text and 3:1 for UI components to ensure readability across all user conditions.</p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Defined variants, states, and properties</h4>
+              <p class="text-[#6B7280] leading-relaxed">All components must include clear definitions of variants, states, and properties such as size, style, orientation, selection, and error states for consistent usage.</p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Full keyboard navigation support</h4>
+              <p class="text-[#6B7280] leading-relaxed">Ensure all interactive flows are fully navigable using keyboard-only input, with logical tab order, visible focus states, and no interaction dead-ends.</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Screen reader compatibility</h4>
+              <p class="text-[#6B7280] leading-relaxed">All content, including headings, labels, and controls, must be fully accessible to screen readers with meaningful structure and semantic clarity.</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Clear usage guidelines</h4>
+              <p class="text-[#6B7280] leading-relaxed">Provide explicit dos and don'ts for each component or pattern to ensure consistent and correct usage across design and development teams.</p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Content writing standards</h4>
+              <p class="text-[#6B7280] leading-relaxed">All in-product content must be clear, concise, contextual, and consistent, ensuring readability and accessibility for diverse user groups.</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
+            <div class="check-icon">
+              <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#111827] text-[19px] mb-1">Proper spacing, touch targets, and interaction zones</h4>
+              <p class="text-[#6B7280] leading-relaxed">Ensure adequate spacing between elements and minimum touch target sizes to reduce errors and improve usability, especially on touch devices.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Section 3: In Practice ─────────────────────────────────── -->
+      <section id="in-practice" class="mb-20 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-12">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Inclusive Design in Practice (How it is applied?)</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="space-y-16">
+
+          <!-- Clear, Predictable Structure -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-4">Clear, Predictable Structure</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Design interfaces so they can be followed in a single, logical flow. Forms, lists, and panels should behave consistently, with a tab order that reflects how users naturally complete tasks. Avoid unexpected focus shifts or hidden navigation paths.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img src="../../assets/images/Accessiblegif.gif" alt="Clear, Predictable Structure" style="width:100%; height:auto;" />
+            </div>
+          </div>
+
+          <!-- Meaningful Use of Color -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-4">Meaningful Use of Color</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Use color to support meaning, not define it. Any information conveyed through color must also be available through labels, icons, structure, or text. Maintain sufficient contrast across all states to ensure readability in all conditions.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img
+                src="../../assets/images/inclusive-design-color.png"
+                alt="Meaningful use of color complaint submitted and not submitted states"
+              />
+            </div>
+          </div>
+
+          <!-- Text Alternatives -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-4">Accessible Text Alternatives</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Provide meaningful text alternatives for all non-text content. Use clear labels for every control, descriptive alt text for informative images, and ARIA attributes only where native HTML is not sufficient. Ensure screen reader experiences remain complete and coherent.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img src="../../assets/images/Point 4.png" alt="Accessible Text Alternatives" style="max-width:100%;height:auto;" />
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-4">Readable and Flexible Typography</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Use typography to guide attention with clear hierarchy and consistent spacing. Maintain readable line lengths and avoid fully justified text. Ensure layouts respect user preferences such as zoom, scaling, theme changes, and contrast adjustments.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img
+                src="../../assets/images/inclusive-design-typography.png"
+                alt="Readable and flexible typography caption, heading, subheading, body hierarchy"
+              />
+            </div>
+          </div>
+
+          <!-- Error Prevention -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-4">Preventing and Handling Errors</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Design systems to reduce errors through clarity and structure. When errors occur, they should appear close to the relevant field and clearly explain what went wrong. Messages must be specific, actionable, and easy to recover from, without disrupting overall comprehension.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img
+                src="../../assets/images/inclusive-design-error-handling.png"
+                alt="Preventing and handling errors Manage Stocks screen"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /max-w-5xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<!-- Scripts -->
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

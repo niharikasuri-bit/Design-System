@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summary · DIGIT Design System</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script>window.tailwind = { config: {theme:{extend:{fontFamily:{sans:['DM Sans','system-ui','sans-serif'],mono:['JetBrains Mono','Consolas','monospace']}}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css"/>
+  <style>
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes shimmer { 0%{opacity:.4} 50%{opacity:1} 100%{opacity:.4} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+    @keyframes barGrow { from{height:0} to{height:var(--h)} }
+    .float { animation: float 4.5s ease-in-out infinite; }
+    .shimmer { animation: shimmer 2s ease-in-out infinite; }
+    .slide-up  { animation: slideUp .5s ease-out both; }
+    .slide-up-2{ animation: slideUp .5s .1s ease-out both; }
+    .slide-up-3{ animation: slideUp .5s .2s ease-out both; }
+    .slide-up-4{ animation: slideUp .5s .3s ease-out both; }
+    .bar { animation: barGrow .6s ease-out both; }
+    .bar-1 { --h:70%; animation-delay:.1s; }
+    .bar-2 { --h:90%; animation-delay:.2s; }
+    .bar-3 { --h:55%; animation-delay:.3s; }
+    .bar-4 { --h:75%; animation-delay:.4s; }
+    .bar-5 { --h:85%; animation-delay:.5s; }
+    .skel { background:linear-gradient(90deg,#E5E7EB 25%,#F4F5F7 50%,#E5E7EB 75%); background-size:200% 100%; animation:shimmer 1.5s ease-in-out infinite; border-radius:4px; }
+    .dark .skel { background:linear-gradient(90deg,#1e2535 25%,#374151 50%,#1e2535 75%); background-size:200% 100%; }
+  </style>
+  <script>
+    window.DIGIT_ROOT='../../';
+    window.DIGIT_PAGE={section:'patterns',page:'summary',title:'Summary',breadcrumb:['Patterns','Summary']};
+    
+  </script>
+</head>
+<body class="bg-white font-sans antialiased">
+
+
+<div class="flex min-h-screen">
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0 h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 py-6 px-8">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="flex flex-col items-center justify-center text-center min-h-screen">
+
+        <!-- Animated summary/dashboard illustration -->
+        <div class="float mb-4">
+          <div class="bg-white rounded-2xl border border-[#E5E7EB] p-3 text-left" style="width:210px;box-shadow:0 8px 24px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04)">
+            <!-- KPI tiles -->
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div class="slide-up rounded-xl p-3 bg-[#EEF1FF]">
+                <div class="h-4 w-10 rounded bg-[#0E165D] mb-1.5 opacity-80"></div>
+                <div class="h-1.5 rounded-full bg-[#C7D2FE] w-full"></div>
+              </div>
+              <div class="slide-up-2 rounded-xl p-3 bg-[#F4F5F7]">
+                <div class="h-4 w-8 rounded bg-[#374151] mb-1.5 opacity-60"></div>
+                <div class="h-1.5 rounded-full bg-[#D1D5DB] w-full"></div>
+              </div>
+              <div class="slide-up-3 rounded-xl p-3 bg-[#ECFDF3]">
+                <div class="h-4 w-6 rounded bg-[#15803D] mb-1.5 opacity-70"></div>
+                <div class="h-1.5 rounded-full bg-[#A7F3D0] w-full"></div>
+              </div>
+            </div>
+            <!-- Bar chart -->
+            <div class="bg-[#F9FAFB] rounded-xl p-3 border border-[#E5E7EB]">
+              <div class="h-1.5 rounded-full bg-[#E5E7EB] w-20 mb-3"></div>
+              <div class="flex items-end gap-1.5" style="height:52px">
+                <div class="flex-1 rounded-t bar bar-1" style="background:#0E165D;opacity:.25"></div>
+                <div class="flex-1 rounded-t bar bar-2" style="background:#0E165D;opacity:.55"></div>
+                <div class="flex-1 rounded-t bar bar-3" style="background:#0E165D;opacity:.35"></div>
+                <div class="flex-1 rounded-t bar bar-4" style="background:#0E165D;opacity:.7"></div>
+                <div class="flex-1 rounded-t bar bar-5" style="background:#0E165D"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Soon badge -->
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-[.12em] uppercase bg-[#EEF1FF] text-[#0E165D] border border-[#C7D2FE] mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#0E165D]"></span>
+          Coming Soon
+        </span>
+
+        <!-- Heading -->
+        <h1 class="text-[22px] font-bold text-[#111827] tracking-[-0.02em] leading-snug">
+          Summary
+        </h1>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/search.js"></script>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>

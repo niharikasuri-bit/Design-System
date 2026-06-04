@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "Bash(dir \"C:\\\\Users\\\\Niharika Suri\\\\digit-design-system\")",
+      "WebFetch(domain:miro.medium.com)",
+      "WebFetch(domain:niharikasuri6.wixstudio.com)",
+      "WebFetch(domain:docs.digit.org)",
+      "Bash(grep -v \"^\\\\s*//\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Niharika Suri\\\\digit-design-system\" -Recurse -Directory)",
+      "Bash(Select-Object -First 20)",
+      "Bash(curl -sL \"https://docs.digit.org/platform/guides/developer-guide/ui-developer-guide/digit-ui-components0.2.0/atom/checkbox\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\")",
+      "Bash(curl -sL \"https://docs.digit.org/platform/guides/developer-guide/ui-developer-guide/digit-ui-components0.2.0/atom/checkbox-3\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" -o \"/tmp/checkbox_page.html\")",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(curl -sL \"https://docs.digit.org/platform/guides/developer-guide/ui-developer-guide/digit-ui-components0.2.0/atom/checkbox-3.md\" -A \"Mozilla/5.0\")",
+      "Bash(grep -rn \"C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Niharika Suri\\\\\\\\\\\\\\\\\" \"C:/Users/Niharika Suri/digit-design-system\" --include=\"*.html\" --include=\"*.js\" --include=\"*.jsx\" --include=\"*.css\")",
+      "Bash(node *)",
+      "PowerShell(Select-String *)",
+      "PowerShell(npm *)"
+    ]
+  }
+}

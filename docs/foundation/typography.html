@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Typography consistent typefaces, scales, and guidelines for the DIGIT Design System." />
+  <title>Typography · Foundation · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+
+    .img-wrap {
+      width: 100%;
+      background: #F4F5F7;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .img-wrap img { width: 100%; max-width: 768px; height: auto; object-fit: contain; border-radius: 4px; }
+
+    /* usage guideline image placeholder */
+    .guideline-img {
+      max-height: 240px;
+      width: 100%;
+      background: #F4F5F7;
+      border: 1px solid #E5E7EB;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Spacing fixes ────────────────────────────────────────────────────────
+       Hero section's mb is the OTP→first-section gap. Raise to 96px. */
+    .page-content > section:first-child { margin-bottom: 6rem !important; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'foundation',
+      page:    'typography',
+      title:   'Typography',
+      breadcrumb: ['Foundation', 'Typography'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────── -->
+      <section class="mb-16">
+        <h1 class="text-[36px] font-bold mb-6 text-[#0E165D] leading-tight tracking-[-0.02em]">Typography</h1>
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-relaxed mb-12">
+          Typography is a crucial part of a design system, ensuring consistency, readability, and usability across different platforms and devices. Good typography rules help present content clearly and efficiently.
+        </p>
+
+        <!-- On this page -->
+        <div class="bg-[#F4F5F7] rounded-xl p-6">
+          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <ul class="space-y-2">
+            <li><a href="#typefaces"              class="text-[#0E165D] hover:underline font-medium">Typefaces</a></li>
+            <li><a href="#typography-components"  class="text-[#0E165D] hover:underline font-medium">Typography Components</a></li>
+            <li><a href="#line-height"             class="text-[#0E165D] hover:underline font-medium">Line Height</a></li>
+            <li><a href="#usage-guidelines"        class="text-[#0E165D] hover:underline font-medium">Usage Guidelines</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── Typefaces ─────────────────────────────────────────────── -->
+      <section id="typefaces" class="mb-16 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Typefaces (font family)</h2>
+          <div class="section-rule"></div>
+        </div>
+        <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+          DIGIT Typography uses the typefaces Roboto and Roboto Condensed.
+        </p>
+        <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHuRAzOvZXizvOoFtNuXn%252FTypefaces.png%3Falt%3Dmedia%26token%3D2e721657-b6c3-4501-a896-be78846194ca&width=768&dpr=3&quality=100&sign=d4ec11f2&sv=2" alt="Typefaces" class="w-full rounded-xl" />
+      </section>
+
+      <!-- ── Typography Components ─────────────────────────────────── -->
+      <section id="typography-components" class="mb-16 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Typography Components</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <!-- Headings -->
+        <div class="mb-16">
+          <h3 class="text-[20px] font-bold text-[#111827] mb-3">Headings</h3>
+          <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+            Headings establish the visual hierarchy of the content, guiding users through structured information. They range from large titles for prominent sections to smaller subheadings for organizations.
+          </p>
+
+          <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white mb-8">
+            <table class="w-full text-left border-collapse" style="min-width:640px">
+              <thead>
+                <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Heading</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Usage</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Mobile</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Tablet</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Desktop</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">headingXl</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for main page titles.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">32px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">36px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">40px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">headingL</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Suitable for section headers.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">24px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">28px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">32px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">headingM</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for subsections or feature highlights.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">22px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">24px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">headingS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Ideal for smaller titles and labels.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                </tr>
+                <tr class="hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">headingXS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for minor headings and annotations.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">12px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FIwDLnoWLU8xmlpvQpQWn%252FHeading.png%3Falt%3Dmedia%26token%3D4df1a726-055d-436e-8d69-fab0eb5500e4&width=768&dpr=3&quality=100&sign=75a6b5c4&sv=2" alt="Headings" class="w-full rounded-xl" />
+        </div>
+
+        <!-- Body Text -->
+        <div class="mb-16">
+          <h3 class="text-[20px] font-bold text-[#111827] mb-3">Body Text</h3>
+          <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+            Body text is the primary content in paragraphs, articles, or instructions. It should be readable, well-spaced, and appropriately sized for different devices.
+          </p>
+
+          <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white mb-8">
+            <table class="w-full text-left border-collapse" style="min-width:640px">
+              <thead>
+                <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Body Text</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Usage</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Mobile</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Tablet</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Desktop</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">bodyL</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for general reading content.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">bodyS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Ideal for supporting information and descriptions.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                </tr>
+                <tr class="hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">bodyXS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for less prominent text, such as disclaimers.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">12px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FwEgjkQNIl1yeMOqUvGRz%252FBody.png%3Falt%3Dmedia%26token%3D019b74d3-d32e-4876-9233-84360c69d212&width=768&dpr=3&quality=100&sign=a8b1d96a&sv=2" alt="Body Text" class="w-full rounded-xl" />
+        </div>
+
+        <!-- Caption Text -->
+        <div class="mb-16">
+          <h3 class="text-[20px] font-bold text-[#111827] mb-3">Caption Text</h3>
+          <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+            Captions text provide supplementary information, often appearing in smaller font sizes below the primary content.
+          </p>
+
+          <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white mb-8">
+            <table class="w-full text-left border-collapse" style="min-width:640px">
+              <thead>
+                <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Caption Text</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Usage</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Mobile</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Tablet</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Desktop</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">captionL</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Used for standout short descriptions.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">24px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">28px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">28px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">captionM</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Suitable for explanatory notes.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">24px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">24px</td>
+                </tr>
+                <tr class="hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">captionS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">Best for minor clarifications and subtitles.</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F9WBaczd5nwKx7sjEq0T1%252FCaption.png%3Falt%3Dmedia%26token%3D3e009bd7-ce23-4139-877f-58838f02c73d&width=768&dpr=3&quality=100&sign=5ca6f1bf&sv=2" alt="Caption Text" class="w-full rounded-xl" />
+        </div>
+
+        <!-- Links -->
+        <div class="mb-16">
+          <h3 class="text-[20px] font-bold text-[#111827] mb-3">Links</h3>
+          <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+            Links are interactive text elements used to navigate or perform actions. They are always underlined to indicate clickability. They all have the same scale across all breakpoints.
+          </p>
+
+          <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white mb-8">
+            <table class="w-full text-left border-collapse" style="min-width:400px">
+              <thead>
+                <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/2">Links</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/2">Scale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">linkL</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">linkM</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                </tr>
+                <tr class="hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">linkS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FBq2ci1XgDEHVIrfTqqYA%252FLinks.png%3Falt%3Dmedia%26token%3D5f233687-9701-4153-aeae-8cbe1b2c327c&width=768&dpr=3&quality=100&sign=83bab3ff&sv=2" alt="Links" class="w-full rounded-xl" />
+        </div>
+
+        <!-- Buttons -->
+        <div class="mb-8">
+          <h3 class="text-[20px] font-bold text-[#111827] mb-3">Buttons</h3>
+          <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-8">
+            Button text is designed to be clear, actionable, and distinguishable from other text elements. It maintains a bold style for better visibility. They all have the same scale across all breakpoints.
+          </p>
+
+          <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white mb-8">
+            <table class="w-full text-left border-collapse" style="min-width:400px">
+              <thead>
+                <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/2">Button</th>
+                  <th class="py-4 px-5 font-bold text-[#111827] text-[13px] uppercase tracking-wider w-1/2">Scale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">buttonL</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">20px</td>
+                </tr>
+                <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">buttonM</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">16px</td>
+                </tr>
+                <tr class="hover:bg-[#FAFAFB] transition-colors">
+                  <td class="py-4 px-5"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">buttonS</code></td>
+                  <td class="py-4 px-5 text-[#6B7280] text-[14px]">14px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="../../assets/images/typography-button.png" alt="Button typography example" class="w-full rounded-xl" />
+        </div>
+      </section>
+
+      <!-- ── Line Height ────────────────────────────────────────────── -->
+      <section id="line-height" class="mb-16 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Line Height</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="flex flex-col gap-12">
+
+          <!-- Heading and Caption -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Heading And Caption</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Heading and Caption use a 1.14× multiplier for Roboto and Roboto condense.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FOfKc9GPyrWGcHEI0M1F2%252FLine%2520Height%2520-%2520Heading%2520%2526%2520Caption.png%3Falt%3Dmedia%26token%3D991cc1a3-80b7-4894-8525-0d0306376179&width=300&dpr=3&quality=100&sign=b0c0f7b1&sv=2" alt="Line Height Heading and Caption" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <!-- Body and Link -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Body and Link</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Body and Link use a 1.37× multiplier for Roboto.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FZDVcBpchBUQd1wkqxidh%252FLine%2520Height%2520-%2520Body%2520%2526%2520Link.png%3Falt%3Dmedia%26token%3Dcd567ecf-0740-4ee5-867c-78bbe3393983&width=300&dpr=3&quality=100&sign=5d29d4b8&sv=2" alt="Line Height Body and Link" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Usage Guidelines ──────────────────────────────────────── -->
+      <section id="usage-guidelines" class="mb-20 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Usage Guidelines</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="flex flex-col gap-10">
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Use defined font sizes</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Stick to the documented font sizes to maintain a consistent typographic hierarchy and visual rhythm across the application.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQLx7HVW1dASUfiP71aOl%252FDefined%2520Font%2520Sizes.png%3Falt%3Dmedia%26token%3Ddbd30754-e607-43ee-a2d4-8495b43a75eb&width=300&dpr=3&quality=100&sign=46ebb6a0&sv=2" alt="Use defined font sizes" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Don't use underlines for adding emphasis</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Reserve underlines exclusively for hyperlinks to avoid confusing users about what is clickable.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FcFeNFTroYFldnPyITqcb%252FDon%27t%2520use%2520underlines%2520for%2520adding%2520emphasis.png%3Falt%3Dmedia%26token%3D184e1aeb-264b-4850-b2c3-a92eb7631631&width=300&dpr=3&quality=100&sign=5270ebd5&sv=2" alt="Don't use underlines for adding emphasis" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Respect capitalization rules</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Use sentence case for most UI elements to enhance readability. Avoid using all-caps for long paragraphs.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FRkMa1HWFWkaAWSBzMYWB%252FRespect%2520capitalization%2520rules.png%3Falt%3Dmedia%26token%3D60611d44-1a14-48d4-a6a2-0487609a3dd3&width=300&dpr=3&quality=100&sign=cfa8442b&sv=2" alt="Respect capitalization rules" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Use tabular numbers for numerical data</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">When displaying data in tables or aligned lists, use tabular figures so numbers line up vertically and are easier to compare.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQq40yVe97KGILNb2f9bF%252FUse%2520tabular%2520numbers%2520for%2520numerical%2520data.png%3Falt%3Dmedia%26token%3Dacf82318-53c5-4980-9669-b6980bb21c99&width=300&dpr=3&quality=100&sign=a887f33a&sv=2" alt="Use tabular numbers for numerical data" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Don't let paragraph widths get too thin</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Maintain an optimal line length (measure) between 45 and 75 characters for comfortable reading.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQrI6u5o60YqhpD2EQJCx%252FDon%27t%2520let%2520paragraph%2520widths%2520get%2520too%2520thin.png%3Falt%3Dmedia%26token%3D61843dd4-55b9-4af5-9053-9654022029b5&width=300&dpr=3&quality=100&sign=6498d9d5&sv=2" alt="Don't let paragraph widths get too thin" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Keep content short and to the point</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Write concisely. Break up long walls of text to ensure users can scan and digest the information quickly.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHoUuz6IKWBGByp7wniuj%252FKeep%2520content%2520short%2520and%2520to%2520the%2520point.png%3Falt%3Dmedia%26token%3D4e71dae9-7cc2-4b0a-9726-a4e08893f793&width=300&dpr=3&quality=100&sign=ecb67b06&sv=2" alt="Keep content short and to the point" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Don't use indentation</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Use spacing between paragraphs instead of indenting the first line. It provides a cleaner and more modern reading experience.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fn4x6w4FBMVjLoHl2uERY%252FDon%27t%2520use%2520indentation.png%3Falt%3Dmedia%26token%3D576d3171-04d0-4792-9588-c76dba1e4cb8&width=300&dpr=3&quality=100&sign=36a8e5de&sv=2" alt="Don't use indentation" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Don't fully-justify text</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Avoid fully justified text as it creates uneven spacing and 'rivers' of white space. Left-aligned text is easier to read.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FIS5fXtTtPfXTsIKfqx19%252FDon%27t%2520fully-justify%2520text.png%3Falt%3Dmedia%26token%3Dd8d0220e-fcd7-468f-bc59-f83aab86a990&width=300&dpr=3&quality=100&sign=c6ec64a1&sv=2" alt="Don't fully-justify text" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%]">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Typography component pairing</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed">Pair headings with appropriate body text scales to create clear relationships and maintain a balanced typographic scale.</p>
+            </div>
+            <div class="w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fw1Io8cSX7CMMx0vibt7A%252FTypography%2520component%2520pairing.png%3Falt%3Dmedia%26token%3Ddbe6dee1-55ed-4b0c-b198-c7727190fc51&width=300&dpr=3&quality=100&sign=9fd70544&sv=2" alt="Typography component pairing" class="max-h-[240px] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /max-w-5xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

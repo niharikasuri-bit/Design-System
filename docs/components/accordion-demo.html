@@ -1,0 +1,667 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accordion Live Demo · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --digit-primary:   #0E165D;
+      --digit-primary-l: #EEF1FF;
+      --digit-accent:    #C7D2FE;
+      --digit-border:    #E5E7EB;
+      --digit-muted:     #6B7280;
+      --digit-bg:        #F4F5F7;
+      --radius-card:     10px;
+    }
+
+    html { font-family: 'DM Sans', system-ui, sans-serif; background: #F9FAFB; color: #111827; }
+
+    /* ─── Page shell ─────────────────────────────────────────── */
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ─── Top bar ────────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--digit-border);
+      padding: 0 28px;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--digit-muted);
+      text-decoration: none; transition: color .15s;
+    }
+    .topbar-back:hover { color: var(--digit-primary); }
+    .topbar-sep { color: #D1D5DB; font-size: 14px; }
+    .topbar-title { font-size: 14px; font-weight: 700; color: #111827; }
+    .badge-live {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #ECFDF5; border: 1px solid #A7F3D0;
+      color: #065F46; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 9999px; letter-spacing: .02em;
+    }
+    .badge-live::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #10B981;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .btn-docs {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--digit-primary);
+      background: var(--digit-primary-l); border: 1px solid rgba(25,29,136,.14);
+      padding: 6px 14px; border-radius: 8px; text-decoration: none;
+      transition: all .15s;
+    }
+    .btn-docs:hover { background: #E0E5FF; border-color: rgba(25,29,136,.28); }
+
+    /* ─── Main layout ─────────────────────────────────────────── */
+    .demo-layout {
+      flex: 1; display: flex; gap: 0;
+      max-width: 1280px; margin: 0 auto; width: 100%;
+      padding: 32px 28px; gap: 24px;
+    }
+
+    /* ─── Controls panel ─────────────────────────────────────── */
+    .controls {
+      width: 280px; flex-shrink: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .controls-card {
+      background: #fff; border: 1px solid var(--digit-border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .controls-card-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--digit-border);
+      font-size: 11px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--digit-muted);
+    }
+    .controls-card-body { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+
+    /* Control row */
+    .ctrl-row { display: flex; flex-direction: column; gap: 6px; }
+    .ctrl-label { font-size: 12px; font-weight: 600; color: #374151; }
+    .ctrl-desc { font-size: 11px; color: #9CA3AF; line-height: 1.4; }
+
+    /* Text input */
+    .ctrl-input {
+      width: 100%; padding: 8px 10px; font-size: 13px; font-family: inherit;
+      border: 1px solid var(--digit-border); border-radius: 8px;
+      background: #FAFAFA; color: #111827;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .ctrl-input:focus {
+      outline: none; border-color: rgba(25,29,136,.4);
+      box-shadow: 0 0 0 3px rgba(25,29,136,.07);
+    }
+    textarea.ctrl-input { resize: vertical; min-height: 72px; line-height: 1.5; }
+
+    /* Toggle switch */
+    .toggle-wrap { display: flex; align-items: center; justify-content: space-between; }
+    .toggle-btn {
+      position: relative; width: 40px; height: 22px; cursor: pointer;
+      background: #D1D5DB; border: none; border-radius: 11px;
+      transition: background .2s;
+      flex-shrink: 0;
+    }
+    .toggle-btn::after {
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; transition: transform .2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    }
+    .toggle-btn.on { background: var(--digit-primary); }
+    .toggle-btn.on::after { transform: translateX(18px); }
+
+    /* Segmented control */
+    .segment {
+      display: flex; background: var(--digit-bg);
+      border-radius: 8px; padding: 3px; gap: 2px;
+    }
+    .seg-btn {
+      flex: 1; padding: 6px 10px; font-size: 12px; font-weight: 600;
+      border: none; border-radius: 6px; cursor: pointer;
+      background: transparent; color: #6B7280; transition: all .15s;
+    }
+    .seg-btn.active {
+      background: #fff; color: var(--digit-primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+
+    /* ─── Preview panel ──────────────────────────────────────── */
+    .preview-panel { flex: 1; display: flex; flex-direction: column; gap: 0; }
+
+    .preview-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 0 14px 0;
+    }
+    .preview-label { font-size: 12px; font-weight: 700; color: var(--digit-muted); letter-spacing: .06em; text-transform: uppercase; }
+    .preview-hint { font-size: 12px; color: #9CA3AF; }
+
+    .preview-canvas {
+      flex: 1; background: #fff;
+      border: 1px solid var(--digit-border);
+      border-radius: 16px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .preview-toolbar {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--digit-border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #FCA5A5; }
+    .dot-y { background: #FCD34D; }
+    .dot-g { background: #6EE7B7; }
+
+    .preview-body {
+      flex: 1; padding: 32px;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 23px,
+        rgba(229,231,235,.4) 23px, rgba(229,231,235,.4) 24px
+      ),
+      repeating-linear-gradient(
+        90deg, transparent, transparent 23px,
+        rgba(229,231,235,.4) 23px, rgba(229,231,235,.4) 24px
+      );
+      background-color: #FAFBFF;
+    }
+    .preview-content { max-width: 560px; margin: 0 auto; }
+
+    /* ─── DIGIT Accordion component ──────────────────────────── */
+    .d-accordion-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .d-accordion {
+      background: #fff;
+      border: 1px solid var(--digit-border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .d-accordion:hover { box-shadow: 0 2px 8px rgba(25,29,136,.08); }
+    .d-accordion.no-border { border-color: transparent; box-shadow: none !important; }
+
+    .d-accordion__header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 20px; cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+    }
+    .d-accordion__header:hover { background: #FAFAFB; }
+    .d-accordion__header:active { background: var(--digit-primary-l); }
+
+    .d-accordion__num {
+      font-size: 14px; font-weight: 700; color: var(--digit-primary);
+      min-width: 22px; flex-shrink: 0; font-family: 'JetBrains Mono', monospace;
+    }
+    .d-accordion__icon {
+      width: 20px; height: 20px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--digit-primary);
+    }
+    .d-accordion__title {
+      flex: 1; font-size: 14px; font-weight: 600; color: #111827; line-height: 1.4;
+    }
+    .d-accordion__chevron {
+      width: 18px; height: 18px; flex-shrink: 0; color: #9CA3AF;
+      transition: transform .28s cubic-bezier(.4,0,.2,1), color .2s;
+    }
+    .d-accordion.open .d-accordion__chevron {
+      transform: rotate(90deg); color: var(--digit-primary);
+    }
+
+    .d-accordion__divider {
+      height: 1px; background: var(--digit-border);
+      margin: 0;
+      max-height: 0; overflow: hidden;
+      transition: max-height .28s cubic-bezier(.4,0,.2,1);
+    }
+    .d-accordion.open .d-accordion__divider { max-height: 1px; }
+    .d-accordion.no-divider .d-accordion__divider { display: none !important; }
+
+    .d-accordion__body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .28s cubic-bezier(.4,0,.2,1);
+    }
+    .d-accordion.open .d-accordion__body { max-height: 600px; }
+
+    .d-accordion__content {
+      padding: 0 20px 18px;
+      font-size: 14px; color: var(--digit-muted); line-height: 1.72;
+    }
+
+    /* Nested child accordion */
+    .d-accordion.child {
+      border: 1px solid rgba(229,231,235,.6);
+      background: #FAFAFA;
+      margin: 0 0 4px 0;
+    }
+    .d-accordion.child .d-accordion__header { padding: 12px 16px; }
+    .d-accordion.child .d-accordion__title { font-size: 13px; }
+    .d-accordion.child .d-accordion__content { padding: 0 16px 14px; font-size: 13px; }
+
+    .nested-container { padding: 8px 12px 4px; display: flex; flex-direction: column; gap: 4px; }
+
+    /* ─── State chip below preview ───────────────────────────── */
+    .state-bar {
+      padding: 10px 16px;
+      border-top: 1px solid var(--digit-border);
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--digit-muted);
+      background: #FAFAFA;
+    }
+    .state-dot { width: 7px; height: 7px; border-radius: 50%; background: #D1D5DB; flex-shrink: 0; }
+    .state-dot.active { background: #10B981; }
+
+    /* ─── Props summary (code-like) ─────────────────────────── */
+    .props-summary {
+      background: #fff; border: 1px solid var(--digit-border);
+      border-radius: 12px; overflow: hidden; margin-top: 16px;
+    }
+    .props-summary-header {
+      padding: 10px 14px; border-bottom: 1px solid var(--digit-border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .props-summary-title { font-size: 11px; font-weight: 700; color: #9CA3AF; letter-spacing: .06em; text-transform: uppercase; }
+    .props-code {
+      padding: 14px 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8;
+      color: #374151; background: #FAFAFA;
+    }
+    .props-code .k { color: var(--digit-primary); font-weight: 600; }
+    .props-code .v-str { color: #0F766E; }
+    .props-code .v-bool-t { color: #10B981; }
+    .props-code .v-bool-f { color: #9CA3AF; }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .demo-layout { flex-direction: column; padding: 20px 16px; }
+      .controls { width: 100%; }
+    }
+  </style>
+</head>
+
+<body class="page">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="./accordion.html" class="topbar-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="15" height="15">
+          <path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/>
+        </svg>
+        Accordion
+      </a>
+      <span class="topbar-sep">/</span>
+      <span class="topbar-title">Live Demo</span>
+      <span class="badge-live">Interactive</span>
+    </div>
+    <div class="topbar-right">
+      <a href="./accordion.html" class="btn-docs">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+          <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"/>
+        </svg>
+        View Documentation
+      </a>
+    </div>
+  </header>
+
+  <!-- Demo layout -->
+  <div class="demo-layout">
+
+    <!-- ── Controls ────────────────────────────────────────── -->
+    <aside class="controls">
+
+      <!-- Variant -->
+      <div class="controls-card">
+        <div class="controls-card-header">Variant</div>
+        <div class="controls-card-body">
+          <div class="ctrl-row">
+            <div class="segment" id="variant-seg">
+              <button class="seg-btn active" data-v="basic" onclick="setVariant('basic',this)">Basic</button>
+              <button class="seg-btn" data-v="nested" onclick="setVariant('nested',this)">Nested</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Props toggles -->
+      <div class="controls-card">
+        <div class="controls-card-header">Properties</div>
+        <div class="controls-card-body">
+
+          <div class="ctrl-row">
+            <div class="toggle-wrap">
+              <div>
+                <div class="ctrl-label">Initially Open</div>
+                <div class="ctrl-desc">isOpenInitially</div>
+              </div>
+              <button class="toggle-btn" id="tog-open" onclick="toggleProp('open')"></button>
+            </div>
+          </div>
+
+          <div class="ctrl-row">
+            <div class="toggle-wrap">
+              <div>
+                <div class="ctrl-label">Show Icon</div>
+                <div class="ctrl-desc">icon</div>
+              </div>
+              <button class="toggle-btn" id="tog-icon" onclick="toggleProp('icon')"></button>
+            </div>
+          </div>
+
+          <div class="ctrl-row">
+            <div class="toggle-wrap">
+              <div>
+                <div class="ctrl-label">Show Number</div>
+                <div class="ctrl-desc">number</div>
+              </div>
+              <button class="toggle-btn" id="tog-num" onclick="toggleProp('num')"></button>
+            </div>
+          </div>
+
+          <div class="ctrl-row">
+            <div class="toggle-wrap">
+              <div>
+                <div class="ctrl-label">Hide Card Border</div>
+                <div class="ctrl-desc">hideCardBorder</div>
+              </div>
+              <button class="toggle-btn" id="tog-border" onclick="toggleProp('border')"></button>
+            </div>
+          </div>
+
+          <div class="ctrl-row">
+            <div class="toggle-wrap">
+              <div>
+                <div class="ctrl-label">Hide Divider</div>
+                <div class="ctrl-desc">hideDivider</div>
+              </div>
+              <button class="toggle-btn" id="tog-divider" onclick="toggleProp('divider')"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Content edit -->
+      <div class="controls-card">
+        <div class="controls-card-header">Content</div>
+        <div class="controls-card-body">
+          <div class="ctrl-row">
+            <label class="ctrl-label">Title (first item)</label>
+            <input type="text" class="ctrl-input" id="ctrl-title"
+              value="What is the DIGIT Design System?"
+              oninput="updateTitle(this.value)" />
+          </div>
+          <div class="ctrl-row">
+            <label class="ctrl-label">Content text</label>
+            <textarea class="ctrl-input" id="ctrl-content"
+              oninput="updateContent(this.value)">The DIGIT Design System is a comprehensive collection of reusable UI components, design tokens, and guidelines that help teams build consistent, accessible digital services across the DIGIT platform.</textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live props summary -->
+      <div class="props-summary">
+        <div class="props-summary-header">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#6B7280" width="13" height="13">
+            <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v11.5A2.25 2.25 0 004.25 18h11.5A2.25 2.25 0 0018 15.75V4.25A2.25 2.25 0 0015.75 2H4.25zm4.03 6.28a.75.75 0 00-1.06-1.06L5 9.44 3.78 8.22a.75.75 0 00-1.06 1.06l1.75 1.75a.75.75 0 001.06 0l3-3z" clip-rule="evenodd"/>
+          </svg>
+          <span class="props-summary-title">Current Props</span>
+        </div>
+        <div class="props-code" id="props-display"></div>
+      </div>
+
+    </aside>
+
+    <!-- ── Preview ─────────────────────────────────────────── -->
+    <section class="preview-panel">
+      <div class="preview-header">
+        <span class="preview-label">Preview</span>
+        <span class="preview-hint" id="state-hint">Click any accordion to expand</span>
+      </div>
+
+      <div class="preview-canvas">
+        <!-- Browser chrome dots -->
+        <div class="preview-toolbar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+
+        <!-- Live preview area -->
+        <div class="preview-body">
+          <div class="preview-content">
+            <div id="accordion-demo"></div>
+          </div>
+        </div>
+
+        <!-- State bar -->
+        <div class="state-bar" id="state-bar">
+          <div class="state-dot" id="state-dot"></div>
+          <span id="state-text">0 of 3 expanded</span>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end demo-layout -->
+
+  <script>
+    // ── State ──────────────────────────────────────────────────
+    var state = {
+      variant:  'basic',
+      open:     false,
+      icon:     false,
+      num:      false,
+      border:   false,
+      divider:  false,
+      title:    'What is the DIGIT Design System?',
+      content:  'The DIGIT Design System is a comprehensive collection of reusable UI components, design tokens, and guidelines that help teams build consistent, accessible digital services across the DIGIT platform.',
+    };
+
+    var ITEMS = [
+      {
+        title: '',  // overridden by state.title
+        content: '', // overridden by state.content
+      },
+      {
+        title: 'When should I use an Accordion?',
+        content: 'Use Accordions when you need to organise dense or hierarchical content such as FAQs, step-by-step instructions, or grouped settings to avoid overwhelming users with too much visible information at once.',
+      },
+      {
+        title: 'Can Accordions be nested?',
+        content: 'Yes. The Nested Accordion allows a hierarchical structure by embedding one accordion inside another. This is ideal for complex multi-level information where users need to navigate progressively deeper content.',
+      },
+    ];
+
+    var NESTED_CHILDREN = [
+      { title: 'Sub-section: Design Tokens', content: 'Colour, typography, spacing, and elevation values that underpin every component in the system.' },
+      { title: 'Sub-section: Components', content: 'Atoms and Molecules built on top of the design tokens, ready for use in React and Flutter.' },
+    ];
+
+    // ── Icon SVG ───────────────────────────────────────────────
+    function iconSVG() {
+      return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">'
+        + '<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/>'
+        + '</svg>';
+    }
+
+    function chevronSVG() {
+      return '<svg class="d-accordion__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">'
+        + '<path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/>'
+        + '</svg>';
+    }
+
+    // ── Build a single accordion element ──────────────────────
+    function buildAccordion(title, content, opts) {
+      opts = opts || {};
+      var isOpen   = opts.open   || false;
+      var showIcon = opts.icon   || false;
+      var showNum  = opts.num    || false;
+      var noBorder = opts.border || false;
+      var noDiv    = opts.divider || false;
+      var idx      = opts.idx    || 0;
+      var isChild  = opts.child  || false;
+
+      var el = document.createElement('div');
+      var cls = 'd-accordion';
+      if (isOpen)   cls += ' open';
+      if (noBorder) cls += ' no-border';
+      if (noDiv)    cls += ' no-divider';
+      if (isChild)  cls += ' child';
+      el.className = cls;
+      el.dataset.idx = idx;
+
+      var numHtml  = showNum  ? '<span class="d-accordion__num">' + (idx+1) + '.</span>' : '';
+      var iconHtml = showIcon ? '<span class="d-accordion__icon">' + iconSVG() + '</span>' : '';
+
+      el.innerHTML =
+        '<div class="d-accordion__header" onclick="handleToggle(this.parentElement)">'
+          + numHtml + iconHtml
+          + '<span class="d-accordion__title">' + escHtml(title) + '</span>'
+          + chevronSVG()
+        + '</div>'
+        + '<div class="d-accordion__divider"></div>'
+        + '<div class="d-accordion__body">'
+          + '<div class="d-accordion__content">' + escHtml(content) + '</div>'
+        + '</div>';
+
+      return el;
+    }
+
+    // ── Handle toggle click ────────────────────────────────────
+    function handleToggle(el) {
+      el.classList.toggle('open');
+      updateStateBar();
+    }
+
+    // ── Render accordion grid ──────────────────────────────────
+    function render() {
+      var demo = document.getElementById('accordion-demo');
+      demo.innerHTML = '';
+
+      var group = document.createElement('div');
+      group.className = 'd-accordion-group';
+
+      ITEMS.forEach(function(item, i) {
+        var title   = i === 0 ? state.title   : item.title;
+        var content = i === 0 ? state.content : item.content;
+
+        var opts = {
+          open:   state.open && i === 0,
+          icon:   state.icon,
+          num:    state.num,
+          border: state.border,
+          divider: state.divider,
+          idx:    i,
+        };
+
+        var acc = buildAccordion(title, content, opts);
+
+        // For nested variant, replace the body of the 3rd accordion
+        if (state.variant === 'nested' && i === 2) {
+          var body = acc.querySelector('.d-accordion__body');
+          body.innerHTML = '';
+
+          var nest = document.createElement('div');
+          nest.className = 'nested-container';
+          NESTED_CHILDREN.forEach(function(child, j) {
+            nest.appendChild(buildAccordion(child.title, child.content, {
+              icon: state.icon, num: state.num,
+              border: state.border, divider: state.divider,
+              idx: j, child: true,
+            }));
+          });
+          body.appendChild(nest);
+        }
+
+        group.appendChild(acc);
+      });
+
+      demo.appendChild(group);
+      updateStateBar();
+      renderProps();
+    }
+
+    // ── State bar ──────────────────────────────────────────────
+    function updateStateBar() {
+      var accs = document.querySelectorAll('#accordion-demo .d-accordion:not(.child)');
+      var open = 0;
+      accs.forEach(function(a) { if (a.classList.contains('open')) open++; });
+      var total = accs.length;
+      var dot  = document.getElementById('state-dot');
+      var text = document.getElementById('state-text');
+      var hint = document.getElementById('state-hint');
+      dot.classList.toggle('active', open > 0);
+      text.textContent = open + ' of ' + total + ' expanded';
+      hint.textContent = open > 0 ? 'Showing expanded content' : 'Click any accordion to expand';
+    }
+
+    // ── Props display ──────────────────────────────────────────
+    function renderProps() {
+      var d = document.getElementById('props-display');
+      function bool(v) {
+        return v ? '<span class="v-bool-t">true</span>' : '<span class="v-bool-f">false</span>';
+      }
+      function str(v) {
+        var s = v.length > 26 ? v.slice(0,26) + '…' : v;
+        return '<span class="v-str">"' + s + '"</span>';
+      }
+      d.innerHTML =
+        '<span class="k">title</span>=' + str(state.title) + '\n' +
+        '<span class="k">isOpenInitially</span>=' + bool(state.open) + '\n' +
+        '<span class="k">icon</span>=' + bool(state.icon) + '\n' +
+        '<span class="k">number</span>=' + bool(state.num) + '\n' +
+        '<span class="k">hideCardBorder</span>=' + bool(state.border) + '\n' +
+        '<span class="k">hideDivider</span>=' + bool(state.divider) + '\n' +
+        '<span class="k">variant</span>=' + str(state.variant);
+    }
+
+    // ── Controls ───────────────────────────────────────────────
+    function toggleProp(key) {
+      state[key] = !state[key];
+      var btn = document.getElementById('tog-' + key);
+      btn.classList.toggle('on', state[key]);
+      render();
+    }
+
+    function setVariant(v, btn) {
+      state.variant = v;
+      document.querySelectorAll('.seg-btn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.v === v);
+      });
+      render();
+    }
+
+    function updateTitle(v) { state.title = v; render(); }
+    function updateContent(v) { state.content = v; render(); }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Init ───────────────────────────────────────────────────
+    render();
+  </script>
+
+</body>
+</html>

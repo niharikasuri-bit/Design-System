@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Color accessible and consistent color palette for the DIGIT Design System." />
+  <title>Color · Foundation · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+
+    .color-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .color-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+    .color-swatch { height: 100px; width: 100%; flex-shrink: 0; }
+    .color-meta {
+      padding: 10px 12px;
+      background: #fff;
+      border-top: 1px solid #E5E7EB;
+      flex: 1;
+    }
+    .color-name { font-weight: 700; font-size: 13px; color: #111827; line-height: 1.3; word-break: break-word; }
+    .color-hex  { font-size: 12px; color: #6B7280; text-transform: uppercase; letter-spacing: .04em; margin-top: 3px; font-family: 'JetBrains Mono','Fira Code',Consolas,monospace; }
+
+    /* ── Spacing fixes ────────────────────────────────────────────────────────
+       Hero section's mb is the OTP→first-section gap. Raise to 96px. */
+    .page-content > section:first-child { margin-bottom: 6rem !important; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'foundation',
+      page:    'color',
+      title:   'Color',
+      breadcrumb: ['Foundation', 'Color'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Header ────────────────────────────────────────────────── -->
+      <section class="mb-16">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-6 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">Color Palette</h1>
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-[1.72] mb-12">
+          The DIGIT Color palette provides a flexible and accessible range of colors designed to enhance digital experiences across platforms. These colors ensure consistency and usability across applications while supporting a wide range of use cases.
+        </p>
+
+        <!-- On this page -->
+        <div class="bg-[#F4F5F7] rounded-xl p-6">
+          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <ul class="space-y-2">
+            <li><a href="#digit-colours"    class="text-[#0E165D] hover:underline font-medium">DIGIT Color Palette</a></li>
+            <li><a href="#usage-guidelines" class="text-[#0E165D] hover:underline font-medium">Usage Guidelines</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── DIGIT Colours ──────────────────────────────────────────── -->
+      <section id="digit-colours" class="mb-16 scroll-mt-4">
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">DIGIT Color Palette</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <p class="text-[16px] text-[#6B7280] max-w-3xl leading-relaxed mb-12">
+          This color palette picker only shows the latest version (6.0.0) of DIGIT Color Palette. For now, the available color palette is only for the light theme.
+        </p>
+
+        <div class="flex flex-col gap-12">
+
+          <!-- Main Color Palette -->
+          <div id="main-color-palette" class="scroll-mt-4">
+            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Main Color Palette</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div class="color-card">
+                <div class="color-swatch" style="background:#C84C0E"></div>
+                <div class="color-meta"><p class="color-name">Primary 1</p><p class="color-hex">#C84C0E</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#0B4B66"></div>
+                <div class="color-meta"><p class="color-name">Primary 2</p><p class="color-hex">#0B4B66</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#FBEEE8; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Primary 1 bg</p><p class="color-hex">#FBEEE8</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div id="text" class="scroll-mt-4">
+            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Text</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div class="color-card">
+                <div class="color-swatch" style="background:#363636"></div>
+                <div class="color-meta"><p class="color-name">Primary</p><p class="color-hex">#363636</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#787878"></div>
+                <div class="color-meta"><p class="color-name">Secondary</p><p class="color-hex">#787878</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#C5C5C5; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Disabled</p><p class="color-hex">#C5C5C5</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alert -->
+          <div id="alert" class="scroll-mt-4">
+            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Alert</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div class="color-card">
+                <div class="color-swatch" style="background:#B91900"></div>
+                <div class="color-meta"><p class="color-name">Error</p><p class="color-hex">#B91900</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#00703C"></div>
+                <div class="color-meta"><p class="color-name">Success</p><p class="color-hex">#00703C</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#EA8D00"></div>
+                <div class="color-meta"><p class="color-name">Warning</p><p class="color-hex">#EA8D00</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#0057BD"></div>
+                <div class="color-meta"><p class="color-name">Info</p><p class="color-hex">#0057BD</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#FFF5F4; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Error bg</p><p class="color-hex">#FFF5F4</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#F1FFF8; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Success bg</p><p class="color-hex">#F1FFF8</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#FFF9F0; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Warning bg</p><p class="color-hex">#FFF9F0</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#DEEFFF; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Info bg</p><p class="color-hex">#DEEFFF</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Generic -->
+          <div id="generic" class="scroll-mt-4">
+            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Generic</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div class="color-card">
+                <div class="color-swatch" style="background:#EEEEEE; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Generic Background</p><p class="color-hex">#EEEEEE</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#D6D5D4; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Divider</p><p class="color-hex">#D6D5D4</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#505A5F"></div>
+                <div class="color-meta"><p class="color-name">Input Border</p><p class="color-hex">#505A5F</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper -->
+          <div id="paper" class="scroll-mt-4">
+            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Paper</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div class="color-card">
+                <div class="color-swatch" style="background:#FFFFFF; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Primary</p><p class="color-hex">#FFFFFF</p></div>
+              </div>
+              <div class="color-card">
+                <div class="color-swatch" style="background:#FAFAFA; border-bottom:1px solid #E5E7EB"></div>
+                <div class="color-meta"><p class="color-name">Secondary</p><p class="color-hex">#FAFAFA</p></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Usage Guidelines ──────────────────────────────────────── -->
+      <section id="usage-guidelines" class="mb-20 scroll-mt-4">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Usage Guidelines</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="flex flex-col gap-12">
+
+          <!-- Consistent Palette -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%] flex flex-col">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Consistent Palette</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Always use colors defined in the library to ensure consistency across the application. Avoid using custom colors unless necessary and approved by the design system.</p>
+            </div>
+            <div class="w-full md:w-[40%] flex justify-start">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F63YwsIKFcoaUJoJ8v6BV%252FConsistent%2520Palette.png%3Falt%3Dmedia%26token%3D3b319acd-e1a3-4ff8-98fb-496318dea1ce&width=300&dpr=3&quality=100&sign=255c0d4&sv=2"
+                   alt="Consistent Palette"
+                   class="max-h-[240px] w-auto object-contain drop-shadow-sm"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Purpose-Driven Colors -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%] flex flex-col">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Purpose-Driven Colors</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Apply colors based on their intended purpose. For instance, use primary colors for buttons and links, secondary colors for accents, and background colors for general layout sections.</p>
+            </div>
+            <div class="w-full md:w-[40%] flex justify-start">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FtEEZ8vni8SCKaFIPMLhV%252FPurpose-Driven%2520Colors.png%3Falt%3Dmedia%26token%3Dc7eb1e3f-b735-4e53-897b-127e33232048&width=300&dpr=2&quality=100&sign=9f89d703&sv=2"
+                   alt="Purpose-Driven Colors"
+                   class="max-h-[240px] w-auto object-contain drop-shadow-sm"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Contrast & Accessibility -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%] flex flex-col">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Contrast &amp; Accessibility</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Ensure that text and important elements have enough contrast against their background. This guarantees readability and accessibility for all users, especially those with visual impairments.</p>
+            </div>
+            <div class="w-full md:w-[40%] flex justify-start">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F73VCVRSASYxJSlUek7OR%252FContrast%2520%2526%2520Accessibility.png%3Falt%3Dmedia%26token%3Dde63d7b5-6a1f-4860-ac6e-dcaa673209c6&width=300&dpr=3&quality=100&sign=da845ef0&sv=2"
+                   alt="Contrast and Accessibility"
+                   class="max-h-[240px] w-auto object-contain drop-shadow-sm"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Limit Color Usage -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-[60%] flex flex-col">
+              <h3 class="text-[20px] font-bold text-[#111827] mb-3">Limit Color Usage</h3>
+              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Avoid excessive use of bright or bold colors, particularly in the body text or background areas. Stick to a clean, minimalist design by using a maximum of 3 to 4 main colors in a given layout or component.</p>
+            </div>
+            <div class="w-full md:w-[40%] flex justify-start">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FFrOG3p9ZdvpGjeIME1cM%252FLimit%2520Color%2520Usage.png%3Falt%3Dmedia%26token%3D06183a75-3ecc-4c71-8740-07fe4de02a4d&width=300&dpr=2&quality=100&sign=7fe80944&sv=2"
+                   alt="Limit Color Usage"
+                   class="max-h-[240px] w-auto object-contain drop-shadow-sm"
+                   loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /max-w-5xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

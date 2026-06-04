@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Radius consistent and scalable corner radius values for the DIGIT Design System." />
+  <title>Radius · Foundation · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'foundation',
+      page:    'radius',
+      title:   'Radius',
+      breadcrumb: ['Foundation', 'Radius'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────── -->
+      <section class="mb-16">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-6 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">Radius</h1>
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-[1.72]">
+          The DIGIT Radius System provides a consistent and scalable set of corner radius values designed to create visual harmony across digital interfaces. The radius scale helps establish hierarchy, improve component recognition, and maintain a cohesive UI language across platforms and screen sizes.
+        </p>
+      </section>
+
+      <!-- ── Radius System ─────────────────────────────────────────── -->
+      <section class="mb-20">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Radius System</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <p class="text-[17px] text-[#6B7280] leading-[1.72] mb-8">
+          The DIGIT Radius System provides 14 predefined radius levels, each corresponding to a consistent corner curvature value.
+        </p>
+
+        <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] shadow-sm bg-white">
+          <table class="w-full text-left border-collapse" style="min-width:560px">
+            <thead>
+              <tr class="bg-[#F4F5F7] border-b border-[#E5E7EB]">
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Radius Token</th>
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Value (px)</th>
+                <th scope="col" class="py-4 px-6 font-bold text-[#111827] text-[13px] uppercase tracking-wider">Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Radius 0 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 0</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">0px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:0px"></div></td>
+              </tr>
+
+              <!-- Radius 1 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 1</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">4px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:4px"></div></td>
+              </tr>
+
+              <!-- Radius 2 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 2</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">6px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:6px"></div></td>
+              </tr>
+
+              <!-- Radius 3 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 3</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">8px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:8px"></div></td>
+              </tr>
+
+              <!-- Radius 4 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 4</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">10px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:10px"></div></td>
+              </tr>
+
+              <!-- Radius 5 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 5</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">12px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:12px"></div></td>
+              </tr>
+
+              <!-- Radius 6 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 6</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">14px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:14px"></div></td>
+              </tr>
+
+              <!-- Radius 7 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 7</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">16px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:16px"></div></td>
+              </tr>
+
+              <!-- Radius 8 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 8</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">18px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:18px"></div></td>
+              </tr>
+
+              <!-- Radius 9 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 9</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">20px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:20px"></div></td>
+              </tr>
+
+              <!-- Radius 10 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 10</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">24px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:24px"></div></td>
+              </tr>
+
+              <!-- Radius 11 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 11</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">28px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:28px"></div></td>
+              </tr>
+
+              <!-- Radius 12 -->
+              <tr class="border-b border-[#E5E7EB] hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 12</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">32px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:32px"></div></td>
+              </tr>
+
+              <!-- Radius 13 -->
+              <tr class="hover:bg-[#FAFAFB] transition-colors">
+                <td class="py-4 px-6"><code class="bg-[#F4F5F7] px-2 py-1 rounded text-[#0E165D] text-[13px] border border-[#E5E7EB]">Radius 13</code></td>
+                <td class="py-4 px-6 text-[#6B7280] text-[15px]">40px</td>
+                <td class="py-4 px-6"><div class="w-10 h-10 border-2 border-[#0E165D]" style="border-radius:40px"></div></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div><!-- /max-w-5xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

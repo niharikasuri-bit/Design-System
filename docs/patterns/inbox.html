@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inbox · DIGIT Design System</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script>window.tailwind = { config: {theme:{extend:{fontFamily:{sans:['DM Sans','system-ui','sans-serif'],mono:['JetBrains Mono','Consolas','monospace']}}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css"/>
+  <style>
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes shimmer { 0%{opacity:.4} 50%{opacity:1} 100%{opacity:.4} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+    @keyframes slideIn { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:none} }
+    .float { animation: float 5s ease-in-out infinite; }
+    .shimmer { animation: shimmer 2s ease-in-out infinite; }
+    .slide-up  { animation: slideUp .5s ease-out both; }
+    .slide-up-2{ animation: slideUp .5s .1s ease-out both; }
+    .slide-up-3{ animation: slideUp .5s .2s ease-out both; }
+    .slide-up-4{ animation: slideUp .5s .3s ease-out both; }
+    .row-1 { animation: slideIn .4s .05s ease-out both; }
+    .row-2 { animation: slideIn .4s .15s ease-out both; }
+    .row-3 { animation: slideIn .4s .25s ease-out both; }
+    .row-4 { animation: slideIn .4s .35s ease-out both; }
+    .skel { background:linear-gradient(90deg,#E5E7EB 25%,#F4F5F7 50%,#E5E7EB 75%); background-size:200% 100%; animation:shimmer 1.5s ease-in-out infinite; border-radius:4px; }
+    .dark .skel { background:linear-gradient(90deg,#1e2535 25%,#374151 50%,#1e2535 75%); background-size:200% 100%; }
+  </style>
+  <script>
+    window.DIGIT_ROOT='../../';
+    window.DIGIT_PAGE={section:'patterns',page:'inbox',title:'Inbox',breadcrumb:['Patterns','Inbox']};
+    
+  </script>
+</head>
+<body class="bg-white font-sans antialiased">
+
+
+<div class="flex min-h-screen">
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0 h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 py-6 px-8">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="flex flex-col items-center justify-center text-center min-h-screen">
+
+        <!-- Animated inbox illustration -->
+        <div class="float mb-4">
+          <div class="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden" style="width:210px;box-shadow:0 8px 24px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04)">
+            <!-- Toolbar -->
+            <div class="flex items-center gap-3 px-4 py-2.5 border-b border-[#E5E7EB] bg-[#F9FAFB]">
+              <div class="h-2 rounded-full bg-[#D1D5DB] w-14"></div>
+              <div class="ml-auto flex gap-1.5">
+                <div class="w-5 h-5 rounded bg-[#E5E7EB]"></div>
+                <div class="w-5 h-5 rounded bg-[#E5E7EB]"></div>
+              </div>
+            </div>
+            <!-- Row 1: unread + selected -->
+            <div class="row-1 flex items-center gap-3 px-4 py-3 border-b border-[#E5E7EB] bg-[#EEF1FF]">
+              <div class="w-2 h-2 rounded-full bg-[#0E165D] shrink-0"></div>
+              <div class="w-8 h-8 rounded-full bg-[#0E165D] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="h-2 rounded-full bg-[#374151] w-24 mb-1.5"></div>
+                <div class="h-1.5 rounded-full bg-[#C7D2FE] w-32"></div>
+              </div>
+              <div class="h-1.5 rounded-full bg-[#9CA3AF] w-8 shrink-0"></div>
+            </div>
+            <!-- Row 2 -->
+            <div class="row-2 flex items-center gap-3 px-4 py-3 border-b border-[#E5E7EB]">
+              <div class="w-2 h-2 rounded-full shrink-0"></div>
+              <div class="w-8 h-8 rounded-full bg-[#E5E7EB] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="h-2 rounded-full bg-[#D1D5DB] w-20 mb-1.5"></div>
+                <div class="h-1.5 rounded-full bg-[#E5E7EB] w-28"></div>
+              </div>
+              <div class="h-1.5 rounded-full bg-[#E5E7EB] w-6 shrink-0"></div>
+            </div>
+            <!-- Row 3: unread -->
+            <div class="row-3 flex items-center gap-3 px-4 py-3 border-b border-[#E5E7EB]">
+              <div class="w-2 h-2 rounded-full bg-[#0E165D] shrink-0"></div>
+              <div class="w-8 h-8 rounded-full bg-[#C7D2FE] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="h-2 rounded-full bg-[#374151] w-28 mb-1.5"></div>
+                <div class="h-1.5 rounded-full bg-[#D1D5DB] w-20"></div>
+              </div>
+              <div class="h-1.5 rounded-full bg-[#9CA3AF] w-8 shrink-0"></div>
+            </div>
+            <!-- Row 4 -->
+            <div class="row-4 flex items-center gap-3 px-4 py-3">
+              <div class="w-2 h-2 rounded-full shrink-0"></div>
+              <div class="w-8 h-8 rounded-full bg-[#E5E7EB] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="h-2 rounded-full bg-[#D1D5DB] w-16 mb-1.5"></div>
+                <div class="h-1.5 rounded-full bg-[#E5E7EB] w-24"></div>
+              </div>
+              <div class="h-1.5 rounded-full bg-[#E5E7EB] w-10 shrink-0"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Soon badge -->
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-[.12em] uppercase bg-[#EEF1FF] text-[#0E165D] border border-[#C7D2FE] mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#0E165D]"></span>
+          Coming Soon
+        </span>
+
+        <!-- Heading -->
+        <h1 class="text-[22px] font-bold text-[#111827] tracking-[-0.02em] leading-snug">
+          Inbox
+        </h1>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/search.js"></script>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>

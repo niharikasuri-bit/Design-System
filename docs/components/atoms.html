@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGIT Design System Atoms 26 foundational UI components." />
+  <title>Atoms · Components · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['DM Sans', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'Consolas', 'monospace'] },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    /* ── Design tokens ───────────────────────────────────────────
+       Card bg:    #FFFFFF  |  dark: #0f1117
+       Preview bg: #F8F8F8
+       Border:     1px rgba(229,231,235,0.85)
+       Radius:     12px
+       Hover lift: translateY(-4px)
+       Gap:        20px
+    ──────────────────────────────────────────────────────────── */
+
+    /* ── Page header accent gradient ─────────────────────────── */
+    .page-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 90% at 96% 0%, rgba(238,241,255,0.75) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .dark .page-header::before {
+      background: radial-gradient(ellipse 70% 90% at 96% 0%, rgba(25,29,136,0.11) 0%, transparent 65%);
+    }
+
+    /* ── Component card ──────────────────────────────────────── */
+    .comp-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid rgba(229, 231, 235, 0.85);
+      border-radius: 12px;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 2px 4px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      text-decoration: none;
+      transition:
+        border-color 0.22s ease,
+        box-shadow   0.22s ease,
+        transform    0.22s ease;
+      cursor: pointer;
+    }
+    .dark .comp-card {
+      background: #0f1117;
+      border-color: rgba(255, 255, 255, 0.07);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.35),
+        0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+    .comp-card:hover {
+      border-color: rgba(25, 29, 136, 0.22);
+      box-shadow:
+        0 0 0 1px rgba(25, 29, 136, 0.06),
+        0 4px 8px  rgba(0, 0, 0, 0.07),
+        0 12px 24px rgba(25, 29, 136, 0.09);
+      transform: translateY(-4px);
+    }
+    .dark .comp-card:hover {
+      border-color: rgba(123, 134, 255, 0.35);
+      box-shadow:
+        0 0 0 1px rgba(123, 134, 255, 0.1),
+        0 4px 8px  rgba(0, 0, 0, 0.45),
+        0 12px 24px rgba(25, 29, 136, 0.28);
+    }
+    .comp-card:focus-visible {
+      outline: 2px solid #0E165D;
+      outline-offset: 2px;
+    }
+
+    /* ── Preview area ─────────────────────────────────────────── */
+    .comp-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      padding: 16px;
+      background: #FFFFFF;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+      flex-shrink: 0;
+      overflow: hidden;
+      transition: background 0.22s ease;
+    }
+    .comp-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .comp-preview--contain img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .dark .comp-preview {
+      background: #161b27;
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+    }
+
+    /* ── Abbreviation fallback ────────────────────────────────── */
+    .comp-abbr {
+      font-size: 32px;
+      font-weight: 600;
+      color: #d1d5db;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      user-select: none;
+      transition: color 0.22s ease;
+    }
+    .dark .comp-abbr { color: #374151; }
+    .comp-card:hover .comp-abbr { color: #C7D2FE; }
+    .dark .comp-card:hover .comp-abbr { color: #C7D2FE; }
+
+    /* ── Label area ───────────────────────────────────────────── */
+    .comp-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+    .comp-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #111827;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      transition: color 0.22s ease;
+    }
+    .dark .comp-name { color: #e5e7eb; }
+    .comp-card:hover .comp-name { color: #0E165D; }
+    .dark .comp-card:hover .comp-name { color: #C7D2FE; }
+
+    /* ── Chevron arrow ────────────────────────────────────────── */
+    .comp-arrow {
+      color: #d1d5db;
+      opacity: 0;
+      transform: translateX(-5px);
+      transition:
+        opacity   0.22s ease,
+        transform 0.22s ease,
+        color     0.22s ease;
+      flex-shrink: 0;
+    }
+    .comp-card:hover .comp-arrow {
+      opacity: 1;
+      transform: translateX(0);
+      color: #0E165D;
+    }
+    .dark .comp-card:hover .comp-arrow { color: #C7D2FE; }
+
+    /* ── Sticky search bar ────────────────────────────────────── */
+    .comp-search-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+    .dark .comp-search-bar {
+      background: rgba(15, 17, 23, 0.92);
+      border-bottom-color: rgba(255, 255, 255, 0.07);
+    }
+
+    /* ── Search input ─────────────────────────────────────────── */
+    #comp-search:focus {
+      border-color: rgba(25, 29, 136, 0.35);
+      box-shadow: 0 0 0 3px rgba(25, 29, 136, 0.07);
+      outline: 2px solid #0E165D;
+      outline-offset: 2px;
+    }
+    .dark #comp-search:focus {
+      border-color: rgba(123, 134, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(123, 134, 255, 0.1);
+    }
+
+    /* ── Hidden card / empty state ────────────────────────────── */
+    .comp-card.hidden-card { display: none; }
+    #empty-state { display: none; }
+    #empty-state.show { display: flex; }
+
+    /* ── Tab navigation ───────────────────────────────────────── */
+    .tab-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      letter-spacing: -0.01em;
+    }
+    .tab-link-active {
+      background: #0E165D;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(25,29,136,0.22), 0 1px 2px rgba(25,29,136,0.15);
+    }
+    .tab-link-inactive {
+      color: #374151;
+      border-color: rgba(229,231,235,0.9);
+      background: #ffffff;
+    }
+    .dark .tab-link-inactive {
+      color: #9ca3af;
+      border-color: rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.04);
+    }
+    .tab-link-inactive:hover {
+      border-color: rgba(25,29,136,0.2);
+      color: #0E165D;
+      background: #F0F3FF;
+    }
+    .dark .tab-link-inactive:hover {
+      border-color: rgba(199,210,254,0.3);
+      color: #C7D2FE;
+      background: rgba(25,29,136,0.12);
+    }
+    .tab-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      letter-spacing: 0;
+    }
+    .tab-link-active .tab-badge {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+    .tab-link-inactive .tab-badge {
+      background: rgba(25,29,136,0.07);
+      color: #0E165D;
+    }
+    .dark .tab-link-inactive .tab-badge {
+      background: rgba(199,210,254,0.1);
+      color: #C7D2FE;
+    }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'components',
+      page: 'atoms',
+      title: 'Atoms',
+      breadcrumb: ['Components', 'Atoms'],
+    };
+
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PAGE LAYOUT
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="flex min-h-screen">
+
+    <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+      h-screen border-r border-gray-200 dark:border-gray-800
+      bg-white z-30">
+      <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+    </aside>
+
+    <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 flex flex-col">
+
+      <!-- ── Page header ─────────────────────────────────────── -->
+      <div class="px-8 sm:px-12 pt-12 pb-8 border-b border-gray-100 dark:border-gray-800/60 page-header">
+
+
+        <!-- Figma title: 36px Bold #0E165D -->
+        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] dark:text-[#C7D2FE] tracking-[-0.022em] leading-[1.18] mb-3">Atoms</h1>
+        <p class="text-[15px] text-[#374151] dark:text-gray-400 leading-relaxed max-w-xl mb-7">
+          The foundational building blocks of the DIGIT Design System. Atoms are the
+          smallest reusable UI elements independently functional and composable into
+          higher-order components.
+        </p>
+
+        <!-- Tab navigation: Atoms ↔ Molecules -->
+        <div class="flex items-center gap-2.5" role="tablist" aria-label="Component type">
+          <a href="./atoms.html"
+            class="tab-link tab-link-active" role="tab" aria-selected="true">
+            Atoms
+            <span class="tab-badge">26</span>
+          </a>
+          <a href="./molecules.html"
+            class="tab-link tab-link-inactive" role="tab" aria-selected="false">
+            Molecules
+            <span class="tab-badge">11</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Sticky search bar ───────────────────────────────── -->
+      <!-- Figma: 448×49px, #F4F5F7 bg, 14px radius, 48px left padding -->
+      <div class="comp-search-bar px-8 sm:px-12 py-4">
+        <div class="flex items-center gap-4">
+          <div class="relative w-full max-w-[448px]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px]
+                text-[rgba(107,114,128,0.7)] pointer-events-none">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0016.803 15.803z"/>
+            </svg>
+            <input
+              id="comp-search"
+              type="search"
+              placeholder="Search components..."
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search atoms"
+              class="w-full pl-12 pr-4 py-3 text-[15px]
+                bg-[#F4F5F7] dark:bg-gray-800/80
+                border border-transparent dark:border-gray-700/40
+                text-gray-900
+                placeholder-[rgba(107,114,128,0.7)] dark:placeholder-gray-500
+                rounded-[14px] transition-all duration-150" />
+          </div>
+          <p class="text-[13px] text-gray-400 dark:text-gray-500 font-medium tabular-nums whitespace-nowrap">
+            <span id="comp-count" class="font-semibold text-[#0E165D] dark:text-[#C7D2FE] text-[15px]">26</span> components
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Component grid ──────────────────────────────────── -->
+      <!-- Figma: 3-col, ~24px gap, 279×216px cards -->
+      <div class="flex-1 px-8 sm:px-12 py-10">
+
+        <div id="comp-grid"
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5"
+          role="list"
+          aria-label="Atoms component library">
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state"
+          class="flex-col items-center justify-center py-28 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0016.803 15.803z"/>
+            </svg>
+          </div>
+          <p class="text-[14px] font-semibold text-gray-500 dark:text-gray-400 mb-1">No components found</p>
+          <p class="text-[12px] text-gray-400 dark:text-gray-600 mb-5">Try a shorter search term.</p>
+          <button onclick="clearCompSearch()"
+            class="text-[13px] text-[#0E165D] dark:text-[#C7D2FE] font-semibold
+              hover:underline underline-offset-4">
+            Clear search
+          </button>
+        </div>
+      </div>
+
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/config.js"></script>
+  <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/sidebar.js"></script>
+  <script src="../../assets/js/search.js"></script>
+  <script src="../../assets/js/mobile-nav.js"></script>
+  <script src="../../assets/js/app.js"></script>
+
+  <script>
+  // ════════════════════════════════════════════════════════════
+  //  ATOMS 26 components from Figma (85388:29293)
+  //  abbr: letter preview shown in card (Figma: 36px Medium #9CA0B2)
+  // ════════════════════════════════════════════════════════════
+  var P = '../../assets/previews/';
+  var ATOMS = [
+    { name: 'Accordion',                abbr: 'Ac',  href: './accordion.html',   img: P+'Accordion.png',                tall: true  },
+    { name: 'Alert Card',               abbr: 'Al',  href: './alert-card.html',  img: P+'Alert Card.png',               tall: true  },
+    { name: 'Breadcrumbs',              abbr: 'Br',  href: './breadcrumbs.html', img: P+'Breadcrumbs.png'                           },
+    { name: 'Button',                   abbr: 'Btn', href: './button.html',      img: P+'Button.png'                                },
+    { name: 'Callout',                  abbr: 'Cl',  href: './callout.html',      img: P+'Callouts.png'                              },
+    { name: 'Checkbox',                 abbr: 'Cb',  href: './checkbox.html',     img: P+'Checkbox.png'                              },
+    { name: 'Chips',                    abbr: 'Ch',  href: './chips.html',        img: P+'Chips.png'                                 },
+    { name: 'Divider',                  abbr: 'Dv',  href: './divider.html',      img: P+'Divider.png',                  tall: true  },
+    { name: 'Dropdown - Single Select', abbr: 'DS',  href: './dropdown-single-select.html', img: P+'Dropdown - Single Select.png' },
+    { name: 'Dropdown - Multi Select',  abbr: 'DM',  href: './dropdown-multi-select.html', img: P+'Dropdown - Multi Select.png' },
+    { name: 'File Uploader',            abbr: 'FU',  href: './file-uploader.html', img: P+'File Uploader.png'                         },
+    { name: 'Input Fields',             abbr: 'If',  href: './input-fields.html', img: P+'Input Field.png'                           },
+    { name: 'Loader',                   abbr: 'Ld',  href: './loader.html',       img: P+'Loader.png'                                },
+    { name: 'OTP Input',                abbr: 'OTP', href: './otp-input.html',   img: P+'OTP.png'                                   },
+    { name: 'Panel',                    abbr: 'Pn',  href: './panel.html',        img: P+'Panel.png'                                 },
+    { name: 'Radio',                    abbr: 'Rd',  href: './radio.html',        img: P+'Radio.png'                                 },
+    { name: 'Stepper',                  abbr: 'St',  href: './stepper.html',      img: P+'Stepper.png'                               },
+    { name: 'Toggles',                  abbr: 'Tg',  href: './toggles.html',      img: P+'Toggle.png'                                },
+    { name: 'Toast',                    abbr: 'Ts',  href: './toast.html',        img: P+'Toast.png'                                 },
+    { name: 'Selection Tags',           abbr: 'Sl',  href: './selection-tags.html', img: P+'Selection Tags.png'                        },
+    { name: 'Switch',                   abbr: 'Sw',  href: './switch.html',       img: P+'Switch.png'                                },
+    { name: 'Tooltip',                  abbr: 'Tp',  href: './tooltip.html',      img: P+'Tooltip.png'                               },
+    { name: 'Tags',                     abbr: 'Ta',  href: './tags.html',         img: P+'Tag.png'                                   },
+    { name: 'Timeline',                 abbr: 'Tl',  href: './timeline.html',     img: P+'Timeline.png'                              },
+    { name: 'Tabs',                     abbr: 'Tb',  href: './tabs.html',         img: P+'Tabs.png'                                  },
+    { name: 'Textblock',                abbr: 'Tx',  href: './textblock.html',    img: P+'Text Block.png',               tall: true  },
+  ];
+
+  // ════════════════════════════════════════════════════════════
+  //  DOM refs
+  // ════════════════════════════════════════════════════════════
+  var gridEl    = document.getElementById('comp-grid');
+  var emptyEl   = document.getElementById('empty-state');
+  var countEl   = document.getElementById('comp-count');
+  var searchEl  = document.getElementById('comp-search');
+  var cardEls   = [];
+  var debounce;
+
+  // ════════════════════════════════════════════════════════════
+  //  BUILD GRID one DocumentFragment pass
+  // ════════════════════════════════════════════════════════════
+  function buildGrid() {
+    var frag = document.createDocumentFragment();
+    ATOMS.forEach(function (comp) {
+      var card = document.createElement('a');
+      card.href      = comp.href || '#';
+      card.className = 'comp-card';
+      card.setAttribute('role', 'listitem');
+      card.setAttribute('data-name', comp.name.toLowerCase());
+      card.setAttribute('aria-label', comp.name);
+
+      var previewInner = comp.img
+        ? '<img src="' + comp.img + '" alt="' + escHtml(comp.name) + '" loading="lazy" />'
+        : '<span class="comp-abbr">' + escHtml(comp.abbr) + '</span>';
+      var previewCls = 'comp-preview' + (comp.tall ? ' comp-preview--contain' : '');
+      card.innerHTML =
+        '<div class="' + previewCls + '" aria-hidden="true">' + previewInner + '</div>' +
+        '<div class="comp-label">' +
+          '<span class="comp-name">' + escHtml(comp.name) + '</span>' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" ' +
+            'class="comp-arrow w-4 h-4 shrink-0">' +
+            '<path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>' +
+          '</svg>' +
+        '</div>';
+
+      // Block navigation only for cards without a real destination yet
+      if (!comp.href) {
+        card.addEventListener('click', function (e) { e.preventDefault(); });
+      }
+
+      cardEls.push(card);
+      frag.appendChild(card);
+    });
+    gridEl.appendChild(frag);
+    countEl.textContent = ATOMS.length;
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  SEARCH
+  // ════════════════════════════════════════════════════════════
+  function runSearch(q) {
+    var query   = q.trim().toLowerCase();
+    var visible = 0;
+    cardEls.forEach(function (card) {
+      var match = !query || card.getAttribute('data-name').includes(query);
+      card.classList.toggle('hidden-card', !match);
+      if (match) visible++;
+    });
+    countEl.textContent = visible;
+    emptyEl.classList.toggle('show', visible === 0);
+  }
+
+  function clearCompSearch() {
+    searchEl.value = '';
+    runSearch('');
+    searchEl.focus();
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  INIT
+  // ════════════════════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', function () {
+    buildGrid();
+
+    searchEl.addEventListener('input', function () {
+      clearTimeout(debounce);
+      debounce = setTimeout(function () { runSearch(searchEl.value); }, 80);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === '/' && document.activeElement !== searchEl &&
+          !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault(); searchEl.focus(); searchEl.select();
+      }
+      if (e.key === 'Escape' && document.activeElement === searchEl) clearCompSearch();
+    });
+
+    // Mobile nav
+    var mBtn   = document.getElementById('mobile-menu-btn');
+    var mClose = document.getElementById('mobile-drawer-close');
+    var mOver  = document.getElementById('mobile-overlay');
+    var mDraw  = document.getElementById('mobile-drawer');
+    if (mBtn && mDraw) {
+      function openM()  { mDraw.classList.remove('-translate-x-full'); mOver.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+      function closeM() { mDraw.classList.add('-translate-x-full');    mOver.classList.add('hidden');    document.body.style.overflow = ''; }
+      mBtn.addEventListener('click', openM);
+      if (mClose) mClose.addEventListener('click', closeM);
+      if (mOver)  mOver.addEventListener('click', closeM);
+    }
+  });
+  </script>
+
+</body>
+</html>

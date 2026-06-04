@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGIT Design Approach scalable, accessible, and intuitive experiences for all citizens." />
+  <title>Design Approach · Getting Started · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+        theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    /* section header rule same pattern as React component */
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
+    .dark .section-rule { background: rgba(255,255,255,.1); }
+
+    /* objective card */
+    .obj-card {
+      background: #F4F5F7;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      border: 1px solid transparent;
+      transition: border-color .15s;
+    }
+    .dark .obj-card { background: #1F2937; }
+    .obj-card:hover { border-color: #E5E7EB; }
+    .dark .obj-card:hover { border-color: rgba(255,255,255,.12); }
+    .obj-icon {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      color: #0E165D;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dark .obj-icon { background: #374151; }
+
+    /* principle card */
+    .prin-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      transition: box-shadow .15s;
+    }
+    .dark .prin-card { background: #111827; border-color: rgba(255,255,255,.08); box-shadow:none; }
+    .prin-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+    .dark .prin-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+    .prin-icon { color: #0E165D; margin-bottom: 16px; }
+    .dark .prin-icon { color: #C7D2FE; }
+
+    /* image placeholder */
+    .practice-placeholder {
+      background: #F4F5F7;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* page fade-in */
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section: 'getting-started',
+      page:    'design-approach',
+      title:   'Design Approach',
+      breadcrumb: ['Getting Started', 'Design Approach'],
+    };
+
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] dark:text-[#F4F5F7] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- ══ LAYOUT ═══════════════════════════════════════════════════ -->
+<div class="flex min-h-screen">
+
+  <!-- Left sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] dark:border-gray-800
+    bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main max-w-5xl matches React component -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl page-content">
+
+      <!-- ══ SECTION 1 Hero ════════════════════════════════════ -->
+      <section class="mb-12">
+        <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-6 text-[#0E165D] dark:text-[#C7D2FE] leading-[1.18] tracking-[-0.022em]">
+          DIGIT Design Approach
+        </h1>
+        <p class="text-[18px] text-[#6B7280] dark:text-gray-400 max-w-3xl leading-[1.72] mb-10">
+          The DIGIT Design Approach is rooted in building scalable, accessible, and intuitive
+          experiences for all citizens. We prioritize clarity, performance, and empathy in every
+          decision, ensuring our solutions empower users and foster trust.
+        </p>
+
+        <!-- On this page -->
+        <div class="bg-[#F4F5F7] rounded-xl p-6">
+          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <ul class="space-y-2">
+            <li><a href="#design-objectives" class="text-[#0E165D] hover:underline font-medium">Design Objectives</a></li>
+            <li><a href="#design-principles" class="text-[#0E165D] hover:underline font-medium">Design Principles</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══ SECTION 2 Design Objectives ══════════════════════ -->
+      <section id="design-objectives" class="mb-16 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] dark:text-[#C7D2FE] whitespace-nowrap">Design Objectives</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="space-y-16">
+
+          <!-- Objective 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] dark:text-white mb-4">How do we make actions easier and faster for users?</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 leading-relaxed">
+                We surface the most relevant actions directly on screen, so users can act immediately without searching or navigating. By prioritizing core tasks and reducing cognitive load, every screen puts the right action within reach at the right moment.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img src="../../assets/images/Point 1.png" alt="How do we make actions easier and faster for users?" style="max-width:100%;height:auto;" />
+            </div>
+          </div>
+
+          <!-- Objective 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] dark:text-white mb-4">How do we remove irrelevant information that creates friction?</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 leading-relaxed">
+                We show only what matters at each step. Whether it's a form that reveals one field at a time or a screen that surfaces only contextually relevant data, we eliminate visual noise so users can focus entirely on the task in front of them.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img src="../../assets/images/Point 2.png" alt="How do we remove irrelevant information that creates friction?" style="max-width:100%;height:auto;" />
+            </div>
+          </div>
+
+          <!-- Objective 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <h3 class="text-[20px] font-bold text-[#111827] dark:text-white mb-4">How do we ensure every interaction feels smooth and intuitive?</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 leading-relaxed">
+                We pair actions with meaningful icons, clear labels, and help text so users always know where they are and what to do next. Consistent patterns and logical progressions make every interaction feel familiar even on first use.
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <img src="../../assets/images/Point 3.png" alt="How do we ensure every interaction feels smooth and intuitive?" style="max-width:100%;height:auto;" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══ SECTION 3 Design Principles ══════════════════════ -->
+      <section id="design-principles" class="scroll-mt-8">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-[24px] font-bold text-[#0E165D] dark:text-[#C7D2FE] whitespace-nowrap">Design Principles</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          <!-- User-Centric: CheckCircle2 -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">User-Centric</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Designed for the needs of real people.</p>
+          </div>
+
+          <!-- Reusable: Copy -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Reusable</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Modular components for faster builds.</p>
+          </div>
+
+          <!-- Accessible: Accessibility -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <circle cx="16" cy="4" r="1"/>
+                <path d="m18 19 1-7-5.87.94"/>
+                <path d="m5 8 3-3 5.5 3-2.36 5.82"/>
+                <path d="M10.62 17.23 8 22"/>
+                <path d="M12 19c-2.5 0-4.5-2-4.5-4.5v-1.5"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Accessible</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Inclusive to all users, regardless of ability.</p>
+          </div>
+
+          <!-- Mobile First: Smartphone -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                <path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Mobile First</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Optimized for small screens initially.</p>
+          </div>
+
+          <!-- Localized: Globe -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Localized</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Adaptable to multiple languages and regions.</p>
+          </div>
+
+          <!-- Data Driven: BarChart -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <line x1="12" y1="20" x2="12" y2="10"/>
+                <line x1="18" y1="20" x2="18" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Data Driven</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Decisions backed by research and metrics.</p>
+          </div>
+
+          <!-- Lightweight Design: Feather -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+                <line x1="16" y1="8" x2="2" y2="22"/>
+                <line x1="17.5" y1="15" x2="9" y2="15"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Lightweight Design</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Fast-loading components for any device.</p>
+          </div>
+
+          <!-- Open Source: Code2 -->
+          <div class="prin-card">
+            <div class="prin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                width="32" height="32">
+                <path d="m18 16 4-4-4-4"/>
+                <path d="m6 8-4 4 4 4"/>
+                <path d="m14.5 4-5 16"/>
+              </svg>
+            </div>
+            <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-2">Open Source</h3>
+            <p class="text-[#6B7280] dark:text-gray-400 text-sm leading-relaxed">Collaborative and transparent development.</p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Scripts -->
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/search.js"></script>
+<script src="../../assets/js/mobile-nav.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn   = document.getElementById('m-btn');
+    var close = document.getElementById('m-close');
+    var ov    = document.getElementById('m-overlay');
+    var dr    = document.getElementById('m-drawer');
+    if (!dr) return;
+    function openM()  { dr.classList.remove('-translate-x-full'); ov.classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    function closeM() { dr.classList.add('-translate-x-full');    ov.classList.add('hidden');    document.body.style.overflow=''; }
+    if (btn)   btn.addEventListener('click', openM);
+    if (close) close.addEventListener('click', closeM);
+    if (ov)    ov.addEventListener('click', closeM);
+  });
+</script>
+
+</body>
+</html>

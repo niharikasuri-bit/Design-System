@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get started as a Designer DIGIT Design System tools, Figma kits, and component guidance." />
+  <title>Designer · Getting Started · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    .page-content { animation: fadeIn .4s ease-out; }
+
+    /* Vertical stepper */
+    .stepper { display: flex; flex-direction: column; }
+    .step { display: flex; gap: 24px; position: relative; }
+    .step:not(:last-child) .step-line {
+      position: absolute;
+      left: 19px;
+      top: 44px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #C7D2FE 0%, #E5E7EB 100%);
+    }
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #0E165D;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 4px #EEF1FF;
+    }
+    .step-body { padding-bottom: 48px; flex: 1; min-width: 0; }
+    .step:last-child .step-body { padding-bottom: 0; }
+
+    .step-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0E165D;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color .15s, text-decoration-thickness .15s;
+    }
+    .step-cta:hover { color: #0E165D; text-decoration-thickness: 2px; }
+    .step-cta svg { flex-shrink: 0; }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section:    'getting-started',
+      page:       'designer',
+      title:      'Designer',
+      breadcrumb: ['Getting Started', 'Designer'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-4xl page-content">
+
+      <!-- Hero -->
+      <h1 class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-4 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">
+        Get started as a Designer
+      </h1>
+      <p class="text-[18px] text-[#6B7280] leading-relaxed mb-12 max-w-3xl">
+        Follow these steps to familiarize yourself with the DIGIT design system and start creating beautiful, consistent user interfaces.
+      </p>
+
+      <!-- Vertical Stepper -->
+      <div class="stepper">
+
+        <!-- Step 1 -->
+        <div class="step">
+          <div>
+            <div class="step-circle">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] mb-2">Understand DIGIT Design Principles</h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed">
+              Understand the core principles and philosophy behind DIGIT design system and how it helps create consistent user experiences.
+            </p>
+            <a href="../../docs/getting-started/design-approach.html" class="step-cta">
+              View design approach
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <div>
+            <div class="step-circle">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] mb-2">Explore Design Foundations</h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed">
+              Dive deep into the foundational elements like color, typography, spacing, and iconography that form the basis of DIGIT.
+            </p>
+            <a href="../../docs/foundation/color.html" class="step-cta">
+              Explore foundations
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <div>
+            <div class="step-circle">3</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] mb-2">Review Component Guidance</h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed">
+              Learn about component usage, best practices, and guidelines to ensure proper implementation across your designs.
+            </p>
+            <a href="../../docs/components/atoms.html" class="step-cta">
+              View component docs
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+          <div>
+            <div class="step-circle">4</div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] mb-2">Get the Figma Design Kits</h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed">
+              Access and install the official Figma design kits containing all components, styles, and templates you need to get started.
+            </p>
+            <a href="https://www.figma.com/design/G4UcvjXgxhpe58W9MiAnmn/DIGIT-Design-System?node-id=72546-14565&p=f&t=z6MWOWWkiCcnJLEs-0" target="_blank" rel="noopener noreferrer" class="step-cta">
+              Access Figma Kits
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /stepper -->
+
+    </div><!-- /max-w-3xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+</body>
+</html>

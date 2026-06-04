@@ -1,0 +1,9 @@
+{
+  "name": "digit-design-system",
+  "version": "1.0.0",
+  "description": "DIGIT Design System — accessible and inclusive design language for government digital services",
+  "scripts": {
+    "start": "npx serve . --listen 3000",
+    "dev": "npx serve . --listen 3000"
+  }
+}

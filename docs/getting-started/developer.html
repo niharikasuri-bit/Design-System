@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get Started as a Developer DIGIT Design System step-by-step guide." />
+  <title>Developer · Getting Started · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+  <style>
+    @keyframes fadeIn  { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @keyframes popIn   { from { opacity:0; transform:scale(.95) translateY(8px); } to { opacity:1; transform:scale(1) translateY(0); } }
+
+    .page-content { animation: fadeIn .35s ease-out; }
+
+    /* ── Vertical stepper ──────────────────────────────────── */
+    .stepper { display: flex; flex-direction: column; }
+
+    .step { display: flex; gap: 24px; position: relative; }
+    .step:not(:last-child) .step-line {
+      position: absolute; left: 19px; top: 44px; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #C7D2FE 0%, #E5E7EB 100%);
+    }
+
+    .step-circle {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #0E165D; color: #fff;
+      font-size: 15px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative; z-index: 1;
+      box-shadow: 0 0 0 4px #EEF1FF;
+    }
+
+    .step-body { padding-bottom: 48px; flex: 1; min-width: 0; }
+    .step:last-child .step-body { padding-bottom: 0; }
+
+    /* ── Step card ─────────────────────────────────────────── */
+    .step-card {
+      margin-top: 12px;
+      background: #fff;
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.03);
+    }
+
+    /* ── CTA link / button ─────────────────────────────────── */
+    .step-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; padding: 0;
+      font-size: 14px; font-weight: 600;
+      color: #0E165D; background: none; border: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color .15s, text-decoration-thickness .15s;
+      cursor: pointer;
+    }
+    .step-cta:hover { color: #0E165D; text-decoration-thickness: 2px; }
+    .step-cta svg { flex-shrink: 0; }
+
+    /* ── Design System popup modal ─────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(17,24,39,.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: #fff;
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 20px;
+      padding: 32px;
+      width: 100%; max-width: 580px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.08);
+      animation: popIn .22s cubic-bezier(.4,0,.2,1);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px; border-radius: 8px;
+      border: none; background: #F4F5F7; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #6B7280; transition: background .15s, color .15s;
+    }
+    .modal-close:hover { background: #E5E7EB; color: #111827; }
+
+    /* ── Destination cards inside modal ────────────────────── */
+    .dest-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+    @media (max-width: 480px) { .dest-grid { grid-template-columns: 1fr; } }
+
+    .dest-card {
+      display: flex; flex-direction: column; align-items: flex-start;
+      padding: 18px 16px; border-radius: 12px;
+      border: 1.5px solid rgba(229,231,235,.9);
+      background: #fff; cursor: pointer; text-decoration: none;
+      transition: border-color .18s, box-shadow .18s, transform .18s;
+    }
+    .dest-card:hover {
+      border-color: rgba(25,29,136,.25);
+      box-shadow: 0 4px 12px rgba(25,29,136,.1);
+      transform: translateY(-2px);
+    }
+
+    .dest-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px; flex-shrink: 0;
+    }
+    .dest-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+    .dest-desc  { font-size: 12px; color: #6B7280; line-height: 1.5; }
+    .dest-arrow {
+      margin-top: auto; padding-top: 12px;
+      font-size: 12px; font-weight: 600; color: #0E165D;
+      display: flex; align-items: center; gap: 4px;
+    }
+  </style>
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = {
+      section:    'getting-started',
+      page:       'developer',
+      title:      'Developer',
+      breadcrumb: ['Getting Started', 'Developer'],
+    };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
+    h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <!-- Main -->
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-3xl page-content">
+
+      <!-- Hero -->
+      <h1 class="text-[28px] sm:text-[36px] font-bold mb-4 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">
+        Get Started as a Developer
+      </h1>
+      <p class="text-[17px] text-[#6B7280] leading-relaxed mb-14 max-w-2xl">
+        Follow these steps to understand the DIGIT UI ecosystem and start building consistent, scalable applications.
+      </p>
+
+      <!-- Vertical Stepper -->
+      <div class="stepper">
+
+        <!-- ── Step 1 ──────────────────────────────────────── -->
+        <div class="step">
+          <div>
+            <div class="step-circle">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] leading-snug">
+              Understand DIGIT UI Architecture
+            </h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed mt-2">
+              Learn how DIGIT UI is structured, including its architecture, application patterns,
+              reusable modules, and key platform capabilities.
+            </p>
+            <a href="https://docs.digit.org/platform/guides/developer-guide/ui-developer-guide/digit-ui"
+               target="_blank" rel="noopener noreferrer"
+               class="step-cta">
+              Explore architecture
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Step 2 ──────────────────────────────────────── -->
+        <div class="step">
+          <div>
+            <div class="step-circle">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] leading-snug">
+              Learn about the Digit Design System
+            </h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed mt-2">
+              Understand the design foundations, component hierarchy, and patterns that power
+              consistent user experiences across DIGIT applications.
+            </p>
+            <button onclick="openModal()" class="step-cta">
+              Explore design system
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Step 3 ──────────────────────────────────────── -->
+        <div class="step">
+          <div>
+            <div class="step-circle">3</div>
+          </div>
+          <div class="step-body">
+            <h3 class="text-[18px] font-bold text-[#111827] leading-snug">
+              Explore Predefined Screens
+            </h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed mt-2">
+              Review ready-to-use screen templates and reference implementations to understand
+              how components come together in real-world workflows.
+            </p>
+            <a href="https://docs.digit.org/platform/guides/developer-guide/ui-developer-guide/pre-defined-screens-in-digit-ui"
+               target="_blank" rel="noopener noreferrer"
+               class="step-cta">
+              View predefined screens
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /stepper -->
+
+    </div><!-- /max-w-3xl -->
+  </main>
+</div><!-- /flex min-h-screen -->
+
+<!-- ══════════════════════════════════════════════════════════
+     DESIGN SYSTEM MODAL (Step 2)
+══════════════════════════════════════════════════════════════ -->
+<div id="ds-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+     onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+      </svg>
+    </button>
+
+    <!-- Modal header -->
+    <div class="inline-flex items-center px-2.5 py-1 rounded-full mb-4
+      text-[10px] font-bold tracking-[.12em] uppercase
+      bg-[#EEF1FF] text-[#0E165D]">DIGIT Design System</div>
+
+    <h2 id="modal-title" class="text-[20px] font-bold text-[#111827] leading-snug mb-1">
+      Where would you like to explore?
+    </h2>
+    <p class="text-[14px] text-[#6B7280] leading-relaxed">
+      Choose a section to navigate to.
+    </p>
+
+    <!-- Three destination cards -->
+    <div class="dest-grid">
+
+      <!-- Foundation -->
+      <a href="../foundation/color.html" class="dest-card" onclick="closeModal()">
+        <div class="dest-icon" style="background:#EEF1FF;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="#0E165D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            width="20" height="20">
+            <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
+          </svg>
+        </div>
+        <div class="dest-title">Foundation</div>
+        <div class="dest-desc">Colour, typography, spacing, radius, and iconography.</div>
+        <div class="dest-arrow">
+          Go to Foundation
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+            <path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Components -->
+      <a href="../components/atoms.html" class="dest-card" onclick="closeModal()">
+        <div class="dest-icon" style="background:#EEF1FF;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="#0E165D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            width="20" height="20">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <div class="dest-title">Components</div>
+        <div class="dest-desc">Atoms and molecules, the reusable UI building blocks.</div>
+        <div class="dest-arrow">
+          Go to Components
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+            <path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Patterns -->
+      <a href="../patterns/form.html" class="dest-card" onclick="closeModal()">
+        <div class="dest-icon" style="background:#EEF1FF;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="#0E165D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            width="20" height="20">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
+        <div class="dest-title">Patterns</div>
+        <div class="dest-desc">Forms, inbox, and summary screen interaction patterns.</div>
+        <div class="dest-arrow">
+          Go to Patterns
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+            <path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </a>
+
+    </div><!-- /dest-grid -->
+  </div><!-- /modal-box -->
+</div><!-- /modal-overlay -->
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/mobile-nav.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+<script>
+  function openModal() {
+    document.getElementById('ds-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('ds-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('ds-modal')) closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1039 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIGIT Design System A universal design language built on accessibility and inclusivity for government digital services." />
+  <title>DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+      theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+    }};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <style>
+    /* ── Hero background ────────────────────────────────────── */
+    .hero-bg {
+      background-color: #F7F8FF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Card hover lift ──────────────────────────────────────── */
+    .card-lift {
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    }
+
+    /* ── Search bar trigger ──────────────────────────────────── */
+    #hero-search { cursor: pointer; }
+    #hero-search:focus { outline: 2px solid #C7D2FE; box-shadow: 0 0 0 3px rgba(25,29,136,.15); }
+
+    /* ── Search modal ────────────────────────────────────────── */
+    #search-modal {
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(11,15,51,.75); backdrop-filter: blur(6px);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding-top: 80px; padding-left: 16px; padding-right: 16px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .18s ease;
+    }
+    #search-modal.open { opacity: 1; pointer-events: all; }
+    #search-modal-box {
+      width: 100%; max-width: 640px;
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,.3), 0 0 0 1px rgba(0,0,0,.06);
+      transform: translateY(-12px) scale(.98);
+      transition: transform .18s ease;
+    }
+    #search-modal.open #search-modal-box { transform: translateY(0) scale(1); }
+    #modal-input-wrap {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 20px; border-bottom: 1px solid #E5E7EB;
+    }
+    #modal-input {
+      flex: 1; border: none; outline: none; font-size: 16px;
+      color: #111827; background: transparent; font-family: inherit;
+    }
+    #modal-input:focus { outline: 2px solid #0E165D; outline-offset: 2px; border-radius: 4px; }
+    #modal-input::placeholder { color: #9ca3af; }
+    #modal-clear {
+      display: none; background: none; border: none; cursor: pointer;
+      color: #9ca3af; padding: 4px; border-radius: 6px; line-height: 0;
+    }
+    #modal-clear:hover { background: #F4F5F7; color: #6B7280; }
+    #modal-results { max-height: 440px; overflow-y: auto; padding: 8px 0; }
+    .modal-cat-header {
+      padding: 8px 20px; font-size: 11px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: #6B7280; background: #F4F5F7;
+    }
+    .modal-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 20px; cursor: pointer; border-bottom: 1px solid #f5f5f5;
+      transition: background .1s;
+    }
+    .modal-row:last-child { border-bottom: none; }
+    .modal-row:hover, .modal-row.active { background: #EEF1FF; }
+    .modal-row.active .modal-row-title { color: #0E165D; font-weight: 600; }
+    .modal-row-title { font-size: 14px; color: #111827; }
+    .modal-row-cat {
+      font-size: 11px; color: #4B5563; background: #F4F5F7;
+      padding: 2px 8px; border-radius: 99px; white-space: nowrap; flex-shrink: 0;
+    }
+    .modal-empty { padding: 32px 20px; text-align: center; color: #6B7280; font-size: 14px; }
+
+
+    /* ── Metric number ────────────────────────────────────────── */
+    .metric-num {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #0E165D 0%, #0E165D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Diff card placeholder ────────────────────────────────── */
+    .diff-card-img {
+      height: 200px;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Section tag ──────────────────────────────────────────── */
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #0E165D;
+      background: #EEF1FF;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:none; }
+    }
+    .fade-up { animation: fadeUp .6s ease-out both; }
+    .fade-up-d1 { animation-delay: .1s; }
+    .fade-up-d2 { animation-delay: .2s; }
+    .fade-up-d3 { animation-delay: .3s; }
+  </style>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E5E7EB]" style="box-shadow:0 1px 3px rgba(0,0,0,.06)">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 h-16 flex items-center justify-between gap-8">
+
+    <!-- Logo -->
+    <a href="./index.html" class="flex items-center gap-2 shrink-0">
+      <img src="https://app.digitalpublicgoods.net/storage/images/digit.png"
+           alt="DIGIT" class="h-8 object-contain"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none" class="font-bold text-[#0E165D] text-[22px] tracking-tight">DIGIT</span>
+    </a>
+
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="./docs/foundation/color.html"
+         class="px-4 py-2 rounded-lg text-[16px] font-medium text-[#6B7280] hover:text-[#0E165D] hover:bg-[#F5F7FB] transition-colors">
+        Foundation
+      </a>
+      <a href="./docs/components/atoms.html"
+         class="px-4 py-2 rounded-lg text-[16px] font-medium text-[#6B7280] hover:text-[#0E165D] hover:bg-[#F5F7FB] transition-colors">
+        Components
+      </a>
+      <a href="./docs/patterns/form.html"
+         class="px-4 py-2 rounded-lg text-[16px] font-medium text-[#6B7280] hover:text-[#0E165D] hover:bg-[#F5F7FB] transition-colors">
+        Patterns
+      </a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="./docs/getting-started/designer.html"
+       class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0E165D] text-white text-[15px] font-semibold hover:bg-[#15186F] transition-colors shrink-0">
+      Get Started
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="md:hidden p-2 rounded-lg text-[#6B7280] hover:bg-[#F4F5F7]" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════ -->
+<section id="main-content" class="hero-bg pt-16">
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- ── Left: Text ──────────────────────────────────────── -->
+      <div class="fade-up fade-up-d1">
+
+        <h1 class="text-[36px] sm:text-[46px] lg:text-[52px] font-bold text-[#1a1f6e] leading-[1.12] tracking-[-0.02em] mb-5">
+          DIGIT<br/>Design System
+        </h1>
+
+        <p class="text-[16px] text-[#6B7280] leading-[1.75] max-w-lg mb-8">
+          A universal design language built on accessibility and inclusivity crafted to serve diverse users across digital public infrastructure.
+        </p>
+
+        <!-- Search -->
+        <div class="relative max-w-md mb-6">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af] pointer-events-none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="hero-search" type="search" placeholder="Search components, tokens, patterns…"
+                 aria-label="Search DIGIT Design System components, tokens, and patterns"
+                 class="w-full bg-white text-[#111827] placeholder-[#9CA3AF] pl-10 pr-4 py-3 rounded-xl border border-[#D0D5F0] text-[14px] transition-all shadow-sm focus:outline-none focus:border-[#6366F1]"
+                 autocomplete="off" readonly />
+        </div>
+
+        <!-- CTA -->
+        <div class="fade-up fade-up-d3">
+          <a href="#explore"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0E165D] text-white text-[14px] font-semibold hover:bg-[#15186F] transition-colors shadow-md">
+            Explore System
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Right: Design system overview ──────────────────── -->
+      <div class="fade-up fade-up-d2 flex items-center justify-center lg:justify-end">
+        <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[520px] h-auto" aria-hidden="true">
+
+          <!-- ══ ROW 1: TOKENS ══════════════════════════════════ -->
+
+          <!-- COLORS -->
+          <rect x="8" y="8" width="154" height="164" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="20" y="40" width="40" height="40" rx="8" fill="#0E165D"/>
+          <rect x="66" y="40" width="40" height="40" rx="8" fill="#6366F1"/>
+          <rect x="112" y="40" width="40" height="40" rx="8" fill="#A5B4FC"/>
+          <rect x="20" y="86" width="40" height="40" rx="8" fill="#FCA5A5"/>
+          <rect x="66" y="86" width="40" height="40" rx="8" fill="#FDE68A"/>
+          <rect x="112" y="86" width="40" height="40" rx="8" fill="#86EFAC"/>
+          <rect x="20" y="134" width="40" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="66" y="134" width="40" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="112" y="134" width="40" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="20" y="146" width="40" height="5" rx="2.5" fill="#F0F0F0"/>
+          <rect x="66" y="146" width="40" height="5" rx="2.5" fill="#F0F0F0"/>
+          <rect x="112" y="146" width="40" height="5" rx="2.5" fill="#F0F0F0"/>
+
+          <!-- TYPOGRAPHY -->
+          <rect x="170" y="8" width="160" height="164" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="182" y="42" width="136" height="18" rx="4" fill="#1a1f6e" opacity="0.88"/>
+          <rect x="182" y="68" width="112" height="14" rx="3" fill="#1a1f6e" opacity="0.75"/>
+          <rect x="182" y="88" width="90" height="11" rx="3" fill="#374151" opacity="0.70"/>
+          <rect x="182" y="105" width="72" height="9" rx="3" fill="#6B7280" opacity="0.65"/>
+          <rect x="182" y="120" width="56" height="8" rx="3" fill="#9CA3AF" opacity="0.60"/>
+          <rect x="182" y="134" width="42" height="7" rx="3" fill="#D1D5DB"/>
+          <rect x="182" y="150" width="136" height="1" fill="#F0F0F0"/>
+          <rect x="182" y="157" width="56" height="6" rx="3" fill="#EEF1FF"/>
+          <rect x="244" y="157" width="44" height="6" rx="3" fill="#E5E7EB"/>
+
+          <!-- COMPONENTS -->
+          <rect x="338" y="8" width="154" height="164" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="350" y="42" width="130" height="28" rx="8" fill="#0E165D"/>
+          <rect x="376" y="52" width="56" height="8" rx="4" fill="white" opacity="0.7"/>
+          <rect x="350" y="78" width="130" height="26" rx="7" fill="white" stroke="#D0D5F0" stroke-width="1.5"/>
+          <circle cx="364" cy="91" r="5" fill="#E5E7EB"/>
+          <rect x="376" y="88" width="68" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="350" y="112" width="44" height="20" rx="10" fill="#0E165D"/>
+          <circle cx="384" cy="122" r="8" fill="white"/>
+          <circle cx="408" cy="122" r="9" fill="white" stroke="#0E165D" stroke-width="1.5"/>
+          <circle cx="408" cy="122" r="4" fill="#0E165D"/>
+          <circle cx="426" cy="122" r="9" fill="white" stroke="#D1D5DB" stroke-width="1.5"/>
+          <rect x="444" y="113" width="18" height="18" rx="5" fill="#0E165D"/>
+          <path d="M448 122 L451 126 L458 116" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <rect x="350" y="140" width="48" height="18" rx="9" fill="#EEF1FF"/>
+          <rect x="404" y="140" width="40" height="18" rx="9" fill="#ECFDF5"/>
+          <rect x="450" y="140" width="30" height="18" rx="9" fill="#FEF3C7"/>
+
+          <!-- ── Connectors ──────────────────────────────────── -->
+          <path d="M85 172 L85 180" stroke="#E0E7FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M250 172 L250 180" stroke="#E0E7FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M415 172 L415 180" stroke="#E0E7FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+          <!-- ══ ROW 2: DEVICES ══════════════════════════════════ -->
+
+          <!-- DESKTOP -->
+          <rect x="8" y="180" width="154" height="212" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="18" y="210" width="134" height="92" rx="8" fill="#F8F9FF" stroke="#E0E7FF" stroke-width="1.5"/>
+          <rect x="18" y="210" width="134" height="22" rx="8" fill="#EEF1FF"/>
+          <rect x="18" y="222" width="134" height="10" fill="#EEF1FF"/>
+          <circle cx="30" cy="221" r="3.5" fill="#FCA5A5"/>
+          <circle cx="40" cy="221" r="3.5" fill="#FDE68A"/>
+          <circle cx="50" cy="221" r="3.5" fill="#86EFAC"/>
+          <rect x="18" y="232" width="32" height="70" fill="#F4F5F7"/>
+          <rect x="24" y="240" width="20" height="5" rx="2.5" fill="#C7D2FE"/>
+          <rect x="24" y="251" width="16" height="4" rx="2" fill="#D1D5DB"/>
+          <rect x="24" y="261" width="18" height="4" rx="2" fill="#D1D5DB"/>
+          <rect x="24" y="271" width="14" height="4" rx="2" fill="#D1D5DB"/>
+          <rect x="24" y="281" width="16" height="4" rx="2" fill="#D1D5DB"/>
+          <rect x="58" y="238" width="86" height="9" rx="3" fill="#1a1f6e" opacity="0.7"/>
+          <rect x="58" y="253" width="68" height="5" rx="2.5" fill="#E5E7EB"/>
+          <rect x="58" y="264" width="40" height="14" rx="5" fill="#0E165D"/>
+          <rect x="104" y="264" width="38" height="14" rx="5" fill="#EEF1FF"/>
+          <rect x="58" y="284" width="86" height="5" rx="2.5" fill="#E5E7EB"/>
+          <rect x="74" y="302" width="18" height="12" rx="2" fill="#D1D5DB"/>
+          <rect x="62" y="312" width="42" height="6" rx="3" fill="#D1D5DB"/>
+          <rect x="20" y="326" width="134" height="1" fill="#F0F0F0"/>
+          <rect x="20" y="334" width="74" height="7" rx="3.5" fill="#E5E7EB"/>
+          <rect x="20" y="348" width="52" height="7" rx="3.5" fill="#EEF1FF"/>
+          <rect x="20" y="362" width="60" height="18" rx="5" fill="#F4F5F7"/>
+          <rect x="86" y="362" width="60" height="18" rx="5" fill="#F4F5F7"/>
+
+          <!-- TABLET -->
+          <rect x="170" y="180" width="160" height="212" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="210" y="212" width="100" height="158" rx="14" fill="#F8F9FF" stroke="#E0E7FF" stroke-width="1.5"/>
+          <circle cx="260" cy="222" r="3" fill="#E5E7EB"/>
+          <rect x="220" y="234" width="80" height="10" rx="4" fill="#EEF1FF"/>
+          <rect x="220" y="250" width="80" height="42" rx="6" fill="#EEF1FF"/>
+          <rect x="220" y="298" width="36" height="28" rx="5" fill="#C7D2FE" opacity="0.65"/>
+          <rect x="262" y="298" width="38" height="28" rx="5" fill="#DDD6FE" opacity="0.65"/>
+          <rect x="220" y="332" width="80" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="220" y="344" width="60" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="235" y="358" width="50" height="4" rx="2" fill="#E5E7EB"/>
+
+          <!-- MOBILE -->
+          <rect x="338" y="180" width="154" height="212" rx="12" fill="white" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,.10))"/>
+          <rect x="373" y="212" width="78" height="160" rx="18" fill="#F8F9FF" stroke="#E0E7FF" stroke-width="1.5"/>
+          <rect x="393" y="221" width="38" height="9" rx="4.5" fill="#E5E7EB"/>
+          <rect x="381" y="238" width="62" height="8" rx="4" fill="#EEF1FF"/>
+          <rect x="381" y="252" width="62" height="36" rx="6" fill="#EEF1FF"/>
+          <rect x="381" y="294" width="28" height="24" rx="5" fill="#C7D2FE" opacity="0.65"/>
+          <rect x="415" y="294" width="28" height="24" rx="5" fill="#DDD6FE" opacity="0.65"/>
+          <rect x="381" y="324" width="62" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="381" y="336" width="46" height="6" rx="3" fill="#E5E7EB"/>
+          <rect x="391" y="358" width="42" height="4" rx="2" fill="#E5E7EB"/>
+
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="relative z-10 h-12 overflow-hidden">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" class="absolute bottom-0 w-full h-full" fill="#ffffff" aria-hidden="true">
+      <path d="M0,24 C360,48 1080,0 1440,24 L1440,48 L0,48 Z"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     DUAL EXPLORE CARDS
+══════════════════════════════════════════════════════════════ -->
+<section id="explore" class="py-20 px-6 sm:px-10 max-w-7xl mx-auto" style="scroll-margin-top:80px">
+  <div class="text-center mb-12">
+    <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight">Explore DIGIT Design System</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+    <!-- Design card -->
+    <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden" style="box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div class="h-48 bg-gradient-to-br from-[#edf0ff] to-[#dce3ff] flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0" style="background-image:linear-gradient(rgba(25,29,136,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(25,29,136,.07) 1px,transparent 1px);background-size:24px 24px;"></div>
+        <div class="relative flex items-center justify-center w-20 h-20 rounded-2xl bg-white shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        </div>
+        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0E165D]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+      </div>
+      <div class="p-7 flex flex-col flex-1">
+        <h3 class="text-[20px] font-bold text-[#111827] mb-3">Design</h3>
+        <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1 mb-6">
+          Access the Figma UI toolkit, design principles, and reusable UI components that help designers build consistent and accessible interfaces.
+        </p>
+        <a href="./docs/getting-started/designer.html"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0E165D] text-white text-[14px] font-semibold hover:bg-[#15186F] transition-colors self-start">
+          Explore as Designer
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Develop card -->
+    <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden" style="box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div class="h-48 bg-gradient-to-br from-[#fff3ee] to-[#ffe4d4] flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0" style="background-image:linear-gradient(rgba(25,29,136,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(25,29,136,.07) 1px,transparent 1px);background-size:24px 24px;"></div>
+        <div class="relative flex items-center justify-center w-20 h-20 rounded-2xl bg-white shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        </div>
+        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0E165D]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+      </div>
+      <div class="p-7 flex flex-col flex-1">
+        <h3 class="text-[20px] font-bold text-[#111827] mb-3">Develop</h3>
+        <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1 mb-6">
+          Find implementation guidance, design tokens, and reusable components to build scalable, consistent interfaces and accelerate product development.
+        </p>
+        <a href="./docs/getting-started/developer.html"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0E165D] text-white text-[14px] font-semibold hover:bg-[#15186F] transition-colors self-start">
+          Explore as Developer
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="py-20" style="background:linear-gradient(135deg,#EEF1FF 0%,#F0F4FF 40%,#E8F4FD 100%)">
+  <div class="max-w-4xl mx-auto px-6 sm:px-10">
+
+    <!-- Heading + text -->
+    <div class="reveal mb-8">
+      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-5">About DIGIT Design System</h2>
+      <p class="text-[#6B7280] text-[16px] leading-[1.72] max-w-3xl mb-6">
+        The DIGIT Design System follows atomic design principles to ensure scalability, consistency, and reusability. Structured with a clear hierarchy starting from the smallest building blocks called <strong class="text-[#111827]">Atoms</strong>, which combine to form <strong class="text-[#111827]">Molecules</strong>. These Molecules assemble into <strong class="text-[#111827]">Organisms</strong>, representing complete interface sections used across the system.
+      </p>
+      <a href="./docs/components/atoms.html"
+         class="inline-flex items-center gap-2 text-[#0E165D] font-semibold text-[16px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
+        Browse components
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Metric cards -->
+    <div class="grid grid-cols-3 gap-4" id="stats-section">
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="26">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Atoms</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="11">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Molecules</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="7">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Organisms</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     DIGIT DIFFERENCE
+══════════════════════════════════════════════════════════════ -->
+<section class="py-16 px-8 sm:px-12">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="mb-10">
+      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-4">The DIGIT Design System Difference</h2>
+      <p class="text-[#6B7280] text-[16px] leading-[1.72] max-w-3xl mb-6">
+        The DIGIT Design System is built to work for everyone, across contexts, devices, and user capabilities. It brings together accessibility, usability, and scalability into a single, consistent approach.
+      </p>
+      <a href="./docs/getting-started/design-approach.html"
+         class="inline-flex items-center gap-2 text-[#0E165D] font-semibold text-[16px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
+        Explore Design Approach
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Themeable -->
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Themeable — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
+          <svg viewBox="0 0 80 80" class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="40" cy="40" r="28" fill="none" stroke="#E5E7EB" stroke-width="2"/>
+            <circle cx="40" cy="12" r="8" fill="#0E165D"/>
+            <circle cx="64" cy="26" r="8" fill="#6366F1"/>
+            <circle cx="64" cy="54" r="8" fill="#A5B4FC"/>
+            <circle cx="40" cy="68" r="8" fill="#86EFAC"/>
+            <circle cx="16" cy="54" r="8" fill="#FDE68A"/>
+            <circle cx="16" cy="26" r="8" fill="#FCA5A5"/>
+            <circle cx="40" cy="40" r="6" fill="#F4F5F7" stroke="#C7D2FE" stroke-width="1.5"/>
+          </svg>
+          <span class="text-[16px] font-semibold text-[#111827] tracking-tight">Themeable</span>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center p-7 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 ease-in-out" style="background:linear-gradient(145deg,#0E165D 0%,#15186F 100%)">
+          <h3 class="text-[18px] font-bold text-white mb-3 leading-snug">Themeable</h3>
+          <p class="text-white text-[13px] leading-relaxed">DIGIT supports flexible theming through tokenized colors, typography, and spacing. Teams can adapt visual styles to match brand requirements without changing the component structure.</p>
+        </div>
+      </div>
+
+      <!-- Responsive -->
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Responsive — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
+          <svg viewBox="0 0 160 110" class="w-36 h-auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+            <!-- ═══ DESKTOP MONITOR ═══════════════════════════════ -->
+            <rect x="4"  y="6"  width="86" height="58" rx="3" fill="#374151"/>
+            <rect x="6"  y="8"  width="82" height="54" fill="white"/>
+            <!-- chrome bar -->
+            <rect x="6"  y="8"  width="82" height="12" fill="#F9FAFB"/>
+            <line x1="6" y1="20" x2="88" y2="20" stroke="#E5E7EB" stroke-width=".8"/>
+            <circle cx="12" cy="14" r="2.5" fill="#FC8181"/>
+            <circle cx="19" cy="14" r="2.5" fill="#F6AD55"/>
+            <circle cx="26" cy="14" r="2.5" fill="#68D391"/>
+            <!-- sidebar -->
+            <rect x="6"  y="20" width="22" height="42" fill="#F4F5F7"/>
+            <rect x="9"  y="24" width="16" height="7"  rx="2" fill="#F4F5F7"/>
+            <rect x="10" y="25.5" width="10" height="4" rx="1" fill="#0E165D" opacity=".7"/>
+            <rect x="9"  y="34" width="14" height="3"  rx="1" fill="#D1D5DB"/>
+            <rect x="9"  y="40" width="16" height="3"  rx="1" fill="#E5E7EB"/>
+            <rect x="9"  y="46" width="12" height="3"  rx="1" fill="#E5E7EB"/>
+            <rect x="9"  y="52" width="15" height="3"  rx="1" fill="#D1D5DB"/>
+            <!-- main nav -->
+            <rect x="29" y="20" width="59" height="10" fill="#0E165D"/>
+            <rect x="31" y="23" width="12" height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <rect x="46" y="23" width="12" height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <rect x="61" y="23" width="12" height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <!-- content block -->
+            <rect x="29" y="32" width="38" height="24" fill="#F4F5F7"/>
+            <!-- sidebar right -->
+            <rect x="69" y="32" width="19" height="11" fill="#E0E7FF"/>
+            <rect x="70" y="45" width="17" height="3"  rx="1" fill="#D1D5DB"/>
+            <rect x="70" y="50" width="13" height="3"  rx="1" fill="#E5E7EB"/>
+            <rect x="70" y="55" width="16" height="3"  rx="1" fill="#E5E7EB"/>
+            <!-- content text -->
+            <rect x="31" y="50" width="34" height="3"  rx="1" fill="#D1D5DB" opacity=".6"/>
+            <rect x="31" y="55" width="26" height="3"  rx="1" fill="#D1D5DB"/>
+            <rect x="31" y="60" width="30" height="3"  rx="1" fill="#D1D5DB"/>
+            <!-- stand + foot -->
+            <rect x="42" y="64" width="12" height="8"  rx="1.5" fill="#6B7280"/>
+            <rect x="34" y="71" width="28" height="5"  rx="2"   fill="#9CA3AF"/>
+
+            <!-- ═══ TABLET — overlaps desktop right, drawn on top ═ -->
+            <rect x="82" y="14" width="44" height="64" rx="4" fill="#374151"/>
+            <rect x="84" y="16" width="40" height="60" fill="white"/>
+            <circle cx="104" cy="19"  r="2.5" fill="#4B5563"/>
+            <!-- nav -->
+            <rect x="84" y="22" width="40" height="10" fill="#0E165D"/>
+            <rect x="86" y="25" width="10" height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <rect x="99" y="25" width="10" height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <!-- content -->
+            <rect x="84" y="34" width="40" height="26" fill="#F4F5F7"/>
+            <!-- text -->
+            <rect x="86" y="63" width="36" height="3"  rx="1" fill="#D1D5DB"/>
+            <rect x="86" y="68" width="28" height="3"  rx="1" fill="#E5E7EB"/>
+            <rect x="86" y="73" width="32" height="3"  rx="1" fill="#E5E7EB"/>
+            <!-- home bar -->
+            <rect x="97" y="74" width="14" height="3"  rx="1.5" fill="#6B7280"/>
+
+            <!-- ═══ PHONE — overlaps tablet right, drawn on top ══ -->
+            <rect x="118" y="22" width="30" height="58" rx="5" fill="#374151"/>
+            <rect x="120" y="24" width="26" height="54" fill="white"/>
+            <!-- camera pill -->
+            <rect x="127" y="27" width="12" height="4"  rx="2" fill="#4B5563"/>
+            <!-- nav -->
+            <rect x="120" y="31" width="26" height="10" fill="#0E165D"/>
+            <rect x="122" y="34" width="8"  height="4"  rx="1" fill="#D1D5DB" opacity=".85"/>
+            <!-- content -->
+            <rect x="120" y="43" width="26" height="18" fill="#F4F5F7"/>
+            <!-- text -->
+            <rect x="122" y="63" width="22" height="3"  rx="1" fill="#D1D5DB"/>
+            <rect x="122" y="68" width="16" height="3"  rx="1" fill="#E5E7EB"/>
+            <rect x="122" y="73" width="19" height="3"  rx="1" fill="#E5E7EB"/>
+            <!-- home bar -->
+            <rect x="128" y="74" width="10" height="3"  rx="1.5" fill="#6B7280"/>
+
+          </svg>
+          <span class="text-[16px] font-semibold text-[#111827] tracking-tight">Responsive</span>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center p-7 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 ease-in-out" style="background:linear-gradient(145deg,#0E165D 0%,#15186F 100%)">
+          <h3 class="text-[18px] font-bold text-white mb-3 leading-snug">Responsive</h3>
+          <p class="text-white text-[13px] leading-relaxed">DIGIT components adapt seamlessly across mobile, tablet, and desktop. Layouts scale while maintaining usability and visual clarity at every breakpoint.</p>
+        </div>
+      </div>
+
+      <!-- Accessible -->
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Accessible — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
+          <svg viewBox="0 0 80 80" class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Background circle -->
+            <circle cx="40" cy="40" r="36" fill="#F4F5F7"/>
+            <circle cx="40" cy="40" r="36" fill="none" stroke="#C7D2FE" stroke-width="1.5"/>
+            <!-- WCAG badge -->
+            <rect x="48" y="7" width="28" height="14" rx="4" fill="#0E165D"/>
+            <text x="62" y="18" font-family="DM Sans,sans-serif" font-size="7" font-weight="800" fill="white" text-anchor="middle" letter-spacing=".3">WCAG</text>
+            <!-- Person head -->
+            <circle cx="40" cy="22" r="6" fill="#0E165D"/>
+            <!-- Body -->
+            <line x1="40" y1="28" x2="40" y2="47" stroke="#0E165D" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Arms raised -->
+            <line x1="24" y1="33" x2="40" y2="38" stroke="#0E165D" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="56" y1="33" x2="40" y2="38" stroke="#0E165D" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Legs -->
+            <line x1="40" y1="47" x2="30" y2="60" stroke="#0E165D" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="40" y1="47" x2="50" y2="60" stroke="#0E165D" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Eye (bottom-left) — almond shape + pupil -->
+            <path d="M8 66 Q16 58 24 66 Q16 74 8 66Z" fill="white" stroke="#C7D2FE" stroke-width="1.2" stroke-linejoin="round"/>
+            <circle cx="16" cy="66" r="3.5" fill="#F4F5F7"/>
+            <circle cx="16" cy="66" r="2" fill="#0E165D"/>
+            <!-- Keyboard (bottom-right) — rect with 2 rows of keys -->
+            <rect x="54" y="60" width="22" height="15" rx="2.5" fill="white" stroke="#C7D2FE" stroke-width="1.2"/>
+            <rect x="57" y="63" width="3.5" height="3" rx="1" fill="#D1D5DB"/>
+            <rect x="62" y="63" width="3.5" height="3" rx="1" fill="#D1D5DB"/>
+            <rect x="67" y="63" width="3.5" height="3" rx="1" fill="#D1D5DB"/>
+            <rect x="57" y="68" width="13" height="3" rx="1.5" fill="#D1D5DB"/>
+          </svg>
+          <span class="text-[16px] font-semibold text-[#111827] tracking-tight">Accessible</span>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center p-7 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 ease-in-out" style="background:linear-gradient(145deg,#0E165D 0%,#15186F 100%)">
+          <h3 class="text-[18px] font-bold text-white mb-3 leading-snug">Accessible</h3>
+          <p class="text-white text-[13px] leading-relaxed">Built to WCAG 2.1 AA standards. Every component supports keyboard navigation, sufficient color contrast, screen reader compatibility, and responsive layouts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     DISCOVER triangle hub layout
+══════════════════════════════════════════════════════════════ -->
+<section class="overflow-hidden" style="padding-top:64px;padding-bottom:64px;background-color:#F7F8FF;background-image:radial-gradient(rgba(99,102,241,.07) 1px,transparent 1px);background-size:28px 28px;">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10">
+
+    <!-- Section heading center, above diagram -->
+    <div class="text-center" style="margin-bottom:48px">
+      <h2 class="text-[36px] sm:text-[44px] font-bold text-[#111827] leading-tight tracking-[-0.02em]">
+        Step Into Our Design System
+      </h2>
+    </div>
+
+    <!-- ── DESKTOP: hub layout all lines exactly 93px ─────────────────
+         viewBox="0 0 1072 500" preserveAspectRatio="none" so 1 SVG unit = 1 CSS px.
+         Hub: CSS left:496px → SVG x=496 (left edge 496, right 576, center 536, top 260)
+         All visible segments = 93px (circle 7px outside card edge → hub edge):
+         • Patterns  bottom (536,167) → hub-top  (536,260) = 93px vertical ✓
+         • Foundation right (403,300) → hub-left (496,300) = 93px horizontal ✓
+         • Components left  (669,300) → hub-right(576,300) = 93px horizontal ✓
+    -->
+    <div class="hidden lg:block relative" style="height:400px">
+
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1072 400" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <style>
+            .dl { stroke-dasharray:8 5; stroke-dashoffset:0; animation:dash-march 1.6s linear infinite; }
+            @keyframes dash-march { to { stroke-dashoffset:-26; } }
+          </style>
+        </defs>
+
+        <!-- Patterns (536,167) → hub top (536,260) 93px vertical -->
+        <line class="dl" x1="536" y1="167" x2="536" y2="260" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+        <circle cx="536" cy="167" r="7"   stroke="rgba(0,71,171,0.65)"  stroke-width="1.5" fill="white"/>
+        <circle cx="536" cy="167" r="3.5" fill="rgba(0,71,171,1)"/>
+        <circle cx="536" cy="167" r="1.8" fill="white"/>
+        <circle cx="536" cy="260" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+
+        <!-- Foundation (403,300) → hub left (496,300) 93px horizontal -->
+        <line class="dl" x1="403" y1="300" x2="496" y2="300" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+        <circle cx="403" cy="300" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
+        <circle cx="403" cy="300" r="3.5" fill="rgba(25,29,136,1)"/>
+        <circle cx="403" cy="300" r="1.8" fill="white"/>
+        <circle cx="496" cy="300" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+
+        <!-- Components (669,300) → hub right (576,300) 93px horizontal -->
+        <line class="dl" x1="669" y1="300" x2="576" y2="300" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+        <circle cx="669" cy="300" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
+        <circle cx="669" cy="300" r="3.5" fill="rgba(25,29,136,1)"/>
+        <circle cx="669" cy="300" r="1.8" fill="white"/>
+        <circle cx="576" cy="300" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+
+      </svg>
+
+      <!-- PATTERNS top center; card center x=536, bottom ~y=160, circle at y=167 (7px outside) -->
+      <a href="./docs/patterns/form.html"
+         class="group absolute rounded-2xl border border-[#E5E7EB] p-5 pb-3 flex flex-col hover:border-[#0E165D]/40 transition-all duration-300"
+         style="top:0;left:calc(536px - 130px);width:260px;background:white;box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="background:linear-gradient(135deg,rgba(99,102,241,.06),transparent 70%)"></div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Patterns</h3>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed">Proven interaction flows forms, inboxes, summaries, and more.</p>
+        </div>
+      </a>
+
+      <!-- FOUNDATION left -->
+      <a href="./docs/foundation/color.html"
+         class="group absolute rounded-2xl border border-[#E5E7EB] p-5 flex flex-col hover:border-[#0E165D]/40 transition-all duration-300"
+         style="top:220px;left:136px;width:260px;background:white;box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="background:linear-gradient(135deg,rgba(99,102,241,.06),transparent 70%)"></div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          </div>
+          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Foundation</h3>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed">Core design tokens color, typography, spacing, and iconography.</p>
+        </div>
+      </a>
+
+      <!-- Center hub icon only -->
+      <div class="absolute pointer-events-none" style="top:260px;left:496px">
+        <div class="relative w-20 h-20">
+          <div class="absolute inset-0 rounded-full" style="border:1px solid rgba(99,102,241,0.18);animation:ping-slow 3.5s ease-in-out infinite"></div>
+          <div class="absolute inset-2 rounded-full" style="border:1px solid rgba(99,102,241,0.22)"></div>
+          <div class="absolute inset-4 rounded-full flex items-center justify-center"
+               style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.30);backdrop-filter:blur(4px)">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0E165D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPONENTS right; card left=676px, circle 7px outside at x=669, line to hub-right 576 = 93px -->
+      <a href="./docs/components/atoms.html"
+         class="group absolute rounded-2xl border border-[#E5E7EB] p-5 flex flex-col hover:border-[#0E165D]/40 transition-all duration-300"
+         style="top:220px;right:136px;width:260px;background:white;box-shadow:0 2px 16px rgba(99,102,241,.08)">
+        <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="background:linear-gradient(135deg,rgba(99,102,241,.06),transparent 70%)"></div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Components</h3>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed">Reusable atoms, molecules, and organisms for consistent UI development.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ── MOBILE: stacked ──────────────────────────────────── -->
+    <div class="lg:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="./docs/foundation/color.html" class="group rounded-2xl border border-[#E5E7EB] p-6 flex gap-4 items-start hover:border-[#0E165D]/40 transition-all" style="background:white;box-shadow:0 2px 12px rgba(99,102,241,.07)">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          </div>
+          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Foundation</h3><p class="text-[#4B5563] text-[13px]">Core tokens color, typography, spacing, iconography.</p></div>
+        </a>
+        <a href="./docs/components/atoms.html" class="group rounded-2xl border border-[#E5E7EB] p-6 flex gap-4 items-start hover:border-[#0E165D]/40 transition-all" style="background:white;box-shadow:0 2px 12px rgba(99,102,241,.07)">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Components</h3><p class="text-[#4B5563] text-[13px]">Reusable atoms, molecules, and organisms.</p></div>
+        </a>
+        <a href="./docs/patterns/form.html" class="group rounded-2xl border border-[#E5E7EB] p-6 flex gap-4 items-start hover:border-[#0E165D]/40 transition-all" style="background:white;box-shadow:0 2px 12px rgba(99,102,241,.07)">
+          <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+          </div>
+          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Patterns</h3><p class="text-[#4B5563] text-[13px]">Proven interaction flows for common user journeys.</p></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes ping-slow {
+    0%,100% { transform: scale(1); opacity:.6; }
+    50%      { transform: scale(1.18); opacity:.15; }
+  }
+</style>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer class="bg-white border-t border-[#E5E7EB] py-8 px-6 sm:px-10">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="text-[#6B7280] text-[13px]">© 2024 eGov Foundation. All rights reserved.</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="./docs/foundation/color.html" class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Foundation</a>
+      <a href="./docs/components/atoms.html" class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Components</a>
+      <a href="./docs/patterns/form.html"   class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Patterns</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SEARCH MODAL
+══════════════════════════════════════════════════════════════ -->
+<div id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
+  <div id="search-modal-box">
+    <div id="modal-input-wrap">
+      <!-- Search icon -->
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="modal-input" type="search" placeholder="Search components, tokens, patterns…" aria-label="Search DIGIT Design System" autocomplete="off" spellcheck="false" />
+      <button id="modal-clear" aria-label="Clear">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button id="modal-close" style="background:none;border:1px solid #E5E7EB;border-radius:6px;padding:3px 8px;font-size:11px;color:#6B7280;cursor:pointer;white-space:nowrap;">ESC</button>
+    </div>
+    <div id="modal-results" aria-live="polite" aria-atomic="true"></div>
+  </div>
+</div>
+
+
+<script src="./assets/js/app.js"></script>
+
+<script>
+  // ── Counter animation ────────────────────────────────────────
+  (function () {
+    var duration = 1400; // ms total
+    var counters = document.querySelectorAll('.counter');
+    var started  = false;
+
+    function animateCounter(el) {
+      var target = parseInt(el.dataset.target, 10);
+      var start  = 0;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        // Ease-out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          counters.forEach(animateCounter);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    var section = document.getElementById('stats-section');
+    if (section) observer.observe(section);
+  })();
+
+  // ── Scroll reveal ─────────────────────────────────────────────
+  (function () {
+    var els = document.querySelectorAll('.reveal, .reveal-scale');
+    if (!els.length) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  }());
+
+  // ── Search modal ─────────────────────────────────────────────
+  (function () {
+    var ROOT = './';
+    var PAGES = [
+      { title:'Designer',         cat:'Getting Started', path:ROOT+'docs/getting-started/designer.html' },
+      { title:'Developer',        cat:'Getting Started', path:ROOT+'docs/getting-started/developer.html' },
+      { title:'Design Approach',  cat:'Getting Started', path:ROOT+'docs/getting-started/design-approach.html' },
+      { title:'Content Standard', cat:'Getting Started', path:ROOT+'docs/getting-started/content-standard.html' },
+      { title:'Inclusive Design', cat:'Getting Started', path:ROOT+'docs/getting-started/inclusive-design.html' },
+      { title:'Color',      cat:'Foundation', path:ROOT+'docs/foundation/color.html' },
+      { title:'Spacing',    cat:'Foundation', path:ROOT+'docs/foundation/spacing.html' },
+      { title:'Typography', cat:'Foundation', path:ROOT+'docs/foundation/typography.html' },
+      { title:'Icon',       cat:'Foundation', path:ROOT+'docs/foundation/icon.html' },
+      { title:'Radius',     cat:'Foundation', path:ROOT+'docs/foundation/radius.html' },
+      { title:'Atoms',                    cat:'Components', path:ROOT+'docs/components/atoms.html' },
+      { title:'Molecules',               cat:'Components', path:ROOT+'docs/components/molecules.html' },
+      { title:'Accordion',               cat:'Components', path:ROOT+'docs/components/accordion.html' },
+      { title:'Alert Card',              cat:'Components', path:ROOT+'docs/components/alert-card.html' },
+      { title:'Bottom Sheet',            cat:'Components', path:ROOT+'docs/components/bottom-sheet.html' },
+      { title:'Breadcrumbs',             cat:'Components', path:ROOT+'docs/components/breadcrumbs.html' },
+      { title:'Button',                  cat:'Components', path:ROOT+'docs/components/button.html' },
+      { title:'Callout',                 cat:'Components', path:ROOT+'docs/components/callout.html' },
+      { title:'Checkbox',                cat:'Components', path:ROOT+'docs/components/checkbox.html' },
+      { title:'Chips',                   cat:'Components', path:ROOT+'docs/components/chips.html' },
+      { title:'Divider',                 cat:'Components', path:ROOT+'docs/components/divider.html' },
+      { title:'Dropdown - Multi Select', cat:'Components', path:ROOT+'docs/components/dropdown-multi-select.html' },
+      { title:'Dropdown - Single Select',cat:'Components', path:ROOT+'docs/components/dropdown-single-select.html' },
+      { title:'File Uploader',           cat:'Components', path:ROOT+'docs/components/file-uploader.html' },
+      { title:'Filter Card',             cat:'Components', path:ROOT+'docs/components/filter-card.html' },
+      { title:'Footer',                  cat:'Components', path:ROOT+'docs/components/footer.html' },
+      { title:'Hamburger',               cat:'Components', path:ROOT+'docs/components/hamburger.html' },
+      { title:'Header',                  cat:'Components', path:ROOT+'docs/components/header.html' },
+      { title:'Input Fields',            cat:'Components', path:ROOT+'docs/components/input-fields.html' },
+      { title:'Landing Page Card',       cat:'Components', path:ROOT+'docs/components/landing-page-card.html' },
+      { title:'Loader',                  cat:'Components', path:ROOT+'docs/components/loader.html' },
+      { title:'Menu Card',               cat:'Components', path:ROOT+'docs/components/menu-card.html' },
+      { title:'OTP Input',               cat:'Components', path:ROOT+'docs/components/otp-input.html' },
+      { title:'Panel',                   cat:'Components', path:ROOT+'docs/components/panel.html' },
+      { title:'Panel Card',              cat:'Components', path:ROOT+'docs/components/panel-card.html' },
+      { title:'Pop Ups',                 cat:'Components', path:ROOT+'docs/components/popups.html' },
+      { title:'Radio',                   cat:'Components', path:ROOT+'docs/components/radio.html' },
+      { title:'Selection Tags',          cat:'Components', path:ROOT+'docs/components/selection-tags.html' },
+      { title:'Side Nav',                cat:'Components', path:ROOT+'docs/components/side-nav.html' },
+      { title:'Side Panel',              cat:'Components', path:ROOT+'docs/components/side-panel.html' },
+      { title:'Stepper',                 cat:'Components', path:ROOT+'docs/components/stepper.html' },
+      { title:'Switch',                  cat:'Components', path:ROOT+'docs/components/switch.html' },
+      { title:'Tabs',                    cat:'Components', path:ROOT+'docs/components/tabs.html' },
+      { title:'Tags',                    cat:'Components', path:ROOT+'docs/components/tags.html' },
+      { title:'Textblock',               cat:'Components', path:ROOT+'docs/components/textblock.html' },
+      { title:'Timeline',                cat:'Components', path:ROOT+'docs/components/timeline.html' },
+      { title:'Toast',                   cat:'Components', path:ROOT+'docs/components/toast.html' },
+      { title:'Toggles',                 cat:'Components', path:ROOT+'docs/components/toggles.html' },
+      { title:'Tooltip',                 cat:'Components', path:ROOT+'docs/components/tooltip.html' },
+      { title:'Form',                    cat:'Patterns',   path:ROOT+'docs/patterns/form.html' },
+      { title:'Inbox',                   cat:'Patterns',   path:ROOT+'docs/patterns/inbox.html' },
+      { title:'Summary',                 cat:'Patterns',   path:ROOT+'docs/patterns/summary.html' },
+    ];
+
+    var modal      = document.getElementById('search-modal');
+    var modalInput = document.getElementById('modal-input');
+    var modalRes   = document.getElementById('modal-results');
+    var clearBtn   = document.getElementById('modal-clear');
+    var closeBtn   = document.getElementById('modal-close');
+    var heroInput  = document.getElementById('hero-search');
+    var flat = [];
+    var selIdx = -1;
+
+    function openModal() {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function(){ modalInput.focus(); }, 60);
+      render('');
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      modalInput.value = '';
+      clearBtn.style.display = 'none';
+      modalRes.innerHTML = '';
+      flat = []; selIdx = -1;
+    }
+
+    function group(items) {
+      var g = {};
+      items.forEach(function(p){
+        if (!g[p.cat]) g[p.cat] = [];
+        g[p.cat].push(p);
+      });
+      return g;
+    }
+
+    function render(q) {
+      q = q.trim().toLowerCase();
+      var hits = q
+        ? PAGES.filter(function(p){ return (p.title+' '+p.cat).toLowerCase().includes(q); })
+        : PAGES;
+
+      flat = hits; selIdx = -1;
+
+      if (!hits.length) {
+        modalRes.innerHTML = '<div class="modal-empty">No results try a different term.</div>';
+        return;
+      }
+
+      var grouped = group(hits);
+      var html = '';
+      Object.keys(grouped).forEach(function(cat) {
+        html += '<div class="modal-cat-header">'+cat+'</div>';
+        grouped[cat].forEach(function(item) {
+          var idx = flat.indexOf(item);
+          html += '<div class="modal-row" data-path="'+item.path+'" data-i="'+idx+'">' +
+            '<span class="modal-row-title">'+item.title+'</span>' +
+            '<span class="modal-row-cat">'+cat+'</span>' +
+          '</div>';
+        });
+      });
+      modalRes.innerHTML = html;
+
+      modalRes.querySelectorAll('.modal-row').forEach(function(row) {
+        row.addEventListener('click', function() {
+          window.location.href = row.getAttribute('data-path');
+          closeModal();
+        });
+        row.addEventListener('mouseenter', function() {
+          selIdx = parseInt(row.getAttribute('data-i'));
+          highlight();
+        });
+      });
+    }
+
+    function highlight() {
+      modalRes.querySelectorAll('.modal-row').forEach(function(row) {
+        var i = parseInt(row.getAttribute('data-i'));
+        row.classList.toggle('active', i === selIdx);
+      });
+      var active = modalRes.querySelector('.modal-row.active');
+      if (active) active.scrollIntoView({ block:'nearest' });
+    }
+
+    // Open triggers
+    heroInput.addEventListener('click',  openModal);
+    heroInput.addEventListener('focus',  openModal);
+    heroInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') openModal(); });
+
+    // Modal input
+    modalInput.addEventListener('input', function() {
+      clearBtn.style.display = this.value ? 'block' : 'none';
+      render(this.value);
+    });
+
+    modalInput.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault(); selIdx = Math.min(selIdx+1, flat.length-1); highlight();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault(); selIdx = Math.max(selIdx-1, 0); highlight();
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selIdx >= 0 && flat[selIdx]) { window.location.href = flat[selIdx].path; closeModal(); }
+      } else if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    clearBtn.addEventListener('click', function() {
+      modalInput.value = ''; clearBtn.style.display = 'none';
+      render(''); modalInput.focus();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Click outside box closes
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    // Global Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  })();
+
+</script>
+
+</body>
+</html>

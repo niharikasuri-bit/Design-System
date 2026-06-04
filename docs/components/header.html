@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Header - DIGIT Design System. Establishes a clear and consistent identity as a navigation anchor, contextual identifier, and personalisation hub." />
+  <title>Header · Molecules · DIGIT Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = { config: {
+        theme: { extend: { fontFamily: { sans: ['DM Sans','system-ui','sans-serif'], mono: ['JetBrains Mono','Consolas','monospace'] } } },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+
+
+  <script>
+    window.DIGIT_ROOT = '../../';
+    window.DIGIT_PAGE = { section:'components', page:'molecules', title:'Header', breadcrumb:['Components','Molecules','Header'] };
+  </script>
+</head>
+
+<body class="bg-white text-[#111827] font-sans antialiased">
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="flex min-h-screen">
+  <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0 h-screen border-r border-[#E5E7EB] bg-white z-30">
+    <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
+  </aside>
+
+  <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 px-8 sm:px-12 py-14">
+    <div class="max-w-5xl">
+      <div id="breadcrumb-mount"></div>
+
+      <!-- ══ HEADER ══════════════════════════════════════════════ -->
+      <div class="mb-12">
+
+        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] dark:text-[#C7D2FE] tracking-[-0.022em] leading-[1.18] mb-4">Header</h1>
+        <p class="text-[16px] text-[#6B7280] dark:text-gray-400 leading-relaxed max-w-[720px] mb-8">
+          The Header component establishes a clear and consistent identity. Designed with accessibility and responsiveness in mind, the Header serves as a navigation anchor, contextual identifier, and personalisation hub. It ensures that users always know where they are, can quickly change settings like language or city, and recognise the governing body or service brand in view.
+        </p>
+        <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-[14px] overflow-hidden mb-10">
+          <img src="../../assets/previews/Header.png" alt="Header component overview — top navigation bar with logo and links" class="w-full block" loading="lazy" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="https://www.figma.com/design/G4UcvjXgxhpe58W9MiAnmn/DIGIT-Design-System?node-id=72553-14698&t=MqAspIMheD9xTUtC-0" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center text-center bg-white dark:bg-[#111827] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] rounded-[14px] px-5 py-5 relative overflow-hidden shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)] hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)] hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]" style="background:linear-gradient(90deg,#f24e1e,#ff7262)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1" style="background:rgba(242,78,30,.08)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="26" height="26" aria-label="Figma" role="img"><path d="M25 150c13.807 0 25-11.193 25-25v-25H25C11.193 100 0 111.193 0 125S11.193 150 25 150z" fill="#0ACF83"/><path d="M0 75C0 61.193 11.193 50 25 50H50v50H25C11.193 100 0 88.807 0 75z" fill="#A259FF"/><path d="M0 25C0 11.193 11.193 0 25 0H50v50H25C11.193 50 0 38.807 0 25z" fill="#F24E1E"/><path d="M50 0h25C88.807 0 100 11.193 100 25S88.807 50 75 50H50V0z" fill="#FF7262"/><path d="M100 75c0 13.807-11.193 25-25 25S50 88.807 50 75s11.193-25 25-25 25 11.193 25 25z" fill="#1ABCFE"/></svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7] group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">Component Design</span>
+          </a>
+          <button onclick="openModal('flutter')" class="group flex flex-col items-center text-center bg-white dark:bg-[#111827] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] rounded-[14px] px-5 py-5 relative overflow-hidden shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)] hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)] hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]" style="background:linear-gradient(90deg,#54C5F8,#01579B)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1" style="background:rgba(84,197,248,.1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="26" height="26" aria-label="Flutter" role="img"><path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z" fill="#54C5F8"/><path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z" fill="#54C5F8"/><path d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z" fill="#29B6F6"/><path d="M115.7 128L81.6 93.9l-20 19.9L76.3 128z" fill="#01579B"/></svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7] group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">Component Flutter</span>
+          </button>
+          <button onclick="openModal('react')" class="group flex flex-col items-center text-center bg-white dark:bg-[#111827] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] rounded-[14px] px-5 py-5 relative overflow-hidden shadow-[0_1px_2px_-1px_rgba(0,0,0,.08),0_1px_3px_rgba(0,0,0,.08)] hover:border-[#C7D2FE] hover:shadow-[0_4px_20px_rgba(25,29,136,.13)] hover:-translate-y-0.5 transition-all duration-150">
+            <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-[14px]" style="background:linear-gradient(90deg,#61DAFB,#087EA4)"></div>
+            <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-3 mt-1" style="background:rgba(97,218,251,.1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.232 23 20.463" width="28" height="28" aria-label="React" role="img"><circle cx="0" cy="0" r="2.05" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>
+            </div>
+            <span class="text-[14px] font-bold text-[#111827] dark:text-[#F4F5F7] group-hover:text-[#0E165D] dark:group-hover:text-[#C7D2FE] transition-colors">Component React</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
+      <div class="bg-[#F4F5F7] dark:bg-[#1F2937] rounded-[14px] p-6 mb-24">
+        <h3 class="text-[18px] font-bold text-[#111827] dark:text-white mb-4">On this page</h3>
+        <ul class="flex flex-col gap-y-3">
+          <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"       class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#usage-guide"      class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"        class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist" class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        </ul>
+      </div>
+
+      <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
+      <section id="anatomy" class="mb-24 scroll-mt-24">
+        <h2 class="section-title">Anatomy</h2>
+        <div class="section-divider"></div>
+        <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQ9naBLYzcpKq7Tb5OlMn%252Fimage.png%3Falt%3Dmedia%26token%3D53aaf4d4-b0bf-43b9-b5c2-0f8f31d5e38a&width=768&dpr=3&quality=100&sign=2ba97206&sv=2" alt="Header anatomy" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+      </section>
+
+      <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
+      <section id="variants" class="mb-24 scroll-mt-24">
+        <h2 class="section-title">Variants</h2>
+        <div class="section-divider"></div>
+
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Light Mode</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">A minimal white background header suited for daylight or bright-themed interfaces. It keeps the focus on the primary page content while maintaining clear brand visibility.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FptgpTzWEXTk2R5DfCZuJ%252Fimage.png%3Falt%3Dmedia%26token%3Ddd7a0c93-457a-45f0-be4e-007dd461cd3f&width=768&dpr=3&quality=100&sign=4926ef79&sv=2" alt="Light Mode" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-0">
+          <div class="section-row flex flex-col md:flex-row gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Dark Mode</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">A bolder visual variant is typically used in high-contrast interfaces. Ideal for mobile or dashboard environments where visual hierarchy is important.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHzMIX8cSahZ8GcH6WnGF%252Fimage.png%3Falt%3Dmedia%26token%3D9b941c88-d02a-4ce4-8b8e-4e945d5d1205&width=768&dpr=3&quality=100&sign=f1412b66&sv=2" alt="Dark Mode" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
+      <section id="properties" class="mb-24 scroll-mt-24">
+        <h2 class="section-title">Properties</h2>
+        <div class="section-divider"></div>
+
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Customise Name</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">The name of the platform, department, or app can be tailored, making the header reusable across multiple services or city implementations.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FrxE5uxa0jMzPsgt5U4rw%252Fimage.png%3Falt%3Dmedia%26token%3De34df519-90dd-4a43-a5d1-d4f1e9ee13a9&width=768&dpr=3&quality=100&sign=2011f23&sv=2" alt="Customise Name" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Language Selector</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Supports multilingual use by allowing users to change the interface language dynamically from the header.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FEbRLRJFLIcxSQKHoSaJg%252Fimage.png%3Falt%3Dmedia%26token%3D1ceb8236-cf46-448e-8163-ea96edee9df7&width=768&dpr=3&quality=100&sign=b62a96fb&sv=2" alt="Language Selector" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-0">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">City Selection Dropdown</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Allows users to switch between different cities or localities, ensuring content and services stay relevant to the chosen jurisdiction.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FFGUU4S8qAaJMMXTJocdb%252Fimage.png%3Falt%3Dmedia%26token%3D64900695-331a-45ce-91e1-199d90c33a7d&width=768&dpr=3&quality=100&sign=90da1587&sv=2" alt="City Selection Dropdown" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Table of Properties -->
+        <div class="mt-12">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <h3 class="text-xl font-bold text-[#111827] dark:text-white" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
+          </div>
+          <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <div class="mt-8">
+            <div class="prop-toggle">
+              <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
+              <button class="tab-trigger" onclick="switchTab(this,'t-flutter')">Flutter</button>
+            </div>
+
+            <!-- React Table -->
+            <div id="t-react" class="tab-panel active">
+              <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shadow-sm bg-white dark:bg-[#111827]">
+                <table class="prop-table w-full" style="min-width:560px">
+                  <thead><tr><th scope="col">Property</th><th scope="col">Type</th><th scope="col">Default</th></tr></thead>
+                  <tbody>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">wrapperClassName</td><td class="pt px-4 py-3">text</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">headerContentClassName</td><td class="pt px-4 py-3">text</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">caption</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">captionClassName</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">header</td><td class="pt px-4 py-3">number</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">headerClasName</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">subHeader</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">subHeaderClasName</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">body</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">bodyClasName</td><td class="pt px-4 py-3">number</td><td class="pd px-4 py-3">no</td></tr>
+                    <tr class="data-row"><td class="pn px-4 py-3">style</td><td class="pt px-4 py-3">yes/no</td><td class="pd px-4 py-3">no</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Flutter Table -->
+            <div id="t-flutter" class="tab-panel">
+              <div class="w-full overflow-x-auto rounded-xl border border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shadow-sm bg-white dark:bg-[#111827]">
+                <table class="prop-table w-full" style="min-width:560px">
+                  <thead><tr><th scope="col">Property</th><th scope="col">Type</th><th scope="col">Default</th></tr></thead>
+                  <tbody>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">type</td><td class="pt px-4 py-3">HeaderType</td><td class="pd px-4 py-3">HeaderType.light</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">title</td><td class="pt px-4 py-3">String</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">actions</td><td class="pt px-4 py-3">List&lt;HeaderAction&gt;</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">leadingWidget</td><td class="pt px-4 py-3">Widget</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">trailingWidget</td><td class="pt px-4 py-3">Widget</td><td class="pd px-4 py-3">-</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">leadingDigitLogo</td><td class="pt px-4 py-3">bool</td><td class="pd px-4 py-3">false</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">trailingDigitLogo</td><td class="pt px-4 py-3">bool</td><td class="pd px-4 py-3">false</td></tr>
+                    <tr class="data-row border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.06)]"><td class="pn px-4 py-3">actionRequired</td><td class="pt px-4 py-3">bool</td><td class="pd px-4 py-3">false</td></tr>
+                    <tr class="data-row"><td class="pn px-4 py-3">onMenuTap</td><td class="pt px-4 py-3">VoidCallBack Function</td><td class="pd px-4 py-3">-</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
+      <section id="usage-guide" class="mb-24 scroll-mt-24">
+        <h2 class="section-title">Usage guide</h2>
+        <div class="section-divider"></div>
+
+        <div class="mb-0">
+          <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
+            <div class="txt-col w-full md:w-[60%]">
+              <h3 class="text-xl font-bold text-[#111827] dark:text-white mb-3">Contrast Adaptation</h3>
+              <p class="text-[#6B7280] dark:text-gray-400 text-[16px] leading-[1.72]">Use appropriate variants (Light/Dark) depending on the surrounding UI theme to ensure optimal readability and visual harmony with the interface environment. Don't use the same header variant across different background contexts, as this creates poor contrast and reduces visibility when the header colour doesn't properly complement the surrounding theme.</p>
+            </div>
+            <div class="vis-col w-full md:w-[40%]">
+              <div class="flex flex-col gap-3">
+                <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F2KRf5m2msPDi1EChQAFX%252Fimage.png%3Falt%3Dmedia%26token%3D9f1de34e-adfc-49f2-ad6a-27ac30ba70ab&width=768&dpr=3&quality=100&sign=c69dd723&sv=2" alt="Do: Use appropriate Light/Dark variants" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+                <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F3HFWjuAiCbDaoxVnKpAX%252Fimage.png%3Falt%3Dmedia%26token%3D470380ec-530b-4e27-aa82-ca698b4a0f29&width=768&dpr=3&quality=100&sign=2c967540&sv=2" alt="Don't: Avoid same variant across different backgrounds" class="w-full block border border-[#D1D5DB] dark:border-[rgba(255,255,255,.08)] rounded-[4px]" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
+      <section id="changelog" class="mb-24 scroll-mt-24">
+        <h2 class="section-title">Change log</h2>
+        <div class="section-divider"></div>
+        <div class="border border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] rounded-xl overflow-hidden">
+          <table class="prop-table w-full" style="min-width:560px">
+            <thead><tr><th scope="col" style="width:140px">Date</th><th scope="col" style="width:100px">Version</th><th scope="col">Notes</th></tr></thead>
+            <tbody>
+              <tr class="data-row">
+                <td class="text-[#6B7280] dark:text-gray-400 text-[15px] whitespace-nowrap align-top px-4 py-3">Dec 15, 2024</td>
+                <td class="text-[#6B7280] dark:text-gray-400 text-[15px] whitespace-nowrap align-top px-4 py-3">v-0.0.2</td>
+                <td class="text-[#6B7280] dark:text-gray-400 text-[15px] align-top px-4 py-3">
+                  <ul class="list-disc pl-4 space-y-1">
+                    <li>This component is added to the website.</li>
+                    <li>This component is now individually versioned.</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
+      <section id="design-checklist" class="mb-16 scroll-mt-24">
+        <h2 class="section-title">Design Checklist</h2>
+        <div class="section-divider"></div>
+        <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ══ FLUTTER MODAL ══════════════════════════════════════════════ -->
+<div id="modal-flutter" class="fixed inset-0 z-[200] hidden" onclick="closeMOnBg(event,'flutter')">
+  <div class="absolute inset-0 bg-black/45 backdrop-blur-[4px]"></div>
+  <div id="drawer-flutter" class="absolute top-0 right-0 w-[580px] max-w-[95vw] h-full bg-white dark:bg-[#111827] border-l border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
+    <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] dark:bg-[#1F2937] border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shrink-0">
+      <div>
+        <div class="text-[15px] font-bold text-[#111827] dark:text-white">Header</div>
+        <div class="text-[11.5px] text-[#6B7280] dark:text-gray-500 mt-0.5">Component Flutter | Dart</div>
+      </div>
+      <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.1)] bg-white dark:bg-[#374151] flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6">
+      <p class="text-[14px] text-[#6B7280] dark:text-gray-400 leading-relaxed mb-5">Use the <code style="background:#F4F5F7;border:1px solid #E5E7EB;border-radius:4px;padding:2px 6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#0E165D">HeaderMolecule</code> widget in your Flutter UI.</p>
+      <div class="relative bg-[#111827] rounded-xl overflow-hidden">
+        <button class="copy-btn" onclick="copyCode(this,'flutter-code-pre')" aria-label="Copy Flutter code">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:12px;height:12px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+          <span class="copy-label">Copy code</span>
+        </button>
+        <div class="p-5 overflow-x-auto">
+          <pre id="flutter-code-pre" class="font-mono text-[12.5px] leading-relaxed text-[#E5E7EB] whitespace-pre"><span style="color:#8b949e">// Sample code</span>
+
+<span style="color:#ff7b72">HeaderMolecule</span>(
+              <span style="color:#79c0ff">title</span>: title,
+              <span style="color:#79c0ff">type</span>: HeaderType.dark,
+              <span style="color:#79c0ff">leadingDigitLogo</span>: <span style="color:#79c0ff">false</span>,
+              <span style="color:#79c0ff">trailingDigitLogo</span>: <span style="color:#79c0ff">true</span>,
+              <span style="color:#79c0ff">actions</span>: [
+                if(cityDropdown)
+                <span style="color:#ff7b72">HeaderAction</span>(
+                  <span style="color:#79c0ff">widget</span>: <span style="color:#ff7b72">Row</span>(
+                    <span style="color:#79c0ff">children</span>: [
+                      <span style="color:#ff7b72">Text</span>(
+                          city, <span style="color:#79c0ff">style</span>: Theme
+                          .of(context)
+                          .digitTextTheme(context)
+                          .bodyS
+                          .copyWith(
+                          <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary)
+                      ),
+                      <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">SizedBox</span>(
+                        <span style="color:#79c0ff">width</span>: <span style="color:#79c0ff">8</span>,
+                      ),
+                      <span style="color:#ff7b72">Icon</span>(
+                        Icons.arrow_drop_down,
+                        <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary,
+                      )
+                    ],
+                  ),
+                  <span style="color:#79c0ff">isSearchable</span>: <span style="color:#79c0ff">true</span>,
+                  <span style="color:#79c0ff">dropdownItems</span>: [
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'1'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Option 1'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'2'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Option 2'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'3'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Option 3'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'4'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Option 4'</span>),
+                  ],
+                ),
+                <span style="color:#ff7b72">HeaderAction</span>(
+                  <span style="color:#79c0ff">widget</span>: <span style="color:#ff7b72">Row</span>(
+                    <span style="color:#79c0ff">children</span>: [
+                      <span style="color:#ff7b72">Text</span>(
+                          <span style="color:#a5d6ff">'Language'</span>, <span style="color:#79c0ff">style</span>: Theme
+                          .of(context)
+                          .digitTextTheme(context)
+                          .bodyS
+                          .copyWith(
+                          <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary)
+                      ),
+                      <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">SizedBox</span>(
+                        <span style="color:#79c0ff">width</span>: <span style="color:#79c0ff">8</span>,
+                      ),
+                      <span style="color:#ff7b72">Icon</span>(
+                        Icons.arrow_drop_down,
+                        <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary,
+                      )
+                    ],
+                  ),
+                  <span style="color:#79c0ff">dropdownItems</span>: [
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'1'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Hindi'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'2'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'English'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'3'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'French'</span>),
+                  ],
+                ),
+                <span style="color:#ff7b72">HeaderAction</span>(
+                  <span style="color:#79c0ff">widget</span>: <span style="color:#ff7b72">Container</span>(
+                    <span style="color:#79c0ff">width</span>: <span style="color:#79c0ff">40</span>,
+                    <span style="color:#79c0ff">height</span>: <span style="color:#79c0ff">40</span>,
+                    <span style="color:#79c0ff">decoration</span>: <span style="color:#ff7b72">BoxDecoration</span>(
+                      <span style="color:#79c0ff">shape</span>: BoxShape.circle,
+                      <span style="color:#79c0ff">border</span>: Border.all(
+                          <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary,
+                          <span style="color:#79c0ff">width</span>: <span style="color:#79c0ff">1.0</span>),
+                      <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.paperPrimary,
+                    ),
+                    <span style="color:#79c0ff">child</span>: <span style="color:#ff7b72">Center</span>(
+                      <span style="color:#79c0ff">child</span>: <span style="color:#ff7b72">Text</span>(
+                        <span style="color:#a5d6ff">'R'</span>,
+                        <span style="color:#79c0ff">style</span>: <span style="color:#ff7b72">TextStyle</span>(
+                            <span style="color:#79c0ff">fontWeight</span>: FontWeight.w700,
+                            <span style="color:#79c0ff">color</span>: <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DigitColors</span>().light.primary2),
+                      ),
+                    ),
+                  ),
+                  <span style="color:#79c0ff">dropdownItems</span>: [
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'1'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Edit Profile'</span>),
+                    <span style="color:#79c0ff">const</span> <span style="color:#ff7b72">DropdownItem</span>(<span style="color:#79c0ff">code</span>: <span style="color:#a5d6ff">'2'</span>, <span style="color:#79c0ff">name</span>: <span style="color:#a5d6ff">'Log Out'</span>),
+                  ],
+                ),
+              ],
+            ),</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REACT MODAL ════════════════════════════════════════════════ -->
+<div id="modal-react" class="fixed inset-0 z-[200] hidden" onclick="closeMOnBg(event,'react')">
+  <div class="absolute inset-0 bg-black/45 backdrop-blur-[4px]"></div>
+  <div id="drawer-react" class="absolute top-0 right-0 w-[580px] max-w-[95vw] h-full bg-white dark:bg-[#111827] border-l border-[#E5E7EB] dark:border-[rgba(255,255,255,.07)] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
+    <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] dark:bg-[#1F2937] border-b border-[#E5E7EB] dark:border-[rgba(255,255,255,.08)] shrink-0">
+      <div>
+        <div class="text-[15px] font-bold text-[#111827] dark:text-white">Header</div>
+        <div class="text-[11.5px] text-[#6B7280] dark:text-gray-500 mt-0.5">Component React | JSX</div>
+      </div>
+      <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] dark:border-[rgba(255,255,255,.1)] bg-white dark:bg-[#374151] flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6">
+      <p class="text-[14px] text-[#6B7280] dark:text-gray-400 leading-relaxed mb-5">Use the <code style="background:#F4F5F7;border:1px solid #E5E7EB;border-radius:4px;padding:2px 6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#0E165D">&lt;Header&gt;</code> component in your React application.</p>
+      <div class="relative bg-[#111827] rounded-xl overflow-hidden">
+        <button class="copy-btn" onclick="copyCode(this,'react-code-pre')" aria-label="Copy React code">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:12px;height:12px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+          <span class="copy-label">Copy code</span>
+        </button>
+        <div class="p-5 overflow-x-auto">
+          <pre id="react-code-pre" class="font-mono text-[12.5px] leading-relaxed text-[#E5E7EB] whitespace-pre"><span style="color:#8b949e">// Sample code</span>
+
+ <span style="color:#ff7b72">&lt;Header</span>
+      <span style="color:#79c0ff">actionFields</span>={[
+        <span style="color:#ff7b72">&lt;ChangeCity</span> <span style="color:#79c0ff">dropdown</span>={<span style="color:#79c0ff">true</span>} <span style="color:#79c0ff">t</span>={t} <span style="color:#ff7b72">/&gt;</span>,
+        showLanguageChange &amp;&amp; <span style="color:#ff7b72">&lt;ChangeLanguage</span> <span style="color:#79c0ff">dropdown</span>={<span style="color:#79c0ff">true</span>} <span style="color:#ff7b72">/&gt;</span>,
+        userDetails?.access_token &amp;&amp; (
+          <span style="color:#ff7b72">&lt;Dropdown</span>
+            <span style="color:#79c0ff">option</span>={userOptions}
+            <span style="color:#79c0ff">optionKey</span>=<span style="color:#a5d6ff">"name"</span>
+            <span style="color:#79c0ff">profilePic</span>={profilePic ? profilePic : userDetails?.info?.name || userDetails?.info?.userInfo?.name || <span style="color:#a5d6ff">"Employee"</span>}
+            <span style="color:#79c0ff">select</span>={handleUserDropdownSelection}
+            <span style="color:#79c0ff">showArrow</span>={<span style="color:#79c0ff">true</span>}
+            <span style="color:#79c0ff">menuStyles</span>={{ marginTop: <span style="color:#a5d6ff">"1rem"</span> }}
+            <span style="color:#79c0ff">theme</span>=<span style="color:#a5d6ff">"light"</span>
+          <span style="color:#ff7b72">/&gt;</span>
+        ),
+      ]}
+      <span style="color:#79c0ff">onHamburgerClick</span>={() =&gt; {
+        toggleSidebar();
+      }}
+      <span style="color:#79c0ff">className</span>=<span style="color:#a5d6ff">"digit-employee-header"</span>
+      <span style="color:#79c0ff">img</span>={logoUrl}
+      <span style="color:#79c0ff">logoWidth</span>=<span style="color:#a5d6ff">{"64px"}</span>
+      <span style="color:#79c0ff">logoHeight</span>=<span style="color:#a5d6ff">{"48px"}</span>
+      <span style="color:#79c0ff">logo</span>={(loggedin ? cityDetails?.logoId : stateInfo?.statelogo)||DEFAULT_EGOV_LOGO}
+      <span style="color:#79c0ff">onImageClick</span>={() =&gt; {}}
+      <span style="color:#79c0ff">onLogoClick</span>={() =&gt; {}}
+      <span style="color:#79c0ff">props</span>={{}}
+      <span style="color:#79c0ff">showDeafultImg</span>
+      <span style="color:#79c0ff">style</span>={{}}
+      <span style="color:#79c0ff">theme</span>=<span style="color:#a5d6ff">"light"</span>
+      <span style="color:#79c0ff">ulb</span>={
+        loggedin ? (
+          cityDetails?.city?.ulbGrade ? (
+            <span style="color:#ff7b72">&lt;&gt;</span>
+              {t(cityDetails?.i18nKey).toUpperCase()}{" "}
+              {t(`ULBGRADE_${cityDetails?.city?.ulbGrade.toUpperCase().replace(" ", "_").replace(".", "_")}`).toUpperCase()}
+            <span style="color:#ff7b72">&lt;/&gt;</span>
+          ) : (
+            <span style="color:#ff7b72">&lt;ImageComponent</span> <span style="color:#79c0ff">className</span>=<span style="color:#a5d6ff">"state"</span> <span style="color:#79c0ff">src</span>={logoUrlWhite} <span style="color:#79c0ff">alt</span>=<span style="color:#a5d6ff">"State Logo"</span> <span style="color:#ff7b72">/&gt;</span>
+          )
+        ) : (
+          <span style="color:#ff7b72">&lt;&gt;</span>
+            {t(`MYCITY_${stateInfo?.code?.toUpperCase()}_LABEL`)} {t(`MYCITY_STATECODE_LABEL`)}
+          <span style="color:#ff7b72">&lt;/&gt;</span>
+        )
+      }
+    <span style="color:#ff7b72">/&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/search.js"></script>
+<script src="../../assets/js/mobile-nav.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+<script>
+  var checklistItems = [
+    { title:"All interactive states",                checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Accessible use of colours",             checked:true,  req:"Colour is not used as the only visual means of conveying information (WCAG 2.1 1.4.1)" },
+    { title:"Accessible contrast for text",          checked:true,  req:"Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3)." },
+    { title:"Accessible contrast for UI components", checked:true,  req:"Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11)." },
+    { title:"Keyboard interactions",                 checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Screen reader accessible",              checked:true, req:"All content, including headings, labels, and descriptions, is meaningful, concise, contextual and accessible by screen readers." },
+    { title:"Responsive for all breakpoints",        checked:true,  req:"Responsiveness for 3 breakpoints - Mobile, Tablet and Desktop" },
+    { title:"Usage guidelines",                      checked:true,  req:"Includes a list of dos and don'ts that highlight best practices and common mistakes." },
+    { title:"Content guidelines",                    checked:false, req:"Content standards and usage guidelines for writing and formatting in-product content for the component." },
+    { title:"Defined variants and properties",       checked:true,  req:"Includes relevant variants and properties (style, size, orientation, optional iconography, decorative elements, selection states, error states, etc.)" },
+    { title:"Defined behaviours",                    checked:true,  req:"Guidelines for keyboard navigation and focus, layout management (including wrapping, truncation, and overflow), animations, and user interactions." },
+    { title:"Design Kit",                            checked:true,  req:"Access to the design file for the component in Figma, multiple options, states, colour themes, and platform scales." },
+  ];
+
+  function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  (function () {
+    var tbody = document.getElementById('checklist-body');
+    if (!tbody) return;
+    var PASS_ICON = '<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#15803D;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5l2.5 2.5 5.5-5.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    var NA_ICON  = '<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#E5E7EB;border:1.5px solid #D1D5DB;flex-shrink:0"><svg width="10" height="2" viewBox="0 0 10 2" fill="none"><line x1="1" y1="1" x2="9" y2="1" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/></svg></span>';
+    var html = '';
+    checklistItems.forEach(function (item) {
+      html += '<div style="padding:12px 0 4px;">'
+        + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
+        + (item.checked ? PASS_ICON : NA_ICON)
+        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '</div>'
+        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '</div>';
+    });
+    tbody.innerHTML = html;
+  }());
+
+  function smoothScroll(e, id) { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
+
+  function switchTab(btn, panelId) {
+    btn.closest('.prop-toggle').querySelectorAll('.tab-trigger').forEach(function(t){ t.classList.remove('active'); });
+    var container = btn.closest('.mt-8');
+    if (container) container.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    var panel = document.getElementById(panelId);
+    if (panel) panel.classList.add('active');
+  }
+
+  function openModal(w) { var o = document.getElementById('modal-' + w), d = document.getElementById('drawer-' + w); if (!o || !d) return; o.classList.remove('hidden'); document.body.style.overflow = 'hidden'; requestAnimationFrame(function(){ d.classList.remove('translate-x-full'); }); }
+  function closeM(w) { var o = document.getElementById('modal-' + w), d = document.getElementById('drawer-' + w); if (!o || !d) return; d.classList.add('translate-x-full'); setTimeout(function(){ o.classList.add('hidden'); document.body.style.overflow = ''; }, 260); }
+  function closeMOnBg(e, w) { if (e.target === e.currentTarget || e.target.classList.contains('absolute')) closeM(w); }
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeM('flutter'); closeM('react'); } });
+
+  function copyCode(btn, preId) {
+    var pre = document.getElementById(preId); if (!pre) return;
+    var text = pre.textContent || pre.innerText;
+    var label = btn.querySelector('.copy-label');
+    navigator.clipboard.writeText(text).then(function(){ btn.classList.add('copied'); if (label) label.textContent = 'Copied!'; setTimeout(function(){ btn.classList.remove('copied'); if (label) label.textContent = 'Copy code'; }, 2000); }).catch(function(){ btn.classList.add('copied'); if (label) label.textContent = 'Copied!'; setTimeout(function(){ btn.classList.remove('copied'); if (label) label.textContent = 'Copy code'; }, 2000); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('m-btn'), cls = document.getElementById('m-close'), ov = document.getElementById('m-overlay'), dr = document.getElementById('m-drawer');
+    if (!dr) return;
+    function openMob(){ dr.classList.remove('-translate-x-full'); ov.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeMob(){ dr.classList.add('-translate-x-full'); ov.classList.add('hidden'); document.body.style.overflow = ''; }
+    if (btn) btn.addEventListener('click', openMob);
+    if (cls) cls.addEventListener('click', closeMob);
+    if (ov)  ov.addEventListener('click', closeMob);
+  });
+</script>
+
+</body>
+</html>
