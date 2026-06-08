@@ -200,7 +200,7 @@
       <div class="fade-up fade-up-d1">
 
         <h1 class="text-[36px] sm:text-[46px] lg:text-[52px] font-bold text-[#1a1f6e] leading-[1.12] tracking-[-0.02em] mb-5">
-          DIGIT<br/>Design System
+          <img id="digit-logo" src="src/assets/images/digit-logo.png" alt="DIGIT" style="display: block; height: auto; margin-bottom: 8px;" /><span id="design-word">Design</span> System
         </h1>
 
         <p class="text-[16px] text-[#6B7280] leading-[1.75] max-w-lg mb-8">
@@ -411,53 +411,15 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════════
-     ABOUT SECTION
-══════════════════════════════════════════════════════════════ -->
-<section class="py-20" style="background:linear-gradient(135deg,#EEF1FF 0%,#F0F4FF 40%,#E8F4FD 100%)">
-  <div class="max-w-4xl mx-auto px-6 sm:px-10">
-
-    <!-- Heading + text -->
-    <div class="reveal mb-8">
-      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-5">About DIGIT Design System</h2>
-      <p class="text-[#6B7280] text-[16px] leading-[1.72] max-w-3xl mb-6">
-        The DIGIT Design System follows atomic design principles to ensure scalability, consistency, and reusability. Structured with a clear hierarchy starting from the smallest building blocks called <strong class="text-[#111827]">Atoms</strong>, which combine to form <strong class="text-[#111827]">Molecules</strong>. These Molecules assemble into <strong class="text-[#111827]">Organisms</strong>, representing complete interface sections used across the system.
-      </p>
-      <a href="./docs/components/atoms.html"
-         class="inline-flex items-center gap-2 text-[#0E165D] font-semibold text-[16px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
-        Browse components
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <!-- Metric cards -->
-    <div class="grid grid-cols-3 gap-4" id="stats-section">
-      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
-        <div class="metric-num counter" data-target="26">0</div>
-        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Atoms</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
-        <div class="metric-num counter" data-target="11">0</div>
-        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Molecules</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
-        <div class="metric-num counter" data-target="7">0</div>
-        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Organisms</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
      DIGIT DIFFERENCE
 ══════════════════════════════════════════════════════════════ -->
-<section class="py-16 px-8 sm:px-12">
+<section class="py-16 px-8 sm:px-12" style="background:linear-gradient(135deg,#EEF1FF 0%,#F0F4FF 40%,#E8F4FD 100%)">
   <div class="max-w-5xl mx-auto">
 
     <div class="mb-10">
-      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-4">The DIGIT Design System Difference</h2>
+      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-4">DIGIT Design Philosophy</h2>
       <p class="text-[#6B7280] text-[16px] leading-[1.72] max-w-3xl mb-6">
-        The DIGIT Design System is built to work for everyone, across contexts, devices, and user capabilities. It brings together accessibility, usability, and scalability into a single, consistent approach.
+        The DIGIT Design System is designed to support themeability, responsiveness, and accessibility across interfaces. It ensures that experiences can adapt to different devices, contexts, and user needs while maintaining consistency and usability at scale.
       </p>
       <a href="./docs/getting-started/design-approach.html"
          class="inline-flex items-center gap-2 text-[#0E165D] font-semibold text-[16px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
@@ -469,7 +431,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <!-- Themeable -->
-      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Themeable — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Themeable — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
           <svg viewBox="0 0 80 80" class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="40" cy="40" r="28" fill="none" stroke="#E5E7EB" stroke-width="2"/>
@@ -490,7 +452,7 @@
       </div>
 
       <!-- Responsive -->
-      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Responsive — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Responsive — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
           <svg viewBox="0 0 160 110" class="w-36 h-auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
@@ -575,7 +537,7 @@
       </div>
 
       <!-- Accessible -->
-      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8F9FF] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Accessible — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
+      <div class="group relative aspect-square rounded-2xl overflow-hidden border border-[#E5E7EB] bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E165D] focus:ring-offset-2" tabindex="0" role="group" aria-label="Accessible — hover or focus to learn more" style="box-shadow:0 2px 16px rgba(99,102,241,.08)">
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-all duration-300 ease-in-out group-hover:opacity-0 group-focus:opacity-0 group-hover:scale-90 group-focus:scale-90 pointer-events-none select-none">
           <svg viewBox="0 0 80 80" class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <!-- Background circle -->
@@ -614,6 +576,44 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6 sm:px-10">
+
+    <!-- Heading + text -->
+    <div class="reveal mb-8">
+      <h2 class="text-[32px] sm:text-[38px] font-bold text-[#111827] leading-tight mb-5">About DIGIT Components</h2>
+      <p class="text-[#6B7280] text-[16px] leading-[1.72] max-w-3xl mb-6">
+        The DIGIT Design System follows atomic design principles to ensure scalability, consistency, and reusability. Structured with a clear hierarchy starting from the smallest building blocks called <strong class="text-[#111827]">Atoms</strong>, which combine to form <strong class="text-[#111827]">Molecules</strong>. These Molecules assemble into <strong class="text-[#111827]">Organisms</strong>, representing complete interface sections used across the system.
+      </p>
+      <a href="./docs/components/atoms.html"
+         class="inline-flex items-center gap-2 text-[#0E165D] font-semibold text-[16px] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all">
+        Browse components
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Metric cards -->
+    <div class="grid grid-cols-3 gap-4" id="stats-section">
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="26">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Atoms</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="11">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Molecules</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] text-center card-lift" style="box-shadow:0 2px 10px rgba(0,0,0,.05)">
+        <div class="metric-num counter" data-target="7">0</div>
+        <p class="text-[#6B7280] text-[13px] font-semibold mt-2 uppercase tracking-wider">Organisms</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -765,15 +765,8 @@
      FOOTER
 ══════════════════════════════════════════════════════════════ -->
 <footer class="bg-white border-t border-[#E5E7EB] py-8 px-6 sm:px-10">
-  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <span class="text-[#6B7280] text-[13px]">© 2024 eGov Foundation. All rights reserved.</span>
-    </div>
-    <div class="flex items-center gap-6">
-      <a href="./docs/foundation/color.html" class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Foundation</a>
-      <a href="./docs/components/atoms.html" class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Components</a>
-      <a href="./docs/patterns/form.html"   class="text-[#6B7280] text-[13px] hover:text-[#0E165D] transition-colors">Patterns</a>
-    </div>
+  <div class="max-w-7xl mx-auto flex items-center justify-center">
+    <span class="text-[#6B7280] text-[13px] text-center">© All content on this page by eGov Foundation is licensed under a Creative Commons Attribution 4.0 International License.</span>
   </div>
 </footer>
 
@@ -1033,6 +1026,18 @@
     });
   })();
 
+</script>
+
+<script>
+  function matchLogoToDesign() {
+    var span = document.getElementById('design-word');
+    var img  = document.getElementById('digit-logo');
+    if (span && img) {
+      img.style.width = span.offsetWidth + 'px';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', matchLogoToDesign);
+  window.addEventListener('resize', matchLogoToDesign);
 </script>
 
 </body>

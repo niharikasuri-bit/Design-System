@@ -45,9 +45,6 @@
       background: radial-gradient(ellipse 70% 90% at 96% 0%, rgba(238,241,255,0.75) 0%, transparent 65%);
       pointer-events: none;
     }
-    .dark .page-header::before {
-      background: radial-gradient(ellipse 70% 90% at 96% 0%, rgba(25,29,136,0.11) 0%, transparent 65%);
-    }
 
     /* ── Component card ──────────────────────────────────────── */
     .comp-card {
@@ -67,13 +64,6 @@
         transform    0.22s ease;
       cursor: pointer;
     }
-    .dark .comp-card {
-      background: #0f1117;
-      border-color: rgba(255, 255, 255, 0.07);
-      box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.35),
-        0 2px 4px rgba(0, 0, 0, 0.25);
-    }
     .comp-card:hover {
       border-color: rgba(25, 29, 136, 0.22);
       box-shadow:
@@ -81,13 +71,6 @@
         0 4px 8px  rgba(0, 0, 0, 0.07),
         0 12px 24px rgba(25, 29, 136, 0.09);
       transform: translateY(-4px);
-    }
-    .dark .comp-card:hover {
-      border-color: rgba(123, 134, 255, 0.35);
-      box-shadow:
-        0 0 0 1px rgba(123, 134, 255, 0.1),
-        0 4px 8px  rgba(0, 0, 0, 0.45),
-        0 12px 24px rgba(25, 29, 136, 0.28);
     }
     .comp-card:focus-visible {
       outline: 2px solid #0E165D;
@@ -122,10 +105,6 @@
       height: auto;
       object-fit: contain;
     }
-    .dark .comp-preview {
-      background: #161b27;
-      border-bottom-color: rgba(255, 255, 255, 0.06);
-    }
 
     /* ── Abbreviation fallback ────────────────────────────────── */
     .comp-abbr {
@@ -137,9 +116,7 @@
       user-select: none;
       transition: color 0.22s ease;
     }
-    .dark .comp-abbr { color: #374151; }
     .comp-card:hover .comp-abbr { color: #C7D2FE; }
-    .dark .comp-card:hover .comp-abbr { color: #C7D2FE; }
 
     /* ── Label area ───────────────────────────────────────────── */
     .comp-label {
@@ -156,9 +133,7 @@
       letter-spacing: -0.01em;
       transition: color 0.22s ease;
     }
-    .dark .comp-name { color: #e5e7eb; }
     .comp-card:hover .comp-name { color: #0E165D; }
-    .dark .comp-card:hover .comp-name { color: #C7D2FE; }
 
     /* ── Chevron arrow ────────────────────────────────────────── */
     .comp-arrow {
@@ -176,7 +151,6 @@
       transform: translateX(0);
       color: #0E165D;
     }
-    .dark .comp-card:hover .comp-arrow { color: #C7D2FE; }
 
     /* ── Sticky search bar ────────────────────────────────────── */
     .comp-search-bar {
@@ -188,10 +162,6 @@
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(229, 231, 235, 0.8);
     }
-    .dark .comp-search-bar {
-      background: rgba(15, 17, 23, 0.92);
-      border-bottom-color: rgba(255, 255, 255, 0.07);
-    }
 
     /* ── Search input ─────────────────────────────────────────── */
     #comp-search:focus {
@@ -199,10 +169,6 @@
       box-shadow: 0 0 0 3px rgba(25, 29, 136, 0.07);
       outline: 2px solid #0E165D;
       outline-offset: 2px;
-    }
-    .dark #comp-search:focus {
-      border-color: rgba(123, 134, 255, 0.4);
-      box-shadow: 0 0 0 3px rgba(123, 134, 255, 0.1);
     }
 
     /* ── Hidden card / empty state ────────────────────────────── */
@@ -234,20 +200,10 @@
       border-color: rgba(229,231,235,0.9);
       background: #ffffff;
     }
-    .dark .tab-link-inactive {
-      color: #9ca3af;
-      border-color: rgba(255,255,255,0.09);
-      background: rgba(255,255,255,0.04);
-    }
     .tab-link-inactive:hover {
       border-color: rgba(25,29,136,0.2);
       color: #0E165D;
       background: #F0F3FF;
-    }
-    .dark .tab-link-inactive:hover {
-      border-color: rgba(199,210,254,0.3);
-      color: #C7D2FE;
-      background: rgba(25,29,136,0.12);
     }
     .tab-badge {
       font-size: 11px;
@@ -263,10 +219,6 @@
     .tab-link-inactive .tab-badge {
       background: rgba(25,29,136,0.07);
       color: #0E165D;
-    }
-    .dark .tab-link-inactive .tab-badge {
-      background: rgba(199,210,254,0.1);
-      color: #C7D2FE;
     }
   </style>
 
