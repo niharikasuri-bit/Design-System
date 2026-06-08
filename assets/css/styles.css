@@ -542,12 +542,11 @@ main#main-content section { margin-bottom: 3rem; }
    These pages use structural selectors instead of scroll-mt-24, so the
    section.scroll-mt-24 rule in §35 doesn't apply. Force 96px to match
    component docs. The existing `main#main-content section { mb: 3rem }` rule
-   (§29) overrides Tailwind mb-* classes to 48px — we need !important here.  */
+   (§29) overrides Tailwind mb-* classes to 48px — we need !important here.
+   Foundation pages (digit-colours, spacing-system, etc.) intentionally omitted
+   so they fall back to the 3rem base rule, matching design-approach.html.     */
 #localisation, #ux-copy, #pre-ship-checklist,
-#principles, #checkpoints, #in-practice,
-#digit-colours, #usage-guidelines,
-#spacing-system,
-#typefaces, #typography-components, #line-height {
+#principles, #checkpoints, #in-practice {
   margin-bottom: 6rem !important;
 }
 
