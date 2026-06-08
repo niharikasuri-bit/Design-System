@@ -46,6 +46,10 @@
     /* -- Spacing fixes --------------------------------------------------------
        Hero section's mb is the OTP?first-section gap. Raise to 96px. */
     .page-content > section:first-child { margin-bottom: 6rem !important; }
+
+    /* -- Overflow / horizontal scroll fixes ---------------------------------- */
+    .page-content { overflow-x: hidden; max-width: 100%; box-sizing: border-box; }
+    .page-content .grid { max-width: 100%; overflow-x: auto; box-sizing: border-box; }
   </style>
 
   <script>
