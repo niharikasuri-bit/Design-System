@@ -101,7 +101,16 @@
 
     /* A11y: #6B7280 on #F4F5F7 = 4.43:1 (fails 4.5:1 minimum). Darken to #4B5563 = 6.93:1 */
     .obj-card p { color: #4B5563; }
-    #pre-ship-checklist li p { color: #4B5563; }
+
+    /* Match Pre-ship Checklist item titles to Design Checkpoints h4 visual style.
+       Global styles.css rule (main#main-content h3) overrides Tailwind text-[19px]/font-bold
+       with clamp(16px,2.2vw,19px) / weight 700. Force 16px / weight 600 to match h4. */
+    #pre-ship-checklist li h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: normal;
+    }
 
     /* ── Spacing fixes: match component-docs reference ───────────────────────
        Hero section contains the OTP card as its last child; its bottom margin
@@ -695,8 +704,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Heading under 6 words</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Heading under 6 words</h3>
+              <p class="text-[#6B7280] leading-relaxed">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
             </div>
           </li>
 
@@ -705,8 +714,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Description is one or two sentences</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Does not repeat the heading. Ends with a full stop.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Description is one or two sentences</h3>
+              <p class="text-[#6B7280] leading-relaxed">Does not repeat the heading. Ends with a full stop.</p>
             </div>
           </li>
 
@@ -715,8 +724,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Labels are nouns, sentence case</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Consistent with labels used elsewhere for the same data across the product.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Labels are nouns, sentence case</h3>
+              <p class="text-[#6B7280] leading-relaxed">Consistent with labels used elsewhere for the same data across the product.</p>
             </div>
           </li>
 
@@ -725,8 +734,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">CTAs start with a verb, Title Case</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">CTAs start with a verb, Title Case</h3>
+              <p class="text-[#6B7280] leading-relaxed">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
             </div>
           </li>
 
@@ -735,8 +744,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Voice is active</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Unless the system, not the user, did the action then passive is acceptable.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Voice is active</h3>
+              <p class="text-[#6B7280] leading-relaxed">Unless the system, not the user, did the action then passive is acceptable.</p>
             </div>
           </li>
 
@@ -745,8 +754,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">No "please", exclamation marks, or "click here"</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Also avoid "invalid" describe what went wrong instead.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">No "please", exclamation marks, or "click here"</h3>
+              <p class="text-[#6B7280] leading-relaxed">Also avoid "invalid" describe what went wrong instead.</p>
             </div>
           </li>
 
@@ -755,8 +764,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Same term for the same concept</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Same term for the same concept</h3>
+              <p class="text-[#6B7280] leading-relaxed">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
             </div>
           </li>
 
@@ -765,8 +774,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[16px] mb-1">Error messages tell the user what to do next</h3>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
+              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Error messages tell the user what to do next</h3>
+              <p class="text-[#6B7280] leading-relaxed">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
             </div>
           </li>
 
