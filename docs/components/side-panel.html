@@ -433,17 +433,17 @@
 <script>
   var checklistItems = [
     { title:"All interactive states",                checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
-    { title:"Accessible use of colours",             checked:true,  req:"Colour is not used as the only visual means of conveying information (WCAG 2.1 1.4.1)" },
-    { title:"Accessible contrast for text",          checked:true,  req:"Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3)." },
-    { title:"Accessible contrast for UI components", checked:true,  req:"Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11)." },
+    { title:"Accessible use of colours",             checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Accessible contrast for text",          checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
+    { title:"Accessible contrast for UI components", checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
     { title:"Keyboard interactions",                 checked:true,  req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
     { title:"Screen reader accessible",              checked:true, req:"All content, including headings, labels, and descriptions, is meaningful, concise, contextual and accessible by screen readers." },
     { title:"Responsive for all breakpoints",        checked:true,  req:"Responsiveness for 3 breakpoints - Mobile, Tablet and Desktop" },
     { title:"Usage guidelines",                      checked:true,  req:"Includes a list of dos and don'ts that highlight best practices and common mistakes." },
     { title:"Content guidelines",                    checked:false, req:"Content standards and usage guidelines for writing and formatting in-product content for the component." },
-    { title:"Defined variants and properties",       checked:true,  req:"Includes relevant variants and properties (style, size, orientation, optional iconography, decorative elements, selection states, error states, etc.)" },
-    { title:"Defined behaviours",                    checked:true,  req:"Guidelines for keyboard navigation and focus, layout management (including wrapping, truncation, and overflow), animations, and user interactions." },
-    { title:"Design Kit",                            checked:true,  req:"Access to the design file for the component in Figma, multiple options, states, colour themes, and platform scales." },
+    { title:"Defined variants and properties",       checked:true,  req:"Includes relevant variants and properties (style, size, orientation, optional iconography, decorative elements, selection states, error states...etc)" },
+    { title:"Defined behaviors",                    checked:true,  req:"Guidelines for keyboard navigation and focus, layout management (including wrapping, truncation, and overflow), animations, and user interactions." },
+    { title:"Design Kit",                            checked:true,  req:"Access to the design file for the component in Figma multiple options, states, color themes, and platform scales." },
   ];
 
   function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
