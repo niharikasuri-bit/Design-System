@@ -371,7 +371,7 @@
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1">
-        <h3 class="text-[20px] font-bold text-[#111827] mb-3">Design</h3>
+        <h3 class="text-[18px] font-bold text-[#111827] mb-3">Design</h3>
         <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1 mb-6">
           Access the Figma UI toolkit, design principles, and reusable UI components that help designers build consistent and accessible interfaces.
         </p>
@@ -395,7 +395,7 @@
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1">
-        <h3 class="text-[20px] font-bold text-[#111827] mb-3">Develop</h3>
+        <h3 class="text-[18px] font-bold text-[#111827] mb-3">Develop</h3>
         <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1 mb-6">
           Find implementation guidance, design tokens, and reusable components to build scalable, consistent interfaces and accelerate product development.
         </p>
@@ -620,7 +620,7 @@
 <!-- ══════════════════════════════════════════════════════════════
      DISCOVER triangle hub layout
 ══════════════════════════════════════════════════════════════ -->
-<section class="overflow-hidden" style="padding-top:64px;padding-bottom:64px;background-color:#F7F8FF;background-image:radial-gradient(rgba(99,102,241,.07) 1px,transparent 1px);background-size:28px 28px;">
+<section style="padding-top:64px;padding-bottom:64px;background-color:#F7F8FF;background-image:radial-gradient(rgba(99,102,241,.07) 1px,transparent 1px);background-size:28px 28px;">
   <div class="max-w-6xl mx-auto px-6 sm:px-10">
 
     <!-- Section heading center, above diagram -->
@@ -630,17 +630,17 @@
       </h2>
     </div>
 
-    <!-- ── DESKTOP: hub layout all lines exactly 93px ─────────────────
-         viewBox="0 0 1072 500" preserveAspectRatio="none" so 1 SVG unit = 1 CSS px.
+    <!-- ── DESKTOP: hub layout ─────────────────────────────────────────
+         viewBox="0 0 1072 420" preserveAspectRatio="none" so 1 SVG unit = 1 CSS px.
          Hub: CSS left:496px → SVG x=496 (left edge 496, right 576, center 536, top 260)
-         All visible segments = 93px (circle 7px outside card edge → hub edge):
-         • Patterns  bottom (536,167) → hub-top  (536,260) = 93px vertical ✓
-         • Foundation right (403,300) → hub-left (496,300) = 93px horizontal ✓
-         • Components left  (669,300) → hub-right(576,300) = 93px horizontal ✓
+         Card borders (7px gap rule: circle inner-edge = card border):
+         • Patterns  bottom border ~y=165; circle at y=172 (165+7) → hub-top  (536,260)
+         • Foundation right border x=396;  circle at x=403 (396+7) → hub-left (496,302)
+         • Components left  border x=676;  circle at x=669 (676-7) → hub-right(576,302)
     -->
-    <div class="hidden lg:block relative" style="height:400px">
+    <div class="hidden lg:block relative" style="height:420px">
 
-      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1072 400" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1072 420" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <style>
             .dl { stroke-dasharray:8 5; stroke-dashoffset:0; animation:dash-march 1.6s linear infinite; }
@@ -648,40 +648,42 @@
           </style>
         </defs>
 
-        <!-- Patterns (536,167) → hub top (536,260) 93px vertical -->
-        <line class="dl" x1="536" y1="167" x2="536" y2="260" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
-        <circle cx="536" cy="167" r="7"   stroke="rgba(0,71,171,0.65)"  stroke-width="1.5" fill="white"/>
-        <circle cx="536" cy="167" r="3.5" fill="rgba(0,71,171,1)"/>
-        <circle cx="536" cy="167" r="1.8" fill="white"/>
+        <!-- Patterns bottom y=156 → hub-top (536,260). Line extends to y=0; card masks above card-bottom. -->
+        <line class="dl" x1="536" y1="0" x2="536" y2="260" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
         <circle cx="536" cy="260" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
 
-        <!-- Foundation (403,300) → hub left (496,300) 93px horizontal -->
-        <line class="dl" x1="403" y1="300" x2="496" y2="300" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
-        <circle cx="403" cy="300" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
-        <circle cx="403" cy="300" r="3.5" fill="rgba(25,29,136,1)"/>
-        <circle cx="403" cy="300" r="1.8" fill="white"/>
-        <circle cx="496" cy="300" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+        <!-- Foundation right border x=403 → hub left (496,302) -->
+        <line class="dl" x1="403" y1="302" x2="496" y2="302" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+        <circle cx="403" cy="302" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
+        <circle cx="403" cy="302" r="3.5" fill="rgba(25,29,136,1)"/>
+        <circle cx="403" cy="302" r="1.8" fill="white"/>
+        <circle cx="496" cy="302" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
 
-        <!-- Components (669,300) → hub right (576,300) 93px horizontal -->
-        <line class="dl" x1="669" y1="300" x2="576" y2="300" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
-        <circle cx="669" cy="300" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
-        <circle cx="669" cy="300" r="3.5" fill="rgba(25,29,136,1)"/>
-        <circle cx="669" cy="300" r="1.8" fill="white"/>
-        <circle cx="576" cy="300" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+        <!-- Components left border x=669 → hub right (576,302) -->
+        <line class="dl" x1="669" y1="302" x2="576" y2="302" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
+        <circle cx="669" cy="302" r="7"   stroke="rgba(25,29,136,0.65)" stroke-width="1.5" fill="white"/>
+        <circle cx="669" cy="302" r="3.5" fill="rgba(25,29,136,1)"/>
+        <circle cx="669" cy="302" r="1.8" fill="white"/>
+        <circle cx="576" cy="302" r="3"   fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
 
       </svg>
 
-      <!-- PATTERNS top center; card center x=536, bottom ~y=160, circle at y=167 (7px outside) -->
+      <!-- PATTERNS top -->
       <a href="./docs/patterns/form.html"
          class="group absolute rounded-2xl border border-[#E5E7EB] p-5 pb-3 flex flex-col hover:border-[#0E165D]/40 transition-all duration-300"
-         style="top:0;left:calc(536px - 130px);width:260px;background:white;box-shadow:0 2px 16px rgba(99,102,241,.08)">
+         style="top:0;left:calc(536px - 130px);width:260px;background:white;box-shadow:0 2px 16px rgba(99,102,241,.08);">
         <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="background:linear-gradient(135deg,rgba(99,102,241,.06),transparent 70%)"></div>
         <div class="relative">
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
-          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Patterns</h3>
-          <p class="text-[#4B5563] text-[13px] leading-relaxed">Proven interaction flows forms, inboxes, summaries, and more.</p>
+          <h3 class="text-[18px] font-bold text-[#111827] mb-1.5">Patterns</h3>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed">Proven interaction flows forms, inboxes, summaries, and more.</p>
+        </div>
+        <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:0;z-index:10;pointer-events:none;width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(25,29,136,0.65);background:white;">
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(25,29,136,1);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+            <div style="width:3.6px;height:3.6px;border-radius:50%;background:white;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+          </div>
         </div>
       </a>
 
@@ -694,8 +696,8 @@
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
           </div>
-          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Foundation</h3>
-          <p class="text-[#4B5563] text-[13px] leading-relaxed">Core design tokens color, typography, spacing, and iconography.</p>
+          <h3 class="text-[18px] font-bold text-[#111827] mb-1.5">Foundation</h3>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed">Core design tokens color, typography, spacing, and iconography.</p>
         </div>
       </a>
 
@@ -720,13 +722,12 @@
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300" style="box-shadow:0 0 0 5px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           </div>
-          <h3 class="text-[16px] font-bold text-[#111827] mb-1.5">Components</h3>
-          <p class="text-[#4B5563] text-[13px] leading-relaxed">Reusable atoms, molecules, and organisms for consistent UI development.</p>
+          <h3 class="text-[18px] font-bold text-[#111827] mb-1.5">Components</h3>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed">Reusable atoms, molecules, and organisms for consistent UI development.</p>
         </div>
       </a>
 
     </div>
-
     <!-- ── MOBILE: stacked ──────────────────────────────────── -->
     <div class="lg:hidden">
       <div class="flex flex-col gap-4">
@@ -734,19 +735,19 @@
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
           </div>
-          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Foundation</h3><p class="text-[#4B5563] text-[13px]">Core tokens color, typography, spacing, iconography.</p></div>
+          <div><h3 class="text-[18px] font-bold text-[#111827] mb-1">Foundation</h3><p class="text-[#4B5563] text-[15px]">Core tokens color, typography, spacing, iconography.</p></div>
         </a>
         <a href="./docs/components/atoms.html" class="group rounded-2xl border border-[#E5E7EB] p-6 flex gap-4 items-start hover:border-[#0E165D]/40 transition-all" style="background:white;box-shadow:0 2px 12px rgba(99,102,241,.07)">
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           </div>
-          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Components</h3><p class="text-[#4B5563] text-[13px]">Reusable atoms, molecules, and organisms.</p></div>
+          <div><h3 class="text-[18px] font-bold text-[#111827] mb-1">Components</h3><p class="text-[#4B5563] text-[15px]">Reusable atoms, molecules, and organisms.</p></div>
         </a>
         <a href="./docs/patterns/form.html" class="group rounded-2xl border border-[#E5E7EB] p-6 flex gap-4 items-start hover:border-[#0E165D]/40 transition-all" style="background:white;box-shadow:0 2px 12px rgba(99,102,241,.07)">
           <div class="w-10 h-10 rounded-xl bg-[#0E165D] flex items-center justify-center shrink-0" style="box-shadow:0 0 0 4px rgba(99,102,241,.12)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
           </div>
-          <div><h3 class="text-[16px] font-bold text-[#111827] mb-1">Patterns</h3><p class="text-[#4B5563] text-[13px]">Proven interaction flows for common user journeys.</p></div>
+          <div><h3 class="text-[18px] font-bold text-[#111827] mb-1">Patterns</h3><p class="text-[#4B5563] text-[15px]">Proven interaction flows for common user journeys.</p></div>
         </a>
       </div>
     </div>
@@ -777,10 +778,10 @@
       <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB]" style="box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid #FF4785;">
         <div class="flex flex-col flex-1 p-6">
           <h3 class="text-[18px] font-bold text-[#111827] mb-2">Storybook</h3>
-          <p class="text-[#6B7280] text-[16px] leading-relaxed flex-1">Browse and interact with all DIGIT UI components live in Storybook.</p>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1">Browse and interact with all DIGIT UI components live in Storybook.</p>
           <div style="border-top:1px solid #e5e7eb;margin:12px -24px 0 -24px;width:calc(100% + 48px);padding:12px 24px 0;">
             <a href="https://egovernments.github.io/DIGIT-UI-LIBRARIES/" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[16px] underline underline-offset-2 transition-colors">
+               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[15px] underline underline-offset-2 transition-colors">
               Open Storybook
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -792,10 +793,10 @@
       <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB]" style="box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid #0E165D;">
         <div class="flex flex-col flex-1 p-6">
           <h3 class="text-[18px] font-bold text-[#111827] mb-2">DIGIT UI Docs</h3>
-          <p class="text-[#6B7280] text-[16px] leading-relaxed flex-1">Full developer documentation for the DIGIT UI platform, guides, and APIs.</p>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1">Full developer documentation for the DIGIT UI platform, guides, and APIs.</p>
           <div style="border-top:1px solid #e5e7eb;margin:12px -24px 0 -24px;width:calc(100% + 48px);padding:12px 24px 0;">
             <a href="https://docs.digit.org/digit-ui/" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[16px] underline underline-offset-2 transition-colors">
+               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[15px] underline underline-offset-2 transition-colors">
               Read the docs
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -807,10 +808,10 @@
       <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB]" style="box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid #E8630A;">
         <div class="flex flex-col flex-1 p-6">
           <h3 class="text-[18px] font-bold text-[#111827] mb-2">UI Components</h3>
-          <p class="text-[#6B7280] text-[16px] leading-relaxed flex-1">Install <code style="font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:14px;background:#f0f0f5;color:#0E165D;padding:2px 6px;border-radius:4px;display:inline-block;">@egovernments/digit-ui-components</code> from npm to use DIGIT components in your React app.</p>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1">Install <code style="font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;background:rgba(0,0,0,0.03);color:#555555;padding:2px 6px;border-radius:4px;display:inline-block;vertical-align:middle;">@egovernments/digit-ui-components</code> from npm to use DIGIT components in your React app.</p>
           <div style="border-top:1px solid #e5e7eb;margin:12px -24px 0 -24px;width:calc(100% + 48px);padding:12px 24px 0;">
             <a href="https://www.npmjs.com/package/@egovernments/digit-ui-components" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[16px] underline underline-offset-2 transition-colors">
+               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[15px] underline underline-offset-2 transition-colors">
               View on npm
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -822,10 +823,10 @@
       <div class="card-lift flex flex-col bg-white rounded-2xl border border-[#E5E7EB]" style="box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid #22C55E;">
         <div class="flex flex-col flex-1 p-6">
           <h3 class="text-[18px] font-bold text-[#111827] mb-2">Module Generator</h3>
-          <p class="text-[#6B7280] text-[16px] leading-relaxed flex-1">Scaffold new DIGIT modules instantly with <code style="font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:14px;background:#f0f0f5;color:#0E165D;padding:2px 6px;border-radius:4px;display:inline-block;">@egovernments/digit-module-generator</code>.</p>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed flex-1">Scaffold new DIGIT modules instantly with <code style="font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;background:rgba(0,0,0,0.03);color:#555555;padding:2px 6px;border-radius:4px;display:inline-block;vertical-align:middle;">@egovernments/digit-module-generator</code></p>
           <div style="border-top:1px solid #e5e7eb;margin:12px -24px 0 -24px;width:calc(100% + 48px);padding:12px 24px 0;">
             <a href="https://www.npmjs.com/package/@egovernments/digit-module-generator" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[16px] underline underline-offset-2 transition-colors">
+               class="inline-flex items-center gap-1.5 text-[#0E165D] font-semibold text-[15px] underline underline-offset-2 transition-colors">
               View on npm
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -924,18 +925,18 @@
   (function () {
     var ROOT = './';
     var PAGES = [
-      { title:'Designer',         cat:'Getting Started', path:ROOT+'docs/getting-started/designer.html' },
-      { title:'Developer',        cat:'Getting Started', path:ROOT+'docs/getting-started/developer.html' },
-      { title:'Design Approach',  cat:'Getting Started', path:ROOT+'docs/getting-started/design-approach.html' },
-      { title:'Content Standard', cat:'Getting Started', path:ROOT+'docs/getting-started/content-standard.html' },
-      { title:'Inclusive Design', cat:'Getting Started', path:ROOT+'docs/getting-started/inclusive-design.html' },
-      { title:'Color',      cat:'Foundation', path:ROOT+'docs/foundation/color.html' },
-      { title:'Spacing',    cat:'Foundation', path:ROOT+'docs/foundation/spacing.html' },
-      { title:'Typography', cat:'Foundation', path:ROOT+'docs/foundation/typography.html' },
-      { title:'Icon',       cat:'Foundation', path:ROOT+'docs/foundation/icon.html' },
-      { title:'Radius',     cat:'Foundation', path:ROOT+'docs/foundation/radius.html' },
-      { title:'Atoms',                    cat:'Components', path:ROOT+'docs/components/atoms.html' },
-      { title:'Molecules',               cat:'Components', path:ROOT+'docs/components/molecules.html' },
+      { title:'Designer',         cat:'Getting Started', path:ROOT+'docs/getting-started/designer.html#get-started-designer' },
+      { title:'Developer',        cat:'Getting Started', path:ROOT+'docs/getting-started/developer.html#get-started-developer' },
+      { title:'Design Approach',  cat:'Getting Started', path:ROOT+'docs/getting-started/design-approach.html#design-approach' },
+      { title:'Content Standard', cat:'Getting Started', path:ROOT+'docs/getting-started/content-standard.html#content-standard' },
+      { title:'Inclusive Design', cat:'Getting Started', path:ROOT+'docs/getting-started/inclusive-design.html#inclusive-design' },
+      { title:'Color Palette', cat:'Foundation', path:ROOT+'docs/foundation/color.html#color-palette' },
+      { title:'Spacing',    cat:'Foundation', path:ROOT+'docs/foundation/spacing.html#spacing' },
+      { title:'Typography', cat:'Foundation', path:ROOT+'docs/foundation/typography.html#typography' },
+      { title:'Icon',       cat:'Foundation', path:ROOT+'docs/foundation/icon.html#icon' },
+      { title:'Radius',     cat:'Foundation', path:ROOT+'docs/foundation/radius.html#radius' },
+      { title:'Atoms',                    cat:'Components', path:ROOT+'docs/components/atoms.html#atoms' },
+      { title:'Molecules',               cat:'Components', path:ROOT+'docs/components/molecules.html#molecules' },
       { title:'Accordion',               cat:'Components', path:ROOT+'docs/components/accordion.html' },
       { title:'Alert Card',              cat:'Components', path:ROOT+'docs/components/alert-card.html' },
       { title:'Bottom Sheet',            cat:'Components', path:ROOT+'docs/components/bottom-sheet.html' },
@@ -973,9 +974,9 @@
       { title:'Toast',                   cat:'Components', path:ROOT+'docs/components/toast.html' },
       { title:'Toggles',                 cat:'Components', path:ROOT+'docs/components/toggles.html' },
       { title:'Tooltip',                 cat:'Components', path:ROOT+'docs/components/tooltip.html' },
-      { title:'Form',                    cat:'Patterns',   path:ROOT+'docs/patterns/form.html' },
-      { title:'Inbox',                   cat:'Patterns',   path:ROOT+'docs/patterns/inbox.html' },
-      { title:'Summary',                 cat:'Patterns',   path:ROOT+'docs/patterns/summary.html' },
+      { title:'Form',                    cat:'Patterns',   path:ROOT+'docs/patterns/form.html#form' },
+      { title:'Inbox',                   cat:'Patterns',   path:ROOT+'docs/patterns/inbox.html#inbox' },
+      { title:'Summary',                 cat:'Patterns',   path:ROOT+'docs/patterns/summary.html#summary' },
     ];
 
     var modal      = document.getElementById('search-modal');

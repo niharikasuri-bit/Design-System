@@ -97,7 +97,7 @@ DIGIT.sidebar = (function () {
       { title: 'Toggles',                   category: 'Components', path: root + 'docs/components/toggles.html'                },
       { title: 'Tooltip',                   category: 'Components', path: root + 'docs/components/tooltip.html'                },
       // Foundation
-      { title: 'Color',            category: 'Foundation',      path: root + 'docs/foundation/color.html'       },
+      { title: 'Color Palette',     category: 'Foundation',      path: root + 'docs/foundation/color.html'       },
       { title: 'Spacing',          category: 'Foundation',      path: root + 'docs/foundation/spacing.html'     },
       { title: 'Typography',       category: 'Foundation',      path: root + 'docs/foundation/typography.html'  },
       { title: 'Icon',             category: 'Foundation',      path: root + 'docs/foundation/icon.html'        },

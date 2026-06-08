@@ -103,7 +103,7 @@ DIGIT.search = (function () {
   // ─── Search logic ─────────────────────────────────────────────────────────
 
   function score(query, item) {
-    const q   = query.toLowerCase();
+    const q   = query.toLowerCase().replace(/colour/g, 'color');
     const t   = item.title.toLowerCase();
     const s   = item.section.toLowerCase();
     if (t.startsWith(q))           return 3;
