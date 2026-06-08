@@ -161,6 +161,14 @@ input[type="search"]::-webkit-search-decoration {
   box-shadow: 0 4px 12px rgba(0,0,0,.06);
 }
 
+/* ─── 12a. Color palette card hover ──────────────────────────────────────────*/
+.color-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.color-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
 /* ─── 13. Hero gradient (homepage) ───────────────────────────────────────────*/
 .hero-gradient {
   background:
