@@ -25,7 +25,7 @@
 
   <style>
     /* ── Design tokens ───────────────────────────────────────────
-       Card bg:    #FFFFFF  |  dark: #0f1117
+       Card bg:    #FFFFFF
        Preview bg: #F8F8F8
        Border:     1px rgba(229,231,235,0.85)
        Radius:     12px
@@ -244,7 +244,7 @@
   <div class="flex min-h-screen">
 
     <aside class="hidden lg:block w-64 xl:w-72 shrink-0 fixed top-0 left-0
-      h-screen border-r border-gray-200 dark:border-gray-800
+      h-screen border-r border-gray-200
       bg-white z-30">
       <div id="sidebar-content" class="h-full overflow-y-auto sidebar-scroll"></div>
     </aside>
@@ -252,12 +252,12 @@
     <main id="main-content" class="flex-1 min-w-0 lg:ml-64 xl:ml-72 flex flex-col">
 
       <!-- ── Page header ─────────────────────────────────────── -->
-      <div class="px-8 sm:px-12 pt-12 pb-8 border-b border-gray-100 dark:border-gray-800/60 page-header">
+      <div class="px-8 sm:px-12 pt-12 pb-8 border-b border-gray-100 page-header">
 
 
         <!-- Figma title: 36px Bold #0E165D -->
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] dark:text-[#C7D2FE] tracking-[-0.022em] leading-[1.18] mb-3">Molecules</h1>
-        <p class="text-[15px] text-[#374151] dark:text-gray-400 leading-relaxed max-w-xl mb-7">
+        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-3">Molecules</h1>
+        <p class="text-[15px] text-[#374151] leading-relaxed max-w-xl mb-7">
           Molecules are compound UI components assembled from atoms. They represent
           complete interface sections navigation, panels, cards, and overlays used
           consistently across the DIGIT platform.
@@ -297,14 +297,14 @@
               spellcheck="false"
               aria-label="Search molecules"
               class="w-full pl-12 pr-4 py-3 text-[15px]
-                bg-[#F4F5F7] dark:bg-gray-800/80
-                border border-transparent dark:border-gray-700/40
+                bg-[#F4F5F7]
+                border border-transparent
                 text-gray-900
-                placeholder-[rgba(107,114,128,0.7)] dark:placeholder-gray-500
+                placeholder-[rgba(107,114,128,0.7)]
                 rounded-[14px] transition-all duration-150" />
           </div>
-          <p class="text-[13px] text-gray-400 dark:text-gray-500 font-medium tabular-nums whitespace-nowrap">
-            <span id="comp-count" class="font-semibold text-[#0E165D] dark:text-[#C7D2FE] text-[15px]">11</span> components
+          <p class="text-[13px] text-gray-400 font-medium tabular-nums whitespace-nowrap">
+            <span id="comp-count" class="font-semibold text-[#0E165D] text-[15px]">11</span> components
           </p>
         </div>
       </div>
@@ -320,15 +320,15 @@
 
         <div id="empty-state"
           class="flex-col items-center justify-center py-28 text-center">
-          <div class="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mx-auto mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mx-auto mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0016.803 15.803z"/>
             </svg>
           </div>
-          <p class="text-[14px] font-semibold text-gray-500 dark:text-gray-400 mb-1">No components found</p>
-          <p class="text-[12px] text-gray-400 dark:text-gray-600 mb-5">Try a shorter search term.</p>
+          <p class="text-[14px] font-semibold text-gray-500 mb-1">No components found</p>
+          <p class="text-[12px] text-gray-400 mb-5">Try a shorter search term.</p>
           <button onclick="clearCompSearch()"
-            class="text-[13px] text-[#0E165D] dark:text-[#C7D2FE] font-semibold
+            class="text-[13px] text-[#0E165D] font-semibold
               hover:underline underline-offset-4">Clear search</button>
         </div>
       </div>

@@ -287,7 +287,7 @@ DIGIT.sidebar = (function () {
       });
 
       if (!filtered.length) {
-        box.innerHTML = '<div class="p-4 text-center text-[#6B7280] dark:text-gray-400 text-sm">No results found</div>';
+        box.innerHTML = '<div class="p-4 text-center text-[#6B7280] text-sm">No results found</div>';
         box.classList.remove('hidden');
         flat = [];
         return;
@@ -299,12 +299,12 @@ DIGIT.sidebar = (function () {
       var html = '';
 
       Object.keys(grouped).forEach(function (cat) {
-        html += '<div class="px-4 py-2 bg-[#F4F5F7] dark:bg-[rgba(255,255,255,.04)] text-[12px] font-bold text-[#6B7280] dark:text-gray-400 uppercase tracking-wider">' + cat + '</div>';
+        html += '<div class="px-4 py-2 bg-[#F4F5F7] text-[12px] font-bold text-[#6B7280] uppercase tracking-wider">' + cat + '</div>';
         grouped[cat].forEach(function (item) {
           var i = flat.indexOf(item);
-          html += '<div data-path="' + item.path + '" data-i="' + i + '" class="sr-row px-4 py-3 cursor-pointer flex items-center justify-between transition-colors hover:bg-[#F5F7FB] dark:hover:bg-[rgba(255,255,255,.05)]">' +
-            '<span class="text-[14px] text-[#111827] dark:text-[#F4F5F7]">' + item.title + '</span>' +
-            '<span class="text-[12px] text-[#9CA0B2] bg-[#F4F5F7] dark:bg-[rgba(255,255,255,.06)] px-2 py-0.5 rounded ml-2 shrink-0">' + cat + '</span>' +
+          html += '<div data-path="' + item.path + '" data-i="' + i + '" class="sr-row px-4 py-3 cursor-pointer flex items-center justify-between transition-colors hover:bg-[#F5F7FB]">' +
+            '<span class="text-[14px] text-[#111827]">' + item.title + '</span>' +
+            '<span class="text-[12px] text-[#9CA0B2] bg-[#F4F5F7] px-2 py-0.5 rounded ml-2 shrink-0">' + cat + '</span>' +
           '</div>';
         });
       });
