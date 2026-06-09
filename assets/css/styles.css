@@ -34,6 +34,14 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'DM Sans', system-ui, sans-serif;
 }
 
+/* ─── 0b. Sidebar — DM Sans ──────────────────────────────────────────────────*/
+#sidebar-content,
+#sidebar-content *,
+#mobile-sidebar-content,
+#mobile-sidebar-content * {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
 /* ─── 1. Prevent FOUC ────────────────────────────────────────────────────────*/
 html:not(.hydrated) * { transition: none !important; }
 
@@ -88,7 +96,7 @@ html:not(.hydrated) * { transition: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 15px;
   line-height: 1.65;
   color: var(--text-primary);
