@@ -480,6 +480,16 @@ section.scroll-mt-24 {
 }
 .otp-link:hover { text-decoration: underline; }
 
+/* ─── 28a. On this page link weight ─────────────────────────────────────────*/
+.on-this-page a,
+.on-this-page-link,
+.page-nav a,
+.toc a,
+.toc-link,
+.otp-link {
+  font-weight: 500;
+}
+
 /* ─── 28b. Checkbox accent & frozen state ───────────────────────────────────*/
 input[type="checkbox"] { accent-color: var(--brand); }
 input[type="checkbox"].chk-frozen { pointer-events: none; cursor: default; }
