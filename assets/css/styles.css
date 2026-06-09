@@ -1,46 +1,8 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
-
-/* ============================================================
+﻿/* ============================================================
    DIGIT Design System — Global Styles
    Supplements Tailwind CSS.
    Design tokens: #0E165D brand · #FFFFFF page · #FFFFFF surface
    ============================================================ */
-
-/* ─── 0. Open Sans — body text only ──────────────────────────────────────────*/
-p,
-li,
-td,
-th,
-span,
-label,
-caption,
-.description,
-.body-text,
-.checklist-item-description,
-.section-description,
-.tab-content,
-.changelog-text,
-.usage-text,
-.property-description {
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6,
-.section-title,
-.section-heading,
-.page-title,
-.card-title,
-.nav-heading {
-  font-family: 'DM Sans', system-ui, sans-serif;
-}
-
-/* ─── 0b. Sidebar — DM Sans ──────────────────────────────────────────────────*/
-#sidebar-content,
-#sidebar-content *,
-#mobile-sidebar-content,
-#mobile-sidebar-content * {
-  font-family: 'DM Sans', system-ui, sans-serif;
-}
 
 /* ─── 1. Prevent FOUC ────────────────────────────────────────────────────────*/
 html:not(.hydrated) * { transition: none !important; }
@@ -96,7 +58,7 @@ html:not(.hydrated) * { transition: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
   font-size: 15px;
   line-height: 1.65;
   color: var(--text-primary);
@@ -517,51 +479,33 @@ input[type="checkbox"].chk-frozen:checked { accent-color: var(--brand); }
   overflow: hidden;
 }
 
-/* ─── 29. Typography scale ────────────────────────────────────────────────────*/
+/* ─── 29. Typography scale for doc pages ─────────────────────────────────────*/
 main#main-content h1 {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 32px;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.18;
+  letter-spacing: -0.022em;
   font-weight: 700;
-  line-height: 1.2;
 }
 main#main-content h2 {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: clamp(19px, 2.8vw, 26px);
+  line-height: 1.26;
+  letter-spacing: -0.014em;
+  font-weight: 700;
 }
 main#main-content h3 {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: clamp(16px, 2.2vw, 19px);
   line-height: 1.35;
+  letter-spacing: -0.008em;
+  font-weight: 700;
 }
 main#main-content h4 {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-main#main-content h5 {
-  font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 16px;
-  font-weight: 500;
   line-height: 1.45;
-}
-main#main-content h6 {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 600;
 }
 main#main-content p { line-height: 1.72; }
+main#main-content .intro-text { font-size: 17px; line-height: 1.7; }
 main#main-content section { margin-bottom: 3rem; }
-
-/* Body text scale */
-.body-large  { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 400; }
-.body-text   { font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; }
-.body-small  { font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; }
-.caption     { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 400; }
 
 /* ─── 30. Sidebar typography ─────────────────────────────────────────────────*/
 .sidebar-section-label {
