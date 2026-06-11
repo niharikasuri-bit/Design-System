@@ -102,16 +102,6 @@
     /* A11y: #6B7280 on #F4F5F7 = 4.43:1 (fails 4.5:1 minimum). Darken to #4B5563 = 6.93:1 */
     .obj-card p { color: #4B5563; }
 
-    /* Match Pre-ship Checklist item titles to Design Checkpoints h4 visual style.
-       Global styles.css rule (main#main-content h3) overrides Tailwind text-[19px]/font-bold
-       with clamp(16px,2.2vw,19px) / weight 700. Force 16px / weight 600 to match h4. */
-    #pre-ship-checklist li h3 {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.45;
-      letter-spacing: normal;
-    }
-
     /* ── Spacing fixes: match component-docs reference ───────────────────────
        Hero section contains the OTP card as its last child; its bottom margin
        IS the OTP→first-section gap. Raise to 96px (same as component pages). */
@@ -691,95 +681,93 @@
       <!-- Pre-ship Checklist -->
       <section id="pre-ship-checklist" class="mb-20 scroll-mt">
 
-        <div class="flex items-center gap-4 mb-2">
+        <div class="flex items-center gap-4 mb-8">
           <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">Pre-ship Checklist</h2>
           <div class="section-rule"></div>
         </div>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-8 max-w-3xl" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Before any screen ships, the copy should pass each of these.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-        <ul class="space-y-3">
-
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Heading under 6 words</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Heading under 6 words</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Description is one or two sentences</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Does not repeat the heading. Ends with a full stop.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Description is one or two sentences</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Does not repeat the heading. Ends with a full stop.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Labels are nouns, sentence case</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Consistent with labels used elsewhere for the same data across the product.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Labels are nouns, sentence case</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Consistent with labels used elsewhere for the same data across the product.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">CTAs start with a verb, Title Case</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">CTAs start with a verb, Title Case</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Voice is active</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Unless the system, not the user, did the action then passive is acceptable.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Voice is active</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Unless the system, not the user, did the action then passive is acceptable.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">No "please", exclamation marks, or "click here"</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Also avoid "invalid" describe what went wrong instead.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">No "please", exclamation marks, or "click here"</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Also avoid "invalid" describe what went wrong instead.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Same term for the same concept</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Same term for the same concept</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
             </div>
-          </li>
+          </div>
 
-          <li class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4 border border-[#E5E7EB]">
+          <div class="flex gap-4 items-start bg-[#F4F5F7] rounded-xl p-4">
             <div class="check-icon">
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Error messages tell the user what to do next</h3>
-              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
+              <h4 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Error messages tell the user what to do next</h4>
+              <p class="text-[14px] text-[#686F7E] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
             </div>
-          </li>
+          </div>
 
-        </ul>
+        </div>
 
       </section><!-- /pre-ship-checklist -->
 
