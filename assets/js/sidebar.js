@@ -47,9 +47,9 @@ DIGIT.sidebar = (function () {
         { label: 'Molecules', path: root + 'docs/components/molecules.html', section: 'components', page: 'molecules' },
       ],
       patterns: [
-        { label: 'Form',    path: root + 'docs/patterns/form.html',    section: 'patterns', page: 'form'    },
-        { label: 'Inbox',   path: root + 'docs/patterns/inbox.html',   section: 'patterns', page: 'inbox'   },
-        { label: 'Summary', path: root + 'docs/patterns/summary.html', section: 'patterns', page: 'summary' },
+        { label: 'Form',    path: root + 'docs/patterns/form.html',    section: 'patterns', page: 'form',    tag: 'Documentation coming soon' },
+        { label: 'Inbox',   path: root + 'docs/patterns/inbox.html',   section: 'patterns', page: 'inbox',   tag: 'Documentation coming soon' },
+        { label: 'Summary', path: root + 'docs/patterns/summary.html', section: 'patterns', page: 'summary', tag: 'Documentation coming soon' },
       ],
     };
   }
@@ -157,8 +157,14 @@ DIGIT.sidebar = (function () {
     var cls = active
       ? 'text-[#0E165D] font-semibold'
       : 'text-[#6B7280] hover:bg-[#F5F7FB] hover:text-[#111827] font-normal';
+    if (item.tag) {
+      return '<a href="' + item.path + '" class="flex flex-col px-2.5 py-[6px] rounded-md mb-px transition-colors ' + cls + '">' +
+        '<span class="leading-snug" style="font-family:\'DM Sans\',sans-serif;font-size:16px">' + item.label + '</span>' +
+        '<span class="leading-tight mt-0.5" style="font-family:\'DM Sans\',sans-serif;font-size:11px;color:#9CA3AF">' + item.tag + '</span>' +
+      '</a>';
+    }
     return '<a href="' + item.path + '" class="flex items-center px-2.5 py-[6px] rounded-md mb-px transition-colors ' + cls + '">' +
-      '<span class="leading-snug" style="font-size:16px">' + item.label + '</span>' +
+      '<span class="leading-snug" style="font-family:\'DM Sans\',sans-serif;font-size:16px">' + item.label + '</span>' +
     '</a>';
   }
 
