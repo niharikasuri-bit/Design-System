@@ -240,10 +240,20 @@ h2.section-title {
   margin-bottom: 0 !important;
 }
 
-/* 2. All section containers get identical bottom spacing (96px = mb-24).
-      Overrides Design Checklist sections that use mb-16 (64px). */
+/* 2. Section bottom spacing — matches design-approach.html mb-16 (64px).
+      Also overrides Design Checklist sections that use mb-16. */
 section.scroll-mt-24 {
-  margin-bottom: 96px !important;
+  margin-bottom: 64px !important;
+}
+
+/* 2a. Section scroll-margin — matches design-approach.html scroll-mt-8 (32px). */
+main#main-content section[id] {
+  scroll-margin-top: 2rem;
+}
+
+/* 2b. On-this-page nav card — matches design-approach.html hero mb-12 (48px). */
+.p-6.mb-24 {
+  margin-bottom: 3rem !important;
 }
 
 /* 3. pt-2 pages: normalise top spacing to match mt-12 (48px) used on other pages. */
