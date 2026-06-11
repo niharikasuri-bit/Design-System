@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -67,12 +67,12 @@
         â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
         <div class="mb-12">
           <!-- Title -->
-          <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">
+          <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">
             Accordion
           </h1>
 
           <!-- Definition - verbatim from docs.digit.org -->
-          <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+          <p class="text-[16px] text-[#6B7280] leading-relaxed w-full mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400; max-width: 100%; box-sizing: border-box;">
             The Accordion organises content into expandable and collapsible sections, making it
             ideal for dense information like FAQs or instructions. They are suitable for
             organising step-by-step instructions or processes.
@@ -174,7 +174,7 @@
              bg-[#F4F5F7] rounded-[14px] p-6 mb-24
         â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
         <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-          <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
+          <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
           <ul class="flex flex-col gap-y-3">
             <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
             <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
@@ -212,8 +212,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%] flex flex-col justify-start">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Basic Accordion</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Basic Accordion</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
                   The Input field enables users to interact with the application through content input and data. The component allows users to input responses or data based on specific requirements.
                 </p>
               </div>
@@ -230,8 +230,8 @@
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%] flex flex-col justify-start">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Nested Accordion</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Nested Accordion</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
                   The Input field enables users to interact with the application through content input and data. The component allows users to input responses or data based on specific requirements.
                 </p>
               </div>
@@ -260,8 +260,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Title</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">The text displayed at the top of the accordion section, representing the title of the content. This is a required property and is typically used to describe the section's content or topic.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Title</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The text displayed at the top of the accordion section, representing the title of the content. This is a required property and is typically used to describe the section's content or topic.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F51h97E7Ycgm09vuAWyXN%252FImagep1.png%3Falt%3Dmedia%26token%3D5a0cc3c3-447a-4ec4-9b96-eeab55ad9048&width=300&dpr=3&quality=100&sign=ba1915a7&sv=2" alt="title property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -271,8 +271,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Children</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">The content that will be displayed inside the accordion when it is expanded. This can include text, images, or other components. This is a required property and holds the main body of the accordion's collapsible section.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Children</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The content that will be displayed inside the accordion when it is expanded. This can include text, images, or other components. This is a required property and holds the main body of the accordion's collapsible section.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FoeNNkV4v7KUsrne7l1dd%252FImagep2.png%3Falt%3Dmedia%26token%3D0d73cdb9-b24e-4a60-85d0-7c8891cf228c&width=300&dpr=3&quality=100&sign=128ff3c4&sv=2" alt="children property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -282,8 +282,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Icon</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">An optional icon displayed beside the title. Icons are used to enhance the visual appeal or convey meaning alongside the title text, such as indicating expand/collapse actions or providing context to the content. The width / height of the icon can be controlled through the Icon Width property to ensure it fits well with the title or the overall design of the accordion.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Icon</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">An optional icon displayed beside the title. Icons are used to enhance the visual appeal or convey meaning alongside the title text, such as indicating expand/collapse actions or providing context to the content. The width / height of the icon can be controlled through the Icon Width property to ensure it fits well with the title or the overall design of the accordion.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FqflBbqc4CqIsXWqbYHEo%252FImagep3.png%3Falt%3Dmedia%26token%3D3bf083ee-a74b-418b-8ef4-80a930f9f977&width=300&dpr=3&quality=100&sign=194561ed&sv=2" alt="icon property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -293,8 +293,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Icon Fill</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Specifies the color of the icon next to the title. This property allows customization of the icon's appearance to match the design or theme of the application. By default, the icon will take the primary color.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Icon Fill</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Specifies the color of the icon next to the title. This property allows customization of the icon's appearance to match the design or theme of the application. By default, the icon will take the primary color.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FBs6WA0inxDbXrg8bVPQW%252FImagep4.png%3Falt%3Dmedia%26token%3Dd3829384-574b-49b8-9472-934c93f1d7b5&width=300&dpr=3&quality=100&sign=eb111dc4&sv=2" alt="iconFill property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -304,8 +304,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Initially Open</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Determines whether the accordion section is open by default when the component is first rendered. Setting this to true will make the accordion section expanded by default, while the default value false keeps it collapsed initially.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Initially Open</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Determines whether the accordion section is open by default when the component is first rendered. Setting this to true will make the accordion section expanded by default, while the default value false keeps it collapsed initially.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FtQaPt8lDMTkWBO42eBmF%252FImagep6.png%3Falt%3Dmedia%26token%3D6292ac34-8fc1-41ab-aa8e-b6b90b102990&width=300&dpr=3&quality=100&sign=53a0f8e8&sv=2" alt="isOpenInitially property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -315,8 +315,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Hide Card Border</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Controls whether the border around the accordion section is visible. Defaults to false, showing the border.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hide Card Border</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Controls whether the border around the accordion section is visible. Defaults to false, showing the border.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Frb7zL05JUmkEM4VTsaR4%252FImagep5.png%3Falt%3Dmedia%26token%3Df7b2c707-4cb1-47aa-9cb5-8994dd62a86d&width=300&dpr=3&quality=100&sign=464b80b2&sv=2" alt="hideCardBorder property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -326,8 +326,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Hide Divider</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Specifies whether the divider line between the title and content is visible. Defaults to false, meaning the divider is shown.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hide Divider</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Specifies whether the divider line between the title and content is visible. Defaults to false, meaning the divider is shown.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Frlz1LLTyord8prTRU9zo%252FImagep7.png%3Falt%3Dmedia%26token%3D1294dffd-09a2-4a2b-af23-57c6dd14daaf&width=300&dpr=3&quality=100&sign=ebd1a8d3&sv=2" alt="hideDivider property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -337,8 +337,8 @@
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Serial Number</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">An optional number to display before the title. This can be used for ordered sections or lists within the accordion.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Serial Number</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">An optional number to display before the title. This can be used for ordered sections or lists within the accordion.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Frlz1LLTyord8prTRU9zo%252FImagep7.png%3Falt%3Dmedia%26token%3D1294dffd-09a2-4a2b-af23-57c6dd14daaf&width=300&dpr=3&quality=100&sign=ebd1a8d3&sv=2" alt="Serial number property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -347,10 +347,10 @@
           <!-- Table of Properties - with React/Flutter tabs -->
           <div class="mt-12">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-              <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+              <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
               <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
             </div>
-            <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">
+            <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               Each design component offers a range of configurable options. These options are
               intentionally platform-agnostic, allowing implementations to adapt and tailor them to
               align with the specific requirements of the chosen framework.
@@ -373,23 +373,23 @@
                       <th scope="col">Default</th>
                     </tr></thead>
                     <tbody>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">title</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">children</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">icon</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">iconFill</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">iconWidth</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">iconHeight</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">number</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">number</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">isOpenInitially</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">onToggle</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">function</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">customClassName</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">customStyles</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">object</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">hideCardBorder</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">hideDivider</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">hideCardBg</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">hideBorderRadius</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">isClosed</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">isChild</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">title</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">children</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">icon</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">iconFill</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">iconWidth</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">iconHeight</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">number</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">number</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">isOpenInitially</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">onToggle</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">function</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">customClassName</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">string</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">customStyles</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">object</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">hideCardBorder</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">hideDivider</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">hideCardBg</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">hideBorderRadius</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">isClosed</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">isChild</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">boolean</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -404,15 +404,15 @@
                       <th scope="col">Default</th>
                     </tr></thead>
                     <tbody>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">Title</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">String</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">required(if header is not passed)</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">Number</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">double</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">Icon</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">Icon widget</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">header</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">Widget</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">content</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">Widget</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">required</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">divider</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">initiallyExpanded</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">showBorder</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">false</td></tr>
-                      <tr class="data-row"><td class="text-[#6B7280] text-[15px] align-top px-4 py-3"><code class="prop-code">onToggle</code></td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">VoidCallBack Function</td><td class="text-[#6B7280] text-[15px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">Title</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">String</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">required(if header is not passed)</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">Number</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">double</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">Icon</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">Icon widget</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">header</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">Widget</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">content</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">Widget</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">required</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">divider</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">initiallyExpanded</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">showBorder</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">bool</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">false</td></tr>
+                      <tr class="data-row"><td class="text-[#6B7280] text-[14px] align-top px-4 py-3"><code class="prop-code">onToggle</code></td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">VoidCallBack Function</td><td class="text-[#6B7280] text-[14px] align-top px-4 py-3">-</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -428,8 +428,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Flexible Width</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">The width of the container defines the width of the accordion.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Flexible Width</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The width of the container defines the width of the accordion.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F2CiQ60cHYHYT8KFFX6ee%252FImageb1.png%3Falt%3Dmedia%26token%3D032aba76-4063-4656-9f73-b7095e892088&width=300&dpr=3&quality=100&sign=448b077d&sv=2" alt="Flexible Width behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -437,8 +437,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Text Overflow</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">The text will overflow / wrap to the next line based on the width of the accordion. The limit to the volume of text is not defined.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Text Overflow</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The text will overflow / wrap to the next line based on the width of the accordion. The limit to the volume of text is not defined.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F58iur7KupC2F9SC8smXd%252FImageb2.png%3Falt%3Dmedia%26token%3D6b8df563-f431-4f12-aaae-400d79b9a3d0&width=300&dpr=3&quality=100&sign=9c9cae8b&sv=2" alt="Text Overflow behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -446,8 +446,8 @@
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Animation</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">The opening and closing movements of an accordion has an "Ease in" animation. The arrow which face sideways in the closed state rotate to facing downwards in the open state.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Animation</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The opening and closing movements of an accordion has an "Ease in" animation. The arrow which face sideways in the closed state rotate to facing downwards in the open state.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FtbJieA7QVQ4mZ2LlzG7L%252FImageb3.png%3Falt%3Dmedia%26token%3D7dba31f0-9342-46b7-9556-b55afadbd3b3&width=300&dpr=3&quality=100&sign=43023437&sv=2" alt="Animation behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -461,8 +461,8 @@
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Use for compact information display</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Organise dense or hierarchical content like FAQs, step-by-step instructions, or grouped data to avoid overwhelming users with too much visible information.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use for compact information display</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Organise dense or hierarchical content like FAQs, step-by-step instructions, or grouped data to avoid overwhelming users with too much visible information.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHNbHIPJmfKGIA17v8MBm%252FImageu1.png%3Falt%3Dmedia%26token%3D9d10aa51-6a13-48f7-a919-a668cad53da7&width=300&dpr=3&quality=100&sign=bf5cc2c4&sv=2" alt="Usage Do" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -470,8 +470,8 @@
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Avoid placing simple messages inside Accordions.</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Since the content is brief and doesn't require hiding, displaying it openly ensures that users see it immediately without extra steps.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Avoid placing simple messages inside Accordions.</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Since the content is brief and doesn't require hiding, displaying it openly ensures that users see it immediately without extra steps.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FqhTpuSn68q2l1gcOkWim%252FImageu2.png%3Falt%3Dmedia%26token%3Dd394b983-d659-4426-b8c5-51f0f37041c1&width=300&dpr=3&quality=100&sign=e91f2cdf&sv=2" alt="Usage Don't" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -487,9 +487,9 @@
               <thead><tr><th scope="col" style="width:140px">Date</th><th scope="col" style="width:100px">Version</th><th scope="col">Notes</th></tr></thead>
               <tbody>
                 <tr class="data-row">
-                  <td class="text-[#6B7280] text-[15px] whitespace-nowrap align-top px-4 py-3">Dec 15, 2024</td>
-                  <td class="text-[#6B7280] text-[15px] whitespace-nowrap align-top px-4 py-3">v-0.0.2</td>
-                  <td class="text-[#6B7280] text-[15px] align-top px-4 py-3">
+                  <td class="text-[#6B7280] text-[14px] whitespace-nowrap align-top px-4 py-3">Dec 15, 2024</td>
+                  <td class="text-[#6B7280] text-[14px] whitespace-nowrap align-top px-4 py-3">v-0.0.2</td>
+                  <td class="text-[#6B7280] text-[14px] align-top px-4 py-3">
                     <ul class="list-disc pl-4 space-y-1">
                       <li>This component is added to the website.</li>
                       <li>This component is now individually versioned.</li>
