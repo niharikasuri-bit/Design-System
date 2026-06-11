@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -106,8 +106,8 @@
        Global styles.css rule (main#main-content h3) overrides Tailwind text-[19px]/font-bold
        with clamp(16px,2.2vw,19px) / weight 700. Force 16px / weight 600 to match h4. */
     #pre-ship-checklist li h3 {
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 500;
       line-height: 1.45;
       letter-spacing: normal;
     }
@@ -149,20 +149,20 @@
 
       <!-- ── Hero ─────────────────────────────────────────────────── -->
       <section class="mb-12">
-        <h1 id="content-standard" class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold mb-4 text-[#0E165D] leading-[1.18] tracking-[-0.022em]">
+        <h1 id="content-standard" class="text-[36px] font-bold mb-4 text-[#0E165D] leading-[1.18] tracking-[-0.022em]" style="font-family: 'DM Sans', sans-serif;">
           DIGIT Content Standard
         </h1>
-        <p class="text-[17px] text-[#6B7280] max-w-3xl leading-relaxed mb-10">
+        <p class="text-[18px] text-[#6B7280] max-w-3xl leading-relaxed mb-10" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           Words are part of the design. These standards ensure every label, heading, error, and CTA across DIGIT products reads as if one person wrote it clearly, consistently, and for the user.
         </p>
 
         <!-- On this page -->
         <div class="bg-[#F4F5F7] rounded-xl p-6">
-          <h3 class="font-bold text-[#111827] mb-4">On this page</h3>
+          <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
           <ul class="space-y-2">
-            <li><a href="#localisation"       class="text-[#0E165D] hover:underline font-medium">Localisation Guidelines</a></li>
-            <li><a href="#ux-copy"            class="text-[#0E165D] hover:underline font-medium">UX Copy Guidelines</a></li>
-            <li><a href="#pre-ship-checklist" class="text-[#0E165D] hover:underline font-medium">Pre-ship Checklist</a></li>
+            <li><a href="#localisation"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;">Localisation Guidelines</a></li>
+            <li><a href="#ux-copy"            class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;">UX Copy Guidelines</a></li>
+            <li><a href="#pre-ship-checklist" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;">Pre-ship Checklist</a></li>
           </ul>
         </div>
       </section>
@@ -173,23 +173,23 @@
       <section id="localisation" class="mb-20 scroll-mt">
 
         <div class="flex items-center gap-4 mb-2">
-          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Localisation Guidelines</h2>
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">Localisation Guidelines</h2>
           <div class="section-rule"></div>
         </div>
 
-        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl">
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           This guide outlines the conventions for localizing text within DIGIT to English, ensuring consistency and clarity across all products and interfaces.
         </p>
 
         <!-- Casing heading -->
-        <h3 class="text-[18px] font-bold text-[#111827] mb-6">Casing</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Casing</h3>
 
         <div class="flex flex-col gap-4">
 
           <!-- Button Text -->
           <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
             <div class="flex items-start justify-between gap-4 mb-3">
-              <h4 class="font-bold text-[#111827] text-[15px]">Button Text &amp; CTAs</h4>
+              <h4 class="text-[18px] font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif;">Button Text &amp; CTAs</h4>
               <span class="badge-title text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Title Case</span>
             </div>
             <p class="text-[#6B7280] text-[14px] leading-relaxed mb-3">
@@ -205,7 +205,7 @@
           <!-- Body Text -->
           <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
             <div class="flex items-start justify-between gap-4 mb-3">
-              <h4 class="font-bold text-[#111827] text-[15px]">Body Text</h4>
+              <h4 class="text-[18px] font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif;">Body Text</h4>
               <span class="badge-sentence text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Sentence Case</span>
             </div>
             <p class="text-[#6B7280] text-[14px] leading-relaxed mb-3">
@@ -220,7 +220,7 @@
           <!-- Headings -->
           <div class="border border-[#E5E7EB] rounded-xl p-6 bg-white shadow-sm">
             <div class="flex items-start justify-between gap-4 mb-3">
-              <h4 class="font-bold text-[#111827] text-[15px]">Headings, Sub-headings &amp; Captions</h4>
+              <h4 class="text-[18px] font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif;">Headings, Sub-headings &amp; Captions</h4>
               <span class="badge-sentence text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0">Sentence Case</span>
             </div>
             <p class="text-[#6B7280] text-[14px] leading-relaxed mb-4">
@@ -241,7 +241,7 @@
         </div>
 
         <!-- Additional Considerations -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-5">Additional Considerations</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-5" style="font-family: 'DM Sans', sans-serif;">Additional Considerations</h3>
         <div class="flex flex-col gap-4">
           <div class="obj-card">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" class="shrink-0 mt-0.5">
@@ -250,8 +250,8 @@
               <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
             <div>
-              <h4 class="text-[16px] font-bold text-[#111827] mb-1">Consistency</h4>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Maintain uniform text formatting throughout the interface to enhance user understanding and reduce cognitive load.</p>
+              <h4 class="text-[18px] font-semibold text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Consistency</h4>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Maintain uniform text formatting throughout the interface to enhance user understanding and reduce cognitive load.</p>
             </div>
           </div>
           <div class="obj-card">
@@ -261,8 +261,8 @@
               <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
             <div>
-              <h4 class="text-[16px] font-bold text-[#111827] mb-1">Clarity</h4>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Ensure localized text is clear, concise, and easy to understand for the target audience, regardless of language or context.</p>
+              <h4 class="text-[18px] font-semibold text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Clarity</h4>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Ensure localized text is clear, concise, and easy to understand for the target audience, regardless of language or context.</p>
             </div>
           </div>
           <div class="obj-card">
@@ -272,8 +272,8 @@
               <path d="m12 8 4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
             <div>
-              <h4 class="text-[16px] font-bold text-[#111827] mb-1">Testing</h4>
-              <p class="text-[#6B7280] text-[14px] leading-relaxed">Thoroughly test all localized text to verify accuracy and appropriateness within the context of the interface before shipping.</p>
+              <h4 class="text-[18px] font-semibold text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Testing</h4>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Thoroughly test all localized text to verify accuracy and appropriateness within the context of the interface before shipping.</p>
             </div>
           </div>
         </div>
@@ -286,61 +286,61 @@
       <section id="ux-copy" class="mb-20 scroll-mt">
 
         <div class="flex items-center gap-4 mb-2">
-          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">UX Copy Guidelines</h2>
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">UX Copy Guidelines</h2>
           <div class="section-rule"></div>
         </div>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl">
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-10 max-w-3xl" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           Standards for voice, structure, and word choice across every product. Use alongside the Localisation Guide, which governs casing.
         </p>
 
         <!-- Core Principles -->
-        <h3 class="text-[18px] font-bold text-[#111827] mb-6">Core Principles</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Core Principles</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Clear over clever</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Plain words beat polished ones. Write to be understood, not to impress.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Clear over clever</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Plain words beat polished ones. Write to be understood, not to impress.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Short over long</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Cut every word that doesn't earn its place.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Short over long</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Cut every word that doesn't earn its place.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Active over passive</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Say who does what. Active voice is shorter and clearer.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Active over passive</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Say who does what. Active voice is shorter and clearer.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Consistent over creative</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Use the same word for the same thing, everywhere.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Consistent over creative</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use the same word for the same thing, everywhere.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">User-first</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Speak to the user, not about the system. Every word should serve them.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">User-first</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Speak to the user, not about the system. Every word should serve them.</p>
           </div>
 
         </div>
 
         <!-- Voice and Tone -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Voice and Tone</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-6" style="font-family: 'DM Sans', sans-serif;">Voice and Tone</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
 
           <!-- Voice -->
@@ -350,7 +350,7 @@
             </div>
             <p class="text-[11px] font-bold text-[#0E165D] uppercase tracking-wider mb-2">Voice stays the same</p>
             <p class="text-[14px] font-bold text-[#111827] mb-1">Direct, helpful, respectful</p>
-            <p class="text-[13px] text-[#6B7280] leading-relaxed">We do not lecture, joke, or apologise unless something has gone wrong.</p>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">We do not lecture, joke, or apologise unless something has gone wrong.</p>
           </div>
 
           <!-- Confirmation -->
@@ -360,7 +360,7 @@
             </div>
             <p class="text-[11px] font-bold text-[#15803D] uppercase tracking-wider mb-2">Confirmation</p>
             <p class="text-[14px] font-bold text-[#111827] mb-1">Warm</p>
-            <p class="text-[13px] text-[#6B7280] leading-relaxed">Confirm what happened in one clear line. Skip the exclamation mark.</p>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Confirm what happened in one clear line. Skip the exclamation mark.</p>
           </div>
 
           <!-- Error -->
@@ -370,7 +370,7 @@
             </div>
             <p class="text-[11px] font-bold text-[#B45309] uppercase tracking-wider mb-2">Error</p>
             <p class="text-[14px] font-bold text-[#111827] mb-1">Calm and specific</p>
-            <p class="text-[13px] text-[#6B7280] leading-relaxed">Say what went wrong and what to do next. Never blame the user.</p>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Say what went wrong and what to do next. Never blame the user.</p>
           </div>
 
           <!-- Destructive -->
@@ -380,14 +380,14 @@
             </div>
             <p class="text-[11px] font-bold text-[#B91900] uppercase tracking-wider mb-2">Destructive action</p>
             <p class="text-[14px] font-bold text-[#111827] mb-1">Firm</p>
-            <p class="text-[13px] text-[#6B7280] leading-relaxed">Be clear about consequences. Don't soften language that needs to be direct.</p>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Be clear about consequences. Don't soften language that needs to be direct.</p>
           </div>
 
         </div>
 
         <!-- Active and Passive Voice -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-2">Active and Passive Voice</h3>
-        <p class="text-[#6B7280] text-[14px] leading-relaxed mb-5">
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-2" style="font-family: 'DM Sans', sans-serif;">Active and Passive Voice</h3>
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-5" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           Use active voice by default. If the user is acting, write actively. If the system did something and blame would be unhelpful, passive is fine.
         </p>
         <div class="rounded-xl overflow-hidden border border-[#E5E7EB] mb-12">
@@ -425,14 +425,14 @@
         </div>
 
         <!-- Element Guidelines -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Element Guidelines</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-6" style="font-family: 'DM Sans', sans-serif;">Element Guidelines</h3>
 
         <div class="flex flex-col gap-8 mb-12">
 
           <!-- Headings -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Headings</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Headings</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• Tell the user what the screen or section is about. Skip filler like "Welcome to".</li>
               <li>• Keep under 6 words where possible. Sentence case. No full stops.</li>
               <li>• Front-load the keyword the most important word comes first.</li>
@@ -454,8 +454,8 @@
 
           <!-- Descriptions -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Descriptions &amp; Supporting Text</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Descriptions &amp; Supporting Text</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• One sentence is usually enough. Two is the ceiling.</li>
               <li>• Explain what the section does. Do not repeat the heading. End with a full stop.</li>
               <li>• Avoid "please" unless asking for something inconvenient.</li>
@@ -476,8 +476,8 @@
 
           <!-- Labels -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Labels</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Labels</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• Use a noun or short noun phrase never a sentence.</li>
               <li>• Sentence case. No colon, no full stop.</li>
               <li>• Match the data, not the field type. "Email address" beats "Enter your email."</li>
@@ -499,8 +499,8 @@
 
           <!-- CTAs -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Calls to Action (CTAs)</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Calls to Action (CTAs)</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• Start with a verb. Title Case. No full stop. Keep to 1–3 words.</li>
               <li>• Be specific "Save Draft" beats "Submit". "Delete Account" beats "OK".</li>
               <li>• Pair opposites: primary moves forward, secondary cancels or goes back.</li>
@@ -523,8 +523,8 @@
 
           <!-- Error Messages -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Error Messages</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Error Messages</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• Say what went wrong and what to do next.</li>
               <li>• Do not blame the user. Avoid the word "invalid" where possible.</li>
               <li>• Be specific about the field or action.</li>
@@ -546,8 +546,8 @@
 
           <!-- Empty States -->
           <div>
-            <h4 class="font-bold text-[#111827] text-[15px] mb-2">Empty States &amp; Confirmations</h4>
-            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4">
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Empty States &amp; Confirmations</h4>
+            <ul class="text-[14px] text-[#6B7280] leading-relaxed mb-4 space-y-1 pl-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
               <li>• Empty state: tell the user what will appear there, and how to add the first item.</li>
               <li>• Confirmation: one line, what happened. No exclamation mark.</li>
             </ul>
@@ -568,8 +568,8 @@
         </div>
 
         <!-- Word Choice -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-5">Word Choice</h3>
-        <p class="text-[14px] text-[#6B7280] mb-4">Pick one term per concept and use it everywhere. Never switch between "property", "asset", "unit", and "listing" for the same thing.</p>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-5" style="font-family: 'DM Sans', sans-serif;">Word Choice</h3>
+        <p class="text-[16px] text-[#6B7280] mb-4" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Pick one term per concept and use it everywhere. Never switch between "property", "asset", "unit", and "listing" for the same thing.</p>
         <div class="rounded-xl overflow-hidden border border-[#E5E7EB] mb-12">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -593,45 +593,45 @@
         </div>
 
         <!-- Numbers, Dates, Punctuation -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Numbers, Dates &amp; Punctuation</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-6" style="font-family: 'DM Sans', sans-serif;">Numbers, Dates &amp; Punctuation</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Numbers</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Always use numerals in UI "3 items", not "three items".</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Numbers</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Always use numerals in UI "3 items", not "three items".</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Dates</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">12 May 2026 (long) or 12/05/2026 (short). Pick one format per surface.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Dates</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">12 May 2026 (long) or 12/05/2026 (short). Pick one format per surface.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Time</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">24-hour for government / back-office; 12-hour with am/pm for citizens.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Time</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">24-hour for government / back-office; 12-hour with am/pm for citizens.</p>
           </div>
 
           <div class="cs-prin-card">
             <div class="cs-prin-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
             </div>
-            <h4 class="text-[15px] font-bold text-[#111827] mb-2">Punctuation</h4>
-            <p class="text-[#6B7280] text-[13px] leading-relaxed">Oxford comma in lists of 3+. No exclamation marks. No emojis in core UI.</p>
+            <h4 class="text-[18px] font-semibold text-[#111827] mb-2" style="font-family: 'DM Sans', sans-serif;">Punctuation</h4>
+            <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Oxford comma in lists of 3+. No exclamation marks. No emojis in core UI.</p>
           </div>
 
         </div>
 
         <!-- Accessibility -->
-        <h3 class="text-[18px] font-bold text-[#111827] mt-10 mb-6">Accessibility &amp; Inclusion</h3>
+        <h3 class="text-[20px] font-semibold text-[#111827] mt-10 mb-6" style="font-family: 'DM Sans', sans-serif;">Accessibility &amp; Inclusion</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
 
           <!-- Do's -->
@@ -692,10 +692,10 @@
       <section id="pre-ship-checklist" class="mb-20 scroll-mt">
 
         <div class="flex items-center gap-4 mb-2">
-          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap">Pre-ship Checklist</h2>
+          <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">Pre-ship Checklist</h2>
           <div class="section-rule"></div>
         </div>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-8 max-w-3xl">Before any screen ships, the copy should pass each of these.</p>
+        <p class="text-[16px] text-[#6B7280] leading-relaxed mb-8 max-w-3xl" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Before any screen ships, the copy should pass each of these.</p>
 
         <ul class="space-y-3">
 
@@ -704,8 +704,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Heading under 6 words</h3>
-              <p class="text-[#6B7280] leading-relaxed">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Heading under 6 words</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Sentence case, no full stop. The heading tells the user what the screen is about.</p>
             </div>
           </li>
 
@@ -714,8 +714,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Description is one or two sentences</h3>
-              <p class="text-[#6B7280] leading-relaxed">Does not repeat the heading. Ends with a full stop.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Description is one or two sentences</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Does not repeat the heading. Ends with a full stop.</p>
             </div>
           </li>
 
@@ -724,8 +724,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Labels are nouns, sentence case</h3>
-              <p class="text-[#6B7280] leading-relaxed">Consistent with labels used elsewhere for the same data across the product.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Labels are nouns, sentence case</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Consistent with labels used elsewhere for the same data across the product.</p>
             </div>
           </li>
 
@@ -734,8 +734,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">CTAs start with a verb, Title Case</h3>
-              <p class="text-[#6B7280] leading-relaxed">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">CTAs start with a verb, Title Case</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Say what will happen when the user taps it. "Save Draft" beats "Submit".</p>
             </div>
           </li>
 
@@ -744,8 +744,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Voice is active</h3>
-              <p class="text-[#6B7280] leading-relaxed">Unless the system, not the user, did the action then passive is acceptable.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Voice is active</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Unless the system, not the user, did the action then passive is acceptable.</p>
             </div>
           </li>
 
@@ -754,8 +754,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">No "please", exclamation marks, or "click here"</h3>
-              <p class="text-[#6B7280] leading-relaxed">Also avoid "invalid" describe what went wrong instead.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">No "please", exclamation marks, or "click here"</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Also avoid "invalid" describe what went wrong instead.</p>
             </div>
           </li>
 
@@ -764,8 +764,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Same term for the same concept</h3>
-              <p class="text-[#6B7280] leading-relaxed">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Same term for the same concept</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Used consistently across the screen and the entire flow. Never switch synonyms mid-journey.</p>
             </div>
           </li>
 
@@ -774,8 +774,8 @@
               <svg viewBox="0 0 14 10" fill="none" width="14" height="10"><path d="M1.16634 5.00033L4.49967 8.33366L12.833 0.000325521" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.99963"/></svg>
             </div>
             <div>
-              <h3 class="font-bold text-[#111827] text-[19px] mb-1">Error messages tell the user what to do next</h3>
-              <p class="text-[#6B7280] leading-relaxed">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
+              <h3 class="text-[18px] font-medium text-[#111827] mb-1" style="font-family: 'DM Sans', sans-serif;">Error messages tell the user what to do next</h3>
+              <p class="text-[14px] text-[#6B7280] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Specific, actionable, and blame-free. "Enter a valid email" beats "Invalid input".</p>
             </div>
           </li>
 
