@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
   <script>
     window.DIGIT_ROOT = '../../';
@@ -40,8 +46,8 @@
       <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Panel</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Panel</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Panel component is a responsive and accessible UI element used to convey important system feedback to users. Aligned with principles of clarity, consistency, and user-first communication, it ensures users receive timely success or error notifications in an unobtrusive yet prominent manner.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -74,35 +80,35 @@
 
       <!-- â•â• ON THIS PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"           class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"          class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"        class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#behaviors"         class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
-          <li><a href="#usage-guide"       class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"         class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"  class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
+          <li><a href="#usage-guide"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"  class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- â•â• ANATOMY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQhjuXMgJYTjetvGyreIg%252Fimage.png%3Falt%3Dmedia%26token%3De6e8214e-4dde-43a0-a3b5-b598d5677ca3&width=768&dpr=3&quality=100&sign=41deb8fa&sv=2" alt="Panel anatomy" class="w-full rounded-lg" />
       </section>
 
       <!-- â•â• VARIANTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Success Panel</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays a positive outcome using a green background and a check icon. Used to confirm actions such as form submissions or successful operations.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Success Panel</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays a positive outcome using a green background and a check icon. Used to confirm actions such as form submissions or successful operations.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FspdHx4Lo2ilBDvnKNQSy%252Fimage.png%3Falt%3Dmedia%26token%3D75c6f8f8-ef0e-402a-904d-c26c504d0f5c&width=768&dpr=3&quality=100&sign=479fe2f4&sv=2" alt="Success Panel" class="w-full rounded-lg" />
@@ -113,8 +119,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Error Panel</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Indicates failure with a red background and alert icon. Helps users identify and resolve problems quickly.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Error Panel</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Indicates failure with a red background and alert icon. Helps users identify and resolve problems quickly.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fqtr2G9fnAP24Tia8QQJn%252Fimage.png%3Falt%3Dmedia%26token%3D58023c7e-4ccf-40a5-8860-fd7c5e20f8ad&width=768&dpr=3&quality=100&sign=16dbb8b5&sv=2" alt="Error Panel" class="w-full rounded-lg" />
@@ -125,14 +131,14 @@
 
       <!-- â•â• PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Animation</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The panel's success or failure animation plays smoothly.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Animation</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The panel's success or failure animation plays smoothly.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FyihGNSyvZAjGRGJDGCpt%252Fimage.png%3Falt%3Dmedia%26token%3D2cb3b579-3307-4cdf-a09b-95991a87d823&width=768&dpr=3&quality=100&sign=56b03b3a&sv=2" alt="Animation property" class="w-full rounded-lg" />
@@ -143,8 +149,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Description</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Each panel contains a clear description with optional supporting information (e.g., reference ID or code).</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Description</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each panel contains a clear description with optional supporting information (e.g., reference ID or code).</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F3FATVYAHi9VsEztbaY53%252Fimage.png%3Falt%3Dmedia%26token%3D131bd46a-85c9-4a68-8dcf-5518efb08080&width=768&dpr=3&quality=100&sign=87c9f6e4&sv=2" alt="Description property" class="w-full rounded-lg" />
@@ -155,10 +161,10 @@
         <!-- Table of Properties -->
         <div class="pt-2">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -206,14 +212,14 @@
       <!-- â•â• INTERACTION STATE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <!-- â•â• BEHAVIOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviours</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviours</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Dynamic Positioning</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The Panel can adapt its position dynamically based on the device or screen size, ensuring visibility without obstructing critical UI elements.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Dynamic Positioning</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The Panel can adapt its position dynamically based on the device or screen size, ensuring visibility without obstructing critical UI elements.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQ6pa1HZ8I8bkF58cOwV4%252Fimage.png%3Falt%3Dmedia%26token%3Dd61065f6-6e30-4e58-a714-d38a1de41346&width=768&dpr=3&quality=100&sign=39431e67&sv=2" alt="Dynamic Positioning" class="w-full rounded-lg" />
@@ -224,14 +230,14 @@
 
       <!-- â•â• USAGE GUIDE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Use clear text and an icon to show the state</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use clear, concise text with relevant icons to indicate success or error states, ensuring users quickly understand the message. Avoid using excessive or unnecessary information that clutters the panel, making it harder to read at a glance.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use clear text and an icon to show the state</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use clear, concise text with relevant icons to indicate success or error states, ensuring users quickly understand the message. Avoid using excessive or unnecessary information that clutters the panel, making it harder to read at a glance.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <div class="flex flex-col gap-3">
@@ -245,7 +251,7 @@
 
       <!-- â•â• CHANGE LOG â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -268,7 +274,7 @@
 
       <!-- â•â• DESIGN CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -283,8 +289,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Panel</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Panel</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -315,8 +321,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Panel</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Panel</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -387,9 +393,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

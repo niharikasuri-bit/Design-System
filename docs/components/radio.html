@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -41,8 +47,8 @@
       <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Radio</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Radio</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Radio component allows users to select a single option from a set of mutually exclusive choices. It promotes clarity, ease of decision-making, and accessibility through consistent styling and intuitive interaction patterns.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -75,36 +81,36 @@
 
       <!-- â•â• ON THIS PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"           class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"          class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"        class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#interaction-state" class="otp-link" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
-          <li><a href="#behaviors"         class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
-          <li><a href="#usage-guide"       class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"         class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"  class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#interaction-state" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
+          <li><a href="#behaviors"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
+          <li><a href="#usage-guide"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"  class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- â•â• ANATOMY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FjAgXfZfue4S1LmDJ4Keh%252Fimage.png%3Falt%3Dmedia%26token%3D405bd219-cf8b-4e6d-8a71-744436b859e1&width=768&dpr=3&quality=100&sign=e0e3b062&sv=2" alt="Radio anatomy" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
       </section>
 
       <!-- â•â• VARIANTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Active</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The active or 'on' state of a radio button indicates that the option has been selected by the user. Unlike checkboxes, only one radio button within a group can be in the active state at any given time.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Active</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The active or 'on' state of a radio button indicates that the option has been selected by the user. Unlike checkboxes, only one radio button within a group can be in the active state at any given time.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FuZfP7ujkQsCQwZcKdecY%252Fimage.png%3Falt%3Dmedia%26token%3Dcdab5dac-477f-482d-91eb-e83a1adacae3&width=768&dpr=3&quality=100&sign=2229a10f&sv=2" alt="Active variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -115,8 +121,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Inactive</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The inactive or 'off' state of a radio button indicates that the option is available but not currently selected. This state is distinct from both the selected state and the disabled state. When a radio button is in the inactive state, it remains fully interactive. Users can click or tap on the radio button to select it, which will automatically deselect any previously selected option in the same group.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Inactive</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The inactive or 'off' state of a radio button indicates that the option is available but not currently selected. This state is distinct from both the selected state and the disabled state. When a radio button is in the inactive state, it remains fully interactive. Users can click or tap on the radio button to select it, which will automatically deselect any previously selected option in the same group.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FR0yzTB4UmtrZnoX3vSQv%252Fimage.png%3Falt%3Dmedia%26token%3D563eaf2d-9578-4da0-97ed-c16a22d30400&width=768&dpr=3&quality=100&sign=d4b14c1b&sv=2" alt="Inactive variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -127,14 +133,14 @@
 
       <!-- â•â• PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Filled State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A radio button that shows it is selected by filling the inner circle. This state indicates the user's current choice.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Filled State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A radio button that shows it is selected by filling the inner circle. This state indicates the user's current choice.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FFKTRznRvyEvI6cB80Lx5%252Fimage.png%3Falt%3Dmedia%26token%3Dbb31abf8-62d4-439b-91ca-e50c04ebceb6&width=768&dpr=3&quality=100&sign=bfc3016c&sv=2" alt="Filled State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -145,8 +151,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Default State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The standard appearance of a radio button before any selection is made. It appears with an empty circle and is ready for interaction.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Default State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The standard appearance of a radio button before any selection is made. It appears with an empty circle and is ready for interaction.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FCpD6B0pA04wBSssSRSHf%252Fimage.png%3Falt%3Dmedia%26token%3Dc031b587-c36b-4b05-8fd8-4bc2728485a6&width=768&dpr=3&quality=100&sign=27365f51&sv=2" alt="Default State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -157,8 +163,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Disabled State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A radio button that appears greyed out and cannot be selected. This state is used when an option is not available for user interaction.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Disabled State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A radio button that appears greyed out and cannot be selected. This state is used when an option is not available for user interaction.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F9ehHo0gZJC1XeSJDPClk%252Fimage.png%3Falt%3Dmedia%26token%3De5bd49cb-9b3b-49e5-a1d3-cd9180b4d015&width=768&dpr=3&quality=100&sign=af87374c&sv=2" alt="Disabled State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -169,8 +175,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Disabled Filled</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A selected radio button that is also disabled. It indicates a pre-selected option that users cannot change.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Disabled Filled</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A selected radio button that is also disabled. It indicates a pre-selected option that users cannot change.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FkbuX9RDw6JJ8Hlw4ryLe%252Fimage.png%3Falt%3Dmedia%26token%3Dcae134e8-820c-45bb-9eee-206750c1cd64&width=768&dpr=3&quality=100&sign=814111ed&sv=2" alt="Disabled Filled" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -181,8 +187,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Read Only</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A radio button that is selected but not interactive. This state is used when users can view the selected option but are not allowed to modify it.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Read Only</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A radio button that is selected but not interactive. This state is used when users can view the selected option but are not allowed to modify it.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FaPHKAO3pinKDmAWoiqTB%252Fimage.png%3Falt%3Dmedia%26token%3D7b63feea-80a3-42df-8139-4f125ba33f07&width=768&dpr=3&quality=100&sign=722ef96e&sv=2" alt="Read Only" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -193,10 +199,10 @@
         <!-- Table of Properties -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -256,14 +262,14 @@
 
       <!-- â•â• INTERACTION STATE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="interaction-state" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Interaction State</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Interaction State</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Hover</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When users hover over an inactive radio button, it transitions to display our Primary orange colour. This distinct colour change serves as a clear visual cue that differentiates the hover state from both the default inactive state and the non-interactive disabled state. The orange highlight indicates to users that the radio button is interactive and can be selected, encouraging engagement while reinforcing the component's actionable nature.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hover</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When users hover over an inactive radio button, it transitions to display our Primary orange colour. This distinct colour change serves as a clear visual cue that differentiates the hover state from both the default inactive state and the non-interactive disabled state. The orange highlight indicates to users that the radio button is interactive and can be selected, encouraging engagement while reinforcing the component's actionable nature.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FsBVKlYW6lkAo01jkkAAm%252Fimage.png%3Falt%3Dmedia%26token%3Dc6342c39-39b4-425f-9794-291b802f7024&width=768&dpr=3&quality=100&sign=c8e1a962&sv=2" alt="Hover state" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -274,8 +280,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Mousedown</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When a user hovers over the button, a visual cue is added to emphasise interactivity. This is achieved by introducing a subtle outline around the button. The subtle halo outline complements the button's style, without overwhelming the design.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Mousedown</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When a user hovers over the button, a visual cue is added to emphasise interactivity. This is achieved by introducing a subtle outline around the button. The subtle halo outline complements the button's style, without overwhelming the design.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fr84QANeJkF3yXBlCuZcd%252Fimage.png%3Falt%3Dmedia%26token%3D0e288690-9459-4110-af52-b31b315857f0&width=768&dpr=3&quality=100&sign=e34aa136&sv=2" alt="Mousedown state" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -286,14 +292,14 @@
 
       <!-- â•â• BEHAVIOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviours</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviours</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Text overflow</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When the radio label exceeds the width of the parent container, the text wraps to the next line to maintain readability. Character count can be limited if required based on layout constraints.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Text overflow</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When the radio label exceeds the width of the parent container, the text wraps to the next line to maintain readability. Character count can be limited if required based on layout constraints.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FdNU1IDZouvkJyd86eXej%252Fimage.png%3Falt%3Dmedia%26token%3D37d7e664-256d-4d7c-9f49-841d3fe8841e&width=768&dpr=3&quality=100&sign=cb8433d0&sv=2" alt="Text overflow" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -304,14 +310,14 @@
 
       <!-- â•â• USAGE GUIDE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Single Selection Only</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use radio buttons when the user needs to select only one option from a list. They are not intended for multi-selection; use checkboxes if multiple selections are required.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Single Selection Only</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use radio buttons when the user needs to select only one option from a list. They are not intended for multi-selection; use checkboxes if multiple selections are required.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FvkQnEVLFqRtXpYxmoXGd%252Fimage.png%3Falt%3Dmedia%26token%3D3a3c14fd-6f48-474d-bdf7-07fdff52ef47&width=768&dpr=3&quality=100&sign=bccf0056&sv=2" alt="Single Selection Only" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -322,7 +328,7 @@
 
       <!-- â•â• CHANGE LOG â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -345,7 +351,7 @@
 
       <!-- â•â• DESIGN CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -360,8 +366,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Radio</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Radio</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -403,8 +409,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Radio</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Radio</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -471,9 +477,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

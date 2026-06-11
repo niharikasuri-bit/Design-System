@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
   <script>
     window.DIGIT_ROOT = '../../';
@@ -40,8 +46,8 @@
       <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">File Uploader</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">File Uploader</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The File Uploader component allows users to easily upload documents and images through drag-and-drop, browse, or click actions. Built with accessibility and clarity in mind, this component ensures seamless interaction, feedback on file status, and visual clarity. It accommodates various upload needs like single, multiple, or preview-based, with consistent interaction feedback.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -74,36 +80,36 @@
 
       <!-- â•â• ON THIS PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"           class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"          class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"        class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#interaction-state" class="otp-link" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
-          <li><a href="#behaviors"         class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
-          <li><a href="#usage-guide"       class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"         class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"  class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#interaction-state" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
+          <li><a href="#behaviors"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
+          <li><a href="#usage-guide"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"  class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- â•â• ANATOMY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FsPXhNaqJpz3bLRN5H2nj%252Fimage.png%3Falt%3Dmedia%26token%3Dac604500-cb77-4def-b472-003da78d59b9&width=768&dpr=3&quality=100&sign=2782ac76&sv=2" alt="File Uploader anatomy" class="w-full rounded-lg" />
       </section>
 
       <!-- â•â• VARIANTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Uploader Field</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A compact file upload input paired with an action button. Best suited for single file uploads in form layouts.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Uploader Field</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A compact file upload input paired with an action button. Best suited for single file uploads in form layouts.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FreXIDCDVRrBDvmrErl46%252Fimage.png%3Falt%3Dmedia%26token%3Dcdecb72a-9d86-4322-b10b-127cf811f137&width=768&dpr=3&quality=100&sign=684b184e&sv=2" alt="Uploader Field" class="w-full rounded-lg" />
@@ -114,8 +120,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Uploader Widget</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A more interactive drag-and-drop style uploader. Useful when multiple files need to be uploaded or where visual cues are important.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Uploader Widget</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A more interactive drag-and-drop style uploader. Useful when multiple files need to be uploaded or where visual cues are important.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FgS0JsdI7McLrToraqgQU%252Fimage.png%3Falt%3Dmedia%26token%3D58274033-97ba-4176-9ea9-6696f9ecfc1a&width=768&dpr=3&quality=100&sign=a1863e5e&sv=2" alt="Uploader Widget" class="w-full rounded-lg" />
@@ -126,8 +132,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Image Upload</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A visual first variant designed to upload and preview images. Users can click to add, preview thumbnails, or remove images directly.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Image Upload</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A visual first variant designed to upload and preview images. Users can click to add, preview thumbnails, or remove images directly.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FwphOQirRblmnAWDvRRKS%252Fimage.png%3Falt%3Dmedia%26token%3D677766ff-af1a-4774-bbe7-358dcb8dda8f&width=768&dpr=3&quality=100&sign=f9cf2fea&sv=2" alt="Image Upload" class="w-full rounded-lg" />
@@ -138,14 +144,14 @@
 
       <!-- â•â• PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Single Upload</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Allows only one file to be uploaded at a time. Automatically replaces existing files.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Single Upload</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Allows only one file to be uploaded at a time. Automatically replaces existing files.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FKfxypU7zHnQYRFdjhVza%252Fimage.png%3Falt%3Dmedia%26token%3D51f44b1a-1251-442d-b5e7-3a67c2e8271c&width=768&dpr=3&quality=100&sign=9ee53bf4&sv=2" alt="Single Upload" class="w-full rounded-lg" />
@@ -156,8 +162,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Multiple Upload</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Enables uploading of several files. Each file is shown with a re-upload and download option.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Multiple Upload</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Enables uploading of several files. Each file is shown with a re-upload and download option.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fln2sT15Yw9eyt6pgOjP1%252Fimage.png%3Falt%3Dmedia%26token%3D9184c9e2-3437-4e03-b43d-5af95bc8db6b&width=768&dpr=3&quality=100&sign=24453f22&sv=2" alt="Multiple Upload" class="w-full rounded-lg" />
@@ -168,8 +174,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Error</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays error messages per file or globally. Indicates upload failure, unsupported format, or size limit.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Error</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays error messages per file or globally. Indicates upload failure, unsupported format, or size limit.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FY9e1AgdMWzOyWLK2pSRL%252Fimage.png%3Falt%3Dmedia%26token%3Dce29d378-7083-4d5f-b437-f560929974fd&width=768&dpr=3&quality=100&sign=7af4c4bd&sv=2" alt="Error" class="w-full rounded-lg" />
@@ -180,8 +186,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Label</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Each uploader can have a custom label to define the upload purpose clearly.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Label</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each uploader can have a custom label to define the upload purpose clearly.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FaBdzrS1l8VvJFr1GxWej%252Fimage.png%3Falt%3Dmedia%26token%3D710a9fd5-9018-4552-82f2-e4cacfff6b39&width=768&dpr=3&quality=100&sign=266e3d89&sv=2" alt="Label" class="w-full rounded-lg" />
@@ -192,8 +198,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Actions</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Includes an option to upload using the 'device camera' and 'my files' options, only applicable for the image upload variant.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Actions</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Includes an option to upload using the 'device camera' and 'my files' options, only applicable for the image upload variant.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FkeDe1wV9fdxR20cOBTv6%252Fimage.png%3Falt%3Dmedia%26token%3D2277eb09-b92f-4b12-a2f9-75986423abc4&width=768&dpr=3&quality=100&sign=2ce2cba7&sv=2" alt="Actions" class="w-full rounded-lg" />
@@ -204,10 +210,10 @@
         <!-- Table of Properties -->
         <div class="pt-2">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -274,14 +280,14 @@
 
       <!-- â•â• INTERACTION STATE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="interaction-state" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Interaction State</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Interaction State</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Hover State for Multiple Image Load</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When the user hovers over the field or an item, it highlights to indicate interactivity and help the user discover selectable areas.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hover State for Multiple Image Load</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When the user hovers over the field or an item, it highlights to indicate interactivity and help the user discover selectable areas.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHLSRvV5Mq6p63bjWWDj1%252Fimage.png%3Falt%3Dmedia%26token%3D2d869c71-9159-4767-93c8-71afeac11934&width=768&dpr=3&quality=100&sign=58f5ba18&sv=2" alt="Hover State for Multiple Image Load" class="w-full rounded-lg" />
@@ -292,8 +298,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Mouse Down State for Multiple Image Load</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When the user performs a mouse-down action on the Image Upload area, a contextual menu appears offering multiple options for uploading. This menu typically includes: Camera - Opens the device's camera to capture and upload a new image instantly. My Files - Opens the file explorer or gallery to choose existing images from the device. This interaction provides flexibility and enhances the upload experience, especially on mobile devices or when real-time photo capture is required.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Mouse Down State for Multiple Image Load</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When the user performs a mouse-down action on the Image Upload area, a contextual menu appears offering multiple options for uploading. This menu typically includes: Camera - Opens the device's camera to capture and upload a new image instantly. My Files - Opens the file explorer or gallery to choose existing images from the device. This interaction provides flexibility and enhances the upload experience, especially on mobile devices or when real-time photo capture is required.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FTkhn135LhQKaarmhzT2b%252Fimage.png%3Falt%3Dmedia%26token%3D3c53f26d-fc49-4d3e-9217-7c23ef01a9ab&width=768&dpr=3&quality=100&sign=ab2dd1db&sv=2" alt="Mouse Down State for Multiple Image Load" class="w-full rounded-lg" />
@@ -304,14 +310,14 @@
 
       <!-- â•â• BEHAVIOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviours</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviours</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Drag &amp; Drop Support</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Uploader Widget allows users to drag and drop files into the designated area.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Drag &amp; Drop Support</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Uploader Widget allows users to drag and drop files into the designated area.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FNhPzEfeCDhcWbsJqZiyC%252Fimage.png%3Falt%3Dmedia%26token%3D5ffb88cc-352e-412b-ae52-25366ca86945&width=768&dpr=3&quality=100&sign=6c29a9b9&sv=2" alt="Drag and Drop Support" class="w-full rounded-lg" />
@@ -322,14 +328,14 @@
 
       <!-- â•â• USAGE GUIDE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Allow to preview uploaded files</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Provide a thumbnail or preview option for the uploaded images. This helps users verify that they uploaded the correct file before submitting it. Avoid using generic error messages like 'Upload failed' without explanation. Users need to know why their file wasn't accepted and what they should do next.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Allow to preview uploaded files</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Provide a thumbnail or preview option for the uploaded images. This helps users verify that they uploaded the correct file before submitting it. Avoid using generic error messages like 'Upload failed' without explanation. Users need to know why their file wasn't accepted and what they should do next.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <div class="flex flex-col gap-3">
@@ -343,7 +349,7 @@
 
       <!-- â•â• CHANGE LOG â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -366,7 +372,7 @@
 
       <!-- â•â• DESIGN CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -381,8 +387,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">File Uploader</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">File Uploader</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -422,8 +428,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">File Uploader</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">File Uploader</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -491,9 +497,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -46,9 +52,9 @@
       <div class="mb-12">
 
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Alert Card</h1>
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Alert Card</h1>
 
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Alert Card component is a visual communication element used to inform users about critical
           messages like errors, warnings, success confirmations, or informative updates. It ensures users
           are guided with appropriate visual cues and messaging hierarchy at every touchpoint of their
@@ -148,22 +154,22 @@
 
       <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"       class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#behaviors"        class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
-          <li><a href="#usage-guide"      class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"        class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist" class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
+          <li><a href="#usage-guide"      class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
 
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F2sHmbdJYqZmjhuqECPot%252Fimage.png%3Falt%3Dmedia%26token%3Db77d7c28-7926-4c67-a2ff-63e3429af6b6&width=768&dpr=3&quality=100&sign=63584067&sv=2"
              alt="Alert Card anatomy diagram" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -173,15 +179,15 @@
       <!-- Section 1: TEXT LEFT · IMAGE RIGHT (md:flex-row, txt first) -->
       <section id="variants" class="mb-24 scroll-mt-24">
 
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <!-- Info -->
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Info</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Used to convey general information or tips that help users proceed smoothly, and uses a neutral blue tone to maintain a calm and non-intrusive presence.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Info</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Used to convey general information or tips that help users proceed smoothly, and uses a neutral blue tone to maintain a calm and non-intrusive presence.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FX0WRTxiMHZBUWAR47lbV%252Fimage.png%3Falt%3Dmedia%26token%3D5aae8574-ccc4-430b-bf4e-5acbd520a02c&width=768&dpr=3&quality=100&sign=b961b493&sv=2" alt="Info variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -191,8 +197,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Error</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Indicates a problem or a failure in the process and is highlighted with red accents to draw immediate attention.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Error</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Indicates a problem or a failure in the process and is highlighted with red accents to draw immediate attention.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FdpEsY6SOArC8HC1ZxFVK%252Fimage.png%3Falt%3Dmedia%26token%3Df719d249-7603-4b3a-8297-c7f7fe2c6a0f&width=768&dpr=3&quality=100&sign=d530712b&sv=2" alt="Error variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -202,8 +208,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Success</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Represents successful outcomes or completion of user actions, and green colour signifies affirmation and closure.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Success</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Represents successful outcomes or completion of user actions, and green colour signifies affirmation and closure.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F9cX7DCoNJpVHyAyT46ov%252Fimage.png%3Falt%3Dmedia%26token%3D1bb942ef-9aaf-4562-a37b-0d3fd9bcc8f4&width=768&dpr=3&quality=100&sign=fdab339e&sv=2" alt="Success variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -213,8 +219,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Warning</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Alerts users about potential issues or required attention, and the orange tone ensures visibility without creating an alarm.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Warning</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Alerts users about potential issues or required attention, and the orange tone ensures visibility without creating an alarm.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fq5dD5TqeJU48XrU1SPjV%252Fimage.png%3Falt%3Dmedia%26token%3Da1072129-e8d8-4ee1-bafd-6a9884149c09&width=768&dpr=3&quality=100&sign=883bed06&sv=2" alt="Warning variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -225,15 +231,15 @@
       <!-- Section 2: IMAGE LEFT · TEXT RIGHT (md:flex-row-reverse, txt first) -->
       <section id="properties" class="mb-24 scroll-mt-24">
 
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <!-- Action Button -->
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Action Button</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Optional call-to-action placed within the alert for quick resolution or follow-up and it is also styled consistently with the alert type.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Action Button</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Optional call-to-action placed within the alert for quick resolution or follow-up and it is also styled consistently with the alert type.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FLaUhL2f7KEzZOtKikU57%252Fimage.png%3Falt%3Dmedia%26token%3D97810e33-f9be-4994-a004-cdfd33b1ba98&width=768&dpr=3&quality=100&sign=68c499f0&sv=2" alt="Action Button property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -243,8 +249,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Widget Alignment</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Elements like text, icon, buttons, and additional content are aligned using layout grids or auto-layout features as it ensures a structured, clean appearance across device sizes and screen states.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Widget Alignment</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Elements like text, icon, buttons, and additional content are aligned using layout grids or auto-layout features as it ensures a structured, clean appearance across device sizes and screen states.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FnyDDcH59MXXpTWn5tFxs%252Fimage.png%3Falt%3Dmedia%26token%3D51d07be9-3073-444b-882d-2c0f14253749&width=768&dpr=3&quality=100&sign=e4e0de1&sv=2" alt="Widget Alignment property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -253,10 +259,10 @@
         <!-- Property Configuration Table -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
 
           <div class="mt-8">
             <div class="prop-toggle">
@@ -312,13 +318,13 @@
 
         <!-- ══ BEHAVIORS ════════════════════════════════════════════ -->
         <section id="behaviors" class="mb-24 scroll-mt-24">
-          <h2 class="section-title">Behaviors</h2>
+          <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviors</h2>
           <div class="section-divider"></div>
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Flexible Layout</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Designed to adapt within cards, modals, or full-width views, and it is also responsive to container size and works well in both desktop and mobile interfaces.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Flexible Layout</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Designed to adapt within cards, modals, or full-width views, and it is also responsive to container size and works well in both desktop and mobile interfaces.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FygXqregdpqNDrnFpxAiP%252Fimage.png%3Falt%3Dmedia%26token%3D0bf7957c-8954-48de-9408-8a4bf98b8350&width=768&dpr=3&quality=100&sign=197a7808&sv=2" alt="Flexible Layout behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -327,13 +333,13 @@
 
         <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
         <section id="usage-guide" class="mb-24 scroll-mt-24">
-          <h2 class="section-title">Usage guide</h2>
+          <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
           <div class="section-divider"></div>
           <div class="mb-12">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Use Alert Cards to provide clear feedback</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use alert cards to provide clear and concise feedback about important system statuses, warnings, or errors. Ensure the message is direct and informative so users can take appropriate action quickly.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use Alert Cards to provide clear feedback</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use alert cards to provide clear and concise feedback about important system statuses, warnings, or errors. Ensure the message is direct and informative so users can take appropriate action quickly.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FD7Ev0KihOY3tqSRI6QI8%252Fimage.png%3Falt%3Dmedia%26token%3D20a69cbe-394d-4791-8394-494b15c7570e&width=768&dpr=3&quality=100&sign=c9f61b10&sv=2" alt="Usage Do" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -341,8 +347,8 @@
           <div class="mb-0">
             <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
               <div class="txt-col w-full md:w-[60%]">
-                <h3 class="text-xl font-bold text-[#111827] mb-3">Avoid using alert cards for non-critical information or minor updates.</h3>
-                <p class="text-[#6B7280] text-[16px] leading-[1.72]">Overusing them for trivial messages can cause users to ignore them, reducing their effectiveness in important situations.</p>
+                <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Avoid using alert cards for non-critical information or minor updates.</h3>
+                <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Overusing them for trivial messages can cause users to ignore them, reducing their effectiveness in important situations.</p>
               </div>
               <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fz3QG0ARudToDQr422YnJ%252Fimage.png%3Falt%3Dmedia%26token%3Da28c445b-9abf-4333-a0af-1a4e3fe4926d&width=768&dpr=3&quality=100&sign=fff7b4b9&sv=2" alt="Usage Don't" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
             </div>
@@ -351,7 +357,7 @@
 
         <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
         <section id="changelog" class="mb-24 scroll-mt-24">
-          <h2 class="section-title">Change log</h2>
+          <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
           <div class="section-divider"></div>
           <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
             <table class="prop-table w-full" style="min-width:560px">
@@ -365,7 +371,7 @@
 
         <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
         <section id="design-checklist" class="mb-16 scroll-mt-24">
-          <h2 class="section-title">Design Checklist</h2>
+          <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
           <div class="section-divider"></div>
           <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
         </section>
@@ -380,8 +386,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Alert Card</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Alert Card</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -412,8 +418,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Alert Card</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Alert Card</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -487,9 +493,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

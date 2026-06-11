@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -41,8 +47,8 @@
       <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Stepper</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Stepper</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Stepper is a navigation component that guides users through a multi-step process in a structured and sequential manner. It is commonly used in forms, onboarding flows, and checkout processes, providing clear progress indicators and step-by-step guidance to enhance the user experience.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -75,36 +81,36 @@
 
       <!-- â•â• ON THIS PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"           class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"          class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"        class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#interaction-state" class="otp-link" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
-          <li><a href="#behaviors"         class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
-          <li><a href="#usage-guide"       class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"         class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"  class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#interaction-state" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
+          <li><a href="#behaviors"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
+          <li><a href="#usage-guide"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"  class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- â•â• ANATOMY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FhuvtFMUrIm0SYJjQ3NoX%252Fimage.png%3Falt%3Dmedia%26token%3D3e44950c-33d1-4c9b-88d9-f7084a1627c4&width=768&dpr=3&quality=100&sign=f89a0f2d&sv=2" alt="Stepper anatomy" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
       </section>
 
       <!-- â•â• VARIANTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Horizontal Stepper</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays steps in a single row, guiding users through a linear process from left to right. Ideal for checkouts, onboarding, and multi-step forms with clear progress indicators.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Horizontal Stepper</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays steps in a single row, guiding users through a linear process from left to right. Ideal for checkouts, onboarding, and multi-step forms with clear progress indicators.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F7WdQuPBkb5zow6VsyCsR%252Fimage.png%3Falt%3Dmedia%26token%3D2306f09b-1ed9-429a-9e84-71f50629296a&width=300&dpr=3&quality=100&sign=a84bb064&sv=2" alt="Horizontal Stepper" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -115,8 +121,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Vertical Stepper</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The Vertical Stepper displays steps in a column, ideal for mobile screens or detailed content. It improves readability and offers clear top-to-bottom navigation, making it great for forms or lengthy descriptions.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Vertical Stepper</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The Vertical Stepper displays steps in a column, ideal for mobile screens or detailed content. It improves readability and offers clear top-to-bottom navigation, making it great for forms or lengthy descriptions.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FuLu7mPWInsqNmGu1YXvV%252Fimage.png%3Falt%3Dmedia%26token%3Dab7a9205-2167-49fd-9619-b3a663b24582&width=300&dpr=3&quality=100&sign=3ffb9935&sv=2" alt="Vertical Stepper" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -127,14 +133,14 @@
 
       <!-- â•â• PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Divider</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Determines whether a visual separator (divider) is displayed between steps. Helps in distinguishing each step clearly.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Divider</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Determines whether a visual separator (divider) is displayed between steps. Helps in distinguishing each step clearly.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FUhafLJ5B4Akk4T03U8QB%252Fimage.png%3Falt%3Dmedia%26token%3D0ffd7dc9-4f1e-4c2d-9dcf-50bca2232a10&width=768&dpr=3&quality=100&sign=aed06914&sv=2" alt="Divider" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -145,8 +151,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Number of Steps</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Defines the total steps in the stepper. Helps in setting the length of the process.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Number of Steps</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Defines the total steps in the stepper. Helps in setting the length of the process.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FmSD12kDOu1EINGU6lWTM%252Fimage.png%3Falt%3Dmedia%26token%3Dff977826-d7ff-4710-acfd-d3ebe1d03f0e&width=768&dpr=3&quality=100&sign=4b271f04&sv=2" alt="Number of Steps" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -157,10 +163,10 @@
         <!-- Table of Properties -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -209,14 +215,14 @@
 
       <!-- â•â• INTERACTION STATE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="interaction-state" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Interaction State</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Interaction State</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Active State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The current step is visually highlighted to indicate progress.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Active State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The current step is visually highlighted to indicate progress.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FKCovVvoevmsWYkvIileC%252Fimage.png%3Falt%3Dmedia%26token%3D2923e3d5-c51d-4921-b9e5-c0e878cc25bb&width=768&dpr=3&quality=100&sign=ae5b90fe&sv=2" alt="Active State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -227,8 +233,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Completed State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Steps that users have finished are marked as completed, often with a checkmark or different styling.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Completed State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Steps that users have finished are marked as completed, often with a checkmark or different styling.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FJ8Qc6yaf8kL3dkJb40Y4%252Fimage.png%3Falt%3Dmedia%26token%3Dd0f71ed4-6526-4376-9dab-c71acc5179d4&width=768&dpr=3&quality=100&sign=6f6c9a9d&sv=2" alt="Completed State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -239,8 +245,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Hover State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">On hover, inactive steps highlight to indicate they are clickable and part of the navigation flow.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hover State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">On hover, inactive steps highlight to indicate they are clickable and part of the navigation flow.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FABMHMGydVr9XbZXxU2xh%252Fimage.png%3Falt%3Dmedia%26token%3D6387fc74-d040-4be8-9283-95ad8dc86f05&width=768&dpr=3&quality=100&sign=a7468e4e&sv=2" alt="Hover State" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -251,14 +257,14 @@
 
       <!-- â•â• BEHAVIOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviours</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviours</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Horizontal Scrolling</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When using a horizontal stepper in a narrow container, steps can scroll sideways to accommodate all steps within view.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Horizontal Scrolling</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When using a horizontal stepper in a narrow container, steps can scroll sideways to accommodate all steps within view.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FWUGjqV2zTckqdhUZdoNi%252Fimage.png%3Falt%3Dmedia%26token%3Deef5f50e-752f-4b4e-9670-91736ba2863d&width=768&dpr=3&quality=100&sign=b7c68f4f&sv=2" alt="Horizontal Scrolling" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -269,8 +275,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Vertical Scrolling</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">In vertical layouts with limited height, steps scroll vertically to ensure users can access each step sequentially without content being cut off.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Vertical Scrolling</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">In vertical layouts with limited height, steps scroll vertically to ensure users can access each step sequentially without content being cut off.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FNFd9BkO6Co0olRgISkJJ%252Fimage.png%3Falt%3Dmedia%26token%3D75f3b92a-c334-42b5-bb47-717a11452557&width=768&dpr=3&quality=100&sign=b7e651b&sv=2" alt="Vertical Scrolling" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -281,8 +287,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Label Overflow</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">If step labels exceed the available space, they are truncated with ellipsis (...) or wrapped to the next line based on layout and design requirements. Tooltips can be used to show the full label on hover.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Label Overflow</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">If step labels exceed the available space, they are truncated with ellipsis (...) or wrapped to the next line based on layout and design requirements. Tooltips can be used to show the full label on hover.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FP8a7OPf09D08yv7KElbr%252Fimage.png%3Falt%3Dmedia%26token%3D4c6b1b43-0589-45eb-8a65-9aa7dd4cb64c&width=768&dpr=3&quality=100&sign=6a44bdea&sv=2" alt="Label Overflow" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -293,8 +299,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Flexible Dimensions</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Steppers adapt to custom width and height defined by their parent containers using flex layouts. They maintain usability and alignment across different screen sizes and orientations.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Flexible Dimensions</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Steppers adapt to custom width and height defined by their parent containers using flex layouts. They maintain usability and alignment across different screen sizes and orientations.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FIH4BUVkRegojC3Eg6Z2C%252Fimage.png%3Falt%3Dmedia%26token%3D381cbee9-ef4b-455a-9b63-55c3ed4be3ff&width=768&dpr=3&quality=100&sign=4c1c27bf&sv=2" alt="Flexible Dimensions" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -305,14 +311,14 @@
 
       <!-- â•â• USAGE GUIDE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Use for a process that involves multiple steps</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use a stepper only when a process involves multiple steps, ensuring clear progression and user guidance.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use for a process that involves multiple steps</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use a stepper only when a process involves multiple steps, ensuring clear progression and user guidance.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FvAGsozpT356D7o9aI0zd%252Fimage.png%3Falt%3Dmedia%26token%3D77b7d11f-c2f4-4d88-ad3e-5d2285bedc06&width=768&dpr=3&quality=100&sign=9751117b&sv=2" alt="Use for a process that involves multiple steps" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -323,8 +329,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Avoid using it for just one or two steps</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Avoid using a stepper for processes with just one or two steps, as it adds unnecessary complexity.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Avoid using it for just one or two steps</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Avoid using a stepper for processes with just one or two steps, as it adds unnecessary complexity.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FL4jnDrvSXx2UUcsbgs52%252Fimage.png%3Falt%3Dmedia%26token%3D93228e8e-a2f9-487a-90ae-8911e8c07c30&width=768&dpr=3&quality=100&sign=2c5ad89c&sv=2" alt="Avoid using it for just one or two steps" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -335,7 +341,7 @@
 
       <!-- â•â• CHANGE LOG â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -358,7 +364,7 @@
 
       <!-- â•â• DESIGN CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -373,8 +379,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Stepper</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Stepper</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -426,8 +432,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Stepper</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Stepper</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -500,9 +506,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

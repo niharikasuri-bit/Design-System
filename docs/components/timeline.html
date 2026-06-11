@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -41,8 +47,8 @@
       <!-- ══ HEADER ══════════════════════════════════════════════ -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Timeline</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Timeline</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Timeline component visually represents a sequence of events or stages in a linear, chronological order. Designed with clarity and accessibility in mind, it helps users understand the progress, status, and associated actions within a workflow.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -75,35 +81,35 @@
 
       <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"       class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#behaviors"        class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
-          <li><a href="#usage-guide"      class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"        class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist" class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviours</a></li>
+          <li><a href="#usage-guide"      class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fo2rQ6fzXRbA23zeMopdC%252Fimage.png%3Falt%3Dmedia%26token%3Dd30f33ce-8e97-4bfa-a8e7-8dedfabd34f3&width=768&dpr=3&quality=100&sign=8271061f&sv=2" alt="Timeline anatomy" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
       </section>
 
       <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Upcoming</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays future events or steps in the process. The visual indicator is muted to reflect inactivity, and it can include relevant date/time info.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Upcoming</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays future events or steps in the process. The visual indicator is muted to reflect inactivity, and it can include relevant date/time info.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FuuF6ytgunFg7hEgqtkTr%252Fimage.png%3Falt%3Dmedia%26token%3D1d0b4dc9-e4f1-42ba-a43b-2ee268ca1b60&width=768&dpr=3&quality=100&sign=299eeff&sv=2" alt="Upcoming" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -114,8 +120,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">In Progress</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Represents tasks or stages currently underway. It uses an active visual indicator to denote ongoing status and may include interactive elements like 'View Details'.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">In Progress</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Represents tasks or stages currently underway. It uses an active visual indicator to denote ongoing status and may include interactive elements like 'View Details'.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FaRXv31Nhj5U87MX51Vxn%252Fimage.png%3Falt%3Dmedia%26token%3D52426b0a-e8eb-45f0-85b6-c03ea716d249&width=768&dpr=3&quality=100&sign=1bcb4fbb&sv=2" alt="In Progress" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -126,8 +132,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Completed</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Marks finished tasks using a filled, completed icon. This variant reinforces a sense of progression and task completion.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Completed</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Marks finished tasks using a filled, completed icon. This variant reinforces a sense of progression and task completion.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FlUBwQSM2BzlGOpK37s1L%252Fimage.png%3Falt%3Dmedia%26token%3Dda2b4adc-2f09-4a9b-a20d-6ad74b29e6ea&width=768&dpr=3&quality=100&sign=b0d9d0be&sv=2" alt="Completed" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -138,14 +144,14 @@
 
       <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Default</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Shows only the stage name without additional data, keeping the interface clean.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Default</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Shows only the stage name without additional data, keeping the interface clean.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F7D5CjRaXygejq5a1l3s1%252Fimage.png%3Falt%3Dmedia%26token%3D35f12ed4-8f88-4427-aee9-22d36b3d149c&width=768&dpr=3&quality=100&sign=98724c1b&sv=2" alt="Default" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -156,8 +162,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Date</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Includes the date beneath the stage to inform users of timing for events or steps.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Date</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Includes the date beneath the stage to inform users of timing for events or steps.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FoSk5aFqatNE7vz28cE75%252Fimage.png%3Falt%3Dmedia%26token%3Debf90b49-e7a8-4cc1-a0b8-687ccb1d53b3&width=768&dpr=3&quality=100&sign=9d8e756f&sv=2" alt="Date" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -168,8 +174,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Additional Elements</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Enhances the component with date/time details and a collapsible 'View Details' element, which opens further content.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Additional Elements</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Enhances the component with date/time details and a collapsible 'View Details' element, which opens further content.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FHCnVDp6fwzR4VokRJADw%252Fimage.png%3Falt%3Dmedia%26token%3D36cab7cf-a40d-49a2-a212-d4c9968d8872&width=768&dpr=3&quality=100&sign=1086c01b&sv=2" alt="Additional Elements" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -180,8 +186,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Expanded</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays rich content such as text blocks, image/document previews, and action buttons to support user interaction.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Expanded</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays rich content such as text blocks, image/document previews, and action buttons to support user interaction.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FR1LuQcCT7sCvUXvmwQ6j%252Fimage.png%3Falt%3Dmedia%26token%3D8ea2415f-c0e7-4f84-8f51-dfa0a1a10d06&width=768&dpr=3&quality=100&sign=ff498af5&sv=2" alt="Expanded" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -192,8 +198,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Error Timeline</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Highlights failed or incomplete steps with red indicators and messaging like 'Failed', drawing attention to issues that require user attention.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Error Timeline</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Highlights failed or incomplete steps with red indicators and messaging like 'Failed', drawing attention to issues that require user attention.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252Fz82ksMBNQTWHJkmEhrOO%252Fimage.png%3Falt%3Dmedia%26token%3D680f1420-625f-4dc9-a2ff-fa3b15398994&width=768&dpr=3&quality=100&sign=7c826940&sv=2" alt="Error Timeline" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -204,10 +210,10 @@
         <!-- Table of Properties -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -263,14 +269,14 @@
 
       <!-- ══ BEHAVIOURS ════════════════════════════════════════════ -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviours</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviours</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Progressive Expansion</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Sections expand to reveal additional information, files, and actions only when the user chooses to explore, preventing visual clutter.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Progressive Expansion</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Sections expand to reveal additional information, files, and actions only when the user chooses to explore, preventing visual clutter.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F4kx4ZbIQc3yEQ27z4Pu8%252Fimage.png%3Falt%3Dmedia%26token%3D7e4e9a7d-39e8-43ac-864a-8b5a86e89fce&width=768&dpr=3&quality=100&sign=63c4f132&sv=2" alt="Progressive Expansion" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy" />
@@ -281,14 +287,14 @@
 
       <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Ensure Clear Status Representation</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Each timeline status should be visually distinct using clear colours, icons, and typography so that users can easily understand the progression and current state. Icons should clearly match their status. Avoid using similar icons for different statuses, which can lead to misinterpretation.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Ensure Clear Status Representation</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each timeline status should be visually distinct using clear colours, icons, and typography so that users can easily understand the progression and current state. Icons should clearly match their status. Avoid using similar icons for different statuses, which can lead to misinterpretation.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <div class="flex flex-col gap-3">
@@ -302,7 +308,7 @@
 
       <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -325,7 +331,7 @@
 
       <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -340,8 +346,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Timeline</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Timeline</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -390,8 +396,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Timeline</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Timeline</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -452,9 +458,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

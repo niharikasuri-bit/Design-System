@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
   <script>
     window.DIGIT_ROOT = '../../';
@@ -44,9 +50,9 @@
       <div class="mb-12">
 
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Breadcrumbs</h1>
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Breadcrumbs</h1>
 
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Breadcrumbs component is a navigation aid that helps users understand their current position within a product's hierarchy. It improves user orientation and facilitates smooth backwards navigation, particularly in multi-level interfaces.
         </p>
 
@@ -101,21 +107,21 @@
 
       <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"          class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"         class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"       class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#behaviors"        class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
-          <li><a href="#usage-guide"      class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"        class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist" class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"       class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
+          <li><a href="#usage-guide"      class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="../../assets/images/breadcrumbs/anatomy.png" alt="Breadcrumbs anatomy diagram" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
       </section>
@@ -123,15 +129,15 @@
       <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
       <!-- §1 TEXT LEFT · IMAGE RIGHT -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <!-- Basic -->
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Basic</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Displays the full navigation path linearly, and it's best used when the number of breadcrumb items is limited and space is sufficient.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Basic</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Displays the full navigation path linearly, and it's best used when the number of breadcrumb items is limited and space is sufficient.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FD5F4nVZIEKItxFNDrZmT%252Fimage.png%3Falt%3Dmedia%26token%3D3e5f7853-50a0-4a58-8056-c78d5f8cbd99&width=768&dpr=3&quality=100&sign=99058dba&sv=2" alt="Basic variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -141,8 +147,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Collapsed</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Compresses middle items into an ellipsis (...) for better scalability, and it's ideal for complex or deeply nested paths to maintain a clean layout.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Collapsed</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Compresses middle items into an ellipsis (...) for better scalability, and it's ideal for complex or deeply nested paths to maintain a clean layout.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FcLC2yLK8q0SWumNOnYZk%252Fimage.png%3Falt%3Dmedia%26token%3D0998898b-644f-423d-9708-c1c5d18bbbaf&width=768&dpr=3&quality=100&sign=dd565a0d&sv=2" alt="Collapsed variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -152,8 +158,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">With Custom Separators</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Uses stylised or alternate separators like arrows (→) instead of slashes, and it enhances visual hierarchy and readability based on context or brand style.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">With Custom Separators</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Uses stylised or alternate separators like arrows (→) instead of slashes, and it enhances visual hierarchy and readability based on context or brand style.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FvdvsUE0MVVTd5MGrh6X1%252Fimage.png%3Falt%3Dmedia%26token%3D38b9b4b8-9a5e-42cd-a1b3-6ce6aed1ec2f&width=768&dpr=3&quality=100&sign=7d5b5b8a&sv=2" alt="With Custom Separators" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -163,8 +169,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">With Icons</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Includes relevant icons alongside each breadcrumb label. Helps with quicker recognition and improves usability, especially for users with lower literacy or cognitive load.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">With Icons</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Includes relevant icons alongside each breadcrumb label. Helps with quicker recognition and improves usability, especially for users with lower literacy or cognitive load.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FR9wWaFKlm9BKO1bKeBaQ%252Fimage.png%3Falt%3Dmedia%26token%3D8e4c5403-8a4f-4553-9c2d-f129127b6992&width=768&dpr=3&quality=100&sign=649dfb81&sv=2" alt="With Icons" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -173,12 +179,12 @@
 
       <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mt-8">
-          <h3 class="text-xl font-bold text-[#111827] mb-3">Table of Properties</h3>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">
+          <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Table of Properties</h3>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
             Each design component offers a range of configurable options. These options are
             intentionally platform-agnostic, allowing implementations to adapt and tailor them
             to align with the specific requirements of the chosen framework.
@@ -239,13 +245,13 @@
 
       <!-- ══ BEHAVIORS ════════════════════════════════════════════ -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviors</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviors</h2>
         <div class="section-divider"></div>
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Clickable Navigation</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">All breadcrumb items (except the current page) are clickable, enabling users to quickly jump to previous steps or levels in their journey.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Clickable Navigation</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">All breadcrumb items (except the current page) are clickable, enabling users to quickly jump to previous steps or levels in their journey.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FMWvwq1Ooz2OuaynHsVx8%252Fimage.png%3Falt%3Dmedia%26token%3D3fb0f822-abe5-4ec2-bb4a-6005a94e479e&width=768&dpr=3&quality=100&sign=edcdd419&sv=2" alt="Clickable Navigation behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -253,8 +259,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Responsive Collapsing</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Breadcrumbs automatically adjust and collapse middle items when the screen width is limited, ensuring the component remains compact and accessible on mobile or smaller viewports.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Responsive Collapsing</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Breadcrumbs automatically adjust and collapse middle items when the screen width is limited, ensuring the component remains compact and accessible on mobile or smaller viewports.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F8lnNkKcMaoai5E19qTbc%252Fimage.png%3Falt%3Dmedia%26token%3D5bf92b62-d53b-4fd6-a784-067452cc234a&width=768&dpr=3&quality=100&sign=4eed8b73&sv=2" alt="Responsive Collapsing behavior" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -263,13 +269,13 @@
 
       <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Use breadcrumbs to show hierarchy</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Maintain a consistent hierarchical structure for breadcrumbs, as they provide users with a clear path for navigation and context about their current location.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use breadcrumbs to show hierarchy</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Maintain a consistent hierarchical structure for breadcrumbs, as they provide users with a clear path for navigation and context about their current location.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F1eO8t8mlv3ZFNLtT9Tvs%252Fimage.png%3Falt%3Dmedia%26token%3Ddf2aba34-e983-4b32-8e1b-4eb4c9da611c&width=768&dpr=3&quality=100&sign=65b135e0&sv=2" alt="Usage Do" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -277,8 +283,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Use breadcrumbs for anything other than navigating a linear hierarchy.</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">They should not serve as interactive elements for actions like filtering or other functionalities.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use breadcrumbs for anything other than navigating a linear hierarchy.</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">They should not serve as interactive elements for actions like filtering or other functionalities.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]"><img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FqL9y7N1mRwS614j7qZ4G%252Fimage.png%3Falt%3Dmedia%26token%3D3336102a-9467-4a11-b8f3-2a91426757e2&width=768&dpr=3&quality=100&sign=6c7d559d&sv=2" alt="Usage Don't" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/></div>
           </div>
@@ -287,7 +293,7 @@
 
       <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -301,7 +307,7 @@
 
       <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -316,8 +322,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Breadcrumbs</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Breadcrumbs</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -365,8 +371,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Breadcrumbs</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Breadcrumbs</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -441,9 +447,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -41,8 +47,8 @@
       <!-- ══ HEADER ══════════════════════════════════════════════ -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Checkbox</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Checkbox</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Checkbox is a simple selection control that allows users to make binary choices, such as selecting or deselecting options. It is commonly used in forms, preference settings, and multi-select scenarios, providing clear visual feedback for user actions.
         </p>
         <div class="border border-[#E5E7EB] rounded-[14px] overflow-hidden mb-10">
@@ -75,35 +81,35 @@
 
       <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"            class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"           class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"         class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#interaction-state"  class="otp-link" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
-          <li><a href="#usage-guide"        class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#changelog"          class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"   class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"            class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#interaction-state"  class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'interaction-state')">Interaction State</a></li>
+          <li><a href="#usage-guide"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#changelog"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"   class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="../../assets/previews/checkbox/Image-1.png" alt="Checkbox anatomy" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
       </section>
 
       <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Checked</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The checked state indicates that the user has actively selected the option. It provides clear visual feedback with a filled checkbox, often accompanied by a checkmark.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Checked</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The checked state indicates that the user has actively selected the option. It provides clear visual feedback with a filled checkbox, often accompanied by a checkmark.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-2.png" alt="Checked variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -114,8 +120,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Intermediate</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The indeterminate state represents a mixed selection, typically used for parent checkboxes in multi-select scenarios. It visually signals that only some child options are selected.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Intermediate</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The indeterminate state represents a mixed selection, typically used for parent checkboxes in multi-select scenarios. It visually signals that only some child options are selected.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-3.png" alt="Intermediate variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -126,8 +132,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Unchecked</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The unchecked state indicates that the option is not selected. It appears as an empty checkbox, providing a clear visual cue that no action has been taken.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Unchecked</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The unchecked state indicates that the option is not selected. It appears as an empty checkbox, providing a clear visual cue that no action has been taken.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-4.png" alt="Unchecked variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -138,14 +144,14 @@
 
       <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Without Label</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A standalone checkbox without any label. This should be used only when there is a clear and visually distinct connection between the checkbox and other components. An example for this case can be checkbox for selecting rows in a table.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Without Label</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A standalone checkbox without any label. This should be used only when there is a clear and visually distinct connection between the checkbox and other components. An example for this case can be checkbox for selecting rows in a table.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-5.png" alt="Without Label" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -156,8 +162,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Label</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The label for a checkbox should always be present except for scenarios where a direct connection with the checkbox and other components exist. Labels should be concise and clear communicating the actions for the user.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Label</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The label for a checkbox should always be present except for scenarios where a direct connection with the checkbox and other components exist. Labels should be concise and clear communicating the actions for the user.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-6.png" alt="Label" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -168,8 +174,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Label First</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A checkbox where the label appears before (to the left of) the checkbox. This layout can be useful where alignment or reading order benefits from this structure.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Label First</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A checkbox where the label appears before (to the left of) the checkbox. This layout can be useful where alignment or reading order benefits from this structure.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-7.png" alt="Label First" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -180,8 +186,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Disabled</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">A non-interactive checkbox that appears visually muted. This state is used when an option is unavailable or restricted. Disabled checkboxes should still be readable to inform users of their options.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Disabled</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">A non-interactive checkbox that appears visually muted. This state is used when an option is unavailable or restricted. Disabled checkboxes should still be readable to inform users of their options.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-8.png" alt="Disabled" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -192,8 +198,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Read Only</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The read-only state of a checkbox indicates that the component is non-editable. In this state, the checkbox may be either checked or unchecked, but users cannot interact with or modify its selection. It is purely for display purposes, providing a view-only representation of the checkbox status.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Read Only</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The read-only state of a checkbox indicates that the component is non-editable. In this state, the checkbox may be either checked or unchecked, but users cannot interact with or modify its selection. It is purely for display purposes, providing a view-only representation of the checkbox status.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-9.png" alt="Read Only" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -204,10 +210,10 @@
         <!-- Table of Properties -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -265,14 +271,14 @@
 
       <!-- ══ BEHAVIORS ════════════════════════════════════════════ -->
       <section id="interaction-state" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviors</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviors</h2>
         <div class="section-divider"></div>
 
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Text overflow</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When the label is too long for the parent container to hold, the text can wrap to the next line. The number of characters can be restricted if necessary.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Text overflow</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When the label is too long for the parent container to hold, the text can wrap to the next line. The number of characters can be restricted if necessary.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-10.png" alt="Text overflow" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -283,14 +289,14 @@
 
       <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Usage for Multiselection</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Checkboxes should be used when users need to select any number of choices from a list of options. They are appropriate when presenting independent options where multiple selections are allowed simultaneously.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Usage for Multiselection</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Checkboxes should be used when users need to select any number of choices from a list of options. They are appropriate when presenting independent options where multiple selections are allowed simultaneously.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="../../assets/previews/checkbox/Image-11.png" alt="Usage for Multiselection" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -301,8 +307,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Avoid interchanging checkboxes with Radio buttons</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Checkboxes should be used when users need to select any number of options from a list (including zero, one, or multiple selections). They represent independent choices that don't affect each other. Checkboxes work well for "opt-in" scenarios, toggling features on/off, or when users need to select multiple items from a visible set of options.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Avoid interchanging checkboxes with Radio buttons</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Checkboxes should be used when users need to select any number of options from a list (including zero, one, or multiple selections). They represent independent choices that don't affect each other. Checkboxes work well for "opt-in" scenarios, toggling features on/off, or when users need to select multiple items from a visible set of options.</p>
               <p class="text-[#6B7280] text-[16px] leading-[1.72] mt-3">Radio buttons, by contrast, should only be used when users must select exactly one option from a set of mutually exclusive choices. Using checkboxes when a single selection is required creates confusion and violates established interaction patterns, potentially leading to user frustration and errors.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
@@ -314,7 +320,7 @@
 
       <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -337,7 +343,7 @@
 
       <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -352,8 +358,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Checkbox</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Checkbox</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -388,8 +394,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Checkbox</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Checkbox</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -451,9 +457,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;

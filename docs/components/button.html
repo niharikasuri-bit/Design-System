@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -18,6 +18,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    #breadcrumb-mount nav { font-size: 14px !important; }
+    .prop-table th { font-size: 12px !important; }
+    .prop-table td { font-size: 14px !important; }
+    .prop-code { font-size: 14px !important; }
+  </style>
 
 
   <script>
@@ -41,8 +47,8 @@
       <!-- ══ HEADER ══════════════════════════════════════════════ -->
       <div class="mb-12">
 
-        <h1 class="text-[28px] sm:text-[34px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4">Button</h1>
-        <p class="text-[16px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8">
+        <h1 class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Button</h1>
+        <p class="text-[18px] text-[#6B7280] leading-relaxed max-w-[720px] mb-8" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">
           The Button is a basic interactive element used to perform actions or navigate within an app. It helps users complete tasks like submitting forms, starting processes, or opening pages, making it an essential part of any interface.
         </p>
         <!-- Preview -->
@@ -77,36 +83,36 @@
 
       <!-- ══ ON THIS PAGE ══════════════════════════════════════════ -->
       <div class="bg-[#F4F5F7] rounded-[14px] p-6 mb-24">
-        <h3 class="text-[18px] font-bold text-[#111827] mb-4">On this page</h3>
-        <ul class="flex flex-col gap-y-3">
-          <li><a href="#anatomy"            class="otp-link" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
-          <li><a href="#variants"           class="otp-link" onclick="smoothScroll(event,'variants')">Variants</a></li>
-          <li><a href="#properties"         class="otp-link" onclick="smoothScroll(event,'properties')">Properties</a></li>
-          <li><a href="#behaviors"          class="otp-link" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
-          <li><a href="#usage-guide"        class="otp-link" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
-          <li><a href="#content-guidelines" class="otp-link" onclick="smoothScroll(event,'content-guidelines')">Content guidelines</a></li>
-          <li><a href="#changelog"          class="otp-link" onclick="smoothScroll(event,'changelog')">Change log</a></li>
-          <li><a href="#design-checklist"   class="otp-link" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
+        <h3 class="text-[18px] font-semibold text-[#111827] mb-4" style="font-family: 'DM Sans', sans-serif;">On this page</h3>
+        <ul class="space-y-2">
+          <li><a href="#anatomy"            class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'anatomy')">Anatomy</a></li>
+          <li><a href="#variants"           class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'variants')">Variants</a></li>
+          <li><a href="#properties"         class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'properties')">Properties</a></li>
+          <li><a href="#behaviors"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'behaviors')">Behaviors</a></li>
+          <li><a href="#usage-guide"        class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'usage-guide')">Usage guide</a></li>
+          <li><a href="#content-guidelines" class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'content-guidelines')">Content guidelines</a></li>
+          <li><a href="#changelog"          class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'changelog')">Change log</a></li>
+          <li><a href="#design-checklist"   class="text-[16px] text-[#0E165D] hover:underline font-medium" style="font-family: 'DM Sans', sans-serif;" onclick="smoothScroll(event,'design-checklist')">Design Checklist</a></li>
         </ul>
       </div>
 
       <!-- ══ ANATOMY ══════════════════════════════════════════════ -->
       <section id="anatomy" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Anatomy</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Anatomy</h2>
         <div class="section-divider"></div>
         <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FxY2pFcTZBFaOeseWQNTZ%252FImage.png%3Falt%3Dmedia%26token%3D5c08a5d9-f3e0-42fd-9b51-fd5809b835b2&width=768&dpr=3&quality=100&sign=9d4aba74&sv=2" alt="Button anatomy diagram" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
       </section>
 
       <!-- ══ VARIANTS ═════════════════════════════════════════════ -->
       <section id="variants" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Variants</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Variants</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Primary</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The primary button is the default action button and is used for the most prominent action on a page or view. It uses a solid fill color to stand out. Only one primary button should appear per view to maintain a clear focus and hierarchy.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Primary</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The primary button is the default action button and is used for the most prominent action on a page or view. It uses a solid fill color to stand out. Only one primary button should appear per view to maintain a clear focus and hierarchy.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FZplH6XRSEpd5T7gLZus5%252FImage1.png%3Falt%3Dmedia%26token%3Da013800c-77d5-416f-9be6-b7e7436eb8ff&width=300&dpr=3&quality=100&sign=8880ad1&sv=2" alt="Primary variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -117,8 +123,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Secondary</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The secondary button communicates a moderate level of emphasis and is intended for actions that complement the primary or accent actions in a view. With a simple stroke and no fill, it maintains a clean and subtle appearance.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Secondary</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The secondary button communicates a moderate level of emphasis and is intended for actions that complement the primary or accent actions in a view. With a simple stroke and no fill, it maintains a clean and subtle appearance.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FicPEpXpDgwYnEutpO48x%252FImage2.png%3Falt%3Dmedia%26token%3D356c0b74-4a12-4aaa-8645-a5bf799effe5&width=300&dpr=3&quality=100&sign=bfced740&sv=2" alt="Secondary variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -129,8 +135,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Tertiary</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The tertiary button is a minimal, text-only variant designed for actions with less prominence in the overall hierarchy. It is used for secondary or supportive actions that complement primary tasks.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Tertiary</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The tertiary button is a minimal, text-only variant designed for actions with less prominence in the overall hierarchy. It is used for secondary or supportive actions that complement primary tasks.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FUKnTb4XIu9ioCRplM8t1%252FImage3.png%3Falt%3Dmedia%26token%3D9eb0f549-97ca-42a4-a8fc-a169dc8fb9cf&width=300&dpr=3&quality=100&sign=1daf0a15&sv=2" alt="Tertiary variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -141,8 +147,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Link</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The link button communicates navigation or secondary actions and is represented as text with an underline. Use link buttons to direct users to related content, additional resources, or less critical actions.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Link</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The link button communicates navigation or secondary actions and is represented as text with an underline. Use link buttons to direct users to related content, additional resources, or less critical actions.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F0xyaYxjiZW7OcR3P1hVt%252FImage4.png%3Falt%3Dmedia%26token%3D65e3baaa-0514-4a67-a0a4-139d9ea8b9cb&width=300&dpr=3&quality=100&sign=4a439e4f&sv=2" alt="Link variant" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -153,14 +159,14 @@
 
       <!-- ══ PROPERTIES ════════════════════════════════════════════ -->
       <section id="properties" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Properties</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Properties</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Label</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">This property represents the text displayed inside the button. It is a required field and helps users understand the action that the button will trigger.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Label</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">This property represents the text displayed inside the button. It is a required field and helps users understand the action that the button will trigger.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FarqXk5SiApnsHuIHvjMz%252FImagep1.png%3Falt%3Dmedia%26token%3D7c214eef-8ab6-4881-9118-e6cfdb35488a&width=300&dpr=3&quality=100&sign=eaf41a30&sv=2" alt="Label property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -171,8 +177,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Disabled</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The 'isDisabled' property disables the button, preventing any user interaction. It also applies a disabled visual style (like graying out the button) to indicate that the button is not active.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Disabled</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The 'isDisabled' property disables the button, preventing any user interaction. It also applies a disabled visual style (like graying out the button) to indicate that the button is not active.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F9lpaNtzSzNbiJOUl6PWp%252FImagep2.png%3Falt%3Dmedia%26token%3D56ed7efd-fa7c-4a58-bc08-70cce071ead9&width=300&dpr=3&quality=100&sign=448e1837&sv=2" alt="Disabled property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -183,8 +189,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Icon</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The icon property specifies the name of the icon to be rendered inside the button. This helps provide a visual cue along with the button text.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Icon</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The icon property specifies the name of the icon to be rendered inside the button. This helps provide a visual cue along with the button text.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F2UHlxGxWqI2LknrCmWqh%252FImagep3.png%3Falt%3Dmedia%26token%3Dde54909e-2eef-458b-a1a0-613bdc2c8503&width=300&dpr=3&quality=100&sign=e78bdc33&sv=2" alt="Icon property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -195,8 +201,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Size</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The size property specifies the size of the button. You can choose between 'large', 'medium', and 'small' to adjust the button's height and font size.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Size</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The size property specifies the size of the button. You can choose between 'large', 'medium', and 'small' to adjust the button's height and font size.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FvVyuSQRsKCu6Zb3GhLnT%252FImagep4.png%3Falt%3Dmedia%26token%3Dc7dc5219-5a0e-427c-80fe-1303b8028179&width=300&dpr=3&quality=100&sign=6e36f59&sv=2" alt="Size property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -207,8 +213,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Type</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The type property determines the HTML type attribute for the button, such as 'submit', 'button', or 'actionButton'.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Type</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The type property determines the HTML type attribute for the button, such as 'submit', 'button', or 'actionButton'.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F3EKZy6XSzuTSpac5Tn9c%252FImagep5.png%3Falt%3Dmedia%26token%3Db067b472-daad-4c85-a40c-8a70640a3b7e&width=300&dpr=3&quality=100&sign=a8544c40&sv=2" alt="Type property" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -219,10 +225,10 @@
         <!-- Table of Properties -->
         <div class="mt-12">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <h3 class="text-xl font-bold text-[#111827]" style="white-space: nowrap; margin: 0;">Table of Properties</h3>
+            <h3 class="text-xl font-semibold text-[#111827]" style="font-family: 'DM Sans', sans-serif; white-space: nowrap; margin: 0;">Table of Properties</h3>
             <div style="flex: 1; height: 1px; background-color: #e5e7eb;"></div>
           </div>
-          <p class="text-[#6B7280] text-[16px] leading-[1.72] mb-6">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
+          <p class="text-[#6B7280] text-[16px] leading-relaxed mb-6" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Each design component offers a range of configurable options. These options are intentionally platform-agnostic, allowing implementations to adapt and tailor them to align with the specific requirements of the chosen framework.</p>
           <div class="mt-8">
             <div class="prop-toggle">
               <button class="tab-trigger active" onclick="switchTab(this,'t-react')">React</button>
@@ -284,14 +290,14 @@
 
       <!-- ══ BEHAVIORS ════════════════════════════════════════════ -->
       <section id="behaviors" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Behaviors</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Behaviors</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Hover State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">When a user hovers over the button, a visual cue is added to emphasize interactivity. This is achieved by introducing a subtle line below the button. The line appears as a clean, horizontal underline that complements the button's style, without overwhelming the design.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Hover State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">When a user hovers over the button, a visual cue is added to emphasize interactivity. This is achieved by introducing a subtle line below the button. The line appears as a clean, horizontal underline that complements the button's style, without overwhelming the design.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FPz3w0LVSNJhh9q3b5tal%252FImageb1.png%3Falt%3Dmedia%26token%3D4b9f1cae-5125-40c5-8689-20c52d80e1e9&width=300&dpr=3&quality=100&sign=b1d0e11f&sv=2" alt="Hover state" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -302,8 +308,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Mousedown State</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The Mouse Down state of the button represents the moment when the user clicks and holds the button. This state provides immediate feedback to the user, confirming that their interaction has been registered. The text label becomes bolder, emphasizing the active interaction.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Mousedown State</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The Mouse Down state of the button represents the moment when the user clicks and holds the button. This state provides immediate feedback to the user, confirming that their interaction has been registered. The text label becomes bolder, emphasizing the active interaction.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FFbCpO3KYuVpq6vosB96v%252FImageb2.png%3Falt%3Dmedia%26token%3D7432baeb-10ca-4309-b87d-78e6826d73de&width=300&dpr=3&quality=100&sign=5f7837ec&sv=2" alt="Mousedown state" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -314,8 +320,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Flexible Width</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The width of the button adjusts to the length of the text. This behaviour is dynamic with respect to the character limit defined. There is no text overflow in buttons.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Flexible Width</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The width of the button adjusts to the length of the text. This behaviour is dynamic with respect to the character limit defined. There is no text overflow in buttons.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FAKsbiwleap9H3E7mkQ2X%252FImageb1.png%3Falt%3Dmedia%26token%3D786bd198-a86c-42d6-97f1-69f23d6979ea&width=300&dpr=3&quality=100&sign=dfd32167&sv=2" alt="Flexible width" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -326,8 +332,8 @@
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Character Limit</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">The default character limit for buttons is set to 64 characters to promote clear and concise actionable labels.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Character Limit</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">The default character limit for buttons is set to 64 characters to promote clear and concise actionable labels.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F0UlAILC3892ocTBYFszU%252FImageb2.png%3Falt%3Dmedia%26token%3Dfb332a2f-4f5a-4246-adb6-e48e76a6041e&width=300&dpr=3&quality=100&sign=e5eba876&sv=2" alt="Character limit" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -338,8 +344,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Truncated Label</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">If the label is too long to fit within the button, it will be truncated. The full text will be displayed on hover for web and on long press for mobile interfaces.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Truncated Label</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">If the label is too long to fit within the button, it will be truncated. The full text will be displayed on hover for web and on long press for mobile interfaces.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FQpL7ix8AoeX30B3ez8ze%252FImageb3.png%3Falt%3Dmedia%26token%3D0483734f-1b50-4f8a-a8a2-741c36efdbb0&width=300&dpr=3&quality=100&sign=689015c7&sv=2" alt="Truncated label" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -350,14 +356,14 @@
 
       <!-- ══ USAGE GUIDE ════════════════════════════════════════════ -->
       <section id="usage-guide" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Usage guide</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Usage guide</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Use icons only when necessary</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Add icons to buttons only when they provide meaningful context or reinforce the action. Icons should be highly relevant and improve user understanding. Never include icons purely for visual appeal or without a clear purpose. Decorative icons can confuse users and detract from the button's functionality.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Use icons only when necessary</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Add icons to buttons only when they provide meaningful context or reinforce the action. Icons should be highly relevant and improve user understanding. Never include icons purely for visual appeal or without a clear purpose. Decorative icons can confuse users and detract from the button's functionality.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <div class="flex flex-col gap-3">
@@ -371,8 +377,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row-reverse gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Do not override button colour</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Do not use custom colors for buttons. The colors of different button variations have been designed to be consistent and accessible.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Do not override button colour</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Do not use custom colors for buttons. The colors of different button variations have been designed to be consistent and accessible.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252F4m1fEb3gbVzj82MsUMat%252FImageb6.png%3Falt%3Dmedia%26token%3Df9f3de4e-54f6-4991-bd72-9ebc28670ade&width=300&dpr=3&quality=100&sign=4d97b334&sv=2" alt="Do not override colour" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -383,14 +389,14 @@
 
       <!-- ══ CONTENT GUIDELINES ════════════════════════════════════ -->
       <section id="content-guidelines" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Content guidelines</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Content guidelines</h2>
         <div class="section-divider"></div>
 
         <div class="mb-12">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Concise and actionable labels</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Button labels should be clear, concise, and action-oriented to help users understand their purpose instantly. Instead of words which are not verbs like 'My Bills' or 'Inbox,' use specific phrases like 'Download Bills' or 'View Application' that tell users what will happen when clicked. Avoid unnecessary words that clutter the labelbrevity improves readability and reduces cognitive load.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Concise and actionable labels</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Button labels should be clear, concise, and action-oriented to help users understand their purpose instantly. Instead of words which are not verbs like 'My Bills' or 'Inbox,' use specific phrases like 'Download Bills' or 'View Application' that tell users what will happen when clicked. Avoid unnecessary words that clutter the labelbrevity improves readability and reduces cognitive load.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FrBn9rf9zibSxdLhWqnvj%252FImageb7.png%3Falt%3Dmedia%26token%3D3a31969f-a0fd-4d27-a3a5-599ff812e909&width=300&dpr=3&quality=100&sign=addc21dd&sv=2" alt="Concise labels" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -401,8 +407,8 @@
         <div class="mb-0">
           <div class="section-row flex flex-col md:flex-row gap-12 items-start">
             <div class="txt-col w-full md:w-[60%]">
-              <h3 class="text-xl font-bold text-[#111827] mb-3">Casing</h3>
-              <p class="text-[#6B7280] text-[16px] leading-[1.72]">Use 'Titlecase' for buttons. This means capitalising the first letter of all words, except for articles and conjunctions. Eg. 'Submit Feedback', 'Create Account', 'Learn More.' Title case enhances the emphasis of actions at the same time ensuring accessibility and readability.</p>
+              <h3 class="text-xl font-semibold text-[#111827] mb-3" style="font-family: 'DM Sans', sans-serif;">Casing</h3>
+              <p class="text-[#6B7280] text-[16px] leading-relaxed" style="font-family: 'Open Sans', sans-serif; font-weight: 400;">Use 'Titlecase' for buttons. This means capitalising the first letter of all words, except for articles and conjunctions. Eg. 'Submit Feedback', 'Create Account', 'Learn More.' Title case enhances the emphasis of actions at the same time ensuring accessibility and readability.</p>
             </div>
             <div class="vis-col w-full md:w-[40%]">
               <img src="https://docs.digit.org/~gitbook/image?url=https%3A%2F%2F3868804918-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FegsIWleSdyH9rMLJ8ShI%252Fuploads%252FTghfMRkpVRKdDLLgtbBH%252FImageb8.png%3Falt%3Dmedia%26token%3D39444127-9f42-47f8-bb3c-1d7b0a106e14&width=300&dpr=3&quality=100&sign=efcae978&sv=2" alt="Casing" class="w-full block border border-[#D1D5DB] rounded-[4px]" loading="lazy"/>
@@ -413,7 +419,7 @@
 
       <!-- ══ CHANGE LOG ════════════════════════════════════════════ -->
       <section id="changelog" class="mb-24 scroll-mt-24">
-        <h2 class="section-title">Change log</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Change log</h2>
         <div class="section-divider"></div>
         <div class="border border-[#E5E7EB] rounded-xl overflow-hidden">
           <table class="prop-table w-full" style="min-width:560px">
@@ -436,7 +442,7 @@
 
       <!-- ══ DESIGN CHECKLIST ═══════════════════════════════════════ -->
       <section id="design-checklist" class="mb-16 scroll-mt-24">
-        <h2 class="section-title">Design Checklist</h2>
+        <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-size: 24px;">Design Checklist</h2>
         <div class="section-divider"></div>
         <div id="checklist-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px;align-items:start;"></div>
       </section>
@@ -451,8 +457,8 @@
   <div id="drawer-flutter" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Button</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component Flutter | Dart</div>
+        <div class="text-[16px] font-bold text-[#111827]">Button</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component Flutter | Dart</div>
       </div>
       <button onclick="closeM('flutter')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -486,8 +492,8 @@
   <div id="drawer-react" class="absolute top-0 right-0 w-[540px] max-w-[95vw] h-full bg-white border-l border-[#E5E7EB] flex flex-col translate-x-full transition-transform duration-[250ms] ease-[cubic-bezier(.4,0,.2,1)]">
     <div class="flex items-center justify-between px-6 py-5 bg-[#F4F5F7] border-b border-[#E5E7EB] shrink-0">
       <div>
-        <div class="text-[15px] font-bold text-[#111827]">Button</div>
-        <div class="text-[11.5px] text-[#6B7280] mt-0.5">Component React | JSX</div>
+        <div class="text-[16px] font-bold text-[#111827]">Button</div>
+        <div class="text-[12px] text-[#6B6F80] mt-0.5">Component React | JSX</div>
       </div>
       <button onclick="closeM('react')" aria-label="Close" class="w-[30px] h-[30px] rounded-[7px] border border-[#E5E7EB] bg-white flex items-center justify-center text-[#6B7280] hover:bg-[#F5F7FB] hover:border-[#C7D2FE] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -550,9 +556,9 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:14px;font-weight:700;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:700;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
-        + '<p style="font-size:13px;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
+        + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:#6B7280;line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
     });
     tbody.innerHTML = html;
