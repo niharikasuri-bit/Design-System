@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     window.tailwind = { config: {
@@ -126,7 +126,8 @@
       padding: 12px 16px;
     }
     .comp-name {
-      font-size: 13.5px;
+      font-size: 16px;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       color: #111827;
       line-height: 1.4;
@@ -183,7 +184,7 @@
       gap: 7px;
       padding: 7px 18px;
       border-radius: 9999px;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.15s ease;
@@ -206,7 +207,7 @@
       background: #F0F3FF;
     }
     .tab-badge {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       padding: 2px 6px;
       border-radius: 9999px;
@@ -256,8 +257,8 @@
 
 
         <!-- Figma title: 36px Bold #0E165D -->
-        <h1 id="atoms" class="text-[28px] sm:text-[36px] lg:text-[38px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-6">Atoms</h1>
-        <p class="text-[18px] text-[#6B7280] leading-[1.72] max-w-3xl mb-10">
+        <h1 id="atoms" class="text-[36px] font-bold text-[#0E165D] tracking-[-0.022em] leading-[1.18] mb-4" style="font-family: 'DM Sans', sans-serif;">Atoms</h1>
+        <p class="text-[18px] text-[#6B7280] w-full leading-relaxed mb-10" style="font-family: 'Open Sans', sans-serif; font-weight: 400; max-width: 100%; box-sizing: border-box;">
           The foundational building blocks of the DIGIT Design System. Atoms are the
           smallest reusable UI elements independently functional and composable into
           higher-order components.
