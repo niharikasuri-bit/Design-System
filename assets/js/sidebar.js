@@ -197,7 +197,7 @@ DIGIT.sidebar = (function () {
           '<div class="relative mb-5" id="sb-search-wrap">' +
             '<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#9CA3AF] pointer-events-none">' + IC.search + '</span>' +
             '<input id="sb-input" type="search" placeholder="Search" aria-label="Search documentation"' +
-              ' class="w-full bg-[#F4F5F7] rounded-lg pl-8 pr-3 py-[7px] text-[#111827] placeholder-[#6B7280] text-[13px] focus:outline-none focus:ring-1 focus:ring-[#0E165D] transition-shadow border border-[#E5E7EB] hover:border-[#D1D5DB]"' +
+              ' class="w-full bg-[#F4F5F7] rounded-lg pl-8 pr-3 py-[7px] text-[#111827] placeholder-[#6B7280] text-[14px] focus:outline-none focus:ring-1 focus:ring-[#0E165D] transition-shadow border border-[#E5E7EB] hover:border-[#D1D5DB]"' +
               ' autocomplete="off" spellcheck="false"/>' +
             '<div id="sb-results" class="hidden absolute top-full left-0 right-0 mt-1.5 bg-white rounded-lg shadow-lg border border-[#E5E7EB] overflow-hidden max-h-[280px] overflow-y-auto z-50"></div>' +
           '</div>' +
@@ -209,11 +209,11 @@ DIGIT.sidebar = (function () {
           '</a>' +
 
           // Getting Started ─────────────────────────────────────────────────
-          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:11.5px;letter-spacing:0.10em">Getting Started</p></div>' +
+          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Getting Started</p></div>' +
           menus.gettingStarted.map(navLink).join('') +
 
           // Design System ───────────────────────────────────────────────────
-          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:11.5px;letter-spacing:0.10em">Design System</p></div>' +
+          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Design System</p></div>' +
 
           // Foundation
           '<div class="mb-1">' +
