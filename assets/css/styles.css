@@ -635,3 +635,127 @@ main#main-content section { margin-bottom: 3rem; }
   padding: 0;
   display: block;
 }
+
+/* ─── 38. Mobile hamburger + slide-in drawer ─────────────────────────────── */
+
+#mob-hamburger {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0E165D;
+  transition: background .15s;
+}
+#mob-hamburger:hover { background: #EEF1FF; }
+#mob-hamburger:focus-visible { outline: 2px solid #0E165D; outline-offset: 2px; }
+
+#mob-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+#mob-overlay.open { display: block; }
+
+#mob-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 288px;
+  max-width: 85vw;
+  background: #fff;
+  border-right: 1px solid #E5E7EB;
+  box-shadow: 4px 0 24px rgba(0,0,0,.12);
+  transform: translateX(-100%);
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#mob-drawer.open { transform: translateX(0); }
+
+#mob-drawer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #F4F5F7;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  z-index: 1;
+  transition: background .15s, color .15s;
+  flex-shrink: 0;
+}
+#mob-drawer-close:hover { background: #E5E7EB; color: #111827; }
+
+#mob-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* ─── 39. Global overflow & responsive fixes ─────────────────────────────── */
+
+/* No horizontal scrollbar on body */
+body { overflow-x: hidden; }
+
+/* Responsive images globally */
+img { max-width: 100%; height: auto; }
+
+/* Code blocks scroll instead of overflow */
+pre { overflow-x: auto; max-width: 100%; }
+
+/* Tables: ensure horizontal scroll wrapper works on touch */
+.overflow-x-auto { -webkit-overflow-scrolling: touch; }
+
+/* ─── 40. Responsive breakpoints (extended) ─────────────────────────────── */
+
+@media (max-width: 1024px) {
+  /* Show hamburger button */
+  #mob-hamburger { display: flex; }
+
+  /* Push content down so hamburger (44px + 12px top) doesn't overlap */
+  main#main-content { padding-top: 68px !important; }
+}
+
+@media (max-width: 768px) {
+  /* Touch targets for interactive elements */
+  button,
+  .step-cta,
+  .otp-link,
+  [role="button"] { min-height: 44px; }
+
+  /* Prevent any fixed-width element from causing horizontal scroll */
+  main#main-content { overflow-x: hidden; }
+
+  /* Code blocks on small screens */
+  pre, code { font-size: 12px !important; }
+}
+
+@media (max-width: 480px) {
+  /* Tighter code block padding on very small screens */
+  pre { padding: 12px; }
+}

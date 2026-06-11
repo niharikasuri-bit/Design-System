@@ -357,12 +357,80 @@ DIGIT.sidebar = (function () {
     });
   }
 
+  // ── Mobile nav injection ─────────────────────────────────────────────────
+  function injectMobileNav() {
+    if (document.getElementById('mob-drawer')) return;
+
+    var MENU_SVG  = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    var CLOSE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+    var btn = document.createElement('button');
+    btn.id = 'mob-hamburger';
+    btn.setAttribute('aria-label', 'Open navigation');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', 'mob-drawer');
+    btn.innerHTML = MENU_SVG;
+
+    var overlay = document.createElement('div');
+    overlay.id = 'mob-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+
+    var drawer = document.createElement('nav');
+    drawer.id = 'mob-drawer';
+    drawer.setAttribute('role', 'dialog');
+    drawer.setAttribute('aria-modal', 'true');
+    drawer.setAttribute('aria-label', 'Site navigation');
+
+    var closeBtn = document.createElement('button');
+    closeBtn.id = 'mob-drawer-close';
+    closeBtn.setAttribute('aria-label', 'Close navigation');
+    closeBtn.innerHTML = CLOSE_SVG;
+
+    var contentMount = document.createElement('div');
+    contentMount.id = 'mob-sidebar-content';
+    contentMount.className = 'sidebar-scroll';
+
+    drawer.appendChild(closeBtn);
+    drawer.appendChild(contentMount);
+    document.body.appendChild(btn);
+    document.body.appendChild(overlay);
+    document.body.appendChild(drawer);
+
+    render(contentMount);
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      btn.setAttribute('aria-expanded', 'true');
+      closeBtn.focus();
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus();
+    }
+
+    btn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+    contentMount.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && e.target.href) closeDrawer();
+    });
+  }
+
   // ── Public init ───────────────────────────────────────────────────────────
   function init() {
     var desktop = document.getElementById('sidebar-content');
     var mobile  = document.getElementById('mobile-sidebar-content');
     if (desktop) render(desktop);
     if (mobile)  render(mobile);
+    if (desktop) injectMobileNav();
   }
 
   return { init: init, render: render };
