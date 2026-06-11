@@ -38,12 +38,14 @@
       border-top: 1px solid #E5E7EB;
       flex: 1;
     }
-    .color-name { font-weight: 700; font-size: 13px; color: #111827; line-height: 1.3; word-break: break-word; }
+    .color-name { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; color: #111827; line-height: 1.3; word-break: break-word; }
     .color-hex  { font-size: 12px; color: #6B7280; text-transform: uppercase; letter-spacing: .04em; margin-top: 3px; font-family: 'JetBrains Mono','Fira Code',Consolas,monospace; }
 
     /* -- Spacing fixes --------------------------------------------------------
        Hero section's mb is the OTP?first-section gap. Raise to 96px. */
     .page-content > section:first-child { margin-bottom: 3rem !important; }
+
+    .section-rule { height: 1px; background: #E5E7EB; flex: 1; }
 
     /* -- Overflow / horizontal scroll fixes ---------------------------------- */
     .page-content { overflow-x: hidden; max-width: 100%; box-sizing: border-box; }
@@ -98,7 +100,7 @@
       <section id="digit-colours" class="mb-16 scroll-mt-4">
         <div class="flex items-center gap-4 mb-6">
           <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">DIGIT Color Palette</h2>
-          <div class="section-divider"></div>
+          <div class="section-rule"></div>
         </div>
 
         <p class="text-[16px] text-[#6B7280] w-full leading-relaxed mb-10" style="font-family: 'Open Sans', sans-serif; font-weight: 400; max-width: 100%; box-sizing: border-box;">
@@ -109,7 +111,7 @@
 
           <!-- Main Color Palette -->
           <div id="main-color-palette" class="scroll-mt-4">
-            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Main Color Palette</h3>
+            <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Main Color Palette</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div class="color-card">
                 <div class="color-swatch" style="background:#C84C0E"></div>
@@ -128,7 +130,7 @@
 
           <!-- Text -->
           <div id="text" class="scroll-mt-4">
-            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Text</h3>
+            <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Text</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div class="color-card">
                 <div class="color-swatch" style="background:#363636"></div>
@@ -147,7 +149,7 @@
 
           <!-- Alert -->
           <div id="alert" class="scroll-mt-4">
-            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Alert</h3>
+            <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Alert</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div class="color-card">
                 <div class="color-swatch" style="background:#B91900"></div>
@@ -186,7 +188,7 @@
 
           <!-- Generic -->
           <div id="generic" class="scroll-mt-4">
-            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Generic</h3>
+            <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Generic</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div class="color-card">
                 <div class="color-swatch" style="background:#EEEEEE; border-bottom:1px solid #E5E7EB"></div>
@@ -205,7 +207,7 @@
 
           <!-- Paper -->
           <div id="paper" class="scroll-mt-4">
-            <h3 class="text-[11px] font-bold text-[#374151] uppercase tracking-[.12em] mb-6">Paper</h3>
+            <h3 class="text-[20px] font-semibold text-[#111827] mb-6" style="font-family: 'DM Sans', sans-serif;">Paper</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div class="color-card">
                 <div class="color-swatch" style="background:#FFFFFF; border-bottom:1px solid #E5E7EB"></div>
@@ -225,7 +227,7 @@
       <section id="usage-guidelines" class="mb-20 scroll-mt-4">
         <div class="flex items-center gap-4 mb-8">
           <h2 class="text-[24px] font-bold text-[#0E165D] whitespace-nowrap" style="font-family: 'DM Sans', sans-serif;">Usage Guidelines</h2>
-          <div class="section-divider"></div>
+          <div class="section-rule"></div>
         </div>
 
         <div class="flex flex-col gap-12">
