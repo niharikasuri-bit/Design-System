@@ -635,7 +635,7 @@
   // checked:true  = tick in source -> frozen pre-checked
   // checked:false = cross in source -> frozen unchecked
   var checklistItems = [
-    { title: "All interactive states",               checked: true,
+    { title: "All interactive states",               checked: true, bold: true,
       req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
     { title: "Accessible use of colours",              checked: true,
       req:"Includes all interactive states that are applicable (hover, down, focus, keyboard focus, disabled)." },
@@ -708,7 +708,7 @@
       html += '<div style="padding:12px 0 4px;">'
         + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:6px;">'
         + (item.checked ? PASS_ICON : NA_ICON)
-        + '<span style="font-size:18px;font-weight:500;font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
+        + '<span style="font-size:18px;font-weight:' + (item.bold ? '700' : '500') + ';font-family:\'DM Sans\',sans-serif;color:' + (item.checked ? '#111827' : '#6B7280') + '">' + escHtml(item.title) + '</span>'
         + '</div>'
         + '<p style="font-size:14px;font-family:\'Open Sans\',sans-serif;font-weight:400;color:' + (item.checked ? '#6B7280' : '#BABFC7') + ';line-height:1.6;margin:0;padding-left:31px">' + escHtml(item.req) + '</p>'
         + '</div>';
