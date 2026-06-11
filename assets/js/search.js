@@ -40,7 +40,7 @@ DIGIT.search = (function () {
             autocomplete="off"
             spellcheck="false"
             class="flex-1 bg-transparent text-gray-900 placeholder-gray-400 text-sm outline-none" />
-          <kbd class="hidden sm:flex items-center text-[11px] font-mono text-gray-400 bg-gray-100 border border-gray-200 rounded px-1.5 py-0.5">
+          <kbd class="hidden sm:flex items-center text-[12px] font-mono text-gray-400 bg-gray-100 border border-gray-200 rounded px-1.5 py-0.5">
             Esc
           </kbd>
         </div>
@@ -58,7 +58,7 @@ DIGIT.search = (function () {
         </div>
 
         <!-- Footer hint -->
-        <div class="flex items-center gap-4 px-4 py-2.5 border-t border-gray-100 text-[11px] text-gray-400">
+        <div class="flex items-center gap-4 px-4 py-2.5 border-t border-gray-100 text-[12px] text-gray-400">
           <span class="flex items-center gap-1">
             <kbd class="font-mono bg-gray-100 border border-gray-200 rounded px-1">↑↓</kbd> Navigate
           </span>

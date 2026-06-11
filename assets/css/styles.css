@@ -34,7 +34,7 @@ html:not(.hydrated) * { transition: none !important; }
   --text-heading:   #111827;
   --text-primary:   #1F2937;
   --text-secondary: #6B7280;
-  --text-disabled:  #9CA3AF;
+  --text-disabled:  #6B7280;
   --border:         #E5E7EB;
   --border-input:   #D1D5DB;
   --success:        #15803D;
@@ -266,7 +266,7 @@ main#main-content section[id] {
 /* ─── 17. Section tag chip ───────────────────────────────────────────────────*/
 .section-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .10em;
   text-transform: uppercase;
@@ -285,7 +285,7 @@ main#main-content section[id] {
   gap: 4px;
   padding: 3px 10px;
   border-radius: var(--radius-pill);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -296,7 +296,7 @@ main#main-content section[id] {
 .prop-table th {
   padding: 10px 14px;
   text-align: left;
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;

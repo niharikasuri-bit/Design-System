@@ -132,7 +132,7 @@ DIGIT.sidebar = (function () {
     var cls    = active
       ? 'bg-[#EEF1FF] text-[#0E165D] font-medium'
       : 'text-[#4B5563] hover:bg-[#F5F7FB] hover:text-[#111827] font-normal';
-    var iconCls = active ? 'text-[#0E165D]' : 'text-[#9CA3AF]';
+    var iconCls = active ? 'text-[#0E165D]' : 'text-[#6B7280]';
     return '<a href="' + item.path + '" class="flex items-center gap-2 px-2.5 py-[7px] rounded-md mb-px transition-colors ' + cls + '">' +
       (item.icon ? '<span class="shrink-0 ' + iconCls + '">' + IC[item.icon] + '</span>' : '') +
       '<span class="flex-1 leading-snug" style="font-size:16px">' + item.label + '</span>' +
@@ -144,7 +144,7 @@ DIGIT.sidebar = (function () {
     var cls    = active
       ? 'bg-[#EEF1FF] text-[#0E165D] font-medium'
       : 'text-[#4B5563] hover:bg-[#F5F7FB] hover:text-[#111827] font-normal';
-    var iconCls = active ? 'text-[#0E165D]' : 'text-[#9CA3AF]';
+    var iconCls = active ? 'text-[#0E165D]' : 'text-[#6B7280]';
     return '<button type="button" data-key="' + key + '" class="w-full flex items-center gap-2 px-2.5 py-[7px] rounded-md mb-px transition-colors ' + cls + '">' +
       '<span class="shrink-0 ' + iconCls + '">' + IC[iconKey] + '</span>' +
       '<span class="flex-1 text-left leading-snug" style="font-size:16px">' + label + '</span>' +
@@ -195,7 +195,7 @@ DIGIT.sidebar = (function () {
 
           // Search ─────────────────────────────────────────────────────────
           '<div class="relative mb-5" id="sb-search-wrap">' +
-            '<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#9CA3AF] pointer-events-none">' + IC.search + '</span>' +
+            '<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#6B7280] pointer-events-none">' + IC.search + '</span>' +
             '<input id="sb-input" type="search" placeholder="Search" aria-label="Search documentation"' +
               ' class="w-full bg-[#F4F5F7] rounded-lg pl-8 pr-3 py-[7px] text-[#111827] placeholder-[#6B7280] text-[14px] focus:outline-none focus:ring-1 focus:ring-[#0E165D] transition-shadow border border-[#E5E7EB] hover:border-[#D1D5DB]"' +
               ' autocomplete="off" spellcheck="false"/>' +
