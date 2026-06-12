@@ -29,8 +29,8 @@ DIGIT.sidebar = (function () {
   function buildMenus(root) {
     return {
       explore: [
-        { label: 'Designer',  path: root + 'docs/getting-started/designer.html',  icon: 'image', section: 'getting-started', page: 'designer'  },
-        { label: 'Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
+        { label: 'Explore as a Designer',  path: root + 'docs/getting-started/designer.html',  icon: 'image', section: 'getting-started', page: 'designer'  },
+        { label: 'Explore as a Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
       ],
       gettingStarted: [
         { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html', icon: 'userPlus', section: 'getting-started', page: 'inclusive-design' },
