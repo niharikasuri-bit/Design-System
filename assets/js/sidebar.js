@@ -212,7 +212,7 @@ DIGIT.sidebar = (function () {
           '</a>' +
 
           // Explore ─────────────────────────────────────────────────────────
-          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Explore</p></div>' +
+          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Explore as</p></div>' +
           menus.explore.map(navLink).join('') +
 
           // Getting Started ─────────────────────────────────────────────────
