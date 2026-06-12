@@ -29,13 +29,13 @@ DIGIT.sidebar = (function () {
   function buildMenus(root) {
     return {
       explore: [
-        { label: 'Explore as a Designer',  path: root + 'docs/getting-started/designer.html',  icon: 'image', section: 'getting-started', page: 'designer'  },
-        { label: 'Explore as a Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
+        { label: 'Designer',  path: root + 'docs/getting-started/designer.html',  icon: 'image', section: 'getting-started', page: 'designer'  },
+        { label: 'Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
       ],
       gettingStarted: [
         { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html', icon: 'userPlus', section: 'getting-started', page: 'inclusive-design' },
         { label: 'Design Approach',  path: root + 'docs/getting-started/design-approach.html', icon: 'bookOpen', section: 'getting-started', page: 'design-approach'  },
-        { label: 'Content Standard', path: root + 'docs/getting-started/content-standard.html', icon: 'fileText', section: 'getting-started', page: 'content-standard' },
+        { label: 'Content Guidelines', path: root + 'docs/getting-started/content-standard.html', icon: 'fileText', section: 'getting-started', page: 'content-standard' },
       ],
       foundation: [
         { label: 'Color Palette', path: root + 'docs/foundation/color.html',      section: 'foundation', page: 'color'      },
@@ -115,7 +115,7 @@ DIGIT.sidebar = (function () {
       // Getting Started
       { title: 'Inclusive Design', category: 'Getting Started', path: root + 'docs/getting-started/inclusive-design.html'  },
       { title: 'Design Approach',  category: 'Getting Started', path: root + 'docs/getting-started/design-approach.html'   },
-      { title: 'Content Standard', category: 'Getting Started', path: root + 'docs/getting-started/content-standard.html'  },
+      { title: 'Content Guidelines', category: 'Getting Started', path: root + 'docs/getting-started/content-standard.html'  },
     ];
   }
 
