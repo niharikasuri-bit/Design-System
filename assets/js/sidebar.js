@@ -216,7 +216,7 @@ DIGIT.sidebar = (function () {
           menus.explore.map(navLink).join('') +
 
           // Getting Started ─────────────────────────────────────────────────
-          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Getting Started</p></div>' +
+          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Get Started</p></div>' +
           menus.gettingStarted.map(navLink).join('') +
 
           // Design System ───────────────────────────────────────────────────
