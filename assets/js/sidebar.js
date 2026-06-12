@@ -33,8 +33,8 @@ DIGIT.sidebar = (function () {
         { label: 'Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
       ],
       gettingStarted: [
-        { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html', icon: 'userPlus', section: 'getting-started', page: 'inclusive-design' },
         { label: 'Design Approach',  path: root + 'docs/getting-started/design-approach.html', icon: 'bookOpen', section: 'getting-started', page: 'design-approach'  },
+        { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html', icon: 'userPlus', section: 'getting-started', page: 'inclusive-design' },
         { label: 'Content Guidelines', path: root + 'docs/getting-started/content-standard.html', icon: 'fileText', section: 'getting-started', page: 'content-standard' },
       ],
       foundation: [
