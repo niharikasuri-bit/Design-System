@@ -13,17 +13,26 @@ DIGIT.page = window.DIGIT_PAGE || {};
 
 DIGIT.nav = [
   {
+    id: 'explore',
+    label: 'Explore',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 shrink-0">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+    </svg>`,
+    items: [
+      { id: 'designer',  label: 'Designer',  path: 'docs/getting-started/designer.html#get-started-designer' },
+      { id: 'developer', label: 'Developer', path: 'docs/getting-started/developer.html#get-started-developer' },
+    ],
+  },
+  {
     id: 'getting-started',
     label: 'Getting Started',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 shrink-0">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
     </svg>`,
     items: [
-      { id: 'designer',         label: 'Designer',         path: 'docs/getting-started/designer.html#get-started-designer' },
-      { id: 'developer',        label: 'Developer',         path: 'docs/getting-started/developer.html#get-started-developer' },
+      { id: 'inclusive-design', label: 'Inclusive Design',  path: 'docs/getting-started/inclusive-design.html#inclusive-design' },
       { id: 'design-approach',  label: 'Design Approach',   path: 'docs/getting-started/design-approach.html#design-approach' },
       { id: 'content-standard', label: 'Content Standard',  path: 'docs/getting-started/content-standard.html#content-standard' },
-      { id: 'inclusive-design', label: 'Inclusive Design',  path: 'docs/getting-started/inclusive-design.html#inclusive-design' },
     ],
   },
   {

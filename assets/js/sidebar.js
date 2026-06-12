@@ -28,12 +28,14 @@ DIGIT.sidebar = (function () {
   // ── Navigation structure (matches React MENUS + dropdown items) ──────────
   function buildMenus(root) {
     return {
+      explore: [
+        { label: 'Designer',  path: root + 'docs/getting-started/designer.html',  icon: 'image', section: 'getting-started', page: 'designer'  },
+        { label: 'Developer', path: root + 'docs/getting-started/developer.html', icon: 'code2', section: 'getting-started', page: 'developer' },
+      ],
       gettingStarted: [
-        { label: 'Designer',         path: root + 'docs/getting-started/designer.html',         icon: 'image',          section: 'getting-started', page: 'designer'         },
-        { label: 'Developer',        path: root + 'docs/getting-started/developer.html',        icon: 'code2',          section: 'getting-started', page: 'developer'        },
-        { label: 'Design Approach',  path: root + 'docs/getting-started/design-approach.html', icon: 'bookOpen',       section: 'getting-started', page: 'design-approach'  },
-        { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html',icon: 'userPlus',       section: 'getting-started', page: 'inclusive-design' },
-        { label: 'Content Standard', path: root + 'docs/getting-started/content-standard.html',icon: 'fileText',       section: 'getting-started', page: 'content-standard' },
+        { label: 'Inclusive Design', path: root + 'docs/getting-started/inclusive-design.html', icon: 'userPlus', section: 'getting-started', page: 'inclusive-design' },
+        { label: 'Design Approach',  path: root + 'docs/getting-started/design-approach.html', icon: 'bookOpen', section: 'getting-started', page: 'design-approach'  },
+        { label: 'Content Standard', path: root + 'docs/getting-started/content-standard.html', icon: 'fileText', section: 'getting-started', page: 'content-standard' },
       ],
       foundation: [
         { label: 'Color Palette', path: root + 'docs/foundation/color.html',      section: 'foundation', page: 'color'      },
@@ -107,12 +109,13 @@ DIGIT.sidebar = (function () {
       { title: 'Form',             category: 'Patterns',        path: root + 'docs/patterns/form.html'          },
       { title: 'Inbox',            category: 'Patterns',        path: root + 'docs/patterns/inbox.html'         },
       { title: 'Summary',          category: 'Patterns',        path: root + 'docs/patterns/summary.html'       },
+      // Explore
+      { title: 'Designer',  category: 'Explore', path: root + 'docs/getting-started/designer.html'  },
+      { title: 'Developer', category: 'Explore', path: root + 'docs/getting-started/developer.html' },
       // Getting Started
-      { title: 'Designer',         category: 'Getting Started', path: root + 'docs/getting-started/designer.html'          },
-      { title: 'Developer',        category: 'Getting Started', path: root + 'docs/getting-started/developer.html'         },
+      { title: 'Inclusive Design', category: 'Getting Started', path: root + 'docs/getting-started/inclusive-design.html'  },
       { title: 'Design Approach',  category: 'Getting Started', path: root + 'docs/getting-started/design-approach.html'   },
       { title: 'Content Standard', category: 'Getting Started', path: root + 'docs/getting-started/content-standard.html'  },
-      { title: 'Inclusive Design', category: 'Getting Started', path: root + 'docs/getting-started/inclusive-design.html'  },
     ];
   }
 
@@ -207,6 +210,10 @@ DIGIT.sidebar = (function () {
             '<span class="shrink-0 ' + homeIcCls + '">' + IC.home + '</span>' +
             '<span class="leading-snug" style="font-size:16px">Home</span>' +
           '</a>' +
+
+          // Explore ─────────────────────────────────────────────────────────
+          '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Explore</p></div>' +
+          menus.explore.map(navLink).join('') +
 
           // Getting Started ─────────────────────────────────────────────────
           '<div class="mt-5 mb-1"><p class="font-semibold uppercase px-2.5 leading-none" style="color:#6B7280;font-size:12px;letter-spacing:0.10em">Getting Started</p></div>' +
